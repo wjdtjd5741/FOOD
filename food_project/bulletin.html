@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/component/bulletin/css/h/section0.css">
     <link rel="stylesheet" href="assets/component/bulletin/css/j/section1.css">
+    <link rel="stylesheet" href="assets/css/mobile_console.css">
     <style>
 
     </style>
@@ -52,6 +53,37 @@
         </div>
     </header>
     <main>
+        <nav>
+            <div class="mobile_console">
+                <div class="array_console">
+                    <a href="mainpage.html">
+                        <img
+                            src="https://media.discordapp.net/attachments/1123448023238844436/1149245362893246494/home.png">
+                        <div class="home">홈</div>
+                    </a>
+                    <a href="bulletin.html">
+                        <img
+                            src="https://media.discordapp.net/attachments/1123448023238844436/1149245362603819048/category.png">
+                        <div class="category">카테고리</div>
+                    </a>
+                    <a href="recipepage.html">
+                        <img
+                            src="https://media.discordapp.net/attachments/1123448023238844436/1149245362289250304/today_recipe.png">
+                        <div class="today_recipe_font">오늘의 레시피</div>
+                    </a>
+                    <a href="recipepage.html">
+                        <img
+                            src="https://media.discordapp.net/attachments/1123448023238844436/1149245361723015298/like.png">
+                        <div class="like">찜한 레시피</div>
+                    </a>
+                    <a href="login.html">
+                        <img
+                            src="https://media.discordapp.net/attachments/1123448023238844436/1149245362020831253/login.png">
+                        <div class="login">로그인</div>
+                    </a>
+                </div>
+            </div>
+        </nav>
         <section>
             <!-- 김호연 -->
             <div class="bulletin_sec1_all">
@@ -197,9 +229,10 @@
                 }
             });
         }
-
+        let index = 0;
         function exchange_contents() {
             let inputs = document.querySelectorAll(".contents");
+            inputs[0].classList.add("selected_section")
             console.log(inputs);
             for (let i = 0; i < inputs.length; i++) {
                 inputs[i].addEventListener("click", function () {
@@ -209,34 +242,38 @@
                         let htmlDom = new DOMParser().parseFromString(text, "text/html");
                         document.querySelector(".ajax_pagereload").innerHTML = htmlDom.querySelector("body > div").innerHTML;
                     }
-                    // inputs[i];
-
+                    inputs[i].classList.add("selected_section")
+                    index = i
+                    for(let j = 0 ; j<inputs.length ;j++){
+                        if(index != j){
+                            inputs[j].classList.remove("selected_section")
+                        }
+                    }
                 });
                 inputs[i].addEventListener("mouseover", function () {
                     console.log("in");
                     inputs[i].classList.add("selected_section");
+                    // for (let j = 0; j < inputs.length; j++) {
+                    //     if (i != j) {
+                    //         inputs[j].classList.remove("selected_section");
+                    //     }
+                    // }
+                });
+
+                inputs[i].addEventListener("mouseout", function () {
                     for (let j = 0; j < inputs.length; j++) {
-                        if (i != j) {
+                        if (index != j) {
                             inputs[j].classList.remove("selected_section");
                         }
                     }
                 });
 
-                // inputs[i].addEventListener("mouseout", function () {
-                //     console.log("out");
-                //     inputs[i].classList.remove("selected_section");
-                // });
-
             }
         }
         control_writepage();
         function control_writepage() {
-            // 'write' 버튼 클릭 시 이벤트 리스너 추가
             document.querySelector(".write").addEventListener("click", function () {
-                // 선택된 섹션을 판별하기 위해 selected_section 클래스를 가진 요소를 찾습니다.
                 let selectedSection = document.querySelector(".selected_section");
-
-                // 선택된 섹션에 따라 다른 홈페이지로 이동합니다.
                 if (selectedSection) {
                     if (selectedSection.textContent === "레시피 게시판") {
                         window.location.href = "newrecipepage.html"; // 레시피 게시판의 글쓰기 페이지로 이동
@@ -249,6 +286,7 @@
 
     </script>
     <script src="assets/js/search_event.js"></script>
+    <script src="assets/js/mobile_pop.js"></script>
 </body>
 
 </html>

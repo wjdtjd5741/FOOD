@@ -12,6 +12,6 @@ function search_event(){
     });
     
     // document.querySelector("#hash").addEventListener("click",function(){
-    //     window.open(`searchpage.html?data=${document.querySelector("#hash").innerText.substring(1,)}`)
+    //     window.open(`searchpage.html?data=${document.querySelector("#hash").innerText.substring(1)}`)
     // });
 }

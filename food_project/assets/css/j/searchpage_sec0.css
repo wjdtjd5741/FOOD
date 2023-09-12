@@ -11,6 +11,7 @@
 .search_box input {
     font-size: 30px;
     border: none;
+    /* background-color: orange; */
 }
 .search_box > div:nth-child(){
 
