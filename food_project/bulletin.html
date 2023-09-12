@@ -229,9 +229,10 @@
                 }
             });
         }
-
+        let index = 0;
         function exchange_contents() {
             let inputs = document.querySelectorAll(".contents");
+            inputs[0].classList.add("selected_section")
             console.log(inputs);
             for (let i = 0; i < inputs.length; i++) {
                 inputs[i].addEventListener("click", function () {
@@ -241,34 +242,38 @@
                         let htmlDom = new DOMParser().parseFromString(text, "text/html");
                         document.querySelector(".ajax_pagereload").innerHTML = htmlDom.querySelector("body > div").innerHTML;
                     }
-                    // inputs[i];
-
+                    inputs[i].classList.add("selected_section")
+                    index = i
+                    for(let j = 0 ; j<inputs.length ;j++){
+                        if(index != j){
+                            inputs[j].classList.remove("selected_section")
+                        }
+                    }
                 });
                 inputs[i].addEventListener("mouseover", function () {
                     console.log("in");
                     inputs[i].classList.add("selected_section");
+                    // for (let j = 0; j < inputs.length; j++) {
+                    //     if (i != j) {
+                    //         inputs[j].classList.remove("selected_section");
+                    //     }
+                    // }
+                });
+
+                inputs[i].addEventListener("mouseout", function () {
                     for (let j = 0; j < inputs.length; j++) {
-                        if (i != j) {
+                        if (index != j) {
                             inputs[j].classList.remove("selected_section");
                         }
                     }
                 });
 
-                // inputs[i].addEventListener("mouseout", function () {
-                //     console.log("out");
-                //     inputs[i].classList.remove("selected_section");
-                // });
-
             }
         }
         control_writepage();
         function control_writepage() {
-            // 'write' 버튼 클릭 시 이벤트 리스너 추가
             document.querySelector(".write").addEventListener("click", function () {
-                // 선택된 섹션을 판별하기 위해 selected_section 클래스를 가진 요소를 찾습니다.
                 let selectedSection = document.querySelector(".selected_section");
-
-                // 선택된 섹션에 따라 다른 홈페이지로 이동합니다.
                 if (selectedSection) {
                     if (selectedSection.textContent === "레시피 게시판") {
                         window.location.href = "newrecipepage.html"; // 레시피 게시판의 글쓰기 페이지로 이동
