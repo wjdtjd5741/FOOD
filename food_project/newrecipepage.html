@@ -125,7 +125,7 @@
                     <div class="food_explain_submit">등록</div>
                 </div>
                 <div class="food_explain"></div>
-                
+                <div class="del_explain">삭제</div>
                     
             </div>
 
@@ -164,6 +164,14 @@
         </div>
     </footer>
     <script>
+        del_explain()
+        function del_explain(){
+            document.querySelector(".del_explain").addEventListener("click",function(){
+                document.querySelector(".food_explain").innerText = "";
+
+            })
+        }
+
         del_titlename()
         function del_titlename(){
             document.querySelector(".del_titlename").addEventListener("click",function(){

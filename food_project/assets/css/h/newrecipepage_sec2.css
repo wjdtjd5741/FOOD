@@ -30,13 +30,13 @@
     line-height: 2;
     cursor: pointer;
 }
-.show_titlename{
+.show_titlename, .food_explain{
     font-size: 20px;
     font-weight: 900;
     margin-bottom: 20px;
     border: 1px solid gray;
     height: 30px;
-    width: 90%;
+    width: 80%;
     display: inline-block;
     word-wrap: break-word;
 }
@@ -105,7 +105,7 @@
     font-size: 18px;
     position: relative;
 }
-.del_titlename{
+.del_titlename , .del_explain{
     font-size: 16px;
     background-color: rgba(207, 207, 207, 0.562); 
     cursor: pointer;
@@ -222,10 +222,11 @@ input { /*김호연 수정함 */
     margin-top: 20px;
     margin-right: 10px;
 }
-.food_explain{
+.food_explain, .del_explain{
     margin-top: 20px;
     font-size: 16px;
 }
+
 #explanation{
     border: 1px solid black;
     font-size: 16px;
