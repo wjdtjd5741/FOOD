@@ -300,6 +300,15 @@
             }
         }
 
+        let title = document.querySelectorAll(".title > div:nth-child(n+2)")
+        for(let i = 0; i < title.length; i++){
+            title[i].addEventListener("mouseover", function(){
+                title[i].style.backgroundColor = "orange"
+            })
+            title[i].addEventListener("mouseout", function(){
+                title[i].style.backgroundColor = "rgb(207, 207, 207, 0.562)"
+            })
+        }
     </script>
     <script src="assets/js/header_contents.js"></script>
     <script src="assets/js/search_event.js"></script>
