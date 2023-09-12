@@ -101,7 +101,7 @@
             <!-- 이정성 -->
             <div class="search_box">
                 <div class="search_box1"><input id="input_text0" type="text" value=""></div>
-                <div><img
+                <div class="search_img" ><img
                         src="https://cdn.discordapp.com/attachments/1148557028927742005/1149214262925987880/search_icon.png">
                 </div>
             </div>
@@ -118,7 +118,7 @@
                 <div class="search_root2">
                     <div class="search_top">
                         <div class="top_first">
-                            <div>카레</div>
+                            <div id="input_text1">카레</div>
                             <div>검색결과</div>
                         </div>
                         <div class="search_result">
@@ -249,12 +249,16 @@
             document.querySelector("#input_text0").value = data;
             document.querySelector("#input_text1").innerText = data;
 
-            document.querySelector("#input_text0").addEventListener("click", function () {
+            document.querySelector(".search_img").addEventListener("click", function () {
                 document.querySelector("#input_text1").innerText = document.querySelector("#input_text0").value
+            });
+            document.querySelector("#input_text0").addEventListener("keyup", function (event) {
+                if(event.keyCode == 13)
+                    document.querySelector("#input_text1").innerText = document.querySelector("#input_text0").value
             });
         }
 
-
+        
 
         // console.log(document.querySelector(".main_top_img > a").textContent);
         // document.querySelector(".main_top_img > a").href = "login.html";
