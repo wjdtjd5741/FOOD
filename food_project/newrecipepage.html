@@ -199,7 +199,7 @@
         
         function add_hashtags() {
             document.querySelector("#hash_submit").addEventListener("click", function () {
-                if (document.querySelector(".recipick_hashtag").value == "") {
+                if (document.querySelector(".recipick_hashtag").value == "" || document.querySelector(".recipick_hashtag").value == "#해시태그") {
                     alert("해시태그를 입력해주세요")
                 } else {
                     let hashtag = document.querySelector(".recipick_hashtag").value;
@@ -309,6 +309,7 @@
                 title[i].style.backgroundColor = "rgb(207, 207, 207, 0.562)"
             })
         }
+        // 이벤트 수정
     </script>
     <script src="assets/js/header_contents.js"></script>
     <script src="assets/js/search_event.js"></script>
