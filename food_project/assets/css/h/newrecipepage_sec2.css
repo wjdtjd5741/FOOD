@@ -34,6 +34,11 @@
     font-size: 20px;
     font-weight: 900;
     margin-bottom: 20px;
+    border: 1px solid gray;
+    height: 30px;
+    width: 90%;
+    display: inline-block;
+    word-wrap: break-word;
 }
 .recipick_hashtag {
     padding-left: 1%;
@@ -97,10 +102,22 @@
     text-align: center;
     margin-top: 30px;
     margin-right: 2%;
-    font-size: 18px;    
+    font-size: 18px;
     position: relative;
 }
-
+.del_titlename{
+    font-size: 16px;
+    background-color: rgba(207, 207, 207, 0.562); 
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    width: 50px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 10px;
+    border-radius: 5px;
+}
 .max {
     color: red;
     margin-top: 20px;

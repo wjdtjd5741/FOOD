@@ -28,9 +28,9 @@
     font-size: 12px;
     margin-left: 87%;
     vertical-align: top;
-    /* border: 1px solid gray; */
+    border: 1px solid gray;
     border-radius: 4px;
-    background-color: rgb(207, 207, 207, 0.562);
+    background-color: gray;
     width: 50px;
     text-align: center;
     height: 30px;
