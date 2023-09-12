@@ -1,0 +1,31 @@
+.board {
+    margin-top: 50px;
+    /* margin-left: 20px; */
+    font-size: 35px;
+    font-weight: bold;
+}
+.notice {
+    margin-top: 50px;
+    /* margin-left: 20px; */
+    font-size: 30px;
+    font-weight: bold;
+}
+.notice_content {
+    margin: 20px 0;
+    /* margin-left: 20px; */
+    font-size: 20px;
+    font-weight: bold;
+}
+@media(max-width:700px){
+    .board {
+        font-size: 30px;
+    }
+    .notice {
+        font-size: 20px;
+    }
+    .notice_content {
+        font-size: 10px;
+    }
+    
+    
+}
