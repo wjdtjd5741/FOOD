@@ -29,7 +29,7 @@ body{
     /* font-size: 16px; */
     display: inline-block;
 }
-.hashtag_show {
+.hashtags {
     color: black;
     display: inline-block;
     border: 2px solid orange;
@@ -42,6 +42,7 @@ body{
     margin-right: 2%;
     font-size: 16px;    
     font-weight: bold;
+    cursor: pointer;
 }
 
 .text_line{

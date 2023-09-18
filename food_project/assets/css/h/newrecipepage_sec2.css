@@ -25,10 +25,11 @@
     height: 35px;
     border-radius: 5px;
     background-color: rgba(207, 207, 207, 0.562);
-    margin-top: 12px;
+    /* margin-top: 12px; */
     text-align: center;
     line-height: 2;
     cursor: pointer;
+    vertical-align: top;
 }
 .show_titlename, .food_explain{
     font-size: 20px;
@@ -90,7 +91,7 @@
     text-align: center;
 }
 
-.hashtag_show {
+.hashtags {
     color: black;
     display: inline-block;
     border: 2px solid orange;
@@ -158,20 +159,22 @@
 .content_all > div:nth-child(1),
 .content_all > div:nth-child(2){
     width: 35%;
+    margin-right: 10px;
 }
 .content_all > div:nth-child(1){
     margin-left: 10px;
 }
-.content_all > div:nth-child(3){
+#quantity_submit{
     font-size: 16px;
     width: 30%;
     height: 35px;
     border-radius: 5px;
     background-color: rgba(207, 207, 207, 0.562);
-    margin-top: 12px;
+    margin-top: 6px;
     text-align: center;
     line-height: 2;
     cursor: pointer;
+    margin-left: 20px;
 }
 
 .content_all {
@@ -218,8 +221,8 @@ input { /*김호연 수정함 */
     border: 1px solid black;
     font-size: 16px;
     width: 86%;
-    height: 40px;
-    margin-top: 20px;
+    height: 30px;
+    /* margin-top: 20px; */
     margin-right: 10px;
 }
 .food_explain, .del_explain{

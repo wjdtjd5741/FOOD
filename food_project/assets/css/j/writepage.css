@@ -41,14 +41,16 @@
     margin-bottom: 20px;
 }
 
-#board_name input {
-    padding-left: 16px;
+#board_name textarea {
+    padding-left: 5px;
     color: gray;
     font-size: 17px;
     margin: 10px 0;
-    border: none;
-    width: 50%;
+    margin-left: 5px;
+    /* border: none; */
+    width: 85%;
     margin-bottom: 40px;
+    resize: none;
 }
 #content input {
     font-size: 18px;
@@ -59,28 +61,49 @@
     height: 700px;
     margin-bottom: 20px;
 }
+.title_name, .write_1, #write{
+    display: inline-block;
+    border-radius: 8px;
+    margin-left: 2%;
+    background-color: rgba(207, 207, 207, 0.562);
+    font-size: 16px;
+    font-weight: bold;
+    height: 30px;
+    line-height: 1.8;
+    text-align: center;
+    width: 60px;
+    cursor: pointer;
+    
+}
+.title_name{
+    vertical-align: top;
+    margin-top: 18px;
+}
 .borad_select {
     margin: 20px 0;
     margin-left: 10px;
     margin-bottom: 20px;
     border: none;
     font-weight: bold;
-
+    cursor: pointer;
 }
 .write_1 {
-    border: 1px solid rgb(230, 126, 34);
-    background-color: rgb(230, 126, 34);
-    font-size: 18px;
+    /* border: 1px solid rgb(230, 126, 34);
+    background-color: rgb(230, 126, 34); */
+    /* font-size: 18px; */
     border-radius: 5px;
-    padding-top: 3px;
+    /* padding-top: 3px; */
     text-align: center;
     height: 30px;
     font-weight: bold;
-    color: white;
-    width: 8%;
+    /* color: white; */
+    /* width: 8%; */
     display: inline-block;
+    margin-top: 5px;
     margin-left: 1%;
     cursor: pointer;
+    vertical-align: top;
+    
 }
 #write {
     line-height: 35px;
@@ -88,13 +111,13 @@
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 89%;
-    background-color: rgb(230, 126, 34);
-    border: none;
+    /* background-color: rgb(230, 126, 34); */
+    /* border: none; */
     width: 10%;
     height: 35px;
-    color: white;
+    /* color: white; */
     font-size: 18px;
-    font-weight: bold;
+    /* font-weight: bold; */
     border-radius: 5px;
     cursor: pointer;
 }
@@ -121,8 +144,9 @@ option {
     font-weight: bold;
     margin-bottom: 20px;
     white-space: wrap;
-    width: 87%;
+    width: 85%;
     height: 30px;
+    resize: none;
 }
 .attach{
     display: flex;
@@ -179,6 +203,7 @@ option {
 
 .write_explaintext{
     font-size: 16px;
+    
 }
 #plus_btn input{
     font-size: 16px;

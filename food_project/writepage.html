@@ -112,7 +112,10 @@
                     <option value="공지사항">공지사항</option>
                 </select>
             </div>
-            <div id="board_name"><input type="text" value="게시글 제목을 작성해주세요."></div>
+            <div id="board_name">
+                <textarea type="text" value="게시글 제목을 작성해주세요."></textarea>
+                <div class="title_name btns_hover">작성</div>
+            </div>
 
             <div class="attach">
                 <div>
@@ -124,11 +127,11 @@
                 <div>첨부파일</div>
             </div>
             <div class="media_box" id="media_box">사진 및 동영상을 올려주세요!</div>
-            <input type="text" class="explanation" value="만드는 방법을 써주세요.">
-            <div class="write_1">작성</div>
-            <div class="write_explaintext"></div>
+            <textarea type="text" class="explanation" value="만드는 방법을 써주세요."></textarea>
+            <div class="write_1 btns_hover">작성</div>
+            <div class="write_explaintext btns_hover"></div>
             <!-- <div id="plus">+</div> -->
-            <div id="write">등록</div>
+            <div id="write" class="btns_hover">등록</div>
         </section>
     </main>
     <footer class="footer">
@@ -189,6 +192,7 @@
 
     </script>
     <script src="assets/js/mobile_pop.js"></script>
+    <script src="assets/js/btns_hover.js"></script>
 </body>
 
 </html>

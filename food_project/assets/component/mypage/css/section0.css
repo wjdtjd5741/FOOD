@@ -61,7 +61,7 @@
 img {
     margin-left: 2%;
 }
-.my_1, .notice, .out, .edit {
+.my_1, .notice, .out, .btns_hover {
     cursor: pointer;
 }
 .bottom_box {
@@ -116,10 +116,12 @@ img {
     white-space: nowrap;
 }
 
-.edit {
-    border: 1px solid rgb(228, 226, 226);
+.btns_hover {
+    /* border: 1px solid rgb(228, 226, 226); */
     padding: 0.6%;
+    /* background-color: gray; */
     background-color: rgb(228, 226, 226);
+    color: black;
     font-size: 10px;
     margin-left: 30%;
     cursor: pointer;

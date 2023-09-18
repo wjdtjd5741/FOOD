@@ -195,11 +195,6 @@
         </div>
     </div>
     <script>
-
-
-
-
-
         show_contents();
         exchange_contents();
         const xhr = new XMLHttpRequest();
@@ -216,10 +211,11 @@
                 load_contents(i);
                 xhr.onload = function () {
                     let text = xhr.responseText;
-                    console.log(text)
+                    // console.log(text)
                     let htmlDom = new DOMParser().parseFromString(text, "text/html");
-                    console.log(htmlDom)
+                    // console.log(htmlDom)
                     document.querySelector(".right").innerHTML = htmlDom.querySelector("body > div").innerHTML;
+                    btns_hover()
                 }
             });
         }
@@ -230,9 +226,9 @@
                     load_contents(i);
                     xhr.onload = function () {
                         let text = xhr.responseText;
-                        console.log(text)
+                        // console.log(text)
                         let htmlDom = new DOMParser().parseFromString(text, "text/html");
-                        console.log("dd", htmlDom.querySelector("body > div").innerHTML)
+                        // console.log("dd", htmlDom.querySelector("body > div").innerHTML)
                         document.querySelector(".right").innerHTML = htmlDom.querySelector("body > div").innerHTML;
                     }
                 })
@@ -241,6 +237,7 @@
         }
     </script>
     <script src="assets/js/mypage_clickEvent.js"></script>
+    <script src="assets/js/btns_hover.js"></script>
 </body>
 
 </html>

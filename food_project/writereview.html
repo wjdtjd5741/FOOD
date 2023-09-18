@@ -88,16 +88,15 @@
                 <div>
                     <img src="https://cdn.discordapp.com/attachments/1123448023238844436/1150705442507472918/egg.PNG.jpeg">
                 </div>
-                <div id="hash">#계란</div>
-                <div id="hash">#볶음밥</div>
-                <div class="food_text_review">
-                    중센불에서 중약불로 5 ~ 10분간 스팸 햄을 먼저 볶은 후<br>
-                    계란도 익기 전에 밥 알 사이에 고루 베이도록 풀어서 밥과 계란을 5~10분간 오래 볶는다.<br>
-                    밥도 진 밥이라도 오랫동안 고루 볶으면 수분이 빠져 나가 고슬고슬 해진다.
-                </div>
+                <div class="hashtags">#계란</div>
+                <div class="hashtags">#볶음밥</div>
+                <textarea class="food_text_review" disabled="true">중센불에서 중약불로 5 ~ 10분간 스팸 햄을 먼저 볶은 후
+계란도 익기 전에 밥 알 사이에 고루 베이도록 풀어서 밥과 계란을 5~10분간 오래 볶는다.
+밥도 진 밥이라도 오랫동안 고루 볶으면 수분이 빠져 나가 고슬고슬 해진다. 
+                </textarea>
                 <div class="modify">
-                    <div>수정</div>
-                    <div>삭제</div>
+                    <div class="edit_text_review">수정</div>
+                    <div class="del_text_review">삭제</div>
                 </div>
             </article>
         </section>
@@ -106,10 +105,10 @@
              <div class="comments">
                 <div class="comment_word">
                     <div>댓글</div>
-                    <div>10</div>
+                    <div class="comment_count">0</div>
                 </div>
                 <div>
-                    <input class="input_text" type="text" value="댓글을 남겨주세요.">
+                    <textarea class="input_text" type="text" value="댓글을 남겨주세요." maxlength="300"></textarea>
                     <input class="btn_txt" type="button" value="등록">
                 </div>
                 <div class="comment_box"></div>
@@ -124,7 +123,19 @@
             <div>Copyright ⓒ recipick! co.,Ltd All Rights Reserved.</div>
         </div>
     </footer>
-    
+    <script>
+        document.querySelector(".edit_text_review").addEventListener("click",function(){
+            let text = document.querySelector(".food_text_review");
+            let btn = document.querySelector(".edit_text_review");
+            if(btn.innerText == "수정"){
+                text.disabled = false;
+                btn.innerText = "저장"
+            } else {
+                text.disabled = true
+                btn.innerText = "수정"
+            }
+        })
+    </script>
     <script src="assets/js/header_contents.js"></script>
     <script src="assets/js/comment.js"></script>
     <script src="assets/js/search_event.js"></script>
