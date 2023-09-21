@@ -42,8 +42,7 @@
 } */
 
 /* .information_name {
-    margin-left: -4%;
-    width: 28%;
+    margin-bottom: 30px;
 } */
 
 .information_title {
@@ -74,7 +73,7 @@
     height: 50px;
 }
 .information_name{
-    line-height: 50px;
+    /* line-height: 50px; */
     vertical-align: top;
 }
 .my_1, .notice, .out, .btns_hover {
@@ -84,7 +83,7 @@
     border: 3px solid rgb(230, 142, 34);
     border-radius: 10px;
     width: 90%;
-    height: 180px;
+    /* height: 180px; */
     /* padding-left: 4%; */
     /* margin-left: 3%;
     margin-top: 20px; */
@@ -126,14 +125,23 @@
 }
 .text_head{
     width: 100px;
+    margin-left: 5%;
+    font-size: 18px;
+}
+.text_d{
+    border: none;
+    height: 20px;
+    resize: none;
+    vertical-align: middle;
+    font-size: 15px;
 }
 .text_d, .text_head{
-    font-size: 15px;
+    /* font-size: 15px; */
 }
 .information_phone,
 .information_email {
-    width: 18%;
-    text-align: center;
+    /* width: 18%; */
+    /* text-align: center; */
     white-space: nowrap;
 }
 
@@ -151,6 +159,7 @@
     height: 25px;
     line-height: 25px;
     text-align: center;
+    border-radius: 5px;
 }
 
 .top_box div:nth-child(2) {
@@ -190,6 +199,7 @@
     line-height: 30px;
     text-align: center;
     background-color: rgb(228, 226, 226);
+    border-radius: 5px;
 }
 
 @media(max-width:800px) {
