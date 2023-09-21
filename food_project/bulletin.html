@@ -90,6 +90,7 @@
                 <div class="board">게시판</div>
                 <div class="notice">공지사항</div>
                 <div class="notice_content">공지사항 내용 ....</div>
+                <!-- 공지사항 제목 길이제한필요할듯 -->
             </div>
             <!-- 김호연 -->
             <!-- l1 전체 목록을 잡고 list2 클래스에 l2로 세부 목록들을 넣었다
@@ -130,6 +131,10 @@
         // document.querySelector(".write").addEventListener("click",function(){
         //     document.querySelector(".ajax_pagereload").
         // });
+        document.querySelector(".notice_content").addEventListener("click",function(){
+            window.location.href = "writereview.html";
+            // 공지사항 페이지로 이동(추후 수정필요)
+        })
 
         write_hover();
 

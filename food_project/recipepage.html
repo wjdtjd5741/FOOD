@@ -238,7 +238,14 @@
         </div>
     </footer>
 <script>
-    
+    let nav_imgs = document.querySelectorAll(".nav_recom");
+    console.log(nav_imgs);
+    for(let i = 0 ;i<nav_imgs.length ;i++){
+        nav_imgs[i].addEventListener("click",function(){
+            window.location.href = "recipepage.html";
+            // 다른 레시피 페이지(최근본 레시피 페이지로 이동)
+        })
+    }
 </script>
     <script src="assets/js/comment.js"></script>
     <script src="assets/js/likeNdislike.js"></script>
