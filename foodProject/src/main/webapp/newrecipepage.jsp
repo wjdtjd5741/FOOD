@@ -17,7 +17,9 @@
 </head>
 <body>
 <body>
+<%@ include file="header.jsp"%>
     <main>
+    
         <nav>
             <div class="mobile_console">
                 <div class="array_console">
@@ -117,5 +119,6 @@
 
         </section>
     </main>
+    <%@ include file="footer.jsp"%>
 </body>
 </html>

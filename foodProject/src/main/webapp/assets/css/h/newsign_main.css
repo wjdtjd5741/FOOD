@@ -91,12 +91,12 @@ h1 {
     text-align: center;
     line-height: 45px;
     margin-bottom: 10px;
-    /* aÅÂ±× Ãß°¡ */
+    /* aíƒœê·¸ ì¶”ê°€ */
     display: inline-block;
     text-decoration: none;
     cursor: pointer;
 }
-/* js¸¦ À§ÇÑ css Ãß°¡ */
+/* jsë¥¼ ìœ„í•œ css ì¶”ê°€ */
 .essential > div{
     /* display: none; */
 }

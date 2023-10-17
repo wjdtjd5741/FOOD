@@ -23,7 +23,7 @@
     height: 400px;
     align-items: flex-end;
 }
-/* pxÀÌ¾Æ´Ñ %¸¦ ÀÌ¿ëÇØÇÔ */
+/* pxì´ì•„ë‹Œ %ë¥¼ ì´ìš©í•´í•¨ */
 .img{
     gap: 25px;
     display: flex;
@@ -31,7 +31,7 @@
     height: 250px;
     /* margin: 15px; */
 }
-/* pxÀÌ¾Æ´Ñ %¸¦ ÀÌ¿ëÇØÇÔ */
+/* pxì´ì•„ë‹Œ %ë¥¼ ì´ìš©í•´í•¨ */
 .img_div >img{
    
     background-size: cover;
@@ -41,7 +41,7 @@
     /* margin-left: 10px; */
     
 }
-/* pxÀÌ¾Æ´Ñ %¸¦ ÀÌ¿ëÇØÇÔ */
+/* pxì´ì•„ë‹Œ %ë¥¼ ì´ìš©í•´í•¨ */
 .img_div{
     
     flex-grow: 1;
@@ -51,7 +51,7 @@
     display: inline-block;
     height: 200px;
 }
-/* °­½Å¿µ ¼öÁ¤¿Ï */
+/* ê°•ì‹ ì˜ ìˆ˜ì •ì™„ */
 .foodName{
     text-align: center;
     height: 40px;
@@ -59,7 +59,7 @@
     font-size: 15px;
     color: black;
 }
-/* °­½Å¿µ ¼öÁ¤¿Ï */
+/* ê°•ì‹ ì˜ ìˆ˜ì •ì™„ */
 .butt1{
     font-size: 30px;
     background-color: orange;
@@ -73,7 +73,7 @@
     height: 50px;
    
 }
-/* °­½Å¿µ ¼öÁ¤¿Ï */
+/* ê°•ì‹ ì˜ ìˆ˜ì •ì™„ */
 .rigth{
     color: white;
     font-size: 16px;
