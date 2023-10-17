@@ -17,6 +17,7 @@ function comment() {
             alert("댓글을 입력해주세요.");
 
         del_reple();
+        reple_count()
     });
 }
 
@@ -33,4 +34,8 @@ function del_reple() {
             reple[i].parentNode.remove();
         });
     }
+}
+
+function reple_count(){
+    document.querySelector(".comment_count").innerText = document.querySelectorAll(".reple_box").length;
 }

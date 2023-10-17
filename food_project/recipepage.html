@@ -120,9 +120,9 @@
                         </div>
                     </div>
                     <div class="hashtag_all">
-                        <div class="hashtag_show">#핫케이크</div>
-                        <div class="hashtag_show">#시나몬</div>
-                        <div class="hashtag_show">#브런치</div>
+                        <div class="hashtags">#핫케이크</div>
+                        <div class="hashtags">#시나몬</div>
+                        <div class="hashtags">#브런치</div>
                     </div>
                     <div class="box2">
                         <div class="box2_1">
@@ -219,10 +219,10 @@
             <div class="comments">
                 <div class="comment_word">
                     <div>댓글</div>
-                    <div>2</div>
+                    <div class="comment_count">0</div>
                 </div>
                 <div>
-                    <input class="input_text" type="text" value="댓글을 남겨주세요.">
+                    <textarea class="input_text" type="text" value="댓글을 남겨주세요." maxlength="300"></textarea>
                     <input class="btn_txt" type="button" value="등록">
                 </div>
                 <div class="comment_box"></div>
@@ -238,7 +238,14 @@
         </div>
     </footer>
 <script>
-    
+    let nav_imgs = document.querySelectorAll(".nav_recom");
+    console.log(nav_imgs);
+    for(let i = 0 ;i<nav_imgs.length ;i++){
+        nav_imgs[i].addEventListener("click",function(){
+            window.location.href = "recipepage.html";
+            // 다른 레시피 페이지(최근본 레시피 페이지로 이동)
+        })
+    }
 </script>
     <script src="assets/js/comment.js"></script>
     <script src="assets/js/likeNdislike.js"></script>

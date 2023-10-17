@@ -12,10 +12,11 @@
     display: inline-block;
     font-size: 16px;
     width:75%;
-    height: 60px;
+    height: 43px;
     padding: 5px;
     /* vertical-align: top; */
     color: rgb(0, 0, 0, 0.8);
+    resize: none;
 }
 .btn_txt{
     display: inline-block;
@@ -28,6 +29,7 @@
     color: white;
     border: none;
     cursor: pointer;
+    vertical-align: top;
 }
 .comment_box > div > div:nth-child(3n+1) {
     margin-top: 10px;

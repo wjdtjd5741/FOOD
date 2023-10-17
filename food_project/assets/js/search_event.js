@@ -10,6 +10,14 @@ function search_event(){
         if(input_text != "")
             window.open(`searchpage.html?data=${input_text.value}`);
     });
+
+    let hashtags = document.querySelectorAll(".hashtags")
+    for(let i = 0 ; i<hashtags.length ;i++){
+        hashtags[i].addEventListener("click",function(){
+            let text = hashtags[i].innerText;
+            window.open(`searchpage.html?data=${text.substring(1)}`)
+        })
+    }
     
     // document.querySelector("#hash").addEventListener("click",function(){
     //     window.open(`searchpage.html?data=${document.querySelector("#hash").innerText.substring(1)}`)

@@ -91,15 +91,15 @@
             <!-- 이정성 -->
             <div class="title">
                 <div>레시피 작성 페이지</div>
-                <div>취소</div>
-                <div>작성</div>
+                <div class="btns_hover">취소</div>
+                <div class="btns_hover">작성</div>
             </div>
             <div class="title_box">
-                <input type="text" class="recipick_title" value="레시피 제목을 작성해주세요">
-                <div class="title_submit">등록</div>
+                <textarea type="text" class="recipick_title" value="레시피 제목을 작성해주세요" maxlength="70"></textarea>
+                <div class="title_submit btns_hover">등록</div>
             </div>
             <div class="show_titlename"></div>
-            <div class="del_titlename">삭제</div>
+            <div class="del_titlename btns_hover">삭제</div>
             <!-- 김호연 -->
             <div class="all2">
                 <div class="img_add">
@@ -109,23 +109,23 @@
                     <div>레시피 사진을 올려주세요 !</div>
                 </div>
                 <div class="hashtag_box">
-                    <div><input type="text" class="recipick_hashtag" value="#해시태그"></div>
-                    <div id="hash_submit">등록</div>
+                    <div><input type="text" class="recipick_hashtag" value="#해시태그" maxlength="7"></div>
+                    <div id="hash_submit" class="btns_hover">등록</div>
                 </div><br>
                 <div class="hashtag_all"></div>
-                <div class="max">해시태그는 5개까지 입력할 수 있습니다.</div>
+                <!-- <div class="max">해시태그는 5개까지 입력할 수 있습니다.</div> -->
                 <div class="content_all">
-                    <div><input type="text" class="recipick_content0" value="재료명"></div>
-                    <div><input type="text" class="recipick_content1" value="수량"></div>
-                    <div id="quantity_submit">등록</div>
+                    <div><input type="text" class="recipick_content0" value="재료명" maxlength="10"></div>
+                    <div><input type="text" class="recipick_content1" value="수량" maxlength="10"></div>
+                    <div id="quantity_submit" class="btns_hover">등록</div>
                 </div>
                 <div class="quantity_box"></div>
                 <div>
-                    <input class="food_explanation" value="음식에 대한 설명을 입력해주세요">
-                    <div class="food_explain_submit">등록</div>
+                    <textarea class="food_explanation" value="음식에 대한 설명을 입력해주세요"></textarea>
+                    <div class="food_explain_submit btns_hover">등록</div>
                 </div>
                 <div class="food_explain"></div>
-                
+                <div class="del_explain btns_hover">삭제</div>
                     
             </div>
 
@@ -164,6 +164,15 @@
         </div>
     </footer>
     <script>
+
+
+        del_explain()
+        function del_explain(){
+            document.querySelector(".del_explain").addEventListener("click",function(){
+                document.querySelector(".food_explain").innerText = "";
+            })
+        }
+
         del_titlename()
         function del_titlename(){
             document.querySelector(".del_titlename").addEventListener("click",function(){
@@ -219,7 +228,7 @@
                     if(hashtag.includes('#'))
                         hashtag = hashtag.substring(1)
                     html = "";
-                    html += `<div class="hashtag_show">`
+                    html += `<div class="hashtags">`
                     html += `#${hashtag}` //.substring(1)
                     html += `<div class="hashtag_minus">-</div>`
                     html += `</div>`
@@ -332,6 +341,7 @@
     <script src="assets/js/header_contents.js"></script>
     <script src="assets/js/search_event.js"></script>
     <script src="assets/js/mobile_pop.js"></script>
+    <script src="assets/js/btns_hover.js"></script>
 </body>
 
 </html>
