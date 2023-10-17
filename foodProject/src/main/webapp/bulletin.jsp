@@ -62,7 +62,6 @@
                     <a class="write">글쓰기</a>
                 </div>
             </div>
-            </div>
         </section>
     </main>
 </body>
