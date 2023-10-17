@@ -7,11 +7,17 @@ article{
     /* margin-left: 40px; */
 }
 
-/* div a 삭제 */
+.recipewrite{
+	width: 100%;
+	height: 700px;
+	border: 1px solid royalblue;
+	
+}
+/* div a �궘�젣 */
 .title{
     margin-top: 30px;
     margin-bottom: 60px;
-    /* 타이틀 */
+    /* ���씠�� */
     color: black;
     font-size: 40px;
     font-weight: bold;
@@ -40,9 +46,9 @@ article > div:nth-child(2){
     margin-left: 10px;
     margin-bottom: 50px;
     text-align: center;
-    /* 수정 사항: 
+    /* �닔�젙 �궗�빆: 
     margin-left: 10px; 
-    추가*/
+    異붽�*/
 }
 
 article > div > img{
@@ -52,7 +58,7 @@ article > div > img{
     display: inline-block;
     margin-bottom: 5px;
 }
-/* 클래스명 변경 */
+/* �겢�옒�뒪紐� 蹂�寃� */
 .food_text_review{
     border: 1px solid orange;
     border-radius: 10px;
@@ -62,8 +68,8 @@ article > div > img{
     margin-left: 1.5%; 
     padding: 0 15px;
     padding-top: 15px;
-    /* 수정사항: 
-    width:100% -> width: 1075px; 변경 
+    /* �닔�젙�궗�빆: 
+    width:100% -> width: 1075px; 蹂�寃� 
     */
     resize: none;
     
@@ -75,8 +81,8 @@ article > div > img{
     line-height: 0;
     justify-content: flex-end;
     margin-right: 2%;
-    /* 수정사항: 
-    margin-left: 800px -> margin-left: 850px; 변경 
+    /* �닔�젙�궗�빆: 
+    margin-left: 800px -> margin-left: 850px; 蹂�寃� 
     */
 }
 .modify > div{
