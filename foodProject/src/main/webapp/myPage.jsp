@@ -5,6 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="assets/component/mypage/css/section1.css">
+    <link rel="stylesheet" href="assets/component/mypage/css/section0.css">
+    <link rel="stylesheet" href="assets/component/mypage/css/section2.css">
 </head>
 <body>
 <body>
