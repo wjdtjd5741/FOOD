@@ -1,0 +1,63 @@
+
+"git" : 협업툴, 형상관리툴 : git, svn, cvs
+저장소에 파일을 버전별로 저장
+
+git 설치
+소스트리 설치
+(*는 용어)
+init : 저장소 생성 : git init
+* repository : 저장소   
+
+* staging : 변경된 파일을 commit 대상으로 지정
+add : staging 명령어 : git add .
+commit : staging된 파일들을 확정 : git commit -m "수정한 내용"
+push : commit된 파일을 원격 저장소로 보냄 : git push origin main
+fetch : 원격 저장소의 정보로 업데이트 : git fetch
+pull : 원격 저장소의 변경된 파일을 다운로드해서 로컬과 동기화
+
+clone : 원격 저장소의 모든 내용을 내 저장소로 다운로드
+branch : push가 따로 관리되는 복사본
+checkout : 브렌치 변경
+fork : 복사는 복사인데 push 후에 즉각 반영되지 않음(pull req 후에 반영)
+pull request : fork의 내용을 승인 - 저장소에 반영
+merge : branch 병합
+
+* conflict : 충돌, push 불가
+소스에는 어떻게 변경되어 있냐면
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+int a = 10;	// 남의 소스
+=========================
+int a = 20; // 내 소스
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+가장 쉽고 빠른 방법
+일단 내꺼 지우고
+그 사람 것만 그대~로 살려서
+push
+그 다음에 내꺼 다시 살려서
+push
+
+-- 소스트리 설치
+bitbucket 이런거 나오면 "건너뛰기"
+머큐리얼 이런거 나오면 체크 해제
+이름이랑 이메일 적기 - 표시되는 정보
+SSH 이런거 나오면 "아니오"
+
+-- github 토큰 받는법
+오른쪽 상단에 아이콘 클릭
+settings
+아래 아래 아래... 선택, repo에만 체크 후 생성
+
+
+프로젝트
+팀장버전
+0. github에서 비어있는 repo 생성
+1. clone
+2. 기존 파일이 있다면(프로젝트 파일이 있다면) clone 폴더에 넣고
+3. push
+4. git 주소 공유
+5. github > repo 화면 상단 > settings > Collaborators에 팀원들 메일 넣고 초대 발송
+
+팀원버전
+0. 메일로 받은 초대에 응하고
+1. clone
+2. add, commit하고 fetch하고 pull하고 push

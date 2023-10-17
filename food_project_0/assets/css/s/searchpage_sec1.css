@@ -1,0 +1,145 @@
+.search_root {
+    display: flex;
+    /* border: 1px solid red; */
+    width: 100%;
+    /* height: 1200px; */
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+}
+
+.search_root2 {
+    display: inline-block;
+    width: 85%;
+    height: 100%;
+}
+
+.color {
+    color: orange;
+    margin-left: 8px;
+}
+
+.search_top {
+    height: 220px;
+    width: 100%;
+    /* border: 1px solid darkblue; */
+    display: inline-block;
+    /* text-align: center; */
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.top_first {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+}
+
+.top_first>div:nth-child(1) {
+    font-size: 30px;
+    text-align: center;
+    color: orange;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.top_first>div:nth-child(2) {
+    font-size: 30px;
+    display: inline-block;
+    text-align: center;
+}
+
+.search_result {
+    display: flex;
+    /* position: absolute; */
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 70px;
+    /* text-align: center; */
+    /* margin-left: 5%; */
+}
+
+.result1 {
+    font-size: 15px;
+    display: inline-block;
+    height: 40px;
+    width: 170px;
+}
+
+.result1>div {
+    display: inline-block;
+    font-size: 15px;
+}
+
+.views {
+    width: 130px;
+    height: auto;
+}
+
+.views>div {
+    height: 40px;
+    font-size: 15px;
+    width: 100%;
+}
+
+.recommend {
+    display: inline-block;
+    font-size: 15px;
+    height: 40px;
+    text-align: end;
+}
+
+.recommend>div {
+    font-size: 15px;
+    display: inline-block;
+}
+
+.recommend>div:nth-child(1) {
+    margin-left: 10px;
+}
+
+.search_main {
+    padding-left: 7px;
+    padding-right: 10px;
+    /* border: 1px solid chartreuse; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 60px;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    align-content: flex-start;
+}
+
+.menu {
+    /* border: 1px solid black; */
+    width: 20%;
+    height: 260px;
+
+    /* display: inline-block; */
+}
+
+.menu>img {
+    width: 100%;
+    height: 200px;
+}
+
+.menu>div {
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 15px;
+}
+
+.hash {
+    width: 200px;
+}
+
+.hash>div {
+    color: rgb(131, 131, 131);
+    display: inline-block;
+    font-size: 14px;
+
+}
+
