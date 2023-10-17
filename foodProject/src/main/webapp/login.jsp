@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-      <link rel="stylesheet" href="assets/css/j/login_main.css">
+       <link rel="stylesheet" href="assets/css/j/login_main.css">
 </head>
 <body>
     <main>
@@ -13,9 +13,13 @@
             <a class="logo" href="mainpage.html">레시pick!</a>
             <div class="text">
                 <div>
+<!--                     <img -->
+<!--                         src="https://cdn.discordapp.com/attachments/1148557028927742005/1148557062645764176/id_icon.png"> -->
                     <input type="text" value="아이디">
                 </div>
                 <div>
+<!--                     <img -->
+<!--                         src="https://cdn.discordapp.com/attachments/1148557028927742005/1148557097999552612/password_icon.png"> -->
                     <input type="text" value="비밀번호">
                 </div>
             </div>

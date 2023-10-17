@@ -14,7 +14,7 @@
 	<div class="all_0">
         <div class="all_1">
             <div class="hi">
-               <%--  <div>안녕하세요 김호연님 !</div>--%>
+                <div>안녕하세요 김호연님 !</div>
                 <div>
 					<a href="mainpage.html">레시pick!</a>
 				</div>

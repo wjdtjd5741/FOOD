@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    font-size: 0;
+}
+.text{
+    /* border: 1px solid red; */
+    margin: 15px 0;
+}
+.text > div {
+    border: 1px solid rgb(128, 128, 128, 0.7);
+    border-radius: 5px;
+    width: 350px;
+    height: 45px;
+    margin: 7px 10px;
+    /* margin-left: 70px; */
+}
+
+.phone img, .birth img, .name img, .email img, .id img, .password img {
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 25px;
+    height: 25px;
+    /* display: inline-block; */
+}
+
+input {
+    /* display: inline-block; */
+    border: none;
+    font-size: 15px;
+    line-height: 30px;
+    margin-left: 10px;
+    width: 300px;
+    height: 42px;
+    vertical-align:top;
+    color: rgb(128, 128, 128, 0.7);
+    font-weight: 300;
+}
+input:focus{
+    outline: none;
+}
+h1 {
+    color: rgb(230, 142, 34);
+    /* margin-top: 30px; */
+    text-align: center;
+    font-size: 30px;
+}
+
+.all_3 {
+    /* border: 1px solid green; */
+    /* margin-top: 40px; */
+}
+
+.essential > div{
+    font-size: 12px;
+    margin-left: 10px;
+    color: rgb(230, 142, 34);
+    text-decoration: underline;
+    font-weight: 900;
+    display: none;
+}
+.gender {
+    width: 350px;
+    height: 45px;
+    margin-left: 10px;
+    border-radius: 5px;
+    background-color: rgb(249, 226, 183);
+}
+.gender_2 {
+    display: inline-block;
+   margin-left: 30px;
+   margin-top: 5px;
+   width: 130px;
+   height: 35px;
+   background-color: white;
+   border-radius: 5px;
+   color:rgb(230, 142, 34);
+   font-weight: bold;
+   font-size: 16px;
+   text-align: center;
+   line-height: 35px;
+}
+.join > a{
+    margin-left: 10px;
+    width: 350px;
+    height: 45px;
+    background-color: rgb(230, 142, 34);
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-align: center;
+    line-height: 45px;
+    margin-bottom: 10px;
+    /* a태그 추가 */
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* js를 위한 css 추가 */
+.essential > div{
+    /* display: none; */
+}
