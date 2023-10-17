@@ -6,30 +6,55 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="assets/css/h/newsign_main.css">
+    <style>
+        /* *{
+            margin: 0;
+            font-size: 0;
+        } */
+        header {
+            /* border: 1px solid red; */
+            height: 20vh;
+        }
+        main {
+            /* border: 1px solid black; */
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        /* main div{
+            border: 1px solid salmon;
+            height: 300px;
+            width: 500px;
+        }  */
+        <%-- footer {
+            /* border: 1px solid blue; */
+            /* width: 100%; */
+            height: 20vh; 
+        } --%>
+    </style>
 </head>
 <body>
 <body>
 	<header></header>
     <main>
         <section>
-            <!--김호연-->
             <h1>레시pick!</h1>
             <div class="all_3">
                 <div class="text">
                     <div class="id">
                         <img
 							src="https://cdn.discordapp.com/attachments/1148557028927742005/1148557062645764176/id_icon.png">
-                        <input type="text" value="아이디">
+                       <input type="text" value="아이디">
                     </div>
                     <div class="password">
                         <img
 							src="https://cdn.discordapp.com/attachments/1148557028927742005/1148557097999552612/password_icon.png">
-                        <input type="text" value="비밀번호">
+                      <input type="text" value="비밀번호"> 
                     </div>
                     <div class="email">
                         <img
 							src="https://cdn.discordapp.com/attachments/1148557028927742005/1148557086582653039/email_icon.png">
-                        <input type="text" value="이메일">
+                       <input type="text" value="이메일">
                     </div>
                 </div>
                 <div class="essential">
@@ -41,7 +66,7 @@
                     <div class="name">
                         <img
 							src="https://cdn.discordapp.com/attachments/1148557028927742005/1148557062645764176/id_icon.png">
-                        <input type="text" value="이름">
+                       <input type="text" value="이름"> 
                     </div>
                     <div class="birth">
                         <img
@@ -57,7 +82,7 @@
                     <div class="phone">
                         <img
 							src="https://cdn.discordapp.com/attachments/1148557028927742005/1148557116009881650/phone_icon.PNG">
-                        <input type="text" value="전화번호">
+                      <input type="text" value="전화번호">
                     </div>
                 </div>
                 <div class="essential">
@@ -66,13 +91,11 @@
                     <div>성별: 필수 정보입니다.</div>
                 </div>
                 <div class="join">
-					<a href="login.html">회원가입</a>
+					<a href="login.jsp">회원가입</a>
 				</div>
                 <!-- href="login.html" -->
             </div>
         </section>
     </main>
 </body>
-
-
 </html>

@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="assets/css/mobile_console.css">
 </head>
 <body>
+<%@ include file="header.jsp"%>
     <main>
         <nav>
           <%@ include file="mobile_console.jsp"%>
@@ -23,7 +24,7 @@
             <div class="bulletin_sec1_all">
                 <div class="board">게시판</div>
                 <div class="notice">공지사항</div>
-                <div class="notice_content">공지사항 내용 ....</div>
+                <div class="notice_content"><%-- 공지사항 내용 ....--%></div>
             </div>
             <div class="all">
                 <div class="bulletin_sec1_all">
@@ -33,13 +34,9 @@
                 </div>
                 <div class="bottom">
                     <div class="order_all">
-                        <div class="order">◁</div>
-                        <div class="order">1</div>
-                        <div class="order">2</div>
-                        <div class="order">3</div>
-                        <div class="order">4</div>
-                        <div class="order">5</div>
-                        <div class="order">▷</div>
+                        <%-- <div class="order">◁</div> --%>
+                        <%-- <div class="order"> 페이지수 </div>  --%>
+                        <%-- <div class="order">▷</div> --%>
                     </div>
                     <a class="write">글쓰기</a>
                 </div>
@@ -47,5 +44,10 @@
             </div>
         </section>
     </main>
+    <%@ include file="footer.jsp"%>
+    
+    <%--
+		<script type="text/javascript" src="assets/js/header_contents.js"></script>
+ 	--%>
 </body>
 </html>

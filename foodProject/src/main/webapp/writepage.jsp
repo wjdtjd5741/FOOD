@@ -34,13 +34,13 @@
     </style>
 </head>
 <body>
+<%@ include file="header.jsp"%>
  <main>
         <nav>
             <%@ include file="mobile_console.jsp" %>
         </nav>
 	<section>
-		<!-- 이정성 -->
-		<!-- 김호연 수정 함-->
+		<!-- 이정성 김호연 수정 함-->
 		<div class="selected_board">선택된 게시판</div>
 		<div>
 			<select class="borad_select">
@@ -72,5 +72,6 @@
 		<div id="write" class="btns_hover">등록</div>
 	</section>
 	</main>
+	<%@ include file="footer.jsp"%>
 </body>
 </html>
