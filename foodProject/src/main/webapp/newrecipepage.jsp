@@ -76,14 +76,14 @@
                     <div><input type="text" class="recipick_hashtag" value="#해시태그" maxlength="7"></div>
                     <div id="hash_submit" class="btns_hover">등록</div>
                 </div><br>
-                <div class="hashtag_all"></div>
+<!--                 <div class="hashtag_all"></div> -->
                 <!-- <div class="max">해시태그는 5개까지 입력할 수 있습니다.</div> -->
                 <div class="content_all">
                     <div><input type="text" class="recipick_content0" value="재료명" maxlength="10"></div>
                     <div><input type="text" class="recipick_content1" value="수량" maxlength="10"></div>
                     <div id="quantity_submit" class="btns_hover">등록</div>
                 </div>
-                <div class="quantity_box"></div>
+<!--                 <div class="quantity_box"></div> -->
                 <div>
                     <textarea class="food_explanation" value="음식에 대한 설명을 입력해주세요"></textarea>
                     <div class="food_explain_submit btns_hover">등록</div>
@@ -96,24 +96,24 @@
             <!-- 이정성
                 + 버튼 누르면 for문을 통해 추가로 작성 가능 -->
             <div id="newpage">
-                <div class="bigbox">
-                    <div class="topbox">
-                        <div>1</div>
-                        <div>만드는 방법</div>
-                        <div class="delete_butt">삭제</div> 
-                    </div>
-                    <div class="attach">
-                        <div>
-                            <img
-                                src="https://cdn1.iconfinder.com/data/icons/document-edit-line/64/Document-doc-file-folder-bundle-add-new-64.png">
-                        </div>
-                    </div>
-                    <div class="attach_font">
-                        <div>첨부파일</div>
-                    </div>
-                    <div class="media_box">레시피 사진, 동영상을 올려주세요!</div>
-                    <div class="explanation">만드는 방법 설명</div>
-                </div>
+<!--                 <div class="bigbox"> -->
+<!--                     <div class="topbox"> -->
+<!--                         <div>1</div> -->
+<!--                         <div>만드는 방법</div> -->
+<!--                         <div class="delete_butt">삭제</div>  -->
+<!--                     </div> -->
+<!--                     <div class="attach"> -->
+<!--                         <div> -->
+<!--                             <img -->
+<!--                                 src="https://cdn1.iconfinder.com/data/icons/document-edit-line/64/Document-doc-file-folder-bundle-add-new-64.png"> -->
+<!--                         </div> -->
+<!--                     </div> -->
+<!--                     <div class="attach_font"> -->
+<!--                         <div>첨부파일</div> -->
+<!--                     </div> -->
+<!--                     <div class="media_box">레시피 사진, 동영상을 올려주세요!</div> -->
+<!--                     <div class="explanation">만드는 방법 설명</div> -->
+<!--                 </div> -->
             </div>
             <div class="plus">+</div>
 
