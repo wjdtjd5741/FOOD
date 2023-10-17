@@ -1,0 +1,173 @@
+.all {
+    /* border: 1px solid red; */
+    /* height: 1500px; */
+    /* position: relative; */
+    /* width: 85%; */
+}
+.bulletin_sec1_all {
+    /* border: 1px solid black; */
+    width: 100%;
+    /* height: 1500px; */
+    /* position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); */
+}
+.notice_content {
+    margin-left: 5px; /* 김호연 수정함 */
+}
+h1 {
+    margin-top: 50px;
+    margin-left: 20px;
+}
+
+h3 {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.bulletin_sec1_all .contents:nth-child(2){
+    margin-left: 10px;
+}
+
+.contents {
+    display: inline-block;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 7px;
+    line-height: 30px;
+    margin-top: 20px;
+    width: 130px;
+    height: 30px;
+    padding: 5px;
+    font-size: 16px;
+    background-color: rgb(221, 214, 214);
+    color: black;
+    cursor: pointer;
+}
+
+.selected_section {
+    background-color: rgb(230, 142, 34);
+    color: white
+}
+
+.list_img, .l2_img {
+    text-align: center;
+    width: 26%; 
+}
+
+.list_num, .l2_num {
+    width: 10%; 
+}
+
+.list_title, .l2_title {
+    width: 14%; 
+}
+
+.list_date, .l2_date {
+    width: 17%; 
+}
+
+.list_writer, .l2_writer {
+    width: 17%; 
+}
+
+.list_look, .l2_look {
+    width: 10%; 
+}
+
+.list0{
+    width: 100%;
+    /* border: 1px solid black; */
+}
+
+.list0 div {
+    text-align: center;
+    display: inline-block;
+    height: 50px;
+    line-height: 60px;
+    vertical-align: top;
+    font-size: 16px;
+}
+
+.list2 {
+    width: 100%;
+    border: 1px solid black;
+}
+
+.list2 div {
+    display: inline-block;
+    height: 180px;
+    line-height: 200px;
+    vertical-align: top;
+    text-align: center;
+    font-size: 16px;
+}
+
+.bulletin_sec1_all > img {
+    margin-top: 15px;
+    width: 70%;
+    height: 150px;
+}
+
+.bottom{
+    width: 100%;
+    /* border: 5px solid aqua; */
+    display: flex;
+}
+
+.write {
+    margin-top: 17px;
+    margin-left: 25%;
+    background-color: rgb(230, 142, 34);
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    color: white;
+    font-size: 17px;
+    
+}
+
+.order,
+.selected {
+    width: 30px;
+    height: 30px;
+    border: none;
+    font-size: 15px;
+    background-color: rgb(221, 214, 214);
+    cursor: pointer;
+}
+.order_all {
+    display: flex;
+    margin-left:38%;
+    /* justify-content: center; */
+    width: 23%;
+    /* display: inline-block; */
+    margin-bottom: 20px;
+    margin-top: 22px;
+    /* border: 5px solid aqua; */
+}
+
+.selected {
+    background-color: rgb(230, 142, 34);
+    color: white;
+    border-radius: 5px;
+}
+.order, .selected, .write {
+    /* display: inline-block; */
+    text-align: center;
+    line-height: 30px;
+}
+.write {
+    cursor: pointer;
+    line-height: 40px;
+    display: inline-block;
+}
+@media(max-width:700px){
+    
+    .contents {
+        line-height: 25px;
+        width: 100px;
+        height: 25px;
+        font-size: 13px;
+    }
+}

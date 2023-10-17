@@ -1,0 +1,113 @@
+main{
+    /* border: 1px solid green; */
+    height: 85%;
+}
+nav{
+    display: none;
+    /* border: 1px solid gold; */
+    height: 300px;
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+.btn_nav{
+    /* border: 1px solid red; */
+    background-color: rgb(230, 142, 34);
+    border-radius: 3px;
+    display: inline-block;
+    width: 15px;
+    height: 50px;
+    margin: 125px 0;
+    font-size: 12px;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+    cursor: pointer;
+}
+.nav_contents{
+    vertical-align: top;
+    border: 2px solid rgb(230, 142, 34);
+    border-radius: 10px;
+    display: inline-block;
+    width: 120px;
+    height: 100%;
+}
+.nav_contents > div{
+    width: 100%;
+    text-align: center;
+    /* border: 1px solid blue; */
+    font-size: 12px;
+}
+.nav_name {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 20px;
+    font-weight: 900;
+    color: rgb(230, 142, 34);
+    cursor: pointer;
+    text-decoration: none;
+}
+.nav_today {
+    height: 30px;
+    line-height: 30px;
+    font-size: 10px;
+    margin-top: 10px;
+    font-weight: 600;
+}
+.nav_contents > img {
+    width: 80px;
+    margin: 5px 10px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+#nav_location a {
+    display: inline-block;
+    /* border: 1px solid black; */
+    font-size: 18px;
+    color: rgb(230, 142, 34);
+    text-decoration: none;
+    line-height: 40px;
+}
+#nav_location{
+    display: flex;
+    height: 20px;
+    justify-content: space-around;
+}
+.reci_top_img{
+    /* border: 1px solid black; */
+    height: 500px;
+    margin-bottom: 50px;
+    width: 100%;
+    background-size: cover;
+}
+article{
+    /* border: 1px solid orange; */
+    width: 85%;
+    margin: 0 auto;
+}
+.reci_head{
+    border: 1px solid black;
+    height: 50px;
+}
+.reci_head > div:nth-child(n+2){
+    display: inline-block;
+    border: 1px solid red;
+    margin-left: 10px;
+    width: 50px;
+    text-align: left;
+    padding-top: 30px;
+    font-size: 15px;
+    float: right;
+}
+.reci_head > div:nth-child(1){
+    /* border: 1px solid green; */
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 50px;
+}

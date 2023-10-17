@@ -1,0 +1,11 @@
+main{
+    /* border: 3px solid red; */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+section{
+    /* border: 2px solid blue; */
+    width: 85%; 
+    /* 85% */
+}
