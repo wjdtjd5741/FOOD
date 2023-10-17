@@ -1,0 +1,146 @@
+.root {
+    /* position: relative; */
+    /* border: 1px solid red; */
+    /* height: 1500px; */
+}
+
+.root_son {
+    /* border: 1px solid black; */
+    width: 100%;
+    /* height: 1500px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); */
+}
+
+.upper {
+    margin-top: 50px;
+    /* border: 1px solid magenta; */
+    height: 55px;
+
+}
+
+.num_img1 {
+    display: inline-block;
+    margin-left: 5px;
+    /* border: 1px solid blue; */
+    height: 30px;
+    width: 30px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 100%;
+    background-color: orange;
+    color: white;
+    /* margin: 30px; */
+}
+
+.num_img2 {
+    display: inline-block;
+    margin-left: 5px;
+    /* border: 1px solid blue; */
+    height: 30px;
+    width: 30px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 100%;
+    background-color: orange;
+    color: white;
+    /* margin: 30px; */
+}
+
+.food_exp {
+    width: 68%;
+    margin-left: 10px;
+    margin-bottom: 50px;
+    margin-top: 10px;
+    font-size: 15px;
+    word-wrap: break-word;
+    text-align: justify; 
+}
+
+.make_how {
+    font-weight: bold;
+    margin-left: 5px;
+    margin-top: 5px;
+    vertical-align: top;
+    font-size: 15px;
+    display: inline-block;
+    /* border: 1px solid purple; */
+    width: 100px;
+    height: 20px;
+}
+
+.food_img {
+    /* border: 1px solid brown; */
+    height: 305px;
+    width: 70%;
+
+}
+.food_img >img{
+    width: 100%;
+    height: 300px;
+}
+/* %수정완료 */
+.commend {
+    display: inline-block;
+    /* display: flex; */
+    height: 100px;
+    width: 100%;
+    margin-bottom: 30px;
+    /* border: 1px solid gray; */
+    font-size: 20px;
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+.commend img {
+    cursor: pointer;
+}
+/* %수정완료 */
+.up {
+    margin-left: 40%;
+    vertical-align: top;
+    display: inline-block;
+    border-radius: 100%;
+    height: 80px;
+    width: 80px;
+    
+    margin-right: 25px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 40px;
+}
+.up > img{
+    height: 110%;
+    width: 110%;
+}
+/* %수정완료 */
+.down {
+    vertical-align: top;
+    line-height: 40px;
+    text-align: center;
+    display: inline-block;
+    height: 80px;
+    width: 80px;
+    text-align: center;
+    border-radius: 100%;
+    
+    font-size: 20px;
+}
+.down > img{
+    height: 110%;
+    width: 110%;
+}
+.up_count{
+    font-size: 20px;
+    margin-left: 6px;
+    color: orange;
+    font-weight: 800;
+}
+
+.down_count{
+    font-size: 20px;
+    margin-left: 6px;
+    font-weight: 800;
+    color: gray;
+}

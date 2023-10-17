@@ -1,0 +1,126 @@
+body{
+    margin: 0;
+    font-size:0;
+}
+@font-face {
+    font-family: 'yg-jalnan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.bigbox{
+    /* border: 5px solid red; */
+    /* margin-bottom: 100px; */
+}
+
+.topbox{
+    /* border: 1px solid green; */
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.headtitle{
+    font-size: 30px;
+    width: auto;
+    font-weight: bold;
+    /* color: orange; */
+}
+.topbox div {
+    /* font-size: 16px; */
+    display: inline-block;
+}
+.hashtag_show {
+    color: black;
+    display: inline-block;
+    border: 2px solid orange;
+    background-color: white;
+    width: 13%;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 30px;
+    text-align: center;
+    margin-right: 2%;
+    font-size: 16px;    
+    font-weight: bold;
+}
+
+.text_line{
+    /* width: 300px; */
+    display: flex;
+    
+    font-weight: bold;
+}
+.text_line > div{
+    font-size: 16px;
+    margin: 0 5px;
+}
+.empty_space{
+    width: 10px;
+    /* font-size: 16px; */
+}
+.topbox > div {
+    /* width: 33%; */
+}
+.text_line div:nth-child(2n+1){
+    /* margin-left: 30px; */
+}
+.pick_count, .like_count, .heart_text{
+    color: orange;
+}
+.heart_text{
+    cursor: pointer;
+}
+.box2 div:nth-child(1),
+.box2 div:nth-child(4){
+    margin-bottom: 10px;
+    font-weight: bold;
+    margin-top: 30px;
+    font-size: 16px;
+}
+    /* 수정 사항:
+    .box2 :nth-child(1),
+.box2 :nth-child(4){
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+    추가 */
+
+/* 수정사항: 
+    .box2 :nth-child(2){
+    margin-bottom: 80px;
+    삭제
+} */
+
+.select{
+    width: 70%;
+    height: 25px;
+    background-color: rgb(230, 126, 34);
+    color: white;
+    line-height: 1.5;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 7px;
+    text-align: center;
+    /* 수정사항: 
+    hheight: 25px
+    font-weight: bold;
+    border-radius: 7px;
+    추가 */
+}
+.box3{
+    font-size: 16px;
+}
+
+.foodreci_text, .food_text {
+    display: none;
+    margin-bottom: 60px;
+    font-size: 14px;
+    /* 수정사항: 
+    margin-bottom: 60px;
+    추가 */
+    width: 70%;
+    margin-top: 5px;
+    line-height: 25px;
+}
+
