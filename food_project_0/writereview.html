@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/j/writereview_sec1.css">
+    <link rel="stylesheet" href="assets/css/writereview.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/comments.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/mobile_console.css">
+    <link rel="stylesheet" href="assets/css/j/media/writereview_sec1.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="head_sec0">
+            <a href="mainpage.html">레시pick!</a>
+            <div class="search_bar">
+                <input id="search_text" type="text" value="">
+                <img src="https://cdn.discordapp.com/attachments/1148557028927742005/1149214262925987880/search_icon.png">
+            </div>
+            <div class="login_box0">
+                <a href="login.html">로그인</a>
+                <a href="newsign.html">회원가입</a>
+            </div>
+        </div>
+        <div>
+            <div class="list">
+                <img src="https://cdn.discordapp.com/attachments/1148541415828246548/1148541548196278372/category_icon.png">
+                <div>
+                    <!-- 목록 -->
+                    <div>
+                        <a href="bulletin.html">게시판 이동</a>
+                    </div>
+                    <div>
+                        <a href="recipepage.html">레시피 이동</a>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <nav>
+            <div class="mobile_console">
+                <div class="array_console">
+                    <a href="mainpage.html">
+                        <img
+                            src="https://media.discordapp.net/attachments/1123448023238844436/1149245362893246494/home.png">
+                        <div class="home">홈</div>
+                    </a>
+                    <a href="bulletin.html">
+                        <img
+                            src="https://media.discordapp.net/attachments/1123448023238844436/1149245362603819048/category.png">
+                        <div class="category">카테고리</div>
+                    </a>
+                    <a href="recipepage.html">
+                        <img
+                            src="https://media.discordapp.net/attachments/1123448023238844436/1149245362289250304/today_recipe.png">
+                        <div class="today_recipe_font">오늘의 레시피</div>
+                    </a>
+                    <a href="recipepage.html">
+                        <img
+                            src="https://media.discordapp.net/attachments/1123448023238844436/1149245361723015298/like.png">
+                        <div class="like">찜한 레시피</div>
+                    </a>
+                    <a href="login.html">
+                        <img
+                            src="https://media.discordapp.net/attachments/1123448023238844436/1149245362020831253/login.png">
+                        <div class="login">로그인</div>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <section>
+            <!-- 이정성 -->
+            <!-- title 클릭 게시판 목록 이동, #음식이름 클릭 레시피 목록 이동, 수정 삭제 -->
+            <article>
+                <!-- a태그 삭제 -->
+                <div class="title">후기 게시판</div>
+                <div>계란 볶음밥</div>
+                <div>
+                    <img src="https://cdn.discordapp.com/attachments/1123448023238844436/1150705442507472918/egg.PNG.jpeg">
+                </div>
+                <div class="hashtags">#계란</div>
+                <div class="hashtags">#볶음밥</div>
+                <textarea class="food_text_review" disabled="true">중센불에서 중약불로 5 ~ 10분간 스팸 햄을 먼저 볶은 후
+계란도 익기 전에 밥 알 사이에 고루 베이도록 풀어서 밥과 계란을 5~10분간 오래 볶는다.
+밥도 진 밥이라도 오랫동안 고루 볶으면 수분이 빠져 나가 고슬고슬 해진다. 
+                </textarea>
+                <div class="modify">
+                    <div class="edit_text_review">수정</div>
+                    <div class="del_text_review">삭제</div>
+                </div>
+            </article>
+        </section>
+        <section>
+             <!-- 강신영  -->
+             <div class="comments">
+                <div class="comment_word">
+                    <div>댓글</div>
+                    <div class="comment_count">0</div>
+                </div>
+                <div>
+                    <textarea class="input_text" type="text" value="댓글을 남겨주세요." maxlength="300"></textarea>
+                    <input class="btn_txt" type="button" value="등록">
+                </div>
+                <div class="comment_box"></div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer_box">
+            <div class="logo">레시pick!</div>
+            <div>(주) 레시pick!</div>
+            <div>충청남도 천안시 동남구 대흥로 215,7층</div>
+            <div>Copyright ⓒ recipick! co.,Ltd All Rights Reserved.</div>
+        </div>
+    </footer>
+    <script>
+        document.querySelector(".edit_text_review").addEventListener("click",function(){
+            let text = document.querySelector(".food_text_review");
+            let btn = document.querySelector(".edit_text_review");
+            if(btn.innerText == "수정"){
+                text.disabled = false;
+                btn.innerText = "저장"
+            } else {
+                text.disabled = true
+                btn.innerText = "수정"
+            }
+        })
+    </script>
+    <script src="assets/js/header_contents.js"></script>
+    <script src="assets/js/comment.js"></script>
+    <script src="assets/js/search_event.js"></script>
+    <script src="assets/js/mobile_pop.js"></script>
+</body>
+
+</html>
