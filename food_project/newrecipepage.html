@@ -99,7 +99,7 @@
                 <div class="title_submit">등록</div>
             </div>
             <div class="show_titlename"></div>
-
+            <div class="del_titlename">삭제</div>
             <!-- 김호연 -->
             <div class="all2">
                 <div class="img_add">
@@ -164,6 +164,14 @@
         </div>
     </footer>
     <script>
+        del_titlename()
+        function del_titlename(){
+            document.querySelector(".del_titlename").addEventListener("click",function(){
+                document.querySelector(".show_titlename").innerText = "";
+                document.querySelector(".show_titlename").style.height = "30px"
+            })
+        }
+
         food_explain_submit()
         function food_explain_submit(){
             document.querySelector(".food_explain_submit").addEventListener("click",function(){
@@ -184,7 +192,12 @@
         title_submit();
         function title_submit(){
             document.querySelector(".title_submit").addEventListener("click",function(){
-                document.querySelector(".show_titlename").innerText = document.querySelector(".recipick_title").value
+                document.querySelector(".show_titlename").style.height = "auto"
+                let title = document.querySelector(".recipick_title").value
+                html = ""
+                html += `${title}`
+                html += ``
+                document.querySelector(".show_titlename").innerHTML += html;
             })
         }
 
@@ -230,9 +243,9 @@
             document.querySelector(".recipick_hashtag").value = "";
         })
 
+        let index = 2;
         plus_recicontents();
         function plus_recicontents() {
-            let index = 2;
             let a = document.querySelector(".plus").addEventListener("click", function () {
                 html = "";
                 html += ` <div class="bigbox">`
@@ -256,7 +269,6 @@
                 document.querySelector("#newpage").innerHTML += html;
                 del_recicontents()
             })
-            
         }
 
         function del_recicontents(){
@@ -264,8 +276,10 @@
             for(let k = 0 ;k<del_recipage.length ;k++){
                 del_recipage[k].addEventListener("click",function(){
                     del_recipage[k].parentNode.parentNode.remove();
+                    index--;
                 })
             }
+            
         }
         input_nameNnum()
         function input_nameNnum(){
@@ -280,7 +294,7 @@
                 document.querySelector(".quantity_box").innerHTML += html;
                 del_nameNnum()
             })
-        }   
+        }
 
         function del_nameNnum(){
             let del_nameNnum = document.querySelectorAll(".quantity_minus")
@@ -290,6 +304,7 @@
                 })
             }
         }
+
         reset_content_all()
         function reset_content_all(){
             let input_box = document.querySelectorAll(".content_all > div > input")
@@ -300,6 +315,7 @@
             }
         }
 
+<<<<<<< HEAD
         let title = document.querySelectorAll(".title > div:nth-child(n+2)")
         for(let i = 0; i < title.length; i++){
             title[i].addEventListener("mouseover", function(){
@@ -310,6 +326,8 @@
             })
         }
         // 이벤트 수정
+=======
+>>>>>>> 9c5c8c34c8e33c40ed53ddfaefd8c28eed062879
     </script>
     <script src="assets/js/header_contents.js"></script>
     <script src="assets/js/search_event.js"></script>
