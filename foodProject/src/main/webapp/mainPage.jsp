@@ -170,6 +170,7 @@
 	            console.log(text)
 	            xhr.open("GET", "searchHash?data="+text);
 	            xhr.send(); */
+
 	        })
 	    } 
 	</script>

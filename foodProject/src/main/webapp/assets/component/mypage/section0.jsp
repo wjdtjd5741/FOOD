@@ -18,27 +18,27 @@
 
             <div class="mypage_line">
                 <div class="information_id text_head">이름</div>
-                <textarea class="information_name text_d" disabled>김호연</textarea>
+                <textarea class="information_name text_d" disabled><%-- 김호연 --%></textarea>
                 <div class="btns_hover">수정</div>
             </div>
             <div class="mypage_line">
                 <div class="information_id text_head">아이디</div>
-                <textarea class="information_id_2 text_d" disabled>ghdus0129</textarea>
+                <textarea class="information_id_2 text_d" disabled><%-- ghdus0129--%></textarea>
                 <div class="btns_hover">수정</div>  
             </div>
             <div class="mypage_line">
                 <div class="information_password text_head">비밀번호</div>
-                <textarea class="information_password_2 text_d" disabled>***********</textarea>
+                <textarea class="information_password_2 text_d" disabled><%--***********--%></textarea>
                 <div class="btns_hover">수정</div>
             </div>
             <div class="mypage_line">
                 <div class="information_birth text_head">생년월일</div>
-                <textarea class="information_birth_2 text_d" disabled>2000.01.29</textarea>
+                <textarea class="information_birth_2 text_d" disabled><%--2000.01.29--%></textarea>
                 <div class="btns_hover">수정</div>
             </div>
             <div class="mypage_line">
                 <div class="information_gender text_head">성별</div>
-                <textarea class="information_gender_2 text_d" disabled>여자</textarea>
+                <textarea class="information_gender_2 text_d" disabled><%-- 여자--%></textarea>
                 <div class="btns_hover">수정</div>
             </div>
         </div>
@@ -48,12 +48,12 @@
             </div>
             <div class="mypage_line">
                 <div class="information_email text_head">이메일</div>
-                <textarea class="information_email_2 text_d" disabled>hy0129@naver.com</textarea>
+                <textarea class="information_email_2 text_d" disabled><%-- hy0129@naver.com--%></textarea>
                 <div class="btns_hover">수정</div>
             </div>
             <div class="mypage_line">
                 <div class="information_phone text_head">휴대전화</div>
-                <textarea class="information_phone_2 text_d" disabled>010-****-****</textarea>
+                <textarea class="information_phone_2 text_d" disabled><%--010-****-****--%></textarea>
                 <div class="btns_hover">수정</div>
             </div>
         </div>

@@ -97,5 +97,83 @@
             </div>
         </section>
     </main>
+        <script>
+        newsign_inputbox();
+        pick_gender();
+        submit_newsign();
+
+        function newsign_inputbox() {
+            let input_text = document.querySelectorAll(".text > div");
+            let show_text = document.querySelectorAll(".essential > div");
+            for (let i = 0; i < input_text.length; i++) {
+                input_text[i].addEventListener("focusin", function () {
+                    if(input_text[i].querySelector("input").style.fontWeight != "900"){
+                        input_text[i].querySelector("input").value = "";
+                        input_text[i].querySelector("input").style.color = "orange";
+                        input_text[i].querySelector("input").style.fontWeight = "900";
+                        input_text[i].style.border = "2px solid orange";
+                    }
+                });
+                input_text[i].addEventListener("focusout", function () {
+                    if (input_text[i].querySelector("input").value == "") {
+                        input_text[i].querySelector("input").value = show_text[i].innerText.split(":", 1);
+                        input_text[i].querySelector("input").style.color = "rgb(128, 128, 128, 0.7)";
+                        input_text[i].querySelector("input").style.fontWeight = "300";
+                        if (i == 2)
+                            input_text[i].style.border = "1.5px solid gray";
+                        if (i != 2) {
+                            show_text[i].style.display = "block";
+                        }
+                    } else {
+                        input_text[i].style.border = "1.5px solid gray";
+                        show_text[i].style.display = "none";
+                    }
+                });
+            }
+        }
+
+        function pick_gender(){
+            let gender_list = document.querySelectorAll(".gender > div");
+            let boole = [];
+            boole.length = gender_list.length;
+            console.log(boole[0]);
+            for(let i = 0 ; i<gender_list.length ;i++){
+                gender_list[i].addEventListener("mouseover",function(){
+                    gender_list[i].style.backgroundColor = "orange";
+                    gender_list[i].style.color = "white";
+                });
+                gender_list[i].addEventListener("mouseout",function(){
+                    if(boole[i] != "true"){
+                        gender_list[i].style.backgroundColor = "white";
+                        gender_list[i].style.color = "orange";
+                    }
+                });
+                gender_list[i].addEventListener("click",function(){
+                    if(boole[i] != "true"){
+                        gender_list[i].style.backgroundColor = "orange";
+                        gender_list[i].style.color = "white";
+                        gender_list[i].style.borderRadius = "6px";
+                        boole[i] = "true";
+                    } else {
+                        gender_list[i].style.backgroundColor = "white";
+                        gender_list[i].style.color = "orange";
+                        boole[i] = "false";
+                    }
+                });
+            }
+        }
+    
+        function submit_newsign(){
+            document.querySelector(".join").addEventListener("click",function(){
+                let ano;
+                let ck_list = document.querySelectorAll(".essential > div");
+                for(let i = 0 ; i<ck_list.length ;i++){
+                    if(ck_list[i].style.color == "orange"){
+                        console.log(i);
+                    }
+                }
+            });
+        }
+    </script>
 </body>
 </html>

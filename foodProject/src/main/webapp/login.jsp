@@ -53,6 +53,36 @@
                 <a href="mainPage.jsp">로그인</a>
             </div>
         </div>
-    </main>
+    </main>	
+        <script>
+        newsign_inputbox();
+        function newsign_inputbox() {
+            let input_text = document.querySelectorAll(".text > div");
+            // let show_text = document.querySelectorAll(".essential > div");
+            for (let i = 0; i < input_text.length; i++) {
+                input_text[i].addEventListener("focusin", function () {
+                    if (input_text[i].querySelector("input").style.fontWeight != "900") {
+                        input_text[i].querySelector("input").value = "";
+                        input_text[i].querySelector("input").style.color = "orange";
+                        input_text[i].querySelector("input").style.fontWeight = "900";
+                        input_text[i].style.border = "2px solid orange";
+                    }
+                });
+                input_text[i].addEventListener("focusout", function () {
+                    if (input_text[i].querySelector("input").value == "") {
+                        console.log(1)
+                        // input_text[i].querySelector("input").value = show_text[i].innerText.split(":", 1);
+                        input_text[i].querySelector("input").style.color = "rgb(128, 128, 128, 0.7)";
+                        input_text[i].querySelector("input").style.fontWeight = "600";
+                        input_text[i].style.border = "1.5px solid gray";
+                        if(i == 0){
+                            input_text[i].querySelector("input").value = "아이디";
+                        } else
+                            input_text[i].querySelector("input").value = "비밀번호";
+                    }
+                });
+            }
+        }
+    </script>
 </body>
 </html>

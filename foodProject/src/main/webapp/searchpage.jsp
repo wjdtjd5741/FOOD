@@ -76,6 +76,9 @@
             </div>
         </section>
     </main>
+    <script type="text/javascript" src="assets/js/header_contents.js"></script>
+    <script type="text/javascript" src="assets/js/search_event.js"></script>
+    <script type="text/javascript" src="assets/js/mobile_pop.js"></script>
 <%@ include file="footer.jsp"%>
 </body>
 </html>

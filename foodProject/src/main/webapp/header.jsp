@@ -26,13 +26,13 @@
                 <div>
                     <!-- 목록 -->
                     <div>
-                        <a href="bulletin.html">게시판</a>
+                        <a href="bulletin.jsp">게시판</a>
                     </div>
                     <div>
-                        <a href="recipepage.html">레시피 페이지</a>
+                        <a href="recipepage.jsp">레시피 페이지</a>
                     </div>
                     <div>
-                        <a href="mypage.html">마이 페이지</a>
+                        <a href="mypage.jsp">마이 페이지</a>
                     </div>
                 </div>
             </div>

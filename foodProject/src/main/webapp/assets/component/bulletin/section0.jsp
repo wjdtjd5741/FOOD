@@ -20,6 +20,7 @@
                 </tr>
             </thead>
             <tbody>
+            <%-- 
                 <tr class="lines">
                     <td class="tb_num_color">1</td>
                     <td><img
@@ -30,44 +31,8 @@
                     <td>강신영</td>
                     <td>312</td>
                 </tr>
-                <tr class="lines">
-                    <td>2</td>
-                    <td><img
-                            src="https://img.freepik.com/free-photo/kimchi-ready-to-eat-in-black-plate_1150-35691.jpg?size=626&ext=jpg&ga=GA1.2.1026167912.1691650236&semt=sph">
-                    </td>
-                    <td>배추김치</td>
-                    <td>2023.09.02</td>
-                    <td>강신삼</td>
-                    <td>12</td>
-                </tr>
-                <tr class="lines">
-                    <td>3</td>
-                    <td><img
-                            src="https://img.freepik.com/premium-photo/korean-instant-noodle-and-tteokbokki-in-korean-spicy-sauce-rabokki-korean-food-style_1339-143780.jpg?size=626&ext=jpg&ga=GA1.1.1026167912.1691650236&semt=sph">
-                    </td>
-                    <td>치즈 라볶이</td>
-                    <td>2023.09.04</td>
-                    <td>김호연</td>
-                    <td>4</td>
-                </tr>
-                <tr class="lines">
-                    <td>4</td>
-                    <td><img
-                            src="https://img.freepik.com/premium-photo/traditional-food-chicken-soup-with-ginseng_1205-8406.jpg?size=626&ext=jpg&ga=GA1.1.1026167912.1691650236&semt=sph">
-                    </td>
-                    <td>삼계탕</td>
-                    <td>2023.09.05</td>
-                    <td>관리자</td>
-                    <td>32</td>
-                </tr>
-                <tr class="lines">
-                    <td>5</td>
-                    <td><img src="https://cdn.pixabay.com/photo/2016/12/26/17/28/spaghetti-1932466_1280.jpg"></td>
-                    <td>토마토 샐러드</td>
-                    <td>2023.09.06</td>
-                    <td>관리자</td>
-                    <td>2</td>
-                </tr>
+                5개 까지
+			--%>
             </tbody>
         </table>
     </div>
