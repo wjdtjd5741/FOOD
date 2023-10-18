@@ -49,7 +49,7 @@
 			</select>
 		</div>
 		<div id="board_name">
-			<textarea type="text" value="게시글 제목을 작성해주세요."></textarea>
+			<textarea class="submit" type="text" value="게시글 제목을 작성해주세요."></textarea>
 		</div>
 
 		<div class="attach">
@@ -63,7 +63,7 @@
 			<div>첨부파일</div>
 		</div>
 		<div class="media_box" id="media_box">사진을 올려주세요!</div>
-		<textarea type="text" class="explanation" value="만드는 방법을 써주세요."></textarea>
+		<textarea class="submit" type="text" class="explanation" value="만드는 방법을 써주세요."></textarea>
 		<div class="write_explaintext btns_hover"></div>
 		<!-- <div id="plus">+</div> -->
 		<div id="write" class="btns_hover">등록</div>
@@ -71,6 +71,8 @@
 	</main>
 	<%@ include file="footer.jsp"%>
 	<script>
+		
+	
 		file_add()
 		function file_add(){
 			click_fileImg()

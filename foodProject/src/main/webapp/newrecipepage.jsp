@@ -42,7 +42,7 @@
                     <div>
                         <img src="https://cdn3.iconfinder.com/data/icons/font-awesome-regular-1/512/image-64.png">
                     </div>
-                    <div>레시피 사진을 올려주세요 !</div>
+                    <div id="media_box">레시피 사진을 올려주세요 !</div>
                 </div>
                 <div class="hashtag_box">
                     <div><input type="text" class="recipick_hashtag" value="#해시태그" maxlength="7"></div>
@@ -79,6 +79,7 @@
                         <div>
                             <img
                                 src="https://cdn1.iconfinder.com/data/icons/document-edit-line/64/Document-doc-file-folder-bundle-add-new-64.png">
+                        	<input type="file" id="file_input" style="">
                         </div>
                     </div>
                     <div class="attach_font">
@@ -94,7 +95,33 @@
     </main>
     <%@ include file="footer.jsp"%>
         <script>
-
+        file_add()
+		function file_add(){
+			click_fileImg()
+	        document.querySelector("#file_input").addEventListener("change", function () {
+	            const file = this.files[0];
+	            if (file) {
+	                const mediaBox = document.querySelector("#media_box");
+	                // 이미지 파일인 경우에만 처리
+	                if (file.type.startsWith("image/")) {
+	                    const reader = new FileReader();
+	                    reader.onload = function (e) {
+	                        // 이미지를 생성하고 media_box에 추가
+	                        const img = document.createElement("img");
+	                        img.src = e.target.result;
+	                        mediaBox.innerHTML = ""; // 기존 이미지를 지우고 새 이미지로 대체
+	                        mediaBox.appendChild(img);
+	                    };
+	                    reader.readAsDataURL(file);
+	                }
+	            }
+	        });
+		}
+		function click_fileImg(){
+	        document.querySelector(".attach").addEventListener("click", function () {
+	            document.querySelector("#file_input").click();
+	        });
+		}
         food_explanation_clickEvent()
         function food_explanation_clickEvent(){
             document.querySelector(".food_explanation").addEventListener("click",function(){
