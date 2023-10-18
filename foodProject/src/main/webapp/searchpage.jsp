@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="assets/css/s/media/searchpage_sec1.css">
 </head>
 <body>
+<%
+	String data = request.getParameter("data");
+%>
 <%@ include file="header.jsp"%>
     <main>
         <nav>
@@ -22,7 +25,7 @@
             <!-- 이정성 -->
             <div class="search_box">
                 <div class="search_box1">
-                	<input id="input_text0" type="text" value="">
+                	<input id="input_text0" type="text" value="<%= data %>">
                 </div>
                 <div class="search_img" ><img
                         src="https://cdn.discordapp.com/attachments/1148557028927742005/1149214262925987880/search_icon.png">
@@ -38,7 +41,7 @@
                 <div class="search_root2">
                     <div class="search_top">
                         <div class="top_first">
-                            <div id="input_text1"><%-- 카레 --%></div>
+                            <div id="input_text1"><%= data %></div>
                             <div>검색결과</div>
                         </div>
                         <div class="search_result">

@@ -13,6 +13,7 @@ function btns_hover(){
                     btns[i].style.color = "black"
                     btns[i].style.backgroundColor = "rgba(207, 207, 207, 0.562)"
             })
+            /*
             btns[i].addEventListener("click",function(){
                 if(btns[i].innerText == "수정"){
                         sec0_text[i].disabled = false;
@@ -22,5 +23,6 @@ function btns_hover(){
                         btns[i].innerText = "수정"
                     }
             })
+            */
         }
 }

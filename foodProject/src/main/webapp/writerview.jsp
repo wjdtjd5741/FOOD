@@ -31,7 +31,7 @@
 				
 				 <div>
                     <img src="<%-- <%= img주소 %> --%>">
-                </div> 
+                </div>
                 
               	<%-- <div class="hashtags">#계란</div> --%>
                 

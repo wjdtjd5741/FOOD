@@ -31,12 +31,13 @@
             </div>
             <div class="title_box">
                 <textarea type="text" class="recipick_title" value="레시피 제목을 작성해주세요" maxlength="70"></textarea>
-                <div class="title_submit btns_hover">등록</div>
             </div>
-            <div class="show_titlename"></div>
-            <div class="del_titlename btns_hover">삭제</div>
             <!-- 김호연 -->
             <div class="all2">
+            <div class="attach">
+                <img src="https://cdn1.iconfinder.com/data/icons/document-edit-line/64/Document-doc-file-folder-bundle-add-new-64.png">
+            	<div>첨부파일</div>
+            </div>
                 <div class="img_add">
                     <div>
                         <img src="https://cdn3.iconfinder.com/data/icons/font-awesome-regular-1/512/image-64.png">
@@ -61,20 +62,16 @@
 				</div> 
                 <div>
                     <textarea class="food_explanation" value="음식에 대한 설명을 입력해주세요"></textarea>
-                    <div class="food_explain_submit btns_hover">등록</div>
                 </div>
-                <div class="food_explain"></div>
-                <div class="del_explain btns_hover">삭제</div>
-                    
             </div>
 
             <!-- 이정성
                 + 버튼 누르면 for문을 통해 추가로 작성 가능 -->
             <div id="newpage">
-            <%--
+            
                  <div class="bigbox">
                     <div class="topbox">
-                        <div>1</div>
+                        <div class="bigbox_num">1</div>
                         <div>만드는 방법</div>
                         <div class="delete_butt">삭제</div> 
                     </div>
@@ -89,13 +86,154 @@
                     </div>
                     <div class="media_box">레시피 사진, 동영상을 올려주세요!</div>
                     <div class="explanation">만드는 방법 설명</div>
-                </div> -->
+                </div>
             </div>
-            --%>
+            
             <div class="plus">+</div>
-			
         </section>
     </main>
     <%@ include file="footer.jsp"%>
+        <script>
+
+        food_explanation_clickEvent()
+        function food_explanation_clickEvent(){
+            document.querySelector(".food_explanation").addEventListener("click",function(){
+                document.querySelector(".food_explanation").value = "";
+            })
+        }
+
+        title_clickEvent();
+        function title_clickEvent(){
+            document.querySelector(".recipick_title").addEventListener("click",function(){
+                document.querySelector(".recipick_title").value = "";
+            })
+        }
+
+        input_nameNnum()
+        function input_nameNnum(){
+            document.querySelector("#quantity_submit").addEventListener("click",function(){
+                console.log(1);
+            	let name = document.querySelector(".recipick_content0").value
+                let num = document.querySelector(".recipick_content1").value
+                console.log(name+", "+num);
+                html="";
+                html +=  `<div class="quantity">`
+                html +=  `    <div>`+name+`:`+num+`</div>`
+                html +=  `    <div class="quantity_minus">-</div>`
+                html +=  `</div>`
+                document.querySelector(".quantity_box").innerHTML += html;
+                del_nameNnum()
+            })
+        }
+        
+        add_hashtags();
+        
+        function add_hashtags() {
+            document.querySelector("#hash_submit").addEventListener("click", function () {
+                if (document.querySelector(".recipick_hashtag").value == "") {
+                    alert("해시태그를 입력해주세요")
+                } else {
+                    let hashtag = document.querySelector(".recipick_hashtag").value;
+                    if(hashtag.includes('#'))
+                        hashtag = hashtag.substring(1)
+                    html = "";
+                    html += `<div class="hashtags">`
+                    html += `#`+hashtag //.substring(1)
+                    html += `<div class="hashtag_minus">-</div>`
+                    html += `</div>`
+                    document.querySelector(".hashtag_all").innerHTML += html;
+                    
+                }
+                del_hashtags();
+            })
+        }
+
+        function del_hashtags(){
+            let minus_hash = document.querySelectorAll(".hashtag_minus")
+            for(let i = 0 ; i<minus_hash.length;i++){
+                minus_hash[i].addEventListener("click",function(){
+                    minus_hash[i].parentNode.remove();
+                })
+            }
+        }
+        
+        document.querySelector(".recipick_hashtag").addEventListener("click", function () {
+            document.querySelector(".recipick_hashtag").value = "";
+        })
+
+        let index = 1;
+        plus_recicontents();
+        function plus_recicontents() {
+            let a = document.querySelector(".plus").addEventListener("click", function () {
+                html = "";
+                html += ` <div class="bigbox">`
+                html += `     <div class="topbox">`
+                html += `         <div class = "bigbox_num">`+ (document.querySelectorAll(".bigbox").length +1) +`</div>`
+                html += `         <div>만드는 방법</div>`
+                html += `         <div class="del_recipage">삭제</div>`
+                html += `     </div>`
+                html += `     <div class="attach">`
+                html += `         <div>`
+                html += `             <img src="https://cdn1.iconfinder.com/data/icons/document-edit-line/64/Document-doc-file-folder-bundle-add-new-64.png">`
+                html += `         </div>`
+                html += `     </div>`
+                html += `     <div class="attach_font">`
+                html += `         <div>첨부파일</div>`
+                html += `     </div>`
+                html += `     <div class="media_box">레시피 사진, 동영상을 올려주세요!</div>`
+                html += `     <div class="explanation">만드는 방법 설명</div>`
+                html += ` </div>`
+                // console.log(html)
+                document.querySelector("#newpage").innerHTML += html;
+                del_recicontents()
+            })
+        }
+
+        function del_recicontents(){
+            let del_recipage = document.querySelectorAll(".del_recipage")
+            for(let k = 0 ;k<del_recipage.length ;k++){
+                del_recipage[k].addEventListener("click",function(){
+                    del_recipage[k].parentNode.parentNode.remove();
+					recount_nums()
+                })
+            }
+        }
+		
+        function recount_nums(){
+            let bigbox_nums = document.querySelectorAll(".bigbox_num")
+            console.log(bigbox_nums)
+            for(let k = 0;k<bigbox_nums.length ;k++){
+            	bigbox_nums[k].innerText = k+1
+            }
+        }
+        
+        function del_nameNnum(){
+            let del_nameNnum = document.querySelectorAll(".quantity_minus")
+            for(let z = 0 ;z<del_nameNnum.length;z++){
+                del_nameNnum[z].addEventListener("click",function(){
+                    del_nameNnum[z].parentNode.remove();
+                })
+            }
+        }
+
+        reset_content_all()
+        function reset_content_all(){
+            let input_box = document.querySelectorAll(".content_all > div > input")
+            for(let i = 0 ; i<input_box.length ;i++){
+                input_box[i].addEventListener("click",function(){
+                    input_box[i].value = "";
+                })
+            }
+        }
+
+    </script>
+    <%-- --%>
+    <script type="text/javascript" src="assets/js/header_contents.js"></script>
+    
+    <script type="text/javascript" src="assets/js/search_event.js"></script>
+    <script type="text/javascript" src="assets/js/mobile_pop.js"></script>
+    
+    <script type="text/javascript" src="assets/js/btns_hover.js"></script>
+	
 </body>
 </html>
