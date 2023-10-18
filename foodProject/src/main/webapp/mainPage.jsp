@@ -9,13 +9,12 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="assets/css/header.css">
-<link rel="stylesheet" href="assets/css/h/mainpage_sec2.css">
 <link rel="stylesheet" href="assets/css/h/media/mainpage_sec2.css">
 <link rel="stylesheet" href="assets/css/s/mainpage_sec1.css">
 <link rel="stylesheet" href="assets/css/mainpage.css">
 <link rel="stylesheet" href="assets/css/footer.css">
 <link rel="stylesheet" href="assets/css/mobile_console.css">
-
+<link rel="stylesheet" href="assets/css/h/mainpage_sec2.css">
 </head>
 <body>
 	<%@ include file="header.jsp"%>
@@ -99,12 +98,10 @@
 					<h2>추천 레시피</h2>
 					<div class="recipick">
 						<div class="big_img1">
-						<%--
+						<%-- 
 							<img
 								src="https://cdn.discordapp.com/attachments/1148541415828246548/1149239367269875772/pancakes-2291908_1280.jpg">
-							<div class="img1_hashtag">#핫케이크</div>
-							<div class="img1_hashtag">#시나몬</div>
-							<div class="img1_hashtag">#브런치</div>
+							<div class="hashtags">#핫케이크</div>
 							<div class="recommend_name">라즈베리 팬케이크</div>
 						--%>
 						</div>
@@ -137,14 +134,19 @@
 						--%>
 						</div>
 						<div class="big_img2">
-						<%--
+						<%-- 
+						<form method="get" action="searchHash" >
+							
+						</form>
+						--%>
+						
 							<img
 								src="https://cdn.discordapp.com/attachments/1148541415828246548/1149236901425987715/side-view-grilled-lamb-liver-with-potato-and-greens.jpg">
-							<div class="img1_hashtag">#닭똥집</div>
-							<div class="img1_hashtag">#마늘</div>
-							<div class="img1_hashtag">#술안주</div>
+							<div class="hashtags">#닭똥집</div>
+							<div class="hashtags">#마늘</div>
+							<div class="hashtags">#술안주</div>
 							<div class="recommend_name">철판 닭똥집구이</div>
-						--%>
+						 
 						</div>
 					</div>
 				</div>
@@ -157,5 +159,21 @@
 		</section>
 	</main>
 	<%@ include file="footer.jsp"%>
+	<script>
+ 	    let hashtags = document.querySelectorAll(".hashtags")
+	    for(let i = 0 ; i<hashtags.length ;i++){
+	        hashtags[i].addEventListener("click",function(){
+	            let text = hashtags[i].innerText.substring(1);
+	            window.location.href = "searchHash?data=" + text;
+
+/* 	            let xhr = new XMLHttpRequest();
+	            console.log(text)
+	            xhr.open("GET", "searchHash?data="+text);
+	            xhr.send(); */
+
+	        })
+	    } 
+	</script>
+	<script type="text/javascript" src="assets/js/search_event.js"></script>
 </body>
 </html>
