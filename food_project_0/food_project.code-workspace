@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../food_project"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.port": 5502,
+		"liveServer.settings.multiRootWorkspaceName": "food_project_0"
+	}
+}
