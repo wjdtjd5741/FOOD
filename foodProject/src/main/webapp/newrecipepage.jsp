@@ -80,7 +80,8 @@
 					<%-- --%>
 				</div>
 				<div>
-					<textarea class="food_explanation" value="음식에 대한 설명을 입력해주세요"></textarea>
+					<textarea class="food_explanation" name="food_explanation"
+						value="음식에 대한 설명을 입력해주세요"></textarea>
 				</div>
 				</div>
 
@@ -104,8 +105,12 @@
 							<div>첨부파일</div>
 						</div>
 						<div class="media_box">레시피 사진, 동영상을 올려주세요!</div>
-						<div class="explanation">만드는 방법 설명</div>
+						<div class="explanation">
+							만드는 방법 설명
+						</div>
 					</div>
+							<textarea class="explanvation_context" type="text" name="explanation"
+							value="만드는 방법을 설명해주세요"></textarea>
 				</div>
 
 				<div class="plus">+</div>
@@ -273,7 +278,9 @@
 								html += `         <div>첨부파일</div>`
 								html += `     </div>`
 								html += `     <div class="media_box">레시피 사진, 동영상을 올려주세요!</div>`
-								html += `     <div class="explanation">만드는 방법 설명</div>`
+								html += `     <div class="explanation">만드는 방법 설명`
+// 								html += `     <textarea type="text" name="explanation">`
+								html += ` </div>`
 								html += ` </div>`
 								// console.log(html)
 								document.querySelector("#newpage").innerHTML += html;
