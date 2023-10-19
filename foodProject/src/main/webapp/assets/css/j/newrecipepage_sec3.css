@@ -36,16 +36,15 @@
     height: 30px;
     line-height: 30px;
     cursor: pointer;
-    /* 삭제 버튼 */
+    
 }
-/* 수정내용: 
-    .topbox div:nth-child(2){
-    font-size: 20px;   
-    margin-left: 10px;
-    font-weight: bold;
-}
-    적용
-*/
+ 
+/*    .topbox div:nth-child(2){*/
+/*    font-size: 20px;   */
+/*    margin-left: 10px;*/
+/*    font-weight: bold;*/
+/*}*/
+ 
 
 .media_box{
     border: 1px solid black;
@@ -57,7 +56,7 @@
     /* margin-left: 300px; */
     margin-bottom: 20px;
     margin-left: 5%;
-    line-height: 25;
+/*    line-height: 25;*/
 }
 /* .bigbox > div:nth-child(3){ */
     /* margin-left: 300px; */
@@ -65,10 +64,10 @@
     margin-bottom: 0px;
     margin-left: 5px;
     font-weight: bold; */
-    /* 수정사항: 
+    /* 
     margin-left: 5px;
     font-weight: bold;
-    추가 */
+    */
 /* } */
 .explanation{
     font-size: 16px;
@@ -120,12 +119,12 @@
     margin-bottom: 30px;
     margin-left: 5%;
     text-align: center;
-    /* 수정내용: 
+    /* 
     cursor: pointer;
     font-size: 30px;
     line-height: 1;
     border-radius: 5px;
-    적용
+ 
     */
 }
 
