@@ -1,0 +1,34 @@
+{
+	"topImg" :[
+		"https://cdn.discordapp.com/attachments/1148541415828246548/1148562443900043304/chuseok.jpg",
+		"https://media.istockphoto.com/id/1449032425/ko/%EC%82%AC%EC%A7%84/%ED%8C%8C%EB%9E%80%EC%83%89%EC%97%90-%EA%B1%B4%EA%B0%95-%EC%8B%9D%ED%92%88%EC%9C%BC%EB%A1%9C-%EA%B0%80%EB%93%9D-%EC%B0%AC-%EC%87%BC%ED%95%91%EB%B0%B1.webp?b=1&s=612x612&w=0&k=20&c=_vhyGwUQA_p_2M6jWxBS5ymy1bebyUEw7RGZltC8e0c=",
+		"https://cdn.pixabay.com/photo/2015/10/02/15/59/olive-oil-968657_640.jpg"
+	],
+	"favorImg" :[
+		"https://img.freepik.com/free-photo/kimchi-ready-to-eat-in-black-plate_1150-35691.jpg?size=626&ext=jpg&ga=GA1.2.1026167912.1691650236&semt=sph",
+		"https://img.freepik.com/premium-photo/korean-instant-noodles-with-fried-chicken-or-fried-chicken-ramyeon_1339-175174.jpg?size=626&ext=jpg&ga=GA1.1.1026167912.1691650236&semt=sph",
+		"https://img.freepik.com/premium-photo/korean-instant-noodle-and-tteokbokki-in-korean-spicy-sauce-rabokki-korean-food-style_1339-143780.jpg?size=626&ext=jpg&ga=GA1.1.1026167912.1691650236&semt=sph",
+		"https://img.freepik.com/premium-photo/traditional-food-chicken-soup-with-ginseng_1205-8406.jpg?size=626&ext=jpg&ga=GA1.1.1026167912.1691650236&semt=sph"
+	],
+	"recom" :[
+		{
+			"img" : [
+				"https://cdn.discordapp.com/attachments/1148541415828246548/1149239367269875772/pancakes-2291908_1280.jpg",
+				"https://cdn.discordapp.com/attachments/1148541415828246548/1149239197144723456/salmon-518032_1280.jpg",
+				"https://img.freepik.com/premium-photo/traditional-food-chicken-soup-with-ginseng_1205-8406.jpg?size=626&ext=jpg&ga=GA1.1.1026167912.1691650236&semt=sph",
+				"https://img.freepik.com/premium-photo/korean-instant-noodle-and-tteokbokki-in-korean-spicy-sauce-rabokki-korean-food-style_1339-143780.jpg?size=626&ext=jpg&ga=GA1.1.1026167912.1691650236&semt=sph",
+				"https://img.freepik.com/premium-photo/korean-instant-noodles-with-fried-chicken-or-fried-chicken-ramyeon_1339-175174.jpg?size=626&ext=jpg&ga=GA1.1.1026167912.1691650236&semt=sph",
+				"https://cdn.discordapp.com/attachments/1148541415828246548/1149236901425987715/side-view-grilled-lamb-liver-with-potato-and-greens.jpg"
+			],
+			"name" :[
+				"∂Û¡Ó∫£∏Æ ∆“ƒ…¿Ã≈©",
+				"ø¨æÓ Ω∫≈◊¿Ã≈© & ª¯∑ØµÂ",
+				"¥©∑Ó¡ˆ ªÔ∞Ë≈¡",
+				"∂Û∫∫¿Ã",
+				"ƒ°≈≤ ∂Û∏È",
+				"√∂∆« ¥ﬂ∂À¡˝±∏¿Ã"
+			]		
+		}
+	]
+}
+

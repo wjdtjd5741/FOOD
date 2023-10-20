@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="bulletin.BulletinDTO" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +8,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%
+	BulletinDTO bDTO = (BulletinDTO)request.getAttribute("bDTO");
+%>
     <div class="table_all">
         <table>
             <thead>
@@ -20,19 +24,19 @@
                 </tr>
             </thead>
             <tbody>
-            <%-- 
+
                 <tr class="lines">
                     <td class="tb_num_color">1</td>
                     <td><img
-                            src="https://img.freepik.com/premium-photo/korean-instant-noodles-with-fried-chicken-or-fried-chicken-ramyeon_1339-175174.jpg?size=626&ext=jpg&ga=GA1.1.1026167912.1691650236&semt=sph">
+                            src="<%= bDTO.getImg() %>">
                     </td>
-                    <td>텐더라면</td>
-                    <td>2023.08.30</td>
-                    <td>강신영</td>
-                    <td>312</td>
+                    <td><%= bDTO.getTitle() %></td>
+                    <td><%= bDTO.getDate() %></td>
+                    <td><%= bDTO.getWriter() %></td>
+                    <td><%= bDTO.getView() %></td>
                 </tr>
-                5개 까지
-			--%>
+                <%-- 5개 까지 --%>
+
             </tbody>
         </table>
     </div>

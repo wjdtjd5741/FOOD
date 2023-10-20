@@ -83,10 +83,10 @@
     border: 3px solid rgb(230, 142, 34);
     border-radius: 10px;
     width: 90%;
-    /* height: 180px; */
+    height: 180px;
     /* padding-left: 4%; */
-    /* margin-left: 3%;
-    margin-top: 20px; */
+    /* margin-left: 3%;*/
+    margin-top: 40px; 
     /* padding-top: 20px; */
     border-radius: 10px;
 }

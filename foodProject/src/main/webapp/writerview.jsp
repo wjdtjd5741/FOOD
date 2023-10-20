@@ -27,17 +27,16 @@
 				<!-- a태그 삭제 -->
 				<div class="title">후기 게시판</div>
 				
-				<div><%-- 음식 이름 제목 --%></div>
+				<div>${write.title}</div>
 				
 				 <div>
                     <img src="<%-- <%= img주소 %> --%>">
                 </div>
-                
               	<%-- <div class="hashtags">#계란</div> --%>
                 
                 
                 <textarea class="food_text_review" disabled="true">
-                	<%-- 텍스트 --%>
+                	${write.text}
                 </textarea>  
 				
 				<div class="modify">

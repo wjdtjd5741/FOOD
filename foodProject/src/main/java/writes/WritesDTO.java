@@ -1,12 +1,21 @@
 package writes;
 
+import java.util.List;
+
 public class WritesDTO {
 	private String title;
 	private String pic;
 	private String text;
 	private String Writer;
 	private String date;
+	private List<String> hashtags;
 	
+	public List<String> getHashtags() {
+		return hashtags;
+	}
+	public void setHashtags(List<String> hashtags) {
+		this.hashtags = hashtags;
+	}
 	public String getTitle() {
 		return title;
 	}

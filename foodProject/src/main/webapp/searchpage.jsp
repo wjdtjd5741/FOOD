@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="recipes.RecipesDTO" %>
+<%@ page import="java.util.*" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>asdfa</title>
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/mobile_console.css">
@@ -14,7 +16,13 @@
 </head>
 <body>
 <%
+	if(request.getAttribute("rDTOList") == null){
+		RequestDispatcher dis = request.getRequestDispatcher("searchHash");
+		dis.forward(request, response);
+	}
 	String data = request.getParameter("data");
+	List<RecipesDTO> reciList = (List<RecipesDTO>)request.getAttribute("rDTOList");
+	
 %>
 <%@ include file="header.jsp"%>
     <main>
@@ -47,7 +55,7 @@
                         <div class="search_result">
                             <div class="result1">
                                 <div>검색결과</div>
-                                <div class="color"><%-- 10 --%></div>
+                                <div class="color"><%= reciList.size() %></div>
                                 <div>건 조회</div>
                             </div>
                             <div class="views">
@@ -59,23 +67,47 @@
                         </div>
                     </div>
                     <div class="search_main">
-                    <%--
-                        <div class="menu">
-                            <img
-                                src="https://cdn.discordapp.com/attachments/1148541415828246548/1149239367269875772/pancakes-2291908_1280.jpg">
-                            <div class="hash">
-                                <div>#따뜻한</div>
-                                <div>#얼큰한</div>
-                                <div>#면요리</div>
-                            </div>
-                            <div>팬케이크</div>
-                        </div>
-                    --%>
+                    <%
+                    	for(int i = 0 ;i<reciList.size() ;i++){
+                    %>		
+                    	<div class="menu">
+                    		<img src="<%= reciList.get(i).getMainPic() %>">
+                    		<div class="hash">
+                    <%
+                    		for(int j = 0 ;j<reciList.get(i).getHashtags().size() ;j++){
+                    %>			
+                    			<div><%= reciList.get(i).getHashtags().get(j) %></div>
+                    <%			
+                    		}
+                    %>
+                    		</div>
+                    		<div><%= reciList.get(i).getTitle() %></div>
+                    	</div>	
+                    <%		
+                    	}
+                    %>   	
                     </div>
                 </div>
             </div>
         </section>
     </main>
+    <script>
+    get_data();
+
+    function get_data() {
+        let data = new URLSearchParams(window.location.search).get("data");
+        document.querySelector("#input_text0").value = data;
+        document.querySelector("#input_text1").innerText = data;
+
+        document.querySelector(".search_img").addEventListener("click", function () {
+            document.querySelector("#input_text1").innerText = document.querySelector("#input_text0").value
+        });
+        document.querySelector("#input_text0").addEventListener("keyup", function (event) {
+            if(event.keyCode == 13)
+                document.querySelector("#input_text1").innerText = document.querySelector("#input_text0").value
+        });
+    }    	
+    </script>
     <script type="text/javascript" src="assets/js/header_contents.js"></script>
     <script type="text/javascript" src="assets/js/search_event.js"></script>
     <script type="text/javascript" src="assets/js/mobile_pop.js"></script>

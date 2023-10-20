@@ -14,7 +14,7 @@
 	src:
 		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff')
 		format('woff');
-	font-weight: normal;
+	font-weig	ht: normal;
 	font-style: normal;
 }
 
@@ -25,6 +25,7 @@
 
 .right {
 	width: 70%;
+	height: 600px;
 	/* border: 1px solid red; */
 	display: inline-block;
 }
@@ -106,6 +107,7 @@
             border: 3px solid orange;
             border-radius: 10px;
         } */
+
 .top_box>div {
 	font-size: 20px;
 	display: inline-block;

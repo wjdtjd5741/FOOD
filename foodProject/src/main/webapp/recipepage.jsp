@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="assets/css/s/recipepage_sec2.css">
 <link rel="stylesheet" href="assets/css/j/media/recipepage_sec1.css">
 </head>
+
 <body>
 	<%@ include file="header.jsp"%>
 	<%@ include file="reci_navi.jsp"%>

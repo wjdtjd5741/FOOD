@@ -63,7 +63,14 @@
 			<div>첨부파일</div>
 		</div>
 		<div class="media_box" id="media_box">사진을 올려주세요!</div>
-		<textarea class="submit" type="text" class="explanation" value="만드는 방법을 써주세요."></textarea>
+        <div class="hashtag_box">
+          <div><input type="text" class="recipick_hashtag" value="#해시태그" maxlength="7"></div>
+          <div id="hash_submit" class="btns_hover">등록</div>
+        </div><br>
+		<div class="hashtag_all">
+			<%-- --%>
+		</div> 
+		<textarea type="text" class="explanation submit" value="만드는 방법을 써주세요."></textarea>
 		<div class="write_explaintext btns_hover"></div>
 		<!-- <div id="plus">+</div> -->
 		<div id="write" class="btns_hover">등록</div>
@@ -71,7 +78,49 @@
 	</main>
 	<%@ include file="footer.jsp"%>
 	<script>
-		
+	
+    add_hashtags();
+    
+    function add_hashtags() {
+        document.querySelector("#hash_submit").addEventListener("click", function () {
+            if (document.querySelector(".recipick_hashtag").value == "") {
+                alert("해시태그를 입력해주세요")
+            } else {
+                let hashtag = document.querySelector(".recipick_hashtag").value;
+                if(hashtag.includes('#'))
+                    hashtag = hashtag.substring(1)
+                html = "";
+                html += `<div class="hashtags">`
+                html += `#`+hashtag //.substring(1)
+                html += `<div class="hashtag_minus">-</div>`
+                html += `</div>`
+                document.querySelector(".hashtag_all").innerHTML += html;
+                
+            }
+            del_hashtags();
+        })
+    }
+
+    function del_hashtags(){
+        let minus_hash = document.querySelectorAll(".hashtag_minus")
+        for(let i = 0 ; i<minus_hash.length;i++){
+            minus_hash[i].addEventListener("click",function(){
+                minus_hash[i].parentNode.remove();
+            })
+        }
+    }
+	
+	submits();
+		function submits(){
+			document.querySelector("#write").addEventListener("click",function(){
+				let params = document.querySelectorAll(".submit")
+				let aa = "";
+				for(let i = 0 ;i<params.length ;i++)
+					aa += params[i].value+","
+				console.log(aa)
+				 window.location.href = "Writes?data=" + aa;
+			})
+		}	
 	
 		file_add()
 		function file_add(){

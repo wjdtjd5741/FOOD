@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ page import="mainpage.MainPageDTO" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,6 +18,16 @@
 <link rel="stylesheet" href="assets/css/h/mainpage_sec2.css">
 </head>
 <body>
+<%
+if(request.getAttribute("mainpage") == null){
+	System.out.print(request.getRequestURI());
+	RequestDispatcher dis = request.getRequestDispatcher("Recipick");
+	dis.forward(request, response);
+}
+	MainPageDTO mpDTO = (MainPageDTO)request.getAttribute("mainpage");
+	System.out.print(mpDTO.getRecom().get(0).get(2));
+
+%>
 	<%@ include file="header.jsp"%>
 	<main>
 		<nav>
@@ -26,23 +37,20 @@
 			</div>
 		</nav>
 		<section>
+			
 			<div class="go_btn">next &gt;</div>
 			<div class="back_btn">&lt; prev</div>
 			<div class="main_top">
-				<div class="main_top_img">
-				<%-- 
+				<%
+					for(int i = 0 ;i<mpDTO.getTopImg().size() ;i++){
+				%>	
+					<div class="main_top_img">
 					<img
-						src="https://cdn.discordapp.com/attachments/1148541415828246548/1148562443900043304/chuseok.jpg">
-				</div>
-				<div class="main_top_img">
-					<img
-						src="https://media.istockphoto.com/id/1449032425/ko/%EC%82%AC%EC%A7%84/%ED%8C%8C%EB%9E%80%EC%83%89%EC%97%90-%EA%B1%B4%EA%B0%95-%EC%8B%9D%ED%92%88%EC%9C%BC%EB%A1%9C-%EA%B0%80%EB%93%9D-%EC%B0%AC-%EC%87%BC%ED%95%91%EB%B0%B1.webp?b=1&s=612x612&w=0&k=20&c=_vhyGwUQA_p_2M6jWxBS5ymy1bebyUEw7RGZltC8e0c=">
-				</div>
-				<div class="main_top_img">
-					<img
-						src="https://cdn.pixabay.com/photo/2015/10/02/15/59/olive-oil-968657_640.jpg">
-				</div>
-				--%>
+						src="<%= mpDTO.getTopImg().get(i) %>">
+					</div>
+				<%
+					}
+				%>
 			</div>
 
 			<!-- 강신영 -->
@@ -61,28 +69,15 @@
 							<div class="left">◁</div>
 						</div>
 						<div class="img">
-						<%-- 
+						<%
+							for(int i = 0 ; i<mpDTO.getFavor().size() ;i++){
+						%>
 							<div class="img_div">
-								<img class="favorite"
-									src="https://img.freepik.com/free-photo/kimchi-ready-to-eat-in-black-plate_1150-35691.jpg?size=626&ext=jpg&ga=GA1.2.1026167912.1691650236&semt=sph">
-								<div class="foodName">배추 김치</div>
-							</div>
-							<div class="img_div">
-								<img
-									src="https://img.freepik.com/premium-photo/korean-instant-noodles-with-fried-chicken-or-fried-chicken-ramyeon_1339-175174.jpg?size=626&ext=jpg&ga=GA1.1.1026167912.1691650236&semt=sph">
-								<div class="foodName">텐더라면</div>
-							</div>
-							<div class="img_div">
-								<img
-									src="https://img.freepik.com/premium-photo/korean-instant-noodle-and-tteokbokki-in-korean-spicy-sauce-rabokki-korean-food-style_1339-143780.jpg?size=626&ext=jpg&ga=GA1.1.1026167912.1691650236&semt=sph">
-								<div class="foodName">라볶이</div>
-							</div>
-							<div class="img_div">
-								<img
-									src="https://img.freepik.com/premium-photo/traditional-food-chicken-soup-with-ginseng_1205-8406.jpg?size=626&ext=jpg&ga=GA1.1.1026167912.1691650236&semt=sph">
-								<div class="foodName">누룽지 삼계탕</div>
-							</div>
-						--%>
+								<img class="favorite" src="<%= mpDTO.getFavor().get(i).get(0)%>" >
+							<div class="foodName"><%= mpDTO.getFavor().get(i).get(1) %></div>
+						<%		
+							}
+						%>
 						</div>
 					</div>
 				</div>
@@ -98,12 +93,19 @@
 					<h2>추천 레시피</h2>
 					<div class="recipick">
 						<div class="big_img1">
-						<%-- 
-							<img
-								src="https://cdn.discordapp.com/attachments/1148541415828246548/1149239367269875772/pancakes-2291908_1280.jpg">
-							<div class="hashtags">#핫케이크</div>
-							<div class="recommend_name">라즈베리 팬케이크</div>
-						--%>
+							<img src="<%= mpDTO.getRecom().get(0).get(0) %>">
+							<%
+							String str = ""+mpDTO.getRecom().get(0).get(2);
+							str = str.substring(1,str.length()-1);
+							String[] hashs = str.split(",");
+							for(int i = 0 ; i<hashs.length ;i++){
+							%>
+							<div class="hashtags">#<%= hashs[i] %></div>
+							<% 	
+							}
+							%>
+							<div class="recommend_name"><%= mpDTO.getRecom().get(0).get(1) %></div>
+
 						</div>
 						<div class="small_img1">
 						<%--
@@ -135,26 +137,19 @@
 						</div>
 						<div class="big_img2">
 						<%-- 
-						<form method="get" action="searchHash" >
-							
-						</form>
-						--%>
-						
 							<img
 								src="https://cdn.discordapp.com/attachments/1148541415828246548/1149236901425987715/side-view-grilled-lamb-liver-with-potato-and-greens.jpg">
 							<div class="hashtags">#닭똥집</div>
 							<div class="hashtags">#마늘</div>
 							<div class="hashtags">#술안주</div>
-							<div class="recommend_name">철판 닭똥집구이</div>
-						 
+							<div class="recommend_name"></div>
+						--%> 
 						</div>
 					</div>
 				</div>
 				<div class="bot_img">
-				<%-- 
 				<img class="main_bottom_img"
-					src="https://cdn.discordapp.com/attachments/1148541415828246548/1148560521562427402/main.jpg">
-				--%>
+					src="<%= mpDTO.getBottomImg() %>">
 				</div>
 		</section>
 	</main>
@@ -173,7 +168,54 @@
 
 	        })
 	    } 
+ 	    
+ 	   document.querySelector(".main_top").addEventListener("mouseover", function () {
+           clearInterval(play)
+       })
+       document.querySelector(".main_top").addEventListener("mouseout", function () {
+           play = setInterval(carousel_opacity, 2000)
+       })
+
+       document.querySelector(".go_btn").addEventListener("click", function () {
+           clearInterval(play)
+           let imgs = document.querySelectorAll(".main_top_img > img")
+           imgs[i].style.opacity = "0"
+           imgs[(i + 1) % imgs.length].style.opacity = "1";
+           i++
+           if (i == imgs.length)
+               i = 0;
+       })
+       document.querySelector(".back_btn").addEventListener("click", function () {
+           clearInterval(play)
+           let imgs = document.querySelectorAll(".main_top_img > img")
+           if (i == 0) {
+               imgs[i].style.opacity = "0"
+               // console.log(i)
+               i = imgs.length - 1;
+               console.log(imgs[i])
+               imgs[i].style.opacity = "1";
+               // console.log(i)
+           } else {
+               console.log("sdf", i)
+               imgs[i + 1].style.opacity = "0"
+               imgs[i].style.opacity = "1";
+           }
+           i--;
+       })
+
+       let play = setInterval(carousel_opacity, 2000)
+       let i = 0;
+       function carousel_opacity() {
+           let imgs = document.querySelectorAll(".main_top_img > img")
+           imgs[i].style.opacity = "0"
+           imgs[(i + 1) % imgs.length].style.opacity = "1";
+           i++
+           if (i == imgs.length)
+               i = 0;
+       }
 	</script>
+    <script type="text/javascript" src="assets/js/header_contents.js"></script>
+    <script type="text/javascript" src="assets/js/mobile_pop.js"></script>	
 	<script type="text/javascript" src="assets/js/search_event.js"></script>
 </body>
 </html>

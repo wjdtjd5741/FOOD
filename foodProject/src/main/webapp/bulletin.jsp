@@ -79,7 +79,7 @@
 		selected_order();
 		show_contents();
 		exchange_contents();
-
+		
 		function selected_order() {
 			let order = document.querySelectorAll(".order")
 			for (let i = 0; i < order.length; i++) {
@@ -144,7 +144,9 @@
 		}
 
 		function load_contents(i) {
-			xhr.open("GET", `assets/component/bulletin/section\${i}.jsp`);
+			xhr.open("GET", `Section\${i}`);
+			console.log("dfsd")
+			//assets/component/bulletin/section\${i}.jsp
 			xhr.send();
 		}
 
@@ -188,14 +190,14 @@
 					//     }
 					// }
 				});
-
+	
 				inputs[i].addEventListener("mouseout", function() {
 					for (let j = 0; j < inputs.length; j++) {
 						if (index != j) 
 							inputs[j].classList.remove("selected_section");
 					}
 				});
-
+				
 			}
 		}
 

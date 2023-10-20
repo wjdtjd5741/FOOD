@@ -10,6 +10,29 @@
                     src="https://cdn.discordapp.com/attachments/1148557028927742005/1149214262925987880/search_icon.png">
             </div>
             <div class="login_box0">
+            <%
+            	Cookie[] cs = request.getCookies();
+            	String username = "";
+            	if(cs != null){
+            	for(Cookie c : cs){
+            		if(c.getName().equals("username"))
+            			username = c.getValue();
+            	}
+            	if(username.isEmpty()){
+            %>
+           		<a href="login.jsp">로그인</a>
+               	<a href="newsign.jsp">회원가입</a>            	
+            <%
+            	} else{
+            %>
+            	<a href="mypage.jsp"> <%= username %> 회원님</a>		
+            	<div> 로그아웃 </div>	
+            <%		
+	      		out.print("<input class='submit' type='text'");
+	      		out.print("value='"+username+"' style='display :none'>");
+            	}
+            	}
+            %>
             	<%-- 
             		<a href="login.jsp">로그인</a>
                 	<a href="newsign.jsp">회원가입</a>
