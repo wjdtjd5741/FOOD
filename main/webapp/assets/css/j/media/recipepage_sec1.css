@@ -1,0 +1,78 @@
+@media (max-width: 700px) {
+    .headtitle {
+        font-size: 10px;
+        width: 50px;
+    }
+    .text_line>div {
+        font-size: 10px;
+        margin: 0px 5px;
+    }
+    .up > img{
+        height: 50px;
+        width: 50px;
+    }
+    .down > img{
+        height: 50px;
+        width: 50px;
+        margin-left: -70px;
+    }
+    .up_count{
+        font-size: 13px;
+        margin-left: 0px;
+    }
+    .down_count{
+        font-size: 13px;
+        margin-left: -70px;
+    }
+.headtitle {
+    font-size: 17px;
+    width: 100%;
+    margin-right: 5%;
+}
+
+.text_line {
+    width: 360px;
+}
+
+.text_line>div {
+    font-size: 10px;
+    margin: 0px 0px 0 5px;
+}
+
+.hashtag_show {
+    width: 15%;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 30px;
+    margin-right: 2%;
+    font-size: 12px;
+}
+
+.hashtag_all div:nth-child(1) {
+    margin-left: 18%;
+}
+.box2 > div{
+    width: 100%;
+}
+
+.box2_1 div:nth-child(1) {
+    font-size: 12px;
+    margin-left: 42%;
+    width: 80%;
+}
+
+.select {
+    margin-left: 10%;
+    width: 80%;
+    height: 15px;
+    line-height: 1;
+    font-size: 12px;
+}
+.food_text {
+    font-size: 12px;
+    width: 80%;
+    margin-left: 12%;
+
+}
+    }
+    

@@ -1,0 +1,63 @@
+@media (max-width:700px) {
+    .title {
+        margin-bottom: 40px;
+        font-size: 20px;
+    }
+
+    article>div:nth-child(2) {
+        font-size: 20px;
+        width: 100%;
+    }
+
+    article>div>img {
+        height: 300px;
+    }
+
+    #hash {
+        font-size: 13px;
+        width: 25%;
+        height: 40px;
+        line-height: 3;
+        margin-left: 35%;
+        margin-bottom: 1px;
+    }
+
+    .food_text_review input {
+        width: 96%;
+        height: 80px;
+        font-size: 16px;
+        margin-left: 1.5%;
+    }
+
+    .food_text_review {
+        margin-top: 15px;
+        font-size: 15px;
+    }
+
+    .modify {
+        display: flex;
+        margin-top: -20px;
+        line-height: 0;
+        margin-left: 15%;
+        position: absolute;
+        top: 203px;
+        left: 50%;
+    }
+
+    .modify>div {
+        font-size: 13px;
+        /* background-color: whitesmoke; */
+        /* background-color: orange; */
+        /* border: 1px solid red; */
+        width: 80px;
+        height: 30px;
+        border-radius: 10px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 2.2;
+    }
+
+    .modify>div:nth-child(2) {
+        margin-left: 10px;
+    }
+}
