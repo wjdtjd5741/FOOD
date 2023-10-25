@@ -30,9 +30,9 @@ body{
     
     margin-left: 85px;
     margin-bottom: 40px;
-    /* 수정사항: 
-    margin-left: 85px로
-    변경 */
+    /* �닔�젙�궗�빆: 
+    margin-left: 85px濡�
+    蹂�寃� */
 }
 
 .text div:nth-child(n+1){
@@ -42,18 +42,18 @@ body{
     margin-bottom: 10px;
     line-height: 3;
     border-radius: 5px;
-    /* 수정사항: 
-    margin-bottom: 10px로
-    width: 350px로
-    변경 */
+    /* �닔�젙�궗�빆: 
+    margin-bottom: 10px濡�
+    width: 350px濡�
+    蹂�寃� */
 }
 .text div:nth-child(1){
     margin-bottom: 30px;
 }
-    /* 수정사항: 
+    /* �닔�젙�궗�빆: 
     .idpa div:nth-child(1){
         margin-bottom: 30px;
-    }추가 */
+    }異붽� */
 .text img {
     width: 40px;
     height: 40px;
@@ -81,10 +81,10 @@ body{
     font-weight: 900;
     /* float: right; */
 }
-    /* 수정사항: 
+    /* �닔�젙�궗�빆: 
     margin-left: 10px;
     margin-right: 10px;
-    추가 */
+    異붽� */
 
 input:focus{
     outline: none;
@@ -101,12 +101,16 @@ input:focus{
     color: white;
     border: none;
     cursor: pointer;
-    /* 수정사항: 
-    width: 352px로
-    변경 */
+    /* �닔�젙�궗�빆: 
+    width: 352px濡�
+    蹂�寃� */
 }
-/* 추가 */
-.login a{
+/* 異붽� */
+.login > input{
+	background-color: rgb(230, 126, 34);
+	font-size: 25px;
+	border: none;
+	font-weight: bolder;
     text-decoration: none;
     color: white;
     display: inline-block;

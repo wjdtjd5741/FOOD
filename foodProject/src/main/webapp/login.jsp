@@ -10,6 +10,7 @@
         header {
             height: 100px;
         }
+
         main {
             /* border: 1px solid red; */
             display: flex;
@@ -20,6 +21,7 @@
             margin-top: 80px;
             추가 */
         }
+
        <%-- footer {
             /* border: 1px solid blue; */
             height: 100px;
@@ -30,59 +32,45 @@
     </style>
 </head>
 <body>
+<%@ page import = "models.MemberDTO" %>
+<%
+	MemberDTO mm = (MemberDTO)request.getAttribute("mb");
+	session.setAttribute("mb", mm);
+%>
+	
+ <form method="post" action="LoginServlet">
     <header></header>
     <main>
         <div class="mainbox">
-            <a class="logo" href="mainpage.html">레시pick!</a>
+            <a class="logo" href="mainpage.jsp">레시pick!</a>
             <div class="text">
                 <div>
                   <img
                         src="https://cdn.discordapp.com/attachments/1148557028927742005/1148557062645764176/id_icon.png">
-                    <input type="text" value="아이디">
+                    <input type="text" name="id" placeholder="아이디">
                 </div>
                 <div>
                     <img
                         src="https://cdn.discordapp.com/attachments/1148557028927742005/1148557097999552612/password_icon.png">
-                   <input type="text" value="비밀번호">
+                   <input type="password" name="pw" placeholder="비밀번호">
                 </div>
+                <%
+                	String msg = request.getParameter("msg");
+                	if(msg != null) {
+                %>
+                <div style="color: red; font-size:15px;"><%= msg %></div>
+                <%
+                	}
+                %>
             </div>
             <div class="find">
                 <a href="newsign.jsp">회원가입</a>
             </div>
             <div class="login">
-                <a href="mainPage.jsp">로그인</a>
+                <input type="submit" value="로그인">
             </div>
         </div>
-    </main>	
-        <script>
-        newsign_inputbox();
-        function newsign_inputbox() {
-            let input_text = document.querySelectorAll(".text > div");
-            // let show_text = document.querySelectorAll(".essential > div");
-            for (let i = 0; i < input_text.length; i++) {
-                input_text[i].addEventListener("focusin", function () {
-                    if (input_text[i].querySelector("input").style.fontWeight != "900") {
-                        input_text[i].querySelector("input").value = "";
-                        input_text[i].querySelector("input").style.color = "orange";
-                        input_text[i].querySelector("input").style.fontWeight = "900";
-                        input_text[i].style.border = "2px solid orange";
-                    }
-                });
-                input_text[i].addEventListener("focusout", function () {
-                    if (input_text[i].querySelector("input").value == "") {
-                        console.log(1)
-                        // input_text[i].querySelector("input").value = show_text[i].innerText.split(":", 1);
-                        input_text[i].querySelector("input").style.color = "rgb(128, 128, 128, 0.7)";
-                        input_text[i].querySelector("input").style.fontWeight = "600";
-                        input_text[i].style.border = "1.5px solid gray";
-                        if(i == 0){
-                            input_text[i].querySelector("input").value = "아이디";
-                        } else
-                            input_text[i].querySelector("input").value = "비밀번호";
-                    }
-                });
-            }
-        }
-    </script>
+    </main>
+     </form>
 </body>
 </html>

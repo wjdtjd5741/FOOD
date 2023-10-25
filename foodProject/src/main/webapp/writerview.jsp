@@ -30,18 +30,19 @@
 				<div>${write.title}</div>
 				
 				 <div>
-                    <img src="<%-- <%= img주소 %> --%>">
+                    <img src="https://img.freepik.com/premium-photo/korean-instant-noodle-and-tteokbokki-in-korean-spicy-sauce-rabokki-korean-food-style_1339-143780.jpg?size=626&ext=jpg&ga=GA1.1.1026167912.1691650236&semt=sph">
                 </div>
-              	<%-- <div class="hashtags">#계란</div> --%>
+              	<div class="hashtags"><%--${write.hashtags} --%></div>
                 
                 
                 <textarea class="food_text_review" disabled="true">
-                	${write.text}
+				${write.text}
                 </textarea>  
 				
 				<div class="modify">
 					<div class="edit_text_review">수정</div>
 					<div class="del_text_review">삭제</div>
+					<a href="bulletin.jsp">목록</a>
 				</div>
 			</article>
 		</section>

@@ -37,7 +37,7 @@
 .abox {
     /* border: 1px solid blue; */
     width: 100%;
-    
+    cursor: pointer;
 }
 
 .sec1_bbox {
@@ -45,6 +45,7 @@
     width: 100%;
     height: 70px;
     display: flex;
+    
 }
 
 .sec1_bbox>div {

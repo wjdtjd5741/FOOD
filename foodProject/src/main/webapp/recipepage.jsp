@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ page import ="models.RecipesDTO" %>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,23 +25,24 @@
 			<%@ include file="mobile_console.jsp"%>
 		</nav>
 		<section>
-			<img class="reci_top_img" src="<%-- <%=  %> --%>">
+			<img class="reci_top_img" src= "${nrp.mainPic}" >
 			<article>
 				<!-- 이정성 -->
 				<div class="bigbox">
 					<div class="topbox">
 						<div class="headtitle">
-							<%--라즈베리 팬케이크--%>
+							${nrp.title}
 						</div>
 						<div></div>
 						<div class="text_line">
 							<div>추천수 :</div>
 							<div class="like_count">
-								<%--123--%>
+								${nrp.recomCount}
 							</div>
 							<div>찜횟수 :</div>
 							<div class="pick_count">
 								<%--2--%>
+								<input type="hidden" name="pick_count" value="0">
 							</div>
 							<div class="empty_space"></div>
 							<div>찜하기</div>
@@ -47,7 +50,12 @@
 						</div>
 					</div>
 					<div class="hashtag_all">
-						<%-- <div class="hashtags">#핫케이크</div> --%>
+					<c:forEach var="hash" items="${nrp.hashtags}">
+						<div class="hashtags">
+							${hash}
+						</div>
+					</c:forEach>
+						
 					</div>
 					<div class="box2">
 						<div class="box2_1">
@@ -61,9 +69,7 @@
 							<div>-음식 설명</div>
 							<div class="select">▽</div>
 							<div class="food_text">
-								<%-- 
-							팬케이크 믹스가 없어도 집에서 쉽게 만들수 있는 팬케이크! 상큼한 과일과 달콤한 시럽을 올려 본인만의 홈까페를 열어보세요 :) -->
- 						--%>
+								${nrp.mainText}
 							</div>
 						</div>
 					</div>
@@ -91,14 +97,15 @@
 						<div class="commend">
 							<div class="up">
 								<div class="up_count">
-									<%--123--%>
+									0
 								</div>
+								
 								<img
 									src="https://cdn.discordapp.com/attachments/1148541415828246548/1148541802450800650/recommend.jpg">
 							</div>
 							<div class="down">
 								<div class="down_count">
-									<%--47--%>
+									0
 								</div>
 								<img
 									src="https://cdn.discordapp.com/attachments/1148541415828246548/1148544129089945640/01e759c8640f0776.png">
@@ -117,7 +124,7 @@
 				<div class="comment_word">
 					<div>댓글</div>
 					<div class="comment_count">
-						<%--0--%>
+						0
 					</div>
 				</div>
 				<div>
@@ -140,5 +147,32 @@
     <script type="text/javascript" src="assets/js/reci_pop.js"></script>
     <script type="text/javascript" src="assets/js/reci_nav.js"></script>
     <script type="text/javascript" src="assets/js/mobile_pop.js"></script>	
+    <script type="text/javascript" src="assets/js/heart_counter.js"></script>	
+    
+    <script>
+    	let up_count_img = document.querySelector(".up > img")
+    	let like_count = document.querySelector(".like_count")
+    	let up_count = document.querySelector(".up_count")
+    	up_count_img.addEventListener("click", function(){
+    		console.log("클릭됨1");
+    		like_count.textContent = parseInt(like_count.textContent) +1;
+    		up_count.textContent = parseInt(up_count.textContent) +1;
+//     		console.log(like_count.textContent);
+    	})
+    	
+    	let down_count_img = document.querySelector(".down > img")
+    	let down_count = document.querySelector(".down_count")
+    	down_count_img.addEventListener("click", function(){
+    		console.log("클릭됨2");
+    		down_count.textContent = parseInt(down_count.textContent) +1;
+    	})
+    	
+    	let btn_txt = document.querySelector(".btn_txt")
+    	let comment_count = document.querySelector(".comment_count")
+    	btn_txt.addEventListener("click", function(){
+    		console.log("클릭됨3");
+    		comment_count.textContent = parseInt(comment_count.textContent) +1;
+    	})
+    </script>
 </body>
 </html>

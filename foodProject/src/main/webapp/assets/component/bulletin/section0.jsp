@@ -1,15 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="bulletin.BulletinDTO" %>
+<%@ page import="models.RecipesDTO" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<style>
+	.bulletinID{
+		visibility: hidden;
+	}
+</style>
 <body>
 <%
-	BulletinDTO bDTO = (BulletinDTO)request.getAttribute("bDTO");
+RecipesDTO bDTO = (RecipesDTO)request.getAttribute("bDTO");
+
 %>
     <div class="table_all">
         <table>
@@ -26,15 +32,15 @@
             <tbody>
 
                 <tr class="lines">
+                <div class="bulletinID"></div>
                     <td class="tb_num_color">1</td>
-                    <td><img
-                            src="<%= bDTO.getImg() %>">
-                    </td>
+                    <td><img src="<%= bDTO.getMainPic() %>"></td>
                     <td><%= bDTO.getTitle() %></td>
                     <td><%= bDTO.getDate() %></td>
                     <td><%= bDTO.getWriter() %></td>
                     <td><%= bDTO.getView() %></td>
                 </tr>
+                
                 <%-- 5개 까지 --%>
 
             </tbody>

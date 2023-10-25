@@ -35,6 +35,7 @@
 </head>
 <body>
 <body>
+<form action="NewsignServlet" method="get">
 	<header></header>
     <main>
         <section>
@@ -44,17 +45,17 @@
                     <div class="id">
                         <img
 							src="https://cdn.discordapp.com/attachments/1148557028927742005/1148557062645764176/id_icon.png">
-                       <input type="text" value="아이디">
+                       <input class="inputbox" type="text" name="id" placeholder="아이디"> 
                     </div>
                     <div class="password">
                         <img
 							src="https://cdn.discordapp.com/attachments/1148557028927742005/1148557097999552612/password_icon.png">
-                      <input type="text" value="비밀번호"> 
+                      <input class="inputbox" type="password" name="pw" placeholder="비밀번호">
                     </div>
                     <div class="email">
                         <img
 							src="https://cdn.discordapp.com/attachments/1148557028927742005/1148557086582653039/email_icon.png">
-                       <input type="text" value="이메일">
+                        <input class="inputbox" type="text" name="email" placeholder="이메일">
                     </div>
                 </div>
                 <div class="essential">
@@ -66,23 +67,31 @@
                     <div class="name">
                         <img
 							src="https://cdn.discordapp.com/attachments/1148557028927742005/1148557062645764176/id_icon.png">
-                       <input type="text" value="이름"> 
+                       <input class="inputbox" type="text" name="name" placeholder="이름">
                     </div>
                     <div class="birth">
                         <img
 							src="https://cdn.discordapp.com/attachments/1148557028927742005/1148557204870414336/birth_icon.PNG">
-                        <input type="text" value="생년월일 8자리">
+                        <input class="inputbox" type="text" name="birth" placeholder="생년월일 8자리">
                     </div>
                 </div>
                 <div class="gender">
-                    <div class="gender_2">남자</div>
-                    <div class="gender_2">여자</div>
+                
+					<label class="gender_2">
+					    <input class="radiogen" type="radio" name="gender" value="1">
+					    <span>남자</span>
+					</label>
+					 
+					<label class="gender_2">
+					    <input class="radiogen" type="radio" name="gender" value="2">
+					    <span>여자</span>
+					</label>                
                 </div>
                 <div class="text">
                     <div class="phone">
                         <img
 							src="https://cdn.discordapp.com/attachments/1148557028927742005/1148557116009881650/phone_icon.PNG">
-                      <input type="text" value="전화번호">
+                       <input class="inputbox" type="text" name="phone" placeholder="전화번호">
                     </div>
                 </div>
                 <div class="essential">
@@ -91,12 +100,13 @@
                     <div>성별: 필수 정보입니다.</div>
                 </div>
                 <div class="join">
-					<a href="login.jsp">회원가입</a>
+					<input id="submit" type="submit" value="회원가입">
 				</div>
                 <!-- href="login.html" -->
             </div>
         </section>
     </main>
+    </form>
         <script>
         newsign_inputbox();
         pick_gender();
@@ -176,4 +186,6 @@
         }
     </script>
 </body>
+
+
 </html>

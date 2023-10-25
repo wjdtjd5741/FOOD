@@ -111,23 +111,21 @@
 		}
 
 		const xhr = new XMLHttpRequest();
+		
 
-		go_recipepage(); // 임시.
+		
+		//go_recipepage(); // 임시.
 		function go_recipepage() {
-			document.querySelector(".ajax_pagereload").addEventListener("click", function() {
-				let lines = document.querySelectorAll(".lines")
-				window.open("recipepage.jsp");
-				// console.log(lines)
-				// for (let i = 0; i < lines.length; i++) {
-				//     console.log(i)
-				//     lines[i].addEventListener("click", function () {
-				//         window.open("recipepage.html");
-				//     });
-				// }
-			});
+			let lines = document.querySelectorAll(".lines")
+			// console.log(lines)
+			for (let i = 0; i < lines.length; i++) {
+			     lines[i].addEventListener("click", function () {
+			    	 //window.location.href = "NewRecipePage?"
+			    });
+			}
 		}
 
-		go_writerpage(); // 임시.
+		//go_writerpage(); // 임시.
 		function go_writerpage() {
 			document.querySelector(".ajax_pagereload").addEventListener("click",function() {
 				let lines = document.querySelector(".ajax_pagereload")
@@ -144,8 +142,8 @@
 		}
 
 		function load_contents(i) {
-			xhr.open("GET", `Section\${i}`);
-			console.log("dfsd")
+			xhr.open("GET", `BulletinSection\${i}`);
+			//console.log("dfsd")
 			//assets/component/bulletin/section\${i}.jsp
 			xhr.send();
 		}
@@ -158,6 +156,7 @@
 					let text = xhr.responseText;
 					let htmlDom = new DOMParser().parseFromString(text, "text/html");
 					document.querySelector(".ajax_pagereload").innerHTML = htmlDom.querySelector("body > div").innerHTML;
+					go_recipepage()
 				}
 			});
 		}
@@ -165,7 +164,7 @@
 		function exchange_contents() {
 			let inputs = document.querySelectorAll(".contents");
 			inputs[0].classList.add("selected_section")
-			console.log(inputs);
+			//console.log(inputs);
 			for (let i = 0; i < inputs.length; i++) {
 				inputs[i].addEventListener("click",function() {
 					load_contents(i);
@@ -182,7 +181,7 @@
 					}
 				});
 				inputs[i].addEventListener("mouseover", function() {
-					console.log("in");
+					//console.log("in");
 					inputs[i].classList.add("selected_section");
 					// for (let j = 0; j < inputs.length; j++) {
 					//     if (i != j) {
@@ -214,6 +213,7 @@
 				}
 			});
 		}
+	
 	</script>
 	<script type="text/javascript" src="assets/js/header_contents.js"></script>
 	<script type="text/javascript" src="assets/js/search_event.js"></script>

@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<%@ page import="mainpage.MainPageDTO" %>
+<%@ page import="models.MainPageDTO" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,21 +17,73 @@
 <link rel="stylesheet" href="assets/css/mobile_console.css">
 <link rel="stylesheet" href="assets/css/h/mainpage_sec2.css">
 </head>
+<style>
+	.popup{
+		position: fixed;
+		top: 150px;
+		left: 50px;
+		z-index: 99;
+		background-color: red;
+	}
+	.popuplocation{
+		width: 300px;
+		height: 300px;
+
+	}
+	.popupbtn{
+		width: 50px;
+		height: 50px;
+	}
+	.img{
+		background-color: red" ;
+	}
+</style>
 <body>
 <%
 if(request.getAttribute("mainpage") == null){
-	System.out.print(request.getRequestURI());
+	//System.out.print(request.getRequestURI());
 	RequestDispatcher dis = request.getRequestDispatcher("Recipick");
 	dis.forward(request, response);
 }
 	MainPageDTO mpDTO = (MainPageDTO)request.getAttribute("mainpage");
-	System.out.print(mpDTO.getRecom().get(0).get(2));
-
+	
+	String popupBox = "on";
+	Cookie[] css = request.getCookies();
+	if(css != null){
+		for(Cookie c : css){
+			if(c.getName().equals("popupBox"))
+				popupBox = c.getValue();
+		}
+	}
+	
 %>
 	<%@ include file="header.jsp"%>
 	<main>
 		<nav>
-		<%@ include file="mobile_console.jsp"%>
+		
+		<%
+			if(popupBox.equals("on")){
+		%>
+		<!-- style="display:none" -->
+			<div class="popup" > 
+				<div class="popuplocation">
+					<div class="img"></div>
+<!-- 					<form method="get" action="Recipick"> -->
+						<input class="ckbox" type="checkbox" name="ck" value="1" >
+						<input class="popupbtn" type="submit" value="닫기">
+<!-- 					</form> -->
+				</div>
+			</div>
+		
+		<%
+		} else{
+		%>
+			<div class="popupbtn"></div>
+		<%
+		}
+		%>
+		
+			<%@ include file="mobile_console.jsp"%>
 			<div class="go_home">
 				<a href="#">▲</a>
 			</div>
@@ -148,20 +200,42 @@ if(request.getAttribute("mainpage") == null){
 					</div>
 				</div>
 				<div class="bot_img">
-				<img class="main_bottom_img"
+				<img class="main_bottom_img "  
 					src="<%= mpDTO.getBottomImg() %>">
 				</div>
 		</section>
 	</main>
 	<%@ include file="footer.jsp"%>
 	<script>
+	// 1. window
+	// 2. div display
+	
+	popbox()
+	function popbox(){
+	 	document.querySelector(".popupbtn").addEventListener("click",function(){
+			if(!document.querySelector(".ckbox").checked){
+				document.querySelector(".popup").style.visibility = "hidden";
+			} else
+				window.location.href = "Recipick?ck=1";
+		})		
+	}
+
+	
+	logout()
+		function logout(){
+			document.querySelector(".logout").addEventListener("click",function(){
+				alert("로그아웃되었습니다");
+				window.location.href = "Logout";
+			})
+		}
+	
  	    let hashtags = document.querySelectorAll(".hashtags")
 	    for(let i = 0 ; i<hashtags.length ;i++){
 	        hashtags[i].addEventListener("click",function(){
 	            let text = hashtags[i].innerText.substring(1);
 	            window.location.href = "searchHash?data=" + text;
 
-/* 	            let xhr = new XMLHttpRequest();
+			/* 	let xhr = new XMLHttpRequest();
 	            console.log(text)
 	            xhr.open("GET", "searchHash?data="+text);
 	            xhr.send(); */

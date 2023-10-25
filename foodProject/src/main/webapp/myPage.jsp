@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import = "models.MemberDTO" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -169,12 +170,22 @@
 </head>
 <body>
 <body>
+
+<%
+if(session.getAttribute("mb") == null){
+	//System.out.print(request.getRequestURI());
+	RequestDispatcher dis = request.getRequestDispatcher("Recipick");
+	dis.forward(request, response);
+}
+	MemberDTO mm = (MemberDTO)session.getAttribute("mb");
+%>
+
 	<div class="all_0">
 		<div class="all_1">
 			<div class="hi">
 				<div>
 					안녕하세요
-					<%-- 김호연 --%>
+					<%= mm.getName() %>
 					님 !
 				</div>
 				<div>
@@ -202,7 +213,7 @@
 		const xhr = new XMLHttpRequest();
 
 		function load_contents(i) {
-			xhr.open("GET", `assets/component/mypage/section\${i}.jsp`);
+			xhr.open("GET", `MypageSection\${i}`);
 			xhr.send();
 			console.log(1)
 		}

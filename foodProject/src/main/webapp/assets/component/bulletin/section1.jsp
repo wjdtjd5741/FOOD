@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="bulletin.BulletinDTO" %>    
+<%@ page import="models.WritesDTO" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +9,7 @@
 </head>
 <body>
 <%
-	BulletinDTO bDTO = (BulletinDTO)request.getAttribute("bDTO");
+WritesDTO bDTO = (WritesDTO)request.getAttribute("bDTO");
 %>
     <div class="sec1_bigbox">
         <div class="sec1_head_box">

@@ -22,8 +22,25 @@
     height: 25px;
     /* display: inline-block; */
 }
-
-input {
+#submit{
+    margin-left: 10px;
+    width: 350px;
+    height: 45px;
+    background-color: rgb(230, 142, 34);
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-align: center;
+    line-height: 45px;
+    margin-bottom: 10px;
+    /* a�깭洹� 異붽� */
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid orange;
+}
+.inputbox {
     /* display: inline-block; */
     border: none;
     font-size: 15px;
@@ -79,24 +96,24 @@ h1 {
    text-align: center;
    line-height: 35px;
 }
-.join > a{
-    margin-left: 10px;
-    width: 350px;
-    height: 45px;
-    background-color: rgb(230, 142, 34);
-    color: white;
-    font-size: 18px;
-    border-radius: 5px;
-    margin-top: 10px;
-    text-align: center;
-    line-height: 45px;
-    margin-bottom: 10px;
-    /* a태그 추가 */
-    display: inline-block;
-    text-decoration: none;
-    cursor: pointer;
+.radiogen {
+    display: none;
 }
-/* js를 위한 css 추가 */
+.radiogen + span {
+    background-color:white;
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+    display: inline-block;
+    width: 130px;
+    height: 35px;
+}
+ 
+.radiogen:checked + span {
+    background-color:rgb(230, 142, 34);
+    color: #ffffff;
+}
+/* js瑜� �쐞�븳 css 異붽� */
 .essential > div{
     /* display: none; */
 }
