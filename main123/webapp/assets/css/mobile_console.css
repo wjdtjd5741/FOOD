@@ -1,0 +1,33 @@
+.mobile_console{
+    position: fixed;
+    /* border: 1px solid red; */
+    background-color: rgba(255, 255, 255, 0.705);
+    width: 500px;
+    height: 100px;
+    border-radius: 16px;
+    bottom: 7%;
+    transform: translateX(-50%);
+    z-index: 98;
+    display: none;
+}
+.array_console{
+    display: flex;
+    justify-content: space-around;
+}
+.array_console > a{
+    /* border: 1px solid red; */
+    height: 60px;
+    width: 60px;
+    text-decoration: none;
+    color: gray;
+}
+.array_console > a > img{
+    height: 60px;
+    width: 60px;
+}
+.array_console > a > div{
+    font-size: 13px;
+    width: 60px;
+    text-align: center;
+}
+

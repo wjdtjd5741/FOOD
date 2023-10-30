@@ -1,0 +1,97 @@
+@media(max-width:700px) {
+    .selected_board {
+        font-size: 20px;
+    }
+
+    .borad_select {
+        font-size: 13px;
+    }
+
+    #board_name input {
+        font-size: 13px;
+    }
+
+    #write {
+        font-size: 13px;
+        line-height: 1.5;
+        height: 20px;
+        width: 10%;
+    }
+    .write_1 {
+        font-size: 15px;
+    }
+
+    .borad_select {
+        position: absolute;
+        top: 200px;
+        right: 30px;
+        margin: 0;
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+
+    #board_name input {
+        position: absolute;
+        top: 190px;
+    }
+
+    .attach {
+        margin-left: 0px;
+        margin-top: 80px;
+    }
+
+    .attach img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .attach_font {
+        margin-left: 4px;
+        margin-bottom: 40px;
+    }
+
+    .attach_font>div {
+        font-size: 11px;
+    }
+
+    .attach_font div:nth-child(1) {
+        margin-right: 21px;
+    }
+
+    .attach_font div:nth-child(2) {
+        margin-right: 13px;
+    }
+
+    .explanation {
+        font-size: 13px;
+        margin-bottom: 150px;
+    }
+
+    #plus {
+        width: 80%;
+        height: 30px;
+        line-height: 0.8;
+        margin-bottom: 50px;
+        margin-left: 10%;
+    }
+
+    #write {
+        position: absolute;
+        top: 260px;
+        left: 75%;
+        line-height: 30px;
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: 5%;
+        width: 10%;
+        height: 30px;
+        font-size: 15px;
+    }
+
+    .media_box {
+        height: 300px;
+        font-size: 15px;
+        line-height: 20;
+    }
+}

@@ -1,0 +1,37 @@
+
+.title{
+    display: flex;
+    margin-top: 100px;
+    /* border: 1px solid red; */
+    width: 100%;
+}
+.title > div:nth-child(1){
+    /* border: 1px solid blue; */
+    width: 100%;
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    
+    
+    /* 수정내용: 폰트사이즈 20px에서 30px로 변경*/
+}
+
+/* .hashtag_box > div:nth-child(1){
+    margin-bottom: 10px;
+} */
+.title div:nth-child(n+2){
+    border-radius: 8px;
+    margin-top: 5px;    
+    background-color: rgba(207, 207, 207, 0.562);
+    font-size: 16px;
+    font-weight: bold;
+    height: 30px;
+    line-height: 1.8;
+    text-align: center;
+    width: 100px;
+    cursor: pointer;
+}
+.title div:nth-child(2){
+    margin-right: 1%;
+}
+

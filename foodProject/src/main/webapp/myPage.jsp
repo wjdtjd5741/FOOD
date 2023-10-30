@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import = "models.MemberDTO" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +15,7 @@
 	src:
 		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff')
 		format('woff');
-	font-weight: normal;
+	font-weig	ht: normal;
 	font-style: normal;
 }
 
@@ -25,6 +26,7 @@
 
 .right {
 	width: 70%;
+	height: 600px;
 	/* border: 1px solid red; */
 	display: inline-block;
 }
@@ -106,6 +108,7 @@
             border: 3px solid orange;
             border-radius: 10px;
         } */
+
 .top_box>div {
 	font-size: 20px;
 	display: inline-block;
@@ -145,8 +148,9 @@
 }
 
 .hi a {
+	margin-left: -45%;
 	font-family: 'yg-jalnan';
-	color: orange;
+	color: rgb(230, 142, 34);
 	width: 23%;
 	text-decoration: none;
 	cursor: pointer;
@@ -166,17 +170,26 @@
 </style>
 </head>
 <body>
-<body>
+
+<%
+if(session.getAttribute("mb") == null){
+	RequestDispatcher b = request.getRequestDispatcher("mainpage.jsp");
+    b.forward(request, response);
+}
+	MemberDTO mm = (MemberDTO)session.getAttribute("mb");
+	
+%>
+
 	<div class="all_0">
 		<div class="all_1">
 			<div class="hi">
 				<div>
 					안녕하세요
-					<%-- 김호연 --%>
+				<%= mm.getName() %>
 					님 !
 				</div>
 				<div>
-					<a href="mainpage.html">레시pick!</a>
+					<a href="mainpage.jsp">레시pick!</a>
 				</div>
 			</div>
 			<div class="left_right">
@@ -195,12 +208,27 @@
 		</div>
 	</div>
 	<script>
+	
+	    function toggleEdit(btn) {
+	        let textArea = document.querySelectorAll("textarea");
+	        for(let i = 0 ;i<textArea.length ;i++){
+		        if (textArea[i].disabled) {
+		            textArea[i].disabled = false;
+		            btn.innerHTML = "확인";
+		            
+		        } else {
+		            textArea[i].disabled = true;
+		            btn.innerHTML = "수정";
+		        }
+	        }
+	    }
+	    
 		show_contents();
 		exchange_contents();
 		const xhr = new XMLHttpRequest();
 
 		function load_contents(i) {
-			xhr.open("GET", `assets/component/mypage/section\${i}.jsp`);
+			xhr.open("GET", `MypageSection\${i}`);
 			xhr.send();
 			console.log(1)
 		}
