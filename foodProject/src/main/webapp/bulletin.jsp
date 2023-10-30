@@ -10,10 +10,8 @@
 <link rel="stylesheet" href="assets/css/h/bulletin_sec2.css">
 <link rel="stylesheet" href="assets/css/bulletin.css">
 <link rel="stylesheet" href="assets/css/footer.css">
-<link rel="stylesheet"
-	href="assets/component/bulletin/css/h/section0.css">
-<link rel="stylesheet"
-	href="assets/component/bulletin/css/j/section1.css">
+<link rel="stylesheet" href="assets/component/bulletin/css/h/section0.css">
+<link rel="stylesheet" href="assets/component/bulletin/css/j/section1.css">
 <link rel="stylesheet" href="assets/css/mobile_console.css">
 </head>
 <body>
@@ -38,9 +36,11 @@
 				</div>
 				<div class="bottom">
 					<div class="order_all">
-						<%-- <div class="order">◁</div> --%>
-						<%-- <div class="order"> 페이지수 </div>  --%>
-						<%-- <div class="order">▷</div> --%>
+						<div class="order">◁</div>
+						<div class="order"> 1 </div> 
+						<div class="order"> 2 </div> 
+						<div class="order"> 3 </div> 
+						<div class="order">▷</div>
 					</div>
 					<a class="write">글쓰기</a>
 				</div>

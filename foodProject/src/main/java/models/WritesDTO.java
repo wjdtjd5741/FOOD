@@ -7,7 +7,7 @@ public class WritesDTO {
 	private String pic;
 	private String text;
 	private String Writer;
-	private String date;
+	private Long date;
 	private List<String> hashtags;
 	private int view;
 	
@@ -47,10 +47,10 @@ public class WritesDTO {
 	public void setWriter(String writer) {
 		Writer = writer;
 	}
-	public String getDate() {
+	public Long getDate() {
 		return date;
 	}
-	public void setDate(String date) {
+	public void setDate(Long date) {
 		this.date = date;
 	}
 }

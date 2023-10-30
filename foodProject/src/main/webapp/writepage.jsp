@@ -42,17 +42,32 @@ section {
 		</nav>
 		<section>
 			<!-- 이정성 김호연 수정 함-->
-			<form action="Writes.jsp" method="post" id="writepageServlet">
-			
 			<div class="selected_board">선택된 게시판</div>
 			<div>
 				<select class="borad_select">
 					<option value="후기 게시판">후기 게시판</option>
+					<%
+        String adminRole = "";
+        Cookie[] cookies = request.getCookies();
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if ("admin".equals(cookie.getName())) {
+                    adminRole = cookie.getValue();
+                    break;
+                }
+            }
+        }
+    %>
+     <% if ("관리자".equals(adminRole)) { %>
 					<option value="공지사항">공지사항</option>
+					<%
+					}
+					%>
 				</select>
 			</div>
 			<div id="board_name">
-				<textarea class="submit" name="title" type="text" value="게시글 제목을 작성해주세요."></textarea>
+				<textarea class="submit" name="title" style="overflow: hidden"
+					placeholder="제목을 입력해주세요(20자 제한)" maxlength="20"></textarea>
 			</div>
 
 			<div class="attach">
@@ -65,22 +80,29 @@ section {
 			<div class="attach_font">
 				<div>첨부파일</div>
 			</div>
-			<div class="media_box" id="media_box">사진을 올려주세요!!</div>
-			<div class="hashtag_box">
-				<div>
-					<input type="text" name="viewhash" class="recipick_hashtag"  value="#해시태그"
-						maxlength="7">
+			<div class="media_box" id="media_box">사진을 올려주세요</div>
+			<div class="hashpull_box">
+				<div class="hashNotice">해쉬태그를 입력해 주세요!(최대 5개)</div>
+				<div class="hashtag_box">
+					<div>
+						<input type="text" name="viewhash" class="recipick_hashtag"
+							value="#해시태그" maxlength="7">
+					</div>
+					<div id="hash_submit" class="btns_hover">등록</div>
 				</div>
-				<div id="hash_submit" class="btns_hover">등록</div>
+
+				<br>
+				<div class="hashtag_all"></div>
 			</div>
-			<br>
-			<div class="hashtag_all"></div>
-			<textarea type="text" name="contents" class="explanation submit"
-				value="만드는 방법을 써주세요."></textarea>
+			<div class="writepageReview">
+				음식에 대한 설명
+				<textarea name="contents" maxlength="300" class="explanation submit"
+					placeholder="후기를 작성해 주세요(300자 제한)"></textarea>
+
+			</div>
 			<div class="write_explaintext btns_hover"></div>
 			<!-- <div id="plus">+</div> -->
 			<div id="write" class="btns_hover">등록</div>
-			</form>
 		</section>
 	</main>
 	<%@ include file="footer.jsp"%>
@@ -103,7 +125,7 @@ section {
 									html = "";
 									html += `<div class="hashtags">`
 									html += `#` + hashtag //.substring(1)
-									html += `<input type="hidden" name="viewhash" value="\${hashtag}">`
+									html += `<input class="submit" type="hidden" name="viewhash" value="\${hashtag}">`
 									html += `<div class="hashtag_minus">-</div>`
 									html += `</div>`
 									document.querySelector(".hashtag_all").innerHTML += html;
@@ -131,9 +153,16 @@ section {
 			document.querySelector("#write").addEventListener("click",
 					function() {
 						let params = document.querySelectorAll(".submit")
+						console.log(params);
 						let aa = "";
-						for (let i = 0; i < params.length; i++)
-							aa += params[i].value + ","
+						for (let i = 0; i < params.length; i++) {
+							if (!(i == 0 || i == params.length - 1)) {
+								aa += params[i].value + " "
+							} else if (i == params.length - 1) {
+								aa += "," + params[i].value
+							} else
+								aa += params[i].value + ","
+						}
 						console.log(aa)
 						window.location.href = "Writes?data=" + aa;
 					})

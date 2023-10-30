@@ -34,12 +34,14 @@
     </style>
 </head>
 <body>
-<body>
 <form action="NewsignServlet" method="get">
 	<header></header>
     <main>
+  <!--   <script>
+    alert("로그아웃 되었습니다.")
+    </script> -->
         <section>
-            <h1>레시pick!</h1>
+            <a class="logo" href="mainpage.jsp">레시pick!</a>
             <div class="all_3">
                 <div class="text">
                     <div class="id">
@@ -55,13 +57,13 @@
                     <div class="email">
                         <img
 							src="https://cdn.discordapp.com/attachments/1148557028927742005/1148557086582653039/email_icon.png">
-                        <input class="inputbox" type="text" name="email" placeholder="이메일">
+                        <input class="inputbox email_1" type="text" name="email" placeholder="이메일">
                     </div>
                 </div>
                 <div class="essential">
                     <div>아이디: 필수 정보입니다.</div>
                     <div>비밀번호: 필수 정보입니다.</div>
-                    <div>이메일:</div>
+                    <div class="email_2">이메일: 형식에 맞는 이메일 주소를 입력해 주세요.</div>
                 </div>
                 <div class="text">
                     <div class="name">
@@ -91,23 +93,39 @@
                     <div class="phone">
                         <img
 							src="https://cdn.discordapp.com/attachments/1148557028927742005/1148557116009881650/phone_icon.PNG">
-                       <input class="inputbox" type="text" name="phone" placeholder="전화번호">
+                       <input class="inputbox" type="text" name="phone" placeholder="연락처">
                     </div>
                 </div>
                 <div class="essential">
                     <div>이름: 필수 정보입니다.</div>
                     <div>생년월일 8자리: 필수 정보입니다.</div>
-                    <div>성별: 필수 정보입니다.</div>
+                    <div>연락처: 필수 정보입니다.</div>
                 </div>
                 <div class="join">
 					<input id="submit" type="submit" value="회원가입">
 				</div>
+			<div class="login">
+                <a href="login.jsp">로그인 페이지로 이동</a>
+            </div>
                 <!-- href="login.html" -->
             </div>
         </section>
     </main>
     </form>
         <script>
+        emailck()
+        function emailck(){
+            document.querySelector(".email_1").addEventListener("focusout", function() {
+                if(!document.querySelector(".email_1").value.includes("@")) {
+                    document.querySelector(".email_2").style.display = "block"
+                    document.querySelector("#submit").disabled = true
+                } else {
+                    document.querySelector(".email_2").style.display = "none"
+                    document.querySelector("#submit").disabled = false
+                }
+            }) 
+        }
+        
         newsign_inputbox();
         pick_gender();
         submit_newsign();
@@ -172,7 +190,7 @@
                 });
             }
         }
-    
+        
         function submit_newsign(){
             document.querySelector(".join").addEventListener("click",function(){
                 let ano;
@@ -184,6 +202,7 @@
                 }
             });
         }
+
     </script>
 </body>
 

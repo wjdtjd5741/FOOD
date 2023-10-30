@@ -5,11 +5,11 @@ import java.util.Date;
 public class RecipickLib {
 	private long date;
 	private String dateYYMMDD;
-	
+
 //	RecipickLib(){
 //		
 //	}
-	
+
 	public long getDate() {
 		return date;
 	}

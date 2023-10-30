@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="assets/css/j/newrecipepage_sec3.css">
 <link rel="stylesheet" href="assets/css/j/media/newrecipepage.css">
 </head>
-]
+
 
 <body>
 <body>
@@ -34,7 +34,7 @@
 			<form action="recipePage1" id="newRecipePage">
 				<div class="title_box">
 					<textarea type="text" name="recipick_title" class="recipick_title"
-						value="레시피 제목을 작성해주세요" maxlength="70"></textarea>
+						maxlength="70">레시피 제목을 작성해주세요!</textarea>
 				</div>
 				<!-- 김호연 -->
 				<div class="all2">
@@ -55,35 +55,43 @@
 						<div>완성된 음식 사진을 올려주세요 !</div>
 					</div>
 				</div>
-				<div class="hashtag_box">
-					<div>
-						<input type="text" class="recipick_hashtag" value="#해시태그"
-							maxlength="7">
+				<div class="hashtag_border">
+					<div class="hashtag_ex">해시태그를 입력해주세요!(최대 5개)</div>
+					<div class="hashtag_box">
+						<div>
+							<input type="text" class="recipick_hashtag" value="#해시태그"
+								maxlength="7">
+						</div>
+						<div id="hash_submit" class="btns_hover">등록</div>
 					</div>
-					<div id="hash_submit" class="btns_hover">등록</div>
-				</div>
-				<br>
-				<div class="hashtag_all">
-					<%-- --%>
+					<br>
+					<div class="hashtag_all">
+						<%-- --%>
+					</div>
 				</div>
 				<!-- <div class="max">해시태그는 5개까지 입력할 수 있습니다.</div> -->
-				<div class="content_all">
-					<div>
-						<input type="text" class="recipick_content0" value="재료명"
-							maxlength="10">
+				<div class="content_all_border">
+					<div class="content_ex">재료명과 수량을 입력해주세요!</div>
+					<div class="content_all">
+						<div>
+							<input type="text" class="recipick_content0" value="재료명"
+								maxlength="10">
+						</div>
+						<div>
+							<input type="text" class="recipick_content1" value="수량"
+								maxlength="10">
+						</div>
+						<div id="quantity_submit" class="btns_hover">등록</div>
 					</div>
-					<div>
-						<input type="text" class="recipick_content1" value="수량"
-							maxlength="10">
+					<div class="quantity_box">
+						<%-- --%>
 					</div>
-					<div id="quantity_submit" class="btns_hover">등록</div>
-				</div>
-				<div class="quantity_box">
-					<%-- --%>
 				</div>
 				<div>
-					<textarea class="food_explanation" name="food_explanation"
-						value="음식에 대한 설명을 입력해주세요"></textarea>
+					<div class="food_ex">
+						음식에 대한 설명
+						<textarea class="food_explanation" name="food_explanation"></textarea>
+					</div>
 				</div>
 				</div>
 
@@ -96,7 +104,7 @@
 							<div class="bigbox_num">1</div>
 							<input class="bigbox_num2" type="hidden" name="bigbox_num"
 								value=1>
-							<div>만드는 방법</div>
+							<div class="making_how">만드는 방법</div>
 							<div class="delete_butt">삭제</div>
 						</div>
 						<div class="attach">
@@ -110,7 +118,10 @@
 						<div class="attach_font">
 							<div>첨부파일</div>
 						</div>
-						<div class="media_box">레시피 사진, 동영상을 올려주세요!</div>
+						<div class="media_box">
+
+							<div class="media_box_pic">레시피 사진, 동영상을 올려주세요!</div>
+						</div>
 						<div class="explanation">만드는 방법 설명</div>
 					</div>
 					<textarea class="explanation_context" type="text"
@@ -210,7 +221,7 @@
 								html = "";
 								html += `<div class="quantity">`
 								html += `    <div>` + name + `:` + num + `</div>`
-								html += `<input type="hidden" name="recipick_content01" value= "\${content01}" `
+								html += `<input type="hidden" name="recipick_content01" value= "\${content01}"> `
 								html += `    <div class="quantity_minus">-</div>`
 								html += `</div>`
 								document.querySelector(".quantity_box").innerHTML += html;
@@ -281,8 +292,8 @@
 				html += `     <div class="attach_font">`
 				html += `         <div>첨부파일</div>`
 				html += `     </div>`
-				html += `     <div class="media_box">레시피 사진, 동영상을 올려주세요!</div>`
-				html += `     <div class="explanation">만드는 방법 설명`
+				html += `     <div class="media_box"><div class="media_box_pic">레시피 사진, 동영상을 올려주세요!</div></div>`
+				html += `     <div class="explanation">만드는 방법 설명</div>`
 				html += `     <textarea class="explanation_context" name="explanation_context"`
 				html += `		value="음식에 대한 설명을 입력해주세요"></textarea>`
 				html += ` </div>`
@@ -310,6 +321,13 @@
 
 		function recount_nums() {
 			let bigbox_nums = document.querySelectorAll(".bigbox_num2")
+			console.log(bigbox_nums)
+			for (let k = 0; k < bigbox_nums.length; k++) {
+				bigbox_nums[k].innerText = k + 1
+			}
+		}
+		function recount_nums() {
+			let bigbox_nums = document.querySelectorAll(".bigbox_num")
 			console.log(bigbox_nums)
 			for (let k = 0; k < bigbox_nums.length; k++) {
 				bigbox_nums[k].innerText = k + 1

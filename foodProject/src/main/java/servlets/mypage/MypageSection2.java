@@ -30,7 +30,7 @@ public class MypageSection2 extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
-		RequestDispatcher dis = request.getRequestDispatcher("assets/component/mypage/section1.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("assets/component/mypage/section2.jsp");
 		dis.forward(request, response);	
 		
 	}

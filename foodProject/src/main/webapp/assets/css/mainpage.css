@@ -60,6 +60,7 @@ section > div:nth-child(n+3){
     height: 400px;
     background-size: contain;
     margin-top: 50px;
+    border-radius: 10px;
 }
 .main_top_img > img{
     position: absolute;
@@ -67,6 +68,7 @@ section > div:nth-child(n+3){
     height: 400px;
     background-size: cover;
     transition: all 2s;
+    border-radius: 10px;
 }
 .main_top > .main_top_img:nth-child(n+2) img {
     opacity: 0;

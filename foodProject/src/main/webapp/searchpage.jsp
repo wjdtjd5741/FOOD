@@ -16,11 +16,14 @@
 </head>
 <body>
 <%
+	
 	if(request.getAttribute("rDTOList") == null){
 		RequestDispatcher dis = request.getRequestDispatcher("searchHash");
 		dis.forward(request, response);
 	}
+	
 	String data = request.getParameter("data");
+	System.out.print("oim: "+data);
 	List<RecipesDTO> reciList = (List<RecipesDTO>)request.getAttribute("rDTOList");
 	
 %>
@@ -77,15 +80,15 @@
                     		for(int j = 0 ;j<reciList.get(i).getHashtags().size() ;j++){
                     %>			
                     			<div><%= reciList.get(i).getHashtags().get(j) %></div>
-                    <%			
+                    <%		
                     		}
                     %>
                     		</div>
                     		<div><%= reciList.get(i).getTitle() %></div>
                     	</div>	
-                    <%		
+                    <%
                     	}
-                    %>   	
+                    %>
                     </div>
                 </div>
             </div>

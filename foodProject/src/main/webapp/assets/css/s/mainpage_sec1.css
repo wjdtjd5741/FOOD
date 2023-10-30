@@ -23,17 +23,19 @@
     height: 400px;
     align-items: flex-end;
 }
-/* px이아닌 %를 이용해함 */
+/* px�씠�븘�땶 %瑜� �씠�슜�빐�븿 */
 .img{
     gap: 25px;
     display: flex;
     width: 100%;
-    height: 250px;
+    height: 230px;
     /* margin: 15px; */
+    background: rgba(255, 174, 44, 0.45);
+    border-radius: 10px;
 }
-/* px이아닌 %를 이용해함 */
+/* px�씠�븘�땶 %瑜� �씠�슜�빐�븿 */
 .img_div >img{
-   
+   border-radius: 5px;
     background-size: cover;
     /* margin:40%; */
     width: 100%;
@@ -41,7 +43,7 @@
     /* margin-left: 10px; */
     
 }
-/* px이아닌 %를 이용해함 */
+/* px�씠�븘�땶 %瑜� �씠�슜�빐�븿 */
 .img_div{
     
     flex-grow: 1;
@@ -51,15 +53,16 @@
     display: inline-block;
     height: 200px;
 }
-/* 강신영 수정완 */
+/* 媛뺤떊�쁺 �닔�젙�셿 */
 .foodName{
     text-align: center;
     height: 40px;
     line-height: 40px;
-    font-size: 15px;
+    font-size: 17px;
     color: black;
+    font-weight: 500;
 }
-/* 강신영 수정완 */
+/* 媛뺤떊�쁺 �닔�젙�셿 */
 .butt1{
     font-size: 30px;
     background-color: orange;
@@ -68,12 +71,12 @@
     /* border: 1px solid orangered; */
     position: absolute;
     right: -2%;
-    bottom: 125px;
+    bottom: 90px;
     width: 50px;
     height: 50px;
    
 }
-/* 강신영 수정완 */
+/* 媛뺤떊�쁺 �닔�젙�셿 */
 .rigth{
     color: white;
     font-size: 16px;
@@ -101,7 +104,7 @@
     background-color: orange;
     position: absolute;
     left: -2.5%;
-    bottom: 125px;
+    bottom: 90px;
     width: 50px;
     height: 50px;
 }

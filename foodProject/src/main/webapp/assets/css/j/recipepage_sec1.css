@@ -8,10 +8,6 @@ body{
     font-weight: normal;
     font-style: normal;
 }
-.bigbox{
-    /* border: 5px solid red; */
-    /* margin-bottom: 100px; */
-}
 
 .topbox{
     /* border: 1px solid green; */
@@ -24,6 +20,19 @@ body{
     width: auto;
     font-weight: bold;
     /* color: orange; */
+}
+.list{
+	border-radius: 8px;
+    background-color: rgba(207, 207, 207, 0.562);
+    font-size: 16px;
+    font-weight: bold;
+    height: 30px;
+    line-height: 1.8;
+    text-align: center;
+    width: 100px;
+    cursor: pointer;
+    margin-left: 80%;
+    color: black;
 }
 .topbox div {
     /* font-size: 16px; */
@@ -78,19 +87,7 @@ body{
     margin-top: 30px;
     font-size: 16px;
 }
-    /* 수정 사항:
-    .box2 :nth-child(1),
-.box2 :nth-child(4){
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-    추가 */
-
-/* 수정사항: 
-    .box2 :nth-child(2){
-    margin-bottom: 80px;
-    삭제
-} */
+   
 
 .select{
     width: 70%;
@@ -103,11 +100,6 @@ body{
     font-weight: bold;
     border-radius: 7px;
     text-align: center;
-    /* 수정사항: 
-    hheight: 25px
-    font-weight: bold;
-    border-radius: 7px;
-    추가 */
 }
 .box3{
     font-size: 16px;
@@ -117,9 +109,6 @@ body{
     display: none;
     margin-bottom: 60px;
     font-size: 14px;
-    /* 수정사항: 
-    margin-bottom: 60px;
-    추가 */
     width: 70%;
     margin-top: 5px;
     line-height: 25px;

@@ -21,21 +21,43 @@
 	.popup{
 		position: fixed;
 		top: 150px;
-		left: 50px;
+		left: 750px;
 		z-index: 99;
-		background-color: red;
+		border: 3px solid white;
+		border-radius: 5px;
 	}
 	.popuplocation{
 		width: 300px;
-		height: 300px;
-
+		height: 200px;
+		backgroind-color:red;
 	}
 	.popupbtn{
 		width: 50px;
-		height: 50px;
+		height: 30px;
+		font-size: 16px;
+/* 		border-radius: 5px; */
+		text-decoration: none;
+		outline: none;
 	}
-	.img{
-		background-color: red" ;
+	.popupcontents{
+		width:300px;
+		height:200px;	
+	}
+	.popupcontents > img{
+		width:300px;
+		height:200px;
+	}
+	.popupc{
+		background-color: rgb(255, 230, 184);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0 0 0 10px;
+	}
+	.popuptext{
+		font-size: 16px;
+		color: orange;
+		font-weight: 900;
 	}
 </style>
 <body>
@@ -45,6 +67,7 @@ if(request.getAttribute("mainpage") == null){
 	RequestDispatcher dis = request.getRequestDispatcher("Recipick");
 	dis.forward(request, response);
 }
+	
 	MainPageDTO mpDTO = (MainPageDTO)request.getAttribute("mainpage");
 	
 	String popupBox = "on";
@@ -55,7 +78,7 @@ if(request.getAttribute("mainpage") == null){
 				popupBox = c.getValue();
 		}
 	}
-	
+	System.out.print(""+mpDTO.getRecom().get(5).get(2));
 %>
 	<%@ include file="header.jsp"%>
 	<main>
@@ -67,18 +90,23 @@ if(request.getAttribute("mainpage") == null){
 		<!-- style="display:none" -->
 			<div class="popup" > 
 				<div class="popuplocation">
-					<div class="img"></div>
-<!-- 					<form method="get" action="Recipick"> -->
-						<input class="ckbox" type="checkbox" name="ck" value="1" >
-						<input class="popupbtn" type="submit" value="닫기">
-<!-- 					</form> -->
+					<div class="popupcontents">
+						<img src="https://cdn.pixabay.com/photo/2023/10/04/14/15/man-8293794_640.jpg">
+					</div>	
+				</div>
+				<div class="popupc">
+					<div class="popuptext">
+					<input class="ckbox" type="checkbox" name="ck" value="1" >
+					하루동안 보지 않기
+					</div>
+					<input class="popupbtn" type="button" value="닫기">
 				</div>
 			</div>
 		
 		<%
 		} else{
 		%>
-			<div class="popupbtn"></div>
+			<div class="popupbtn" style="display:none"></div>
 		<%
 		}
 		%>
@@ -115,10 +143,10 @@ if(request.getAttribute("mainpage") == null){
 					<div class="food">
 						<!-- %수정 완료 -->
 						<div class="butt1">
-							<div class="rigth">▷</div>
+							<div class="rigth">▶</div>
 						</div>
 						<div class="butt2">
-							<div class="left">◁</div>
+							<div class="left">◀</div>
 						</div>
 						<div class="img">
 						<%
@@ -127,6 +155,7 @@ if(request.getAttribute("mainpage") == null){
 							<div class="img_div">
 								<img class="favorite" src="<%= mpDTO.getFavor().get(i).get(0)%>" >
 							<div class="foodName"><%= mpDTO.getFavor().get(i).get(1) %></div>
+							</div>
 						<%		
 							}
 						%>
@@ -148,7 +177,6 @@ if(request.getAttribute("mainpage") == null){
 							<img src="<%= mpDTO.getRecom().get(0).get(0) %>">
 							<%
 							String str = ""+mpDTO.getRecom().get(0).get(2);
-							str = str.substring(1,str.length()-1);
 							String[] hashs = str.split(",");
 							for(int i = 0 ; i<hashs.length ;i++){
 							%>
@@ -160,48 +188,47 @@ if(request.getAttribute("mainpage") == null){
 
 						</div>
 						<div class="small_img1">
-						<%--
 							<img
-								src="https://cdn.discordapp.com/attachments/1148541415828246548/1149239197144723456/salmon-518032_1280.jpg">
-							<div class="small_name1">연어 스테이크 & 샐러드</div>
-						--%>
+								src="<%= mpDTO.getRecom().get(1).get(0) %>">
+							<div class="small_name1"><%= mpDTO.getRecom().get(1).get(1) %></div>
 						</div>
 						<div class="small_img1_1">
-						<%--
 							<img
-								src="https://img.freepik.com/premium-photo/traditional-food-chicken-soup-with-ginseng_1205-8406.jpg?size=626&ext=jpg&ga=GA1.1.1026167912.1691650236&semt=sph">
-							<div class="small_name1">누룽지 삼계탕</div>
-						--%>
+								src="<%= mpDTO.getRecom().get(2).get(0) %>">
+							<div class="small_name1"><%= mpDTO.getRecom().get(2).get(1) %></div>
 						</div>
 						<div class="small_img2">
-						<%--
 							<img
-								src="https://img.freepik.com/premium-photo/korean-instant-noodle-and-tteokbokki-in-korean-spicy-sauce-rabokki-korean-food-style_1339-143780.jpg?size=626&ext=jpg&ga=GA1.1.1026167912.1691650236&semt=sph">
-							<div class="small_name1">라볶이</div>
-						--%>
+								src="<%= mpDTO.getRecom().get(3).get(0) %>">
+							<div class="small_name1"><%= mpDTO.getRecom().get(3).get(1) %></div>
 						</div>
 						<div class="small_img2">
-						<%--
+						
 							<img
-								src="https://img.freepik.com/premium-photo/korean-instant-noodles-with-fried-chicken-or-fried-chicken-ramyeon_1339-175174.jpg?size=626&ext=jpg&ga=GA1.1.1026167912.1691650236&semt=sph">
-							<div class="small_name1">치킨 라면</div>
-						--%>
+								src="<%= mpDTO.getRecom().get(4).get(0) %>">
+							<div class="small_name1"><%= mpDTO.getRecom().get(4).get(1) %></div>
+						
 						</div>
 						<div class="big_img2">
-						<%-- 
-							<img
-								src="https://cdn.discordapp.com/attachments/1148541415828246548/1149236901425987715/side-view-grilled-lamb-liver-with-potato-and-greens.jpg">
-							<div class="hashtags">#닭똥집</div>
-							<div class="hashtags">#마늘</div>
-							<div class="hashtags">#술안주</div>
-							<div class="recommend_name"></div>
-						--%> 
+						
+							<img src="<%= mpDTO.getRecom().get(5).get(0) %>">
+							<%
+							String strA = ""+mpDTO.getRecom().get(5).get(2);
+							String[] hashsA = strA.split(",");
+							for(int i = 0 ; i<hashsA.length ;i++){
+							%>
+							<div class="hashtags">#<%= hashsA[i] %></div>
+							<% 	
+							}
+							%>
+							<div class="recommend_name"><%= mpDTO.getRecom().get(5).get(1) %></div>
+						 
 						</div>
 					</div>
 				</div>
 				<div class="bot_img">
-				<img class="main_bottom_img "  
-					src="<%= mpDTO.getBottomImg() %>">
+				<img class="main_bottom_img" src="<%= mpDTO.getBottomImg() %>">
+				<div class="bot_text">Make yourself, Recipick</div>
 				</div>
 		</section>
 	</main>

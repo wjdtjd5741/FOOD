@@ -3,9 +3,15 @@
 }
 .topbox{
     margin-bottom: 30px;
+    margin-left: 45px;
 }
 .topbox > div:nth-child(n){
     display: inline-block;
+}
+.making_how{
+	font-size: 16px;
+	font-weight: bold;
+	margin-left: 10px;
 }
 
 .topbox > div:nth-child(1){
@@ -36,16 +42,15 @@
     height: 30px;
     line-height: 30px;
     cursor: pointer;
-    /* �궘�젣 踰꾪듉 */
+    
 }
-/* �닔�젙�궡�슜: 
-    .topbox div:nth-child(2){
-    font-size: 20px;   
-    margin-left: 10px;
-    font-weight: bold;
-}
-    �쟻�슜
-*/
+ 
+/*    .topbox div:nth-child(2){*/
+/*    font-size: 20px;   */
+/*    margin-left: 10px;*/
+/*    font-weight: bold;*/
+/*}*/
+ 
 
 .media_box{
     border: 1px solid black;
@@ -57,24 +62,32 @@
     /* margin-left: 300px; */
     margin-bottom: 20px;
     margin-left: 5%;
-    line-height: 25;
+/*    line-height: 25;*/
 }
-/* .bigbox > div:nth-child(3){ */
-    /* margin-left: 300px; */
-    /* font-size: 16px;
-    margin-bottom: 0px;
-    margin-left: 5px;
-    font-weight: bold; */
-    /* �닔�젙�궗�빆: 
-    margin-left: 5px;
-    font-weight: bold;
-    異붽� */
-/* } */
+
+.media_box > img {
+	margin-top: 180px;
+}
+.media_box_pic{
+	font-size: 20px;
+	margin-top: 210px;
+}
 .explanation{
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
     margin-left: 5%;
-    margin-bottom: 200px;
+    margin-bottom: 10px;
+/*    margin-bottom: 200px;*/
+}
+.explanation_context{
+	border: 1px solid black;
+    font-size: 16px;
+    font-weight: bold;
+    width: 90%;
+    height: 100px;
+    margin-left: 52px;
+    margin-top: 5px;
+    margin-bottom: 30px;
 }
 .attach{
     display: flex;
@@ -120,12 +133,12 @@
     margin-bottom: 30px;
     margin-left: 5%;
     text-align: center;
-    /* �닔�젙�궡�슜: 
+    /* 
     cursor: pointer;
     font-size: 30px;
     line-height: 1;
     border-radius: 5px;
-    �쟻�슜
+ 
     */
 }
 

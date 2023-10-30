@@ -148,8 +148,9 @@
 }
 
 .hi a {
+	margin-left: -45%;
 	font-family: 'yg-jalnan';
-	color: orange;
+	color: rgb(230, 142, 34);
 	width: 23%;
 	text-decoration: none;
 	cursor: pointer;
@@ -169,15 +170,14 @@
 </style>
 </head>
 <body>
-<body>
 
 <%
 if(session.getAttribute("mb") == null){
-	//System.out.print(request.getRequestURI());
-	RequestDispatcher dis = request.getRequestDispatcher("Recipick");
-	dis.forward(request, response);
+	RequestDispatcher b = request.getRequestDispatcher("mainpage.jsp");
+    b.forward(request, response);
 }
 	MemberDTO mm = (MemberDTO)session.getAttribute("mb");
+	
 %>
 
 	<div class="all_0">
@@ -185,11 +185,11 @@ if(session.getAttribute("mb") == null){
 			<div class="hi">
 				<div>
 					안녕하세요
-					<%= mm.getName() %>
+				<%= mm.getName() %>
 					님 !
 				</div>
 				<div>
-					<a href="mainpage.html">레시pick!</a>
+					<a href="mainpage.jsp">레시pick!</a>
 				</div>
 			</div>
 			<div class="left_right">
@@ -208,6 +208,21 @@ if(session.getAttribute("mb") == null){
 		</div>
 	</div>
 	<script>
+	
+	    function toggleEdit(btn) {
+	        let textArea = document.querySelectorAll("textarea");
+	        for(let i = 0 ;i<textArea.length ;i++){
+		        if (textArea[i].disabled) {
+		            textArea[i].disabled = false;
+		            btn.innerHTML = "확인";
+		            
+		        } else {
+		            textArea[i].disabled = true;
+		            btn.innerHTML = "수정";
+		        }
+	        }
+	    }
+	    
 		show_contents();
 		exchange_contents();
 		const xhr = new XMLHttpRequest();

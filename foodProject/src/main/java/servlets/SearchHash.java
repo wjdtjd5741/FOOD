@@ -32,9 +32,11 @@ public class SearchHash extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String data = request.getParameter("data");
+		
+//		String data = request.getParameter("data");
 		
 		RecipesDTO rDTO = new RecipesDTO();
+		
 		List<RecipesDTO> dtoList = new ArrayList<>();
 		rDTO.setTitle("계란찜");
 		rDTO.setMainPic("");
@@ -58,14 +60,6 @@ public class SearchHash extends HttpServlet {
 		
 		RequestDispatcher dis = request.getRequestDispatcher("searchpage.jsp");
 		dis.forward(request, response);
-		/*
-		 * 
-			title
-			hashtag(ArrayList)
-			재료명 수량(map)
-			text
-			각 페이지()
-		*/
 	}
 
 	/**

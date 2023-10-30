@@ -7,8 +7,15 @@ public class MemberDTO {
 	private String name;
 	private String birth;
 	private String phone;
+	private String gender;
 	private String admin;
 	
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
 	public String getAdmin() {
 		return admin;
 	}

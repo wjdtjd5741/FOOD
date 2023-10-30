@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="models.RecipesDTO" %>
+<%@ page import="component.RecipickLib" %>
+<%@ page import="java.util.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,8 +16,9 @@
 </style>
 <body>
 <%
-RecipesDTO bDTO = (RecipesDTO)request.getAttribute("bDTO");
-
+RecipickLib rLib = new RecipickLib();
+List<RecipesDTO> rDTO = (List<RecipesDTO>)request.getAttribute("recipe_list");
+rLib.setDate(rDTO.get(0).getDate());
 %>
     <div class="table_all">
         <table>
@@ -34,11 +37,11 @@ RecipesDTO bDTO = (RecipesDTO)request.getAttribute("bDTO");
                 <tr class="lines">
                 <div class="bulletinID"></div>
                     <td class="tb_num_color">1</td>
-                    <td><img src="<%= bDTO.getMainPic() %>"></td>
-                    <td><%= bDTO.getTitle() %></td>
-                    <td><%= bDTO.getDate() %></td>
-                    <td><%= bDTO.getWriter() %></td>
-                    <td><%= bDTO.getView() %></td>
+                    <td><img src="<%= rDTO.get(0).getMainPic() %>"></td>
+                    <td><%= rDTO.get(0).getTitle() %></td>
+                    <td><%= rLib.getDateYYMMDD() %></td>
+                    <td><%= rDTO.get(0).getWriter() %></td>
+                    <td><%= rDTO.get(0).getView() %></td>
                 </tr>
                 
                 <%-- 5개 까지 --%>

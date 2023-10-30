@@ -5,7 +5,6 @@ import java.util.List;
 public class MainPageDTO {
 	private List<String> topImg;
 	private List<List> favor;
-	private List<String> hashtags; //?
 	private List<List> recom;
 	private String bottomImg;
 	
@@ -22,12 +21,6 @@ public class MainPageDTO {
 		this.topImg = topImg;
 	}
 
-	public List<String> getHashtags() {
-		return hashtags;
-	}
-	public void setHashtags(List<String> hashtags) {
-		this.hashtags = hashtags;
-	}
 	public List<List> getRecom() {
 		return recom;
 	}

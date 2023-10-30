@@ -13,14 +13,14 @@ function search_event(){
             window.location.href = `searchHash?data=`+input_text.value;
     });
 
-/*    let hashtags = document.querySelectorAll(".hashtags")
-    for(let i = 0 ; i<hashtags.length ;i++){
-        hashtags[i].addEventListener("click",function(){
-            let text = hashtags[i].innerText;
-            window.open(`searchpage.jsp?data=${text.substring(1)}`)
-        })
+	let hashtags = document.querySelectorAll(".hashtags")
+	    for(let i = 0 ; i<hashtags.length ;i++){
+	        hashtags[i].addEventListener("click",function(){
+	            let text = hashtags[i].innerText;
+	            window.location.href = `searchHash?data=`+text.substring(1);
+	    })
     }
-*/
+
     // document.querySelector("#hash").addEventListener("click",function(){
     //     window.open(`searchpage.html?data=${document.querySelector("#hash").innerText.substring(1)}`)
     // });

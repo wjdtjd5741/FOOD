@@ -10,6 +10,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import models.RecipesDTO;
 
@@ -26,41 +27,74 @@ public class NewRecipePage extends HttpServlet {
 		String explanation_context[] = request.getParameterValues("explanation_context");
 		String bigbox_num[] = request.getParameterValues("bigbox_num");
 		String mainPic = "https://cdn.discordapp.com/attachments/1148541415828246548/1149239367269875772/pancakes-2291908_1280.jpg";
+		String subPic[] = {
+				"https://cdn.discordapp.com/attachments/1148541415828246548/1150968861777199154/recipe1.png",
+				"https://cdn.discordapp.com/attachments/1148541415828246548/1150969287637471302/recipe2.png",
+							};
+		String cookiename = "";
+		
 		RecipesDTO rDTO = new RecipesDTO();
 		rDTO.setRecomCount(0);
 		List<String> box_num = new ArrayList<>();
 		List<String> hash_str = new ArrayList<>();
-//		List<String> recipick_content01_str = new ArrayList<>();
-//		List<String> explanation_context_str = new ArrayList<>();
+		List<List<String>> ex_subP = new ArrayList<>();
+		List<String> mini_exsub = new ArrayList<>();
+//		HttpSession session = request.getSession();
+		
+		for(int i = 0; i<explanation_context.length; i++) {
+			mini_exsub = new ArrayList<>();
+			mini_exsub.add(explanation_context[i]);
+			mini_exsub.add(subPic[i]);
+			ex_subP.add(mini_exsub);
+			}
+		
+		Cookie[] cid = request.getCookies();
+		if(cid != null) {
+			for(int i =0; i<cid.length; i++) {
+				if(cid[i].getName().equals("id")) {
+					cookiename = cid[i].getValue();
+//					session.setAttribute("cookiename", cookiename);
+				}
+			}
+		}
 		
 		for(int i = 0; i<bigbox_num.length; i++) {
 			String bigbox_num2 = bigbox_num[i];
 			box_num.add(bigbox_num2);
 		}
-//		System.out.println("만드는방법 숫자 : " + bigbox_num);
+		
+		for(int i = 0; i<subPic.length; i++) {
+			String subpic = subPic[i];
+			box_num.add(subpic);
+		}
 		
 		for(int i = 0; i<hashs.length; i++) {
 			String hash = hashs[i];
 			hash_str.add(hash);
 		}
 		
-//		for(int i = 0; i<recipick_content01.length; i++) {
-//			String rc_str = recipick_content01[i];
-//			recipick_content01_str.add(rc_str);
-//		}
+		;
+		Map<String, String> foodsMap = new HashMap<>();
+		System.out.println();
+		for(int i = 0 ;i<recipick_content01.length ;i++) {
+			String[] strArr = recipick_content01[i].split(":");
+			foodsMap.put(strArr[0], strArr[1]);
+		}
 		
-//		for(int i = 0; i<explanation_context.length; i++) {
-//			String ec_str = explanation_context[i];
-//			explanation_context_str.add(ec_str);
-//		}
 		
-		rDTO.setMainPic(mainPic);
+		Date dd = new Date();
+		
+		rDTO.setWriter(cookiename);
+		rDTO.setDate(dd.getTime());
 		rDTO.setTitle(recipick_title);
+		rDTO.setMainPic(mainPic);
 		rDTO.setHashtags(hash_str);
-//		rDTO.setKnowHow(recipick_content01_str);
+		rDTO.setFoods(foodsMap);
 		rDTO.setMainText(food_explanation);
-//		rDTO.setFoods(explanation_context_str);
-		
+		rDTO.setKnowHow(ex_subP);
+		rDTO.setRecomCount(0);
+		rDTO.setGgimCount(0);
+
 		request.setAttribute("nrp", rDTO);
 		
 		RequestDispatcher a = request.getRequestDispatcher("recipepage.jsp");

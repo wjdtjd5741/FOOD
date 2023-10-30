@@ -4,12 +4,12 @@ import java.util.*;
 
 public class RecipesDTO {
 	private String writer;
-	private String date;
+	private Long date;
 	private String title;
 	private String mainPic;
 	private String mainText;
 	private List<String> hashtags;
-	private Map<String,Integer> foods;
+	private Map<String,String> foods;
 	private List<List<String>> knowHow; // pic,text
 	private int recomCount;
 	private int ggimCount;
@@ -39,10 +39,10 @@ public class RecipesDTO {
 	public void setWriter(String writer) {
 		this.writer = writer;
 	}
-	public String getDate() {
+	public Long getDate() {
 		return date;
 	}
-	public void setDate(String date) {
+	public void setDate(Long date) {
 		this.date = date;
 	}
 	public String getTitle() {
@@ -69,10 +69,10 @@ public class RecipesDTO {
 	public void setHashtags(List<String> hashtags) {
 		this.hashtags = hashtags;
 	}
-	public Map<String, Integer> getFoods() {
+	public Map<String, String> getFoods() {
 		return foods;
 	}
-	public void setFoods(Map<String, Integer> foods) {
+	public void setFoods(Map<String, String> foods) {
 		this.foods = foods;
 	}
 	public List<List<String>> getKnowHow() {

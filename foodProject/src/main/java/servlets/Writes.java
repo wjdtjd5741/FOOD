@@ -9,6 +9,7 @@ import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -41,40 +42,52 @@ public class Writes extends HttpServlet {
 //		String date = "" + d.getTime();
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=utf-8");
-		String title=request.getParameter("title");
-		String contents = request.getParameter("contents");
-		String[] hashtags = request.getParameterValues("viewhash");
+//		String title=request.getParameter("title");
+//		String contents = request.getParameter("contents");
+		//String[] hashtags = request.getParameterValues("viewhash");
 		String[] strArr = request.getParameter("data").split(",");
+		System.out.println(strArr[0]);
+		System.out.println(strArr[1]);
+		System.out.println(strArr[2]);
+		
+		String updatedReviewText = request.getParameter("updatedReviewText");
+		
+		String cook ="";
+		System.out.println(strArr[0]);
+		Cookie[] cookie=request.getCookies();
+		if(cookie!=null) {
+			for(Cookie c :cookie) {
+				if(c.getName().equals("id")) {
+					
+					cook=c.getValue();
+				}
+			}
+		}
+		String[] hashs = strArr[1].split(" ");
+		List<String> strList = new ArrayList<>();
+		for(int i = 0 ;i<hashs.length ;i++) 
+			strList.add(hashs[i]); 
 		
 //		 System.out.println(strArr[2]);
 //		String[] hashtags = request.getParameterValues("viewhash");
 //		List<String> hash = new ArrayList<>();s
 //		PrintWriter out=response.getWriter();
-		WritesDTO write = new WritesDTO();
-
-		List<String> hash = new ArrayList<>();
-		if (hashtags != null) {
-		    for (int i = 0; i < hashtags.length; i++) {
-		        String shap = hash.get(i);
-		        hash.add(shap);
-		    }
-		} else {
-			
-		}
+		WritesDTO write = new WritesDTO();//
+		Date dd = new Date();
 		
-		
-		System.out.println("이름"+ strArr[0]);
-		System.out.println(strArr[1]);
-		System.out.println(hash);
-		write.setHashtags(hash);
+		write.setView(0);
+		write.setWriter(cook);
+//		System.out.println("이름"+ strArr[0]);
+//		System.out.println(strArr[1]);
+//		System.out.println(hash);
+		write.setHashtags(strList);
 		write.setTitle(strArr[0]);
-		write.setText(strArr[1]);		
+		write.setText(strArr[2]);
 //		write.setPic("pic");
-//		write.setDate(date);
-		// write.setText(strArr[2]);
+		write.setDate(dd.getTime());
 
 		request.setAttribute("write", write);
-
+		
 		/* System.out.println(write.getTitle()); */
 		/* response.sendRedirect("test.jsp"); */
 
