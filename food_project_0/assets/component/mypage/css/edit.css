@@ -1,11 +1,16 @@
+.edit {
+    margin-left: 2%;
+    font-size: 30px;
+    font-weight: bold;
+}
+
 .all_box hr {
     width: 80%;
 }
 
 .top_box ,.bottom_box{
     margin-top: 15px;
-    margin-left: 5%;
-    /* border: 3px solid rgb(230, 142, 34); */
+    border: 3px solid rgb(230, 142, 34);
     /* padding-left: 4%; */
     /* margin-left: 3%; */
     /* padding-top: 15px; */
@@ -81,10 +86,9 @@
     cursor: pointer;
 }
 .bottom_box {
-    /* border: 3px solid rgb(230, 142, 34); */
+    border: 3px solid rgb(230, 142, 34);
     border-radius: 10px;
     width: 90%;
-    margin-top: 10%;
     /* height: 180px; */
     /* padding-left: 4%; */
     /* margin-left: 3%;
@@ -107,7 +111,7 @@
 }
 
 .information_title_2 {
-    font-size: 25px;
+    font-size: 30px;
     /* margin-bottom: 30px; */
 }
 

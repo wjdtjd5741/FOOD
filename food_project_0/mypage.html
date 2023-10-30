@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/component/mypage/css/section1.css">
     <link rel="stylesheet" href="assets/component/mypage/css/section0.css">
     <link rel="stylesheet" href="assets/component/mypage/css/section2.css">
+
     <style>
         @font-face {
             font-family: 'yg-jalnan';
@@ -20,14 +21,27 @@
             margin: 0;
             font-size: 0;
         }
-
+        .logo {
+            margin-top: 15%;
+        }
+        body {
+            height: 100%;
+        }
         .right {
-            width: 70%;
+            /* background-color: #f9fbfc; */
+            /* margin-top: 10%; */
+            /* margin-left: 5%; */
+            /* border: 3px solid rgb(230, 142, 34); */
+            width: 68%;
+            height: 100%;
+            /* border-radius: 2%; */
             /* border: 1px solid red; */
             display: inline-block;
         }
 
         .all_0 {
+            width: 100%;
+            height: 900px;
             /* border: 1px solid red; */
             display: flex;
             justify-content: center;
@@ -36,20 +50,17 @@
         .all_1 {
             /* border: 1px solid green; */
             /* display: flex; */
-            width: 90%;
-        }
-        .hi div,
-        .hi a {
-            /* border: 1px solid red; */
-            margin-top: 70px;
-            height: 40px;
-            /* width: 100%; */
-            font-size: 25px;
-            font-weight: bold;
-            white-space: nowrap;
+            width: 100%;
+            height: 100%;
         }
 
         .hi {
+            margin-top: 30px;
+            height: 40px;
+            font-size: 25px;
+            font-weight: bold;
+            white-space: nowrap;
+            width: 100%;
             display: flex;
             justify-content: space-between;
         }
@@ -80,11 +91,14 @@
         }
 
         .left {
+            padding-left: 2%;
+            z-index: 1;
+            box-shadow: 5px 1px 8px 0px rgba(0,0,0,.06);
             display: inline-block;
             /* border: 1px solid red; */
             width: 30%;
             vertical-align: top;
-            height: 600px;
+            height: 100%;
         }
 
         /* .top_box {
@@ -110,6 +124,14 @@
             font-size: 20px;
             display: inline-block;
         }
+        .top_bottom_box {
+            border-radius: 2%;
+            margin-left: 10%;
+            border: 2px solid orange;
+            margin-top: 15%;
+            width: 80%;
+            height: 60%;
+        }
 
         /* .right {
             margin-left: 5%;
@@ -120,9 +142,10 @@
         } */
 
         .left_right {
-            margin-top: 60px;
+            /* margin-top: 60px; */
             /* border: 1px solid red; */
             width: 100%;
+            height: 100%;
         }
 
         .write_title {
@@ -147,7 +170,8 @@
             margin-top: 30px;
         }
 
-        .hi a {
+        .logo a{
+            font-size: 25px;
             font-family: 'yg-jalnan';
             color: orange;
             width: 23%;
@@ -172,14 +196,13 @@
 </head>
 
 <body>
+   
     <div class="all_0">
         <div class="all_1">
-            <div class="hi">
-                <div>안녕하세요 김호연님 !</div>
-                <div><a href="mainpage.html">레시pick!</a></div>
-            </div>
             <div class="left_right">
                 <div class="left">
+                    <div class = "logo"><a href="mainpage.html">레시pick!</a></div>
+                    <div class = "hi">안녕하세요 김호연님 !</div>
                     <div class="my_0">MY</div>
                     <hr>
                     <div class="my_1">회원정보</div>
