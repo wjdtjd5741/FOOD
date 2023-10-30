@@ -33,6 +33,7 @@
             <%@ include file="mobile_console.jsp"%>
         </nav>
         <section>
+        <div class="search_bg">
             <div class="search_box">
                 <div class="search_box1">
                 	<input id="input_text0" type="text" value="<%= data %>">
@@ -44,6 +45,7 @@
             <div class="hash_box">
                 <%-- <div class="hashtags">#대파</div> --%>
             </div>
+        </div>
         </section>
         <section>
             <div class="search_root">

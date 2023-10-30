@@ -5,7 +5,7 @@
     height: 50px;
     margin-left: 31.5%;
     justify-content: center;
-    margin-top: 80px;
+/*    margin-top: 80px;*/
 }
 
 .search_box input {
@@ -15,6 +15,11 @@
 }
 .search_box > div:nth-child(){
 
+}
+.search_bg{
+	background:rgb(255 147 92 / 52%);
+	height: 100px;
+	padding: 80px;
 }
 .search_box img{
     width: 50px;
