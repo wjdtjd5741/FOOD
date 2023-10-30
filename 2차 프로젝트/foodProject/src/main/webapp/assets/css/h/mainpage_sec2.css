@@ -1,0 +1,130 @@
+.a11 {
+    /* border: 1px solid red; */
+    /* height: 1000px; */
+    margin-bottom: 50px;
+    position: relative;
+}
+.a11_2 {
+    /* border: 1px solid green; */
+    width: 100%;
+    /* height: 800px; */
+    /* position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); */
+}
+.big_img1 img {
+    width: 100%; 
+    height: 350px; 
+}
+.big_img2 img {
+    width: 100%; 
+    height: 350px; 
+}
+
+.small_img1 img,.small_img1_1 img {
+    width: 100%;
+    /* margin-bottom: 200px; */
+}
+
+.small_img1 img,.small_img1_1 img, .small_img2 img {
+    height: 170px;
+}
+.hashtags {
+    font-size: 18px;
+    display: inline-block;
+    margin-left: 2%;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.recommend_name {
+    font-size: 22px;
+    margin-left: 2%;
+    margin-top: 10px;
+    font-weight: bold;
+}
+.big_img1 {
+    background-color: rgba(255, 174, 44, 0.45);
+    /* border:1px solid red; */
+    width: 48%; 
+    height: 450px;
+    display: inline-block;
+    
+    margin-right: -3.1%; 
+}
+.bot_img{
+	position: relative;
+}
+.bot_text{
+	color:  rgb(231, 130, 18);
+	font-size: 45px;
+	z-index: 99;
+	position: absolute;
+	top: 60px;
+	left: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: 700;
+}
+.small_img1,.small_img1_1 {
+    margin-left: 3%;
+    /* border:1px solid red; */
+    width: 22%;
+    height: 200px;
+    display: inline-block;
+    /* margin-bottom: 300px; */
+    vertical-align: top;
+}
+
+.small_name1 {
+    margin-top: 8px;
+    margin-left: 5px;
+    font-size: 16px;
+    /* margin-bottom: 200px; */
+    font-weight: 600;
+}
+.small_img2 {
+    margin-top: 50px;
+    margin-right: 2%; 
+    /* border:1px solid red; */
+    width: 23%;
+    height: 150px;
+    display: inline-block;
+}
+.small_img2 > img {
+    width: 100%;
+}
+.big_img2 {
+    background-color: rgba(255, 174, 44, 0.45);
+    margin-left: 53%;
+    /* border:1px solid red; */
+    width: 47.2%;
+    height: 450px;
+    display: inline-block;
+    margin-top: -600px; 
+    vertical-align: bottom;
+    
+}
+.small_img1 {
+    margin-left: 8%;
+}
+.recipick {
+    /* border: 1px solid black; */
+    margin-top: 50px;
+    margin-bottom: 130px;
+    padding-top: 20px;
+    width: 100%;
+    height: 720px;
+    background: gainsboro;
+    border-radius: 10px;
+}
+.recipick > div{
+	border-radius: 5px;
+}
+.recipick > div > img{
+	border-radius: 5px;
+}
+h2 {
+    font-size: 25px;
+    margin-top: 30px;
+    text-align: center;
+}

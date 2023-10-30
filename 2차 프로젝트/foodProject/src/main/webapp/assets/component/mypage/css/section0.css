@@ -1,0 +1,225 @@
+.all_box hr {
+    width: 80%;
+}
+
+.top_box ,.bottom_box{
+    margin-top: 15px;
+    border: 3px solid rgb(230, 142, 34);
+    /* padding-left: 4%; */
+    /* margin-left: 3%; */
+    /* padding-top: 15px; */
+    /* padding-bottom: 15px; */
+    border-radius: 10px;
+    width: 90%;
+    /* height: 300px; */
+    padding: 0 15px 15px 15px;
+}
+
+.top_box>div {
+    font-size: 20px;
+    display: inline-block;
+}
+
+.mypage_line{
+    width: 100%;
+    margin-top: 15px;
+}
+.mypage_line > div{
+    display: inline-block;
+}
+
+/* .information_id_2,
+.information_password_2,
+.information_birth_2,
+.information_gender_2 {
+    margin-left: 10%;
+    width: 28%;
+} */
+
+/* .information_img {
+    width: 30%;
+    margin-left: 4%;
+} */
+
+/* .information_name {
+    margin-bottom: 30px;
+} */
+
+.information_title {
+    font-size: 25px;
+    /* margin-bottom: 20px; */
+}
+
+.information_id,
+.information_password,
+.information_birth {
+    /* margin-bottom: 5px; */
+}
+
+/* .information_title,
+.information_id,
+.information_password,
+.information_birth,
+.information_gender {
+    margin-top: 10px;
+    width: 20%;
+    text-align: center;
+    white-space: nowrap;
+} */
+
+.mypage_icon {
+    /* margin-left: 2%; */
+    width: 60px;
+    height: 50px;
+}
+.information_name{
+    /* line-height: 50px; */
+    vertical-align: top;
+}
+.my_1, .notice, .out, .btns_hover {
+    cursor: pointer;
+}
+.bottom_box {
+    border: 3px solid rgb(230, 142, 34);
+    border-radius: 10px;
+    width: 90%;
+    height: 180px;
+    /* padding-left: 4%; */
+    /* margin-left: 3%;*/
+    margin-top: 40px; 
+    /* padding-top: 20px; */
+    border-radius: 10px;
+}
+
+.bottom_box>div {
+    font-size: 20px;
+    display: inline-block;
+}
+
+.all_box {
+    /* margin-left: 20%; */
+    display: inline-block;
+    /* border: 1px solid red; */
+    width: 60%;
+    height: 600px;
+}
+
+.information_title_2 {
+    font-size: 30px;
+    /* margin-bottom: 30px; */
+}
+
+.information_email_2,
+.information_phone_2 {
+    /* margin-bottom: 10px;
+    margin-left: 10%; */
+    width: 30%;
+}
+
+.information_phone {
+    /* margin-top: 10px; */
+}
+
+.information_phone_2 {
+    white-space: nowrap;
+}
+.text_head{
+    width: 100px;
+    margin-left: 5%;
+    font-size: 18px;
+}
+.text_d{
+    border: none;
+    height: 20px;
+    resize: none;
+    vertical-align: middle;
+    font-size: 15px;
+}
+.text_d, .text_head{
+    /* font-size: 15px; */
+}
+.information_phone,
+.information_email {
+    /* width: 18%; */
+    /* text-align: center; */
+    white-space: nowrap;
+}
+
+.btns_hover {
+    /* border: 1px solid rgb(228, 226, 226); */
+    /* padding: 0.6%; */
+    /* background-color: gray; */
+    background-color: rgb(228, 226, 226);
+    color: black;
+    font-size: 10px;
+    /* margin-left: 30%; */
+    cursor: pointer;
+    float: right;
+    width: 40px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.top_box div:nth-child(2) {
+    /* border: 1px solid rgb(228, 226, 226); */
+    /* padding: 0.6%; */
+    /* background-color: rgb(228, 226, 226); */
+    /* font-size: 13px; */
+    /* margin-left: 66.5%; */
+}
+
+.top_box div:nth-child(6),
+.top_box div:nth-child(10),
+.top_box div:nth-child(15),
+.top_box div:nth-child(20),
+.top_box div:nth-child(25) {
+    /* font-size: 13px; */
+     /* white-space: nowrap; */
+    /* text-align: center; */
+    /* width: 30px; */
+    /* margin-left: 31% */
+}
+
+.bottom_box div:nth-child(5),
+.bottom_box div:nth-child(10) {
+    /* font-size: 13px; */
+    white-space: nowrap;
+    /* text-align: center; */
+    width: 5%;
+    /* margin-left: 31% */
+}
+.out{
+    font-size: 15px;
+    float: right;
+    cursor: pointer;
+    width: 65px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: rgb(228, 226, 226);
+    border-radius: 5px;
+}
+
+@media(max-width:800px) {
+    .top_box>div {
+        font-size: 15px;
+    }
+
+    .bottom_box>div {
+        font-size: 13px;
+    }
+
+    .top_box div:nth-child(6),
+    .top_box div:nth-child(10),
+    .top_box div:nth-child(15),
+    .top_box div:nth-child(20),
+    .top_box div:nth-child(25),
+    .bottom_box div:nth-child(5),
+    .bottom_box div:nth-child(10) {
+        width: 5%;
+        font-size: 10px;
+    }
+
+}
