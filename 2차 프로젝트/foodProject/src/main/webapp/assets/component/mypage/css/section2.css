@@ -21,14 +21,15 @@
 }
 
 .write_box {
+	margin-left : 10%;
+    height: 600px;
+    width: 80%;
+    margin-top: 13%;
     border: 3px solid rgb(230, 142, 34);
     padding-left: 4%;
-    margin-left: 3%;
     padding-top: 15px;
     padding-bottom: 15px;
     border-radius: 10px;
-    width: 90%;
-    height: 550px;
 }
 
 .write_box>div {
@@ -45,9 +46,10 @@
 }
 
 .write_title {
-    margin-left: 10%;
+	font-weight: bold;
+/*    margin-left: 3%;*/
     font-size: 25px;
-    margin-top: 30px;
+    margin-top: 20px;
 
 }
 

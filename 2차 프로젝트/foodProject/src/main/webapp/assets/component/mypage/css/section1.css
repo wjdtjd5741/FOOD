@@ -5,9 +5,10 @@
 
 
 .right_bord {
+	margin-left : 10%;
     height: 600px;
-    width: 100%;
-    /* margin-top: 50px; */
+    width: 80%;
+    margin-top: 13%;
     border: 3px solid orange;
     border-radius: 10px;
 }
@@ -15,8 +16,8 @@
 .ggim {
     /* border: 1px solid orange; */
     font-weight: bold;
-    margin-left: 20px;
-    margin-top: 30px;
+    margin-left: 40px;
+    margin-top: 35px;
     font-size: 20px;
 }
 
