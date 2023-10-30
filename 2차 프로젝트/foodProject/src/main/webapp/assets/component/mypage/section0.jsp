@@ -12,19 +12,21 @@
 <%
 	MemberDTO mm = (MemberDTO)request.getAttribute("mb");
 
-/* 	String gender = "";
+ 	String gender = "";
 	if (mm.getGender().equals("1")) {
 		gender = "남자";
 	} else {
 		gender = "여자";
-} */
+	}
 %>
     <div class="all_box">
      <form id="myForm" action="MypageSection0" method="get">
+      <div class="top_bottom_box">
         <div class="top_box">
             <div class="mypage_line">
                 <div class="information_title">기본 정보</div>
-                <div class="out">회원탈퇴</div>
+                <div class="btns_hover" onclick="toggleEdit(this)">수정</div>
+<!--                 <div class="out">회원탈퇴</div> -->
             </div>
             <div class="mypage_line">
                 <div class="information_id text_head">이름</div>
@@ -44,7 +46,7 @@
             </div>
             <div class="mypage_line">
                 <div class="information_gender text_head">성별</div>
-                <textarea class="information_gender_2 text_d" disabled name="gender"><%= mm.getGender() %></textarea>
+                <textarea class="information_gender_2 text_d" disabled name="gender"><%= gender %></textarea>
             </div>
         </div>
         <div class="bottom_box">
@@ -60,9 +62,12 @@
                 <textarea class="information_phone_2 text_d" disabled name="phone"><%= mm.getPhone() %></textarea>
             </div>
 <!--             <input id="submit" type="submit" class="btns_hover" onclick="toggleEdit(this)" value="수정"> -->
-            <div class="btns_hover" onclick="toggleEdit(this)">수정</div>
+<!--             <div class="btns_hover" onclick="toggleEdit(this)">수정</div> -->
         </div>
+        <div class="out">회원탈퇴</div>
+          </div>
          </form>
     </div>
+
 </body>
 </html>

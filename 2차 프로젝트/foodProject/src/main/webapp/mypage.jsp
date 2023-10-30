@@ -10,87 +10,98 @@
 <link rel="stylesheet" href="assets/component/mypage/css/section0.css">
 <link rel="stylesheet" href="assets/component/mypage/css/section2.css">
 <style>
-@font-face {
-	font-family: 'yg-jalnan';
-	src:
-		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff')
-		format('woff');
-	font-weig	ht: normal;
-	font-style: normal;
-}
+        @font-face {
+            font-family: 'yg-jalnan';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
 
-* {
-	margin: 0;
-	font-size: 0;
-}
+        * {
+            margin: 0;
+            font-size: 0;
+        }
+        .logo {
+            margin-top: 15%;
+        }
+        body {
+            height: 100%;
+        }
+        .right {
+            /* background-color: #f9fbfc; */
+            /* margin-top: 10%; */
+            /* margin-left: 5%; */
+            /* border: 3px solid rgb(230, 142, 34); */
+            width: 68%;
+            height: 100%;
+            /* border-radius: 2%; */
+            /* border: 1px solid red; */
+            display: inline-block;
+        }
 
-.right {
-	width: 70%;
-	height: 600px;
-	/* border: 1px solid red; */
-	display: inline-block;
-}
+        .all_0 {
+            width: 100%;
+            height: 900px;
+            /* border: 1px solid red; */
+            display: flex;
+            justify-content: center;
+        }
 
-.all_0 {
-	/* border: 1px solid red; */
-	display: flex;
-	justify-content: center;
-}
+        .all_1 {
+            /* border: 1px solid green; */
+            /* display: flex; */
+            width: 100%;
+            height: 100%;
+        }
 
-.all_1 {
-	/* border: 1px solid green; */
-	/* display: flex; */
-	width: 90%;
-}
+        .hi {
+            margin-top: 30px;
+            height: 40px;
+            font-size: 25px;
+            font-weight: bold;
+            white-space: nowrap;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
 
-.hi div, .hi a {
-	/* border: 1px solid red; */
-	margin-top: 70px;
-	height: 40px;
-	/* width: 100%; */
-	font-size: 25px;
-	font-weight: bold;
-	white-space: nowrap;
-}
+        .my_0 {
+            margin-top: 80px;
+            margin-left: 40px;
+            font-size: 25px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
 
-.hi {
-	display: flex;
-	justify-content: space-between;
-}
+        .my_1,
+        .notice {
+            margin-left: 40px;
+            font-size: 20px;
+            margin-top: 25px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
 
-.my_0 {
-	margin-top: 80px;
-	margin-left: 40px;
-	font-size: 25px;
-	margin-bottom: 20px;
-	font-weight: bold;
-}
+        .left hr {
+            width: 70%;
+        }
 
-.my_1, .notice {
-	margin-left: 40px;
-	font-size: 20px;
-	margin-top: 25px;
-	margin-bottom: 20px;
-	font-weight: bold;
-}
+        .right hr {
+            width: 80%;
+        }
 
-.left hr {
-	width: 70%;
-}
+        .left {
+            padding-left: 2%;
+            z-index: 1;
+            box-shadow: 5px 1px 8px 0px rgba(0,0,0,.06);
+            display: inline-block;
+            /* border: 1px solid red; */
+            width: 30%;
+            vertical-align: top;
+            height: 100%;
+        }
 
-.right hr {
-	width: 80%;
-}
-
-.left {
-	display: inline-block;
-	/* border: 1px solid red; */
-	width: 30%;
-	vertical-align: top;
-	height: 600px;
-}
-
-/* .top_box {
+        /* .top_box {
             border: 3px solid rgb(230, 142, 34);
             padding-left: 4%;
             margin-left: 3%;
@@ -101,7 +112,7 @@
             height: 350px;
         } */
 
-/* .right_bord {
+        /* .right_bord {
             height: auto;
             width: 88%;
             margin-top: 50px;
@@ -109,65 +120,72 @@
             border-radius: 10px;
         } */
 
-.top_box>div {
-	font-size: 20px;
-	display: inline-block;
-}
+        .top_box>div {
+            font-size: 20px;
+            display: inline-block;
+        }
+        .top_bottom_box {
+            border-radius: 2%;
+            margin-left: 10%;
+            border: 2px solid orange;
+            margin-top: 13%;
+            width: 80%;
+            height: 650px;
+        }
 
-/* .right {
+        /* .right {
             margin-left: 5%;
             display: inline-block;
             border: 1px solid red;
             width: 60%;
             height: 600px;
         } */
-.left_right {
-	margin-top: 60px;
-	/* border: 1px solid red; */
-	width: 100%;
-}
 
-.write_title {
-	margin-left: 10%;
-	font-size: 25px;
-	margin-top: 30px;
-}
+        .left_right {
+            /* margin-top: 60px; */
+            /* border: 1px solid red; */
+            width: 100%;
+            height: 100%;
+        }
 
-.write_name, .write_date {
-	margin-left: 10%;
-	font-size: 18px;
-}
+        .write_name,
+        .write_date {
+            margin-left: 10%;
+            font-size: 18px;
+        }
 
-.write_date {
-	margin-top: 10px;
-	margin-bottom: 10px;
-}
+        .write_date {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
 
-.write_name {
-	margin-top: 30px;
-}
+        .write_name {
+            margin-top: 30px;
+        }
 
-.hi a {
-	margin-left: -45%;
-	font-family: 'yg-jalnan';
-	color: rgb(230, 142, 34);
-	width: 23%;
-	text-decoration: none;
-	cursor: pointer;
-}
+        .logo a{
+            font-size: 25px;
+            font-family: 'yg-jalnan';
+            color: orange;
+            width: 23%;
+            text-decoration: none;
+            cursor: pointer;
+        }
 
-@media ( max-width :800px) {
-	.left>div {
-		font-size: 15px;
-	}
-	.top_box>div {
-		font-size: 15px;
-	}
-	.hi>div {
-		font-size: 18px;
-	}
-}
-</style>
+        @media(max-width:800px) {
+            .left>div {
+                font-size: 15px;
+            }
+
+            .top_box>div {
+                font-size: 15px;
+            }
+
+            .hi>div {
+                font-size: 18px;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -182,28 +200,24 @@ if(session.getAttribute("mb") == null){
 
 	<div class="all_0">
 		<div class="all_1">
-			<div class="hi">
-				<div>
+			 <div class="left_right">
+                <div class="left">
+					<div class = "logo"><a href="mainpage.jsp">레시pick!</a></div>
+				<div class = "hi">
 					안녕하세요
 				<%= mm.getName() %>
 					님 !
 				</div>
-				<div>
-					<a href="mainpage.jsp">레시pick!</a>
-				</div>
-			</div>
-			<div class="left_right">
-				<div class="left">
 					<div class="my_0">MY</div>
-					<hr>
-					<div class="my_1">회원정보</div>
-					<div class="my_1">찜한 레시피</div>
-					<div class="my_1">나의 게시물</div>
-					<div class="my_0">고객센터</div>
-					<hr>
-					<div class="notice">공지사항</div>
-				</div>
-				<div class="right"></div>
+                    <hr>
+                    <div class="my_1">회원정보</div>
+                    <div class="my_1">찜한 레시피</div>
+                    <div class="my_1">나의 게시물</div>
+                    <div class="my_0">고객센터</div>
+                    <hr>
+                    <div class="notice">공지사항</div>
+                </div>
+                <div class="right"></div>
 			</div>
 		</div>
 	</div>

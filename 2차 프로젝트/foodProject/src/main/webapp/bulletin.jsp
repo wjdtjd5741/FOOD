@@ -145,7 +145,6 @@
 			//assets/component/bulletin/section\${i}.jsp
 			xhr.send();
 		}
-		
 		/* 각각의 페이지에 대응되는 버튼에 클릭이벤트를 걸어 페이지를 리로드시킴 */
 		let index = 0;
 		function exchange_contents() {
@@ -170,7 +169,7 @@
 				});
 				/* mouseover,mouseout에 selected_section css추가, 제거 */
 				inputs[i].addEventListener("mouseover", function() {
-					//console.log("in");
+					//console.log("in");	
 					inputs[i].classList.add("selected_section");
 					// for (let j = 0; j < inputs.length; j++) {
 					//     if (i != j) {
