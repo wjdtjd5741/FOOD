@@ -2,11 +2,11 @@
 <!DOCTYPE configuration
    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
    "http://mybatis.org/dtd/mybatis-3-config.dtd">
-<configuration>
+<configuration> 
 	<settings>
 		<setting name="jdbcTypeForNull" value="NULL"/>
 	</settings>
 	<typeAliases>
-		<typeAlias type="com.food.recipick.dto.EmpDTO" alias="empDTO" />
+		<typeAlias type="com.food.recipick.dto.MemberDTO" alias="memberDTO" />
 	</typeAliases>
 </configuration>
