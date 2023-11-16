@@ -2,8 +2,9 @@
 <!DOCTYPE mapper
    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
-<mapper namespace="id_emp">
-	<select id="selectEmp" resultType="memberDTO">
-		SELECT * FROM EMP
+<mapper namespace="id_recipick">
+	<select id="selectMember" resultType="memberDTO">
+		SELECT * FROM MEMBER
 	</select>
+
 </mapper>
