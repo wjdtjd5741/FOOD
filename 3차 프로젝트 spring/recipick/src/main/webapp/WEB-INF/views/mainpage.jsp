@@ -399,11 +399,21 @@ h2 {
 
 </style>
 <body>
+<%
+	// popupBox 쿠키 있으면 그 값을 저장
+	String popupBox = "on";
+	Cookie[] css = request.getCookies();
+	if(css != null){
+		for(Cookie c : css){
+			if(c.getName().equals("popupBox"))
+				popupBox = c.getValue();
+		}
+	}
+%>
 	<main>
-<%--
 		<nav>
 		<!-- popupBox의 값이 초기에 설정된 값일때만 팝업 보여줌 -->
- 		<% 
+ 		<%
 			if(popupBox.equals("on")){
 		%>
 			<div class="popup" > 
@@ -427,12 +437,12 @@ h2 {
 		<%
 		}
 		%>
-			<%@ include file="mobile_console.jsp"%>
+			<%-- <%@ include file="mobile_console.jsp"%> --%>
 			<div class="go_home">
 				<a href="#">▲</a>
 			</div>
 		</nav>
---%>
+
 		<section>
 			<div class="go_btn">next &gt;</div>
 			<div class="back_btn">&lt; prev</div>
@@ -552,3 +562,87 @@ h2 {
 				</div>
 		</section>
 	</main>
+	<script>
+	// 1. window
+	// 2. div display
+	
+/* 	
+	popbox()
+	function popbox(){
+	 	document.querySelector(".popupbtn").addEventListener("click",function(){
+			if(!document.querySelector(".ckbox").checked){
+				document.querySelector(".popup").style.visibility = "hidden";
+			} else
+				window.location.href = "Recipick?ck=1";
+		})		
+	} 
+*/
+
+	logout()
+		function logout(){
+			document.querySelector(".logout").addEventListener("click",function(){
+				alert("로그아웃되었습니다");
+				window.location.href = "Logout";
+			})
+		}
+	/* mainpage에 있는 해시태그 클릭시 searchHash 서블릿으로 이동 */
+ 	    let hashtags = document.querySelectorAll(".hashtags")
+	    for(let i = 0 ; i<hashtags.length ;i++){
+	        hashtags[i].addEventListener("click",function(){
+	            let text = hashtags[i].innerText.substring(1);
+	            window.location.href = "searchHash?data=" + text;
+			/* 	let xhr = new XMLHttpRequest();
+	            console.log(text)
+	            xhr.open("GET", "searchHash?data="+text);
+	            xhr.send(); */
+	        })
+	    }
+ 	    
+ 	   document.querySelector(".main_top").addEventListener("mouseover", function () {
+           clearInterval(play)
+       })
+       document.querySelector(".main_top").addEventListener("mouseout", function () {
+           play = setInterval(carousel_opacity, 2000)
+       })
+
+       document.querySelector(".go_btn").addEventListener("click", function () {
+           clearInterval(play)
+           let imgs = document.querySelectorAll(".main_top_img > img")
+           imgs[i].style.opacity = "0"
+           imgs[(i + 1) % imgs.length].style.opacity = "1";
+           i++
+           if (i == imgs.length)
+               i = 0;
+       })
+       document.querySelector(".back_btn").addEventListener("click", function () {
+           clearInterval(play)
+           let imgs = document.querySelectorAll(".main_top_img > img")
+           if (i == 0) {
+               imgs[i].style.opacity = "0"
+               // console.log(i)
+               i = imgs.length - 1;
+               console.log(imgs[i])
+               imgs[i].style.opacity = "1";
+               // console.log(i)
+           } else {
+               console.log("sdf", i)
+               imgs[i + 1].style.opacity = "0"
+               imgs[i].style.opacity = "1";
+           }
+           i--;
+       })
+
+       let play = setInterval(carousel_opacity, 2000)
+       let i = 0;
+       function carousel_opacity() {
+           let imgs = document.querySelectorAll(".main_top_img > img")
+           imgs[i].style.opacity = "0"
+           imgs[(i + 1) % imgs.length].style.opacity = "1";
+           i++
+           if (i == imgs.length)
+               i = 0;
+       }
+	</script>
+    <script type="text/javascript" src="resources/assets/js/header_contents.js"></script>
+<!--     <script type="text/javascript" src="assets/js/mobile_pop.js"></script>	 -->
+	<script type="text/javascript" src="resources/assets/js/search_event.js"></script>	

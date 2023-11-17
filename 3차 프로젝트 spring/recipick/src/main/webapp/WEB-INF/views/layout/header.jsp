@@ -194,7 +194,7 @@ header > div:nth-child(2) {
 
 <header>
     <div class="head_sec0">
-        <a href="mainpage.jsp">레시pick!</a>
+        <a href="main">레시pick!</a>
         <div class="search_bar">
             <input id="search_text" type="text" value="">
             <img
@@ -249,7 +249,7 @@ header > div:nth-child(2) {
             <div>
                 <!-- 목록 -->
                 <div>
-                    <a href="bulletin.jsp">게시판</a>
+                    <a href="bulletin">게시판</a>
                 </div>
                 <%-- 
                 <div>
@@ -273,7 +273,6 @@ header > div:nth-child(2) {
                 	}
                 %>
 --%>
-
             </div>
         </div>
     </div>
