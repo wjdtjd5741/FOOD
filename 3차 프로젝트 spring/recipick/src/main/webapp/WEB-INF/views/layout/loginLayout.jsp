@@ -9,16 +9,7 @@
 </head>
 <body>
 	<main>
-		<header>
-			<tiles:insertAttribute name="header" />
-			<nav></nav>
-		</header>
-		<section>
-			<tiles:insertAttribute name="body" />
-		</section>
-		<footer>
-			<tiles:insertAttribute name="footer" />
-		</footer>
+		<tiles:insertAttribute name="body" />
 	</main>
 </body>
 </html>

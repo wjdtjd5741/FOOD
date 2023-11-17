@@ -20,5 +20,17 @@ public class tilesController {
 		return "main";
 	}
 	
+	@RequestMapping("/search")
+	public String search() {
+		System.out.println("aa");
+		return "search";
+	}
+	
+	@RequestMapping("/bulletin")
+	public String bulletin() {
+		System.out.println("aa");
+		return "bulletin";
+	}
+	
 }
 

@@ -6,5 +6,5 @@
 	<select id="selectMember" resultType="memberDTO">
 		SELECT * FROM MEMBER
 	</select>
-
+	
 </mapper>

@@ -10,17 +10,29 @@
 		<put-attribute name="footer" value="/WEB-INF/views/layout/footer.jsp"/>
 		<put-attribute name="body" value=""/>
 	</definition>
-
-	<definition name="anotherLayout" template="/WEB-INF/views/layout/anotherlayout.jsp">
-		<put-attribute name="title" value="Recipick"/>
-		<put-attribute name="header" value="/WEB-INF/views/layout/header.jsp"/>
-		<put-attribute name="footer" value="/WEB-INF/views/layout/footer.jsp"/>
-		<put-attribute name="body" value=""/>
-	</definition>
    
 	<definition name="main" extends="baseLayout">
    		<put-attribute name="body" value="/WEB-INF/views/mainpage.jsp"/>
 	</definition>
+	
+	<definition name="search" extends="baseLayout">
+   		<put-attribute name="body" value="/WEB-INF/views/searchpage.jsp"/>
+	</definition>
+
+	<definition name="bulletin" extends="baseLayout">
+   		<put-attribute name="body" value="/WEB-INF/views/bulletin.jsp"/>
+	</definition>
+	
+	<definition name="loginLayout" template="/WEB-INF/views/layout/loginLayout.jsp">
+		<put-attribute name="title" value="Recipick"/>
+		<put-attribute name="body" value=""/>
+	</definition>
+
+	<!--  
+	<definition name="main" extends="loginLayout">
+		<put-attribute name="body" value="/WEB-INF/views/layout/login.jsp"/>
+	</definition>
+	-->
 	
 	<definition name="*.*.do" extends="baseLayout">
    		<put-attribute name="body" value="/WEB-INF/views/{1}/{2}.jsp"/>
