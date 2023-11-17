@@ -8,6 +8,7 @@
 <title><tiles:insertAttribute name="title" /></title>
 </head>
 <body>
+	<tiles:insertAttribute name="reci_navi"/>
 	<main>
 		<header>
 			<tiles:insertAttribute name="header" />

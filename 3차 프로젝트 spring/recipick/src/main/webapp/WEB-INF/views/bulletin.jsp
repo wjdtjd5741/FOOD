@@ -221,7 +221,179 @@ h3 {
         font-size: 13px;
     }
 }
+/* section1 */
+.sec1_head_box {
+    /* border: 1px solid red; */
+    display: flex;
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    background-color: rgba(243, 156, 18, 0.45);
+}
 
+.sec1_head_box>div {
+    font-size: 16px;
+    text-align: center;
+    line-height: 3;
+    font-weight: bold;
+}
+
+.sec1_head_box>div:nth-child(1) {
+    width: 7%;
+}
+
+.sec1_head_box>div:nth-child(2) {
+    width: 50%;
+}
+
+.sec1_head_box>div:nth-child(3) {
+    width: 20%;
+}
+
+.sec1_head_box>div:nth-child(4) {
+    width: 16.5%;
+}
+
+.sec1_head_box>div:nth-child(5) {
+    width: 12.5%;
+}
+
+.abox {
+    /* border: 1px solid blue; */
+    width: 100%;
+    cursor: pointer;
+}
+
+.sec1_bbox {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.432);
+    width: 100%;
+    height: 70px;
+    display: flex;
+    
+}
+
+.sec1_bbox>div {
+    font-size: 16px;
+    text-align: center;
+    line-height: 4.5;
+    font-weight: 400;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+}
+
+.sec1_bbox>div:nth-child(1) {
+    width: 6%;
+}
+
+.sec1_bbox>div:nth-child(2) {
+    width: 50%;
+    
+}
+
+.sec1_bbox>div:nth-child(3) {
+    width: 20%;
+}
+
+.sec1_bbox>div:nth-child(4) {
+    width: 12.5%;
+}
+
+.sec1_bbox>div:nth-child(5) {
+    width: 12.5%;
+}
+
+@media(max-width:700px) {
+    .sec1_head_box{
+        height: 40px;
+    }
+    .sec1_head_box>div {
+        font-size: 11px;
+        line-height: 40px;
+    }
+    .sec1_bbox{
+        align-items: center;
+        height: 40px;
+    }
+    .sec1_bbox>div {
+        font-size: 11px;
+        line-height: 30px;
+    }
+}
+/* section0 */
+        /*css �떆�옉 !*/
+        * {
+            margin: 0;
+            /* font-size: 0; */
+        }
+        .table_all {
+            /* border: 3px solid green; */
+            /* width: 79%; */
+            height: 100%;
+        }
+        th, tr {
+            /* border: 1px solid red; */
+            text-align: center;
+            font-size: 16px;
+            white-space: nowrap;
+        }
+        td {
+            border-width: 1px 0;
+            border-style: solid;
+            border-color: rgb(128, 128, 128, 0.3);
+            padding-top: 5px;
+            text-align: center;
+            font-size: 16px;
+            white-space: nowrap;
+        }
+        tbody > tr{
+            cursor: pointer;
+        }
+        th {
+            padding: 10px 2.5%;
+            background-color: rgba(243, 156, 18, 0.45);
+
+        }
+        table {
+            margin-top: 20px;
+            /* border: 5px solid yellow; */
+            border-spacing: 0px 0px;
+            width: 100%;
+        }
+        img {
+            width: 175px;
+            height: 150px;
+        }
+
+        .num {
+            width: 14.5%;
+        }
+        .look {
+            width: 18%;
+        }
+        .writer {
+            width: 19.5%;
+        }
+        .title {
+            width: 16%;
+        }
+        .date {
+            width: 13%;
+        }
+        /*  */
+        @media (max-width: 700px) {
+            th, tr {
+                font-size: 11px;
+            }
+            td{
+                font-size: 11px;
+            }
+            img{
+                width: 125px;
+                height: 100px;
+            }
+        }
+        
 </style>
 
 <body>
@@ -349,7 +521,7 @@ h3 {
 		/* ajax를 이용한 페이지 로딩 */
 		const xhr = new XMLHttpRequest();
 		function load_contents(i) {
-			xhr.open("GET", `BulletinSection\${i}`);
+			xhr.open("GET", `bulletinsection?page=\${i}`);
 			//console.log("실행")
 			//assets/component/bulletin/section\${i}.jsp
 			xhr.send();

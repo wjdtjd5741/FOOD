@@ -32,5 +32,19 @@ public class tilesController {
 		return "bulletin";
 	}
 	
+	@RequestMapping("/login")
+	public String login() {
+		return "login";
+	}
+	
+	@RequestMapping("/newsign")
+	public String newsign() {
+		return "newsign";
+	}
+	
+	@RequestMapping("/recipe")
+	public String recipe() {
+		return "recipe";
+	}
 }
 
