@@ -11,16 +11,22 @@ import com.food.recipick.dto.RecipeDTO;
 @Repository
 public class RecipickDAOImpl implements RecipickDAO{
 
-	
-	
-	
 	@Autowired
 	SqlSession sqlSession;
 
 	@Override
 	public List recipePage1(RecipeDTO dto) {
-			
-		return sqlSession.selectList("id_recipick.recipe_id", dto);
+		sqlSession.insert("id_recipick.insert_recipe", dto);
+		
+		sqlSession.insert("id_recipick.다른sql문", dto); //해시태그
+
+		sqlSession.insert("id_recipick.다른sql문", dto); //해시태그
+
+		sqlSession.insert("id_recipick.다른sql문", dto); //해시태그
+		
+		
+//		System.out.println("ggg : "+l.get(0));
+		return sqlSession.selectList("select문");
 	}
 
 	

@@ -186,7 +186,7 @@
 }
 
 .views {
-    width: 130px;
+    width: 180px;
     height: auto;
 }
 
@@ -206,6 +206,7 @@
 .recommend>div {
     font-size: 15px;
     display: inline-block;
+    margin: 0px 4px;
 }
 
 .recommend>div:nth-child(1) {
@@ -300,8 +301,9 @@
                             </div>
                             <div class="views">
                                 <div class="recommend">
+                                    <div>최신순</div>
                                     <div>조회순</div>
-                                    <div>추천순</div>
+<!--                                     <div>추천순</div> -->
                                 </div>
                             </div>
                         </div>
@@ -317,6 +319,7 @@
                     	</div>
                     	<div id="reciID" style="display:none">${content.recipe_id }</div>
                     </c:forEach>
+                    
 <%--                    
                     <%
                     	for(int i = 0 ;i<reciList.size() ;i++){
@@ -344,6 +347,33 @@
         </section>
     </main>
     <script>
+    orderby();
+    
+    function orderby(){
+    	let divs = document.querySelectorAll(".recommend > div")
+    	let data = new URLSearchParams(window.location.search).get("order");
+    	divs[data].style.color = "orange"
+    	for(let i = 0 ; i<divs.length ;i++){
+    		divs[i].addEventListener("click", function(){
+    			divs[i].style.color="orange"
+    			for(let j = 0 ;j<divs.length ;j++){
+    				if(j == i){
+    					divs[j].style.color = "orange"
+    				} else{
+    					divs[j].style.color = "black"
+    				}
+    			}
+    			window.location.href = "searchHash?data="+document.querySelector("#input_text0").value+"&order="+i
+    		})
+/*     		divs[i].addEventListener("mouseover", function(){
+    			divs[i].style.color = "orange"
+    		}) */
+/*     		divs[i].addEventListener("mouseout", function(){
+    			divs[i].style.color = "black"
+    		}) */
+    	}
+    }
+    
     get_data();
 
     function get_data() {
@@ -353,19 +383,29 @@
 
         document.querySelector(".search_img").addEventListener("click", function () {
             document.querySelector("#input_text1").innerText = document.querySelector("#input_text0").value
+            window.location.href = "searchHash?data="+document.querySelector("#input_text0").value+"&order=0"
         });
         document.querySelector("#input_text0").addEventListener("keyup", function (event) {
-            if(event.keyCode == 13)
-                document.querySelector("#input_text1").innerText = document.querySelector("#input_text0").value
+            if(event.keyCode == 13){
+            	document.querySelector("#input_text1").innerText = document.querySelector("#input_text0").value
+            	window.location.href = "searchHash?data="+document.querySelector("#input_text0").value+"&order=0"
+            }
+                
+                
         });
     }
     
     go_recipepage();
     function go_recipepage(){
-    	document.querySelector(".menu").addEventListener("click", function(){
-    		console.log(document.querySelector("#reciID").innerText);
-    		window.location.href = "gorecipe?reciid="+document.querySelector("#reciID").innerText;
-    	})
+    	let menus = document.querySelectorAll(".menu")
+    	let ids = document.querySelectorAll("#reciID")
+    	console.log(menus)
+    	for(let i = 0 ; i<menus.length ;i++){
+    		menus[i].addEventListener("click", function(){
+        		console.log(document.querySelector("#reciID").innerText);
+        		window.location.href = "gorecipe?reciid="+ids[i].innerText;
+    		})
+    	}
     }
     
     </script>

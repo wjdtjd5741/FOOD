@@ -506,7 +506,7 @@ h2 {
 // 							String[] hashs = str.split(",");
 // 							for(int i = 0 ; i<hashs.length ;i++){
 							%>
-							<div class="hashtags">#aa<%-- <%= hashs[i] %> --%></div>
+							<div class="hashtags">#A<%-- <%= hashs[i] %> --%></div>
 							<% 	
 // 							}
 							%>
@@ -577,7 +577,6 @@ h2 {
 		})		
 	} 
 
-
  	logout()
 		function logout(){
 			document.querySelector(".logout").addEventListener("click",function(){
@@ -590,7 +589,7 @@ h2 {
 	    for(let i = 0 ; i<hashtags.length ;i++){
 	        hashtags[i].addEventListener("click",function(){
 	            let text = hashtags[i].innerText.substring(1);
-	            window.location.href = "searchHash?data=" + text;
+	            window.location.href = "searchHash?data=" + text+"&order=0";
 			/* 	let xhr = new XMLHttpRequest();
 	            console.log(text)
 	            xhr.open("GET", "searchHash?data="+text);

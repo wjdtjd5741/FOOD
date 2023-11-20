@@ -5,19 +5,19 @@ function search_event(){
     document.querySelector(".search_bar > input").addEventListener("keyup",function(event){
         console.log("sdfsd")
         if(event.keyCode === 13 && input_text.value != "")
-            window.location.href = `searchHash?data=`+input_text.value;
+            window.location.href = `searchHash?data=`+input_text.value+"&order=0";
     });
     document.querySelector(".search_bar > img").addEventListener("click", function(){
         console.log("sdfsd")
         if(input_text != "")
-            window.location.href = `searchHash?data=`+input_text.value;
+            window.location.href = `searchHash?data=`+input_text.value+"&order=0";
     });
 
 	let hashtags = document.querySelectorAll(".hashtags")
 	    for(let i = 0 ; i<hashtags.length ;i++){
 	        hashtags[i].addEventListener("click",function(){
 	            let text = hashtags[i].innerText;
-	            window.location.href = `searchHash?data=`+text.substring(1);
+	            window.location.href = `searchHash?data=`+text.substring(1)+"&order=0";
 	    })
     }
 
