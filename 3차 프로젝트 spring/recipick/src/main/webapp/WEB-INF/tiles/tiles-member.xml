@@ -35,6 +35,9 @@
 	<definition name="writer" extends="baseLayout">
 		<put-attribute name="body" value="/WEB-INF/views/writerview.jsp"/>
 	</definition>
+	<definition name="newrecipe" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/views/newrecipepage.jsp"/>
+	</definition>
 	
 	<definition name="loginLayout" template="/WEB-INF/views/layout/loginLayout.jsp">
 		<put-attribute name="title" value="Recipick"/>

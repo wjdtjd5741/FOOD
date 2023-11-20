@@ -70,5 +70,9 @@ public class tilesController {
 	public String writer() {
 		return "writer";
 	}
+	@RequestMapping("/newrecipe")
+	public String newrecipe() {
+		return "newrecipe";
+	}
 }
 
