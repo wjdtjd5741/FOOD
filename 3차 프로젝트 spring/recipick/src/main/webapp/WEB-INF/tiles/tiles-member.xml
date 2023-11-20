@@ -8,19 +8,52 @@
 		<put-attribute name="title" value="Recipick"/>
 		<put-attribute name="header" value="/WEB-INF/views/layout/header.jsp"/>
 		<put-attribute name="footer" value="/WEB-INF/views/layout/footer.jsp"/>
-		<put-attribute name="body" value=""/>
-	</definition>
-
-	<definition name="anotherLayout" template="/WEB-INF/views/layout/anotherlayout.jsp">
-		<put-attribute name="title" value="Recipick"/>
-		<put-attribute name="header" value="/WEB-INF/views/layout/header.jsp"/>
-		<put-attribute name="footer" value="/WEB-INF/views/layout/footer.jsp"/>
+		<put-attribute name="reci_navi" value="" />
 		<put-attribute name="body" value=""/>
 	</definition>
    
-	<definition name="recipepage" extends="baseLayout">
-   		<put-attribute name="body" value="/WEB-INF/views/recipepage.jsp"/>
+	<definition name="main" extends="baseLayout">
+   		<put-attribute name="body" value="/WEB-INF/views/mainpage.jsp"/>
 	</definition>
+	
+	<definition name="search" extends="baseLayout">
+   		<put-attribute name="body" value="/WEB-INF/views/searchpage.jsp"/>
+	</definition>
+
+	<definition name="bulletin" extends="baseLayout">
+   		<put-attribute name="body" value="/WEB-INF/views/bulletin.jsp"/>
+	</definition>
+
+	<definition name="recipe" extends="baseLayout">
+   		<put-attribute name="body" value="/WEB-INF/views/recipepage.jsp"/>
+   		<put-attribute name="reci_navi" value="/WEB-INF/views/layout/reci_navi.jsp"/>
+	</definition>
+	
+	<definition name="bulletinsection0" template="/WEB-INF/views/bulletinboard/recipecontents.jsp"/>
+	<definition name="bulletinsection1" template="/WEB-INF/views/bulletinboard/reviewcontents.jsp"/>
+	
+	<definition name="writer" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/views/writerview.jsp"/>
+	</definition>
+	
+	<definition name="loginLayout" template="/WEB-INF/views/layout/loginLayout.jsp">
+		<put-attribute name="title" value="Recipick"/>
+		<put-attribute name="body" value=""/>
+	</definition>
+
+	<definition name="login" extends="loginLayout">
+   		<put-attribute name="body" value="/WEB-INF/views/login.jsp"/>
+	</definition>
+
+	<definition name="newsign" extends="loginLayout">
+   		<put-attribute name="body" value="/WEB-INF/views/newsign.jsp"/>
+	</definition>
+
+	<!--  
+	<definition name="main" extends="loginLayout">
+		<put-attribute name="body" value="/WEB-INF/views/layout/login.jsp"/>
+	</definition>
+	-->
 	
 	<definition name="*.*.do" extends="baseLayout">
    		<put-attribute name="body" value="/WEB-INF/views/{1}/{2}.jsp"/>

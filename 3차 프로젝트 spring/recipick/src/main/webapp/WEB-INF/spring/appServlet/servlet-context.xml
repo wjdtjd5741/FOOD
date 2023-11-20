@@ -45,7 +45,7 @@
 	<interceptors>
 		<interceptor>
 			<mapping path="/**"/>
-			<!--  
+			<!-- 
 			<exclude-mapping path="/controller requestmapping"/>
 			-->
 			<beans:bean id="commonInterceptor" class="com.food.recipick.aop.MainInterceptor"/>

@@ -8,7 +8,8 @@
 <title><tiles:insertAttribute name="title" /></title>
 </head>
 <body>
-	<div>
+	<tiles:insertAttribute name="reci_navi"/>
+	<main>
 		<header>
 			<tiles:insertAttribute name="header" />
 			<nav></nav>
@@ -19,6 +20,6 @@
 		<footer>
 			<tiles:insertAttribute name="footer" />
 		</footer>
-	</div>
+	</main>
 </body>
 </html>

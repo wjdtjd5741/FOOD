@@ -2,21 +2,21 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <style>
-        header {
-            height: 100px;
-        }
+header {
+    height: 100px;
+}
 
-        main {
-            /* border: 1px solid red; */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 80px;
-            /* 수정사항: 
-            margin-top: 80px;
-            추가 */
-        }
-        body{
+main {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+    /* 수정사항: 
+    margin-top: 80px;
+    추가 */
+}
+body{
     margin: 0;
     font-size: 0;
 }
@@ -139,7 +139,7 @@ input:focus{
  <form method="post" action="loginsubmit">
     <main>
         <div class="mainbox">
-            <a class="logo" href="mainpage.jsp">레시pick!</a>
+            <a class="logo" href="main">레시pick!</a>
             <div class="text">
                 <div>
                   <img
@@ -160,7 +160,7 @@ input:focus{
                 <%
                 	}
                 %>
---%>                
+--%>
             </div>
             <div class="find">
                 <a href="newsign">회원가입</a>

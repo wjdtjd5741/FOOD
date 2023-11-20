@@ -4,7 +4,16 @@
    "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
 <mapper namespace="id_recipick">
 	<select id="selectMember" resultType="memberDTO">
+<!-- 		
+		<selectKey keyProperty="pw" resultType="int" order="BEFORE">
+			select * seq_emp2.nextval from dual  
+		</selectKey> 
+-->
 		SELECT * FROM MEMBER
 	</select>
-
+	
+	<select id="searchData" resultType="recipeDTO" parameterType="string">
+		SELECT * FROM RECIPE
+		WHERE RECIPE_TITLE LIKE '%' || '#{data}' || '%'
+	</select>
 </mapper>

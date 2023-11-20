@@ -1,13 +1,21 @@
 package com.food.recipick;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.apache.tiles.request.servlet.ServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class memberController {
 
 	@RequestMapping("/loginsubmit")
-	public String loginsubmit() {
+	public String loginsubmit(@RequestParam("id") String id,
+			HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		session.setAttribute("id", id);
 		
 		// 아이디 / 비밀번호 비교. 
 		// 맞으면 main. 틀리면 다시 로그인페이지로(redirect)
@@ -30,5 +38,11 @@ public class memberController {
 //		return "redirect:newsign";
 	}
 	
+	@RequestMapping("/logout")
+	public String logout(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		session.removeAttribute("id");
+		return "login";
+	}
 	
 }
