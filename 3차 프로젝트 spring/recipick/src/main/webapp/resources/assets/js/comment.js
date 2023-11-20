@@ -5,6 +5,9 @@ text_focus();
 function comment() {
     document.querySelector(".btn_txt").addEventListener("click", function () {
         let text = document.querySelector(".input_text").value;
+        window.location.href = ""
+        
+        
         if (text != "") {
             let html = "";
             html += `<div class="reple_box">`
