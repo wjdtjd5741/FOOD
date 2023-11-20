@@ -3,12 +3,12 @@
     /* height: 200px; */
     /* padding: 5px; */
     font-size: 16px;
-    width: 80%;
+    width: 100%;
     margin: 70px 0;
 }
 .input_text{
     margin-left: 2%;
-    /* margin-left: 2%濡� �닔�젙 */
+    /* margin-left: 2%로 수정 */
     display: inline-block;
     font-size: 16px;
     width:75%;
@@ -23,7 +23,7 @@
     font-size: 16px;
     width: 60px;
     height: 50px;
-    /* vertical-align: middle; �궘�젣 */
+    /* vertical-align: middle; 삭제 */
     margin-left: 2%;
     background-color: orange;
     color: white;
@@ -42,7 +42,7 @@
     border-color: gray;
     border-style: solid;
     padding-bottom: 5px;
-    width: 60%;
+    width: 80%;
 }
 
 .comment_word > div:nth-child(1){

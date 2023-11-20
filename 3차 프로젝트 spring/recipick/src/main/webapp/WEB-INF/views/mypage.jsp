@@ -1,6 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="assets/component/mypage/css/section1.css">
+<link rel="stylesheet" href="assets/component/mypage/css/section0.css">
+<link rel="stylesheet" href="assets/component/mypage/css/section2.css">
 <style>
         @font-face {
             font-family: 'yg-jalnan';
@@ -181,15 +188,24 @@
 </head>
 <body>
 
+<%-- <% --%>
+// if(session.getAttribute("mb") == null){
+// 	RequestDispatcher b = request.getRequestDispatcher("mainpage.jsp");
+//     b.forward(request, response);
+// }
+// 	MemberDTO mm = (MemberDTO)session.getAttribute("mb");
+	
+<%-- %> --%>
+
 	<div class="all_0">
 		<div class="all_1">
 			 <div class="left_right">
                 <div class="left">
 					<div class = "logo"><a href="mainpage.jsp">레시pick!</a></div>
 				<div class = "hi">
-					안녕하세요
+<!-- 					안녕하세요 -->
 <%-- 				<%= mm.getName() %> --%>
-					님 !
+<!-- 					님 ! -->
 				</div>
 					<div class="my_0">MY</div>
                     <hr>
@@ -225,7 +241,7 @@
 		const xhr = new XMLHttpRequest();
 
 		function load_contents(i) {
-			xhr.open("GET", `mypagesection?page=\${i}`);
+			xhr.open("GET", `MypageSection\${i}`);
 			xhr.send();
 			console.log(1)
 		}
@@ -264,3 +280,5 @@
 	</script>
 	<script type="text/javascript" src="assets/js/mypage_clickEvent.js"></script>
 	<script type="text/javascript" src="assets/js/btns_hover.js"></script>
+</body>
+</html>

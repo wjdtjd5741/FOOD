@@ -8,7 +8,7 @@ function likeNdislike() {
             document.querySelector(".up_count").innerText = parseInt(document.querySelector(".up_count").innerText) + 1;
             document.querySelector(".like_count").innerText = document.querySelector(".up_count").innerText;
             document.querySelector(".up_count").style.color = "orange";
-            alert("추천되었습니다.");
+            alert("추천 되었습니다.");
         } else if (downU.style.color == "orange") {
             document.querySelector(".up_count").innerText = parseInt(document.querySelector(".up_count").innerText) - 1;
             document.querySelector(".up_count").innerText = document.querySelector(".up_count").innerText;
@@ -21,12 +21,12 @@ function likeNdislike() {
         if (downU.style.color != "orange" && downC.style.color != "gray") {
             document.querySelector(".down_count").innerText = parseInt(document.querySelector(".down_count").innerText) + 1;
             document.querySelector(".down_count").style.color = "gray";
-            alert("비추천되었습니다.")
+            alert("비추천 되었습니다.")
         } else if (downC.style.color == "gray") {
             document.querySelector(".down_count").innerText = parseInt(document.querySelector(".down_count").innerText) - 1;
             document.querySelector(".down_count").style.color = "black";
         } else if (downU.style.color == "orange") {
-            alert("비추천할 수 없습니다.");
+            alert("비추천 할 수 없습니다.");
         }
     });
     

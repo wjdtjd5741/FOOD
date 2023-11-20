@@ -19,9 +19,9 @@ public class RecipickDAOImpl implements RecipickDAO{
 		sqlSession.insert("id_recipick.insert_recipe", dto);
 		
 		sqlSession.insert("id_recipick.다른sql문", dto); //해시태그
-		
+
 		sqlSession.insert("id_recipick.다른sql문", dto); //해시태그
-		
+
 		sqlSession.insert("id_recipick.다른sql문", dto); //해시태그
 		
 		
