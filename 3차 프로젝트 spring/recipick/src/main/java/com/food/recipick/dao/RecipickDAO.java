@@ -1,12 +1,13 @@
 package com.food.recipick.dao;
 
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
 
 import com.food.recipick.dto.RecipeDTO;
 
-@Repository
 
 public interface RecipickDAO {
 
-	RecipeDTO recipePage1(RecipeDTO dto);
+	List recipePage1(RecipeDTO dto);
 }

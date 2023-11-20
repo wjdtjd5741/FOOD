@@ -1,6 +1,7 @@
 package com.food.recipick.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,8 @@ public class SearchDAO {
 	@Autowired
 	SqlSession sqlSession;
 	
-	public List searchRecipe(String data) {
-		return sqlSession.selectList("id_recipick.searchData", data);
+	public List searchRecipe(Map map) {
+		System.out.println("data : " + map);
+		return sqlSession.selectList("id_recipick.searchData", map);
 	}
 }

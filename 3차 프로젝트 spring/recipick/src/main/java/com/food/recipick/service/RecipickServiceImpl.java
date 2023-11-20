@@ -16,9 +16,9 @@ public class RecipickServiceImpl implements RecipickService{
 	RecipickDAO recipickdao;
 
 	@Override
-	public RecipeDTO recipePage1(RecipeDTO dto) {
-			recipickdao.recipePage1(dto);
-		return null;
+	public List recipePage1(RecipeDTO dto) {
+			
+		return recipickdao.recipePage1(dto);
 	}
 
 	

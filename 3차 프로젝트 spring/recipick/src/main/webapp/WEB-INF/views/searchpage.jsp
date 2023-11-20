@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <style>
 @charset "UTF-8";
@@ -304,6 +307,16 @@
                         </div>
                     </div>
                     <div class="search_main">
+                    <c:forEach var="content" items="${contents}">
+                    	<div class="menu" style="cursor: pointer">
+                    		<img src="${content.mainpic }">
+                    		<div class="hash">
+                    			<div><%-- <%= reciList.get(i).getHashtags().get(j) %> --%></div>
+                    		</div>	
+                    		<div>${content.recipe_title}</div>
+                    	</div>
+                    	<div id="reciID" style="display:none">${content.recipe_id }</div>
+                    </c:forEach>
 <%--                    
                     <%
                     	for(int i = 0 ;i<reciList.size() ;i++){
@@ -345,6 +358,14 @@
             if(event.keyCode == 13)
                 document.querySelector("#input_text1").innerText = document.querySelector("#input_text0").value
         });
+    }
+    
+    go_recipepage();
+    function go_recipepage(){
+    	document.querySelector(".menu").addEventListener("click", function(){
+    		console.log(document.querySelector("#reciID").innerText);
+    		window.location.href = "gorecipe?reciid="+document.querySelector("#reciID").innerText;
+    	})
     }
     
     </script>
