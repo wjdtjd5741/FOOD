@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <style>
 *{
     margin: 0;
@@ -208,17 +211,17 @@ header > div:nth-child(2) {
         
         <div class="login_box0" style="font-size: 16px">
 
-		<c:if test="${dto == null}">
+		<c:if test="${memberdto == null}">
         	<a href="login">로그인</a>	
         	<a href="newsign">회원가입</a>
         </c:if>
         	
-        <c:if test="${dto != null}">
-        	<a href="mypage" class="member"> ${dto.uname } 회원님</a>		
+        <c:if test="${memberdto != null}">
+        	<a href="mypage" class="member"> ${memberdto.uname } 회원님</a>		
         	<a class="logout"> 로그아웃 </a>
         </c:if>
 
-<!--         <div class="logout" style="display:none"></div> -->
+        <div class="logout" style="display:none"></div>
         
         	<%-- 
         		<a href="login.jsp">로그인</a>

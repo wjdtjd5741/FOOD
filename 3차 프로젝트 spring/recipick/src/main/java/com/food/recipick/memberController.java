@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.food.recipick.dto.MemberDTO;
+import com.food.recipick.dto.RecipeDTO;
 import com.food.recipick.service.NewsignService;
 
 @Controller
@@ -38,8 +39,8 @@ public class memberController {
     		
 //    		// model에 담아서
     		model.addAttribute("list", loginList);
-    		model.addAttribute("dto", dto);
-    		
+    		session.setAttribute("memberdto", dto);
+//    		String str = (String)session.getAttribute("memberdto");
     		
     		
         	return "main"; // 메인 페이지로 리다이렉트

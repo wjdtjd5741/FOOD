@@ -8,6 +8,9 @@
 <title>Insert title here</title>
 
 </head>
+<style>
+
+</style>
 <body>
     <div class="all_box">
      <form id="myForm" action="MypageSection0" method="get">
