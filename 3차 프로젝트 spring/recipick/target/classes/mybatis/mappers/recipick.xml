@@ -3,6 +3,8 @@
    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
 <mapper namespace="id_recipick">
+
+
 	<insert id="insert_recipe" parameterType="recipeDTO">
 		<selectKey keyProperty="recipe_id" resultType="int" order="BEFORE">
 			select seq_reci.nextval from dual
@@ -49,5 +51,44 @@
 		WHERE recipe_id = #{_parameter}
 	</select>
 	
+<!-- 	김호연 -->
+	<insert id="newsigninsert" parameterType="memberDTO">
+			insert into MEMBER (
+				uname, 
+				rname, 
+				email, 
+				pw, 
+				birth, 
+				phone, 
+				gender,
+				guest
+			) values (
+				#{uname}, 
+				#{rname}, 
+				#{email}, 
+				#{pw},  
+				to_date(#{birth}, 'yyyy-mm-dd'), 
+				#{phone}, 
+				#{gender},
+				#{guest}
+			)
+		</insert>
 	
+		<select id="loginselect" resultType="memberDTO">
+			select 
+				uname, pw 
+			from 
+				MEMBER 
+			where 
+				uname = #{uname} and pw = #{pw}
+		</select>
+		
+		<select id="isDuplicateUname" resultType="memberDTO">
+			select 
+				uname
+			from 
+				MEMBER 
+			where 
+				uname = #{uname}
+		</select>
 </mapper>

@@ -206,34 +206,19 @@ header > div:nth-child(2) {
                 src="https://cdn.discordapp.com/attachments/1148557028927742005/1149214262925987880/search_icon.png">
         </div>
         
-        <div class="login_box0">
-        <%
-        	String id = "";
-        	if(session.getAttribute("id") != null){
-        		id = (String)session.getAttribute("id");
-        	 
-        	if(id.isEmpty()){
-        %>
-       		<a href="login">로그인</a>
-           	<a href="newsign">회원가입</a>            	
-        <%
-        	} else{
-        %>
-        	<a href="mypage.jsp"> <%= id %> 회원님</a>		
-        	<a class="logout"> 로그아웃 </a>	
-        <%	
-/* 	      		out.print("<input class='submit' type='text'");
-	      		out.print("value='"+username+"' style='display :none'>"); */
-        	}
-            	} else{
-        %>
-       		<a href="login">로그인</a>
-           	<a href="newsign">회원가입</a> 		
-        <%		
-        	}
-        %>
+        <div class="login_box0" style="font-size: 16px">
 
-        <div class="logout" style="display:none"></div>
+		<c:if test="${dto == null}">
+        	<a href="login">로그인</a>	
+        	<a href="newsign">회원가입</a>
+        </c:if>
+        	
+        <c:if test="${dto != null}">
+        	<a href="mypage" class="member"> ${dto.uname } 회원님</a>		
+        	<a class="logout"> 로그아웃 </a>
+        </c:if>
+
+<!--         <div class="logout" style="display:none"></div> -->
         
         	<%-- 
         		<a href="login.jsp">로그인</a>
