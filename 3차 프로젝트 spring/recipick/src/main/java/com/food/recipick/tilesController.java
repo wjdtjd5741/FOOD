@@ -74,9 +74,5 @@ public class tilesController {
 	public String newrecipe() {
 		return "newrecipe";
 	}
-	@RequestMapping("/mypage")
-	public String mypage() {
-		return "mypage";
-	}
 }
 

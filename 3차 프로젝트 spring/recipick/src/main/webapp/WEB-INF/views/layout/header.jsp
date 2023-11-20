@@ -1,8 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <style>
 *{
     margin: 0;
@@ -209,17 +206,32 @@ header > div:nth-child(2) {
                 src="https://cdn.discordapp.com/attachments/1148557028927742005/1149214262925987880/search_icon.png">
         </div>
         
-        <div class="login_box0" style="font-size: 16px">
-
-		<c:if test="${memberdto == null}">
-        	<a href="login">로그인</a>	
-        	<a href="newsign">회원가입</a>
-        </c:if>
-        	
-        <c:if test="${memberdto != null}">
-        	<a href="mypage" class="member"> ${memberdto.uname } 회원님</a>		
-        	<a class="logout"> 로그아웃 </a>
-        </c:if>
+        <div class="login_box0">
+        <%
+        	String id = "";
+        	if(session.getAttribute("id") != null){
+        		id = (String)session.getAttribute("id");
+        	 
+        	if(id.isEmpty()){
+        %>
+       		<a href="login">로그인</a>
+           	<a href="newsign">회원가입</a>            	
+        <%
+        	} else{
+        %>
+        	<a href="mypage.jsp"> <%= id %> 회원님</a>		
+        	<a class="logout"> 로그아웃 </a>	
+        <%	
+/* 	      		out.print("<input class='submit' type='text'");
+	      		out.print("value='"+username+"' style='display :none'>"); */
+        	}
+            	} else{
+        %>
+       		<a href="login">로그인</a>
+           	<a href="newsign">회원가입</a> 		
+        <%		
+        	}
+        %>
 
         <div class="logout" style="display:none"></div>
         

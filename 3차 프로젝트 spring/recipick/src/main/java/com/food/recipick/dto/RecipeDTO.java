@@ -23,7 +23,16 @@ public class RecipeDTO {
 	private List hash_name;
 	private List detail_pic;
 	private List detail_text;
+	private int make_order;
 	
+	public int getMake_order() {
+		return make_order;
+	}
+
+	public void setMake_order(int make_order) {
+		this.make_order = make_order;
+	}
+
 	public List getDetail_text() {
 		return detail_text;
 	}

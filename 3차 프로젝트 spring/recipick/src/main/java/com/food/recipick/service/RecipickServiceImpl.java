@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,12 +19,12 @@ public class RecipickServiceImpl implements RecipickService{
 	@Override
 	public List recipePage1(RecipeDTO dto) {
 		dto.setMainpic("юс╫ц");
-		dto.setUser("user");
 		List l = new ArrayList();
 		l.add("f");
+		l.add("g");
 		dto.setDetail_pic(l);
 		dto.setView("0");
-
+		
 		
 		return recipickdao.recipePage1(dto);
 	}

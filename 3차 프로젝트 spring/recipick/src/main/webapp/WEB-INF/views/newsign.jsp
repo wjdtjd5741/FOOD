@@ -5,14 +5,6 @@
     margin: 0;
     font-size: 0;
 }
-
-.error2, .error1 {
-	margin-top: 3%;
-	font-size: 18px;
-	color : red;
-	font-weight: bold;
-	text-align: center;
-}
 @font-face {
     font-family: 'yg-jalnan';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
@@ -172,7 +164,7 @@ input:focus{
                     <div class="id">
                         <img
 							src="https://cdn.discordapp.com/attachments/1148557028927742005/1148557062645764176/id_icon.png">
-                       <input class="inputbox" type="text" name="uname" placeholder="아이디"> 
+                       <input class="inputbox" type="text" name="id" placeholder="아이디"> 
                     </div>
                     <div class="password">
                         <img
@@ -194,7 +186,7 @@ input:focus{
                     <div class="name">
                         <img
 							src="https://cdn.discordapp.com/attachments/1148557028927742005/1148557062645764176/id_icon.png">
-                       <input class="inputbox" type="text" name="rname" placeholder="이름">
+                       <input class="inputbox" type="text" name="name" placeholder="이름">
                     </div>
                     <div class="birth">
                         <img
@@ -205,12 +197,12 @@ input:focus{
                 <div class="gender">
                 
 					<label class="gender_2">
-					    <input class="radiogen" type="radio" name="gender" value="남자">
+					    <input class="radiogen" type="radio" name="gender" value="1">
 					    <span>남자</span>
 					</label>
 					 
 					<label class="gender_2">
-					    <input class="radiogen" type="radio" name="gender" value="여자">
+					    <input class="radiogen" type="radio" name="gender" value="2">
 					    <span>여자</span>
 					</label>                
                 </div>
@@ -226,15 +218,12 @@ input:focus{
                     <div>생년월일 8자리: 필수 정보입니다.</div>
                     <div>연락처: 필수 정보입니다.</div>
                 </div>
-                 <div class="error2"> ${error2 } </div>
-                 <div class="error1"> ${error1 } </div>
                 <div class="join">
 					<input id="submit" type="submit" value="회원가입">
 				</div>
 			<div class="login">
                 <a href="login">로그인 페이지로 이동</a>
             </div>
-          
                 <!-- href="login.html" -->
             </div>
         </section>

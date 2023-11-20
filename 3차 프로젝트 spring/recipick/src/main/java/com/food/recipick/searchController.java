@@ -19,11 +19,9 @@ public class searchController {
 	SearchService searchService;
 	
 	@RequestMapping("/searchHash")
-	public String search(Model m , @RequestParam("data") String data,
-			@RequestParam("order") String order) {
+	public String search(Model m , @RequestParam("data") String data) {
 		Map map = new HashMap();
 		map.put("recipe_title", data);
-		map.put("order", order);
 		List l = searchService.searchRecipe(map);
 		System.out.println(l.get(0).toString());
 		m.addAttribute("data", data);
@@ -34,10 +32,7 @@ public class searchController {
 	@RequestMapping("/gorecipe")
 	public String gorecipe(@RequestParam("reciid") String data) {
 		
-		System.out.println("in0 : "+ data);
-		
-		List l = searchService.goRecipe(data);
-		System.out.println(l);
+		System.out.println("in0");
 		return "recipe";
 	}
 }

@@ -2,27 +2,24 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <style>
-        header {
-            height: 100px;
-        }
+header {
+    height: 100px;
+}
 
-        main {
-            /* border: 1px solid red; */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 80px;
-            /* 수정사항: 
-            margin-top: 80px;
-            추가 */
-        }
-        
-        body {
-		    margin: 0;
-		    color : red;
-		    font-size: 18px;
-		    font-weight: bold;
-		}
+main {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+    /* 수정사항: 
+    margin-top: 80px;
+    추가 */
+}
+body{
+    margin: 0;
+    font-size: 0;
+}
 @font-face {
     font-family: 'yg-jalnan';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
@@ -122,7 +119,6 @@ input:focus{
     color: white;
     border: none;
     cursor: pointer;
-    margin-bottom : 3%;
     /* �닔�젙�궗�빆: 
     width: 352px濡�
     蹂�寃� */
@@ -143,12 +139,12 @@ input:focus{
  <form method="post" action="loginsubmit">
     <main>
         <div class="mainbox">
-            <a class="logo" href="mainpage.jsp">레시pick!</a>
+            <a class="logo" href="main">레시pick!</a>
             <div class="text">
                 <div>
                   <img
                         src="https://cdn.discordapp.com/attachments/1148557028927742005/1148557062645764176/id_icon.png">
-                    <input type="text" name="uname" placeholder="아이디">
+                    <input type="text" name="id" placeholder="아이디">
                 </div>
                 <div>
                     <img
@@ -164,7 +160,7 @@ input:focus{
                 <%
                 	}
                 %>
---%>                
+--%>
             </div>
             <div class="find">
                 <a href="newsign">회원가입</a>
@@ -172,7 +168,6 @@ input:focus{
             <div class="login">
                 <input type="submit" value="로그인">
             </div>
-            ${error }
         </div>
     </main>
   </form>

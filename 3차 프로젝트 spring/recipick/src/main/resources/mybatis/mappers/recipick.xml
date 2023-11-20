@@ -3,12 +3,10 @@
    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
 <mapper namespace="id_recipick">
-
-
-	<insert id="insert_recipe" parameterType="recipeDTO">
+	<insert id="recipe_id" parameterType="recipeDTO">
 		<selectKey keyProperty="recipe_id" resultType="int" order="BEFORE">
-			select seq_reci.nextval from dual
-		</selectKey> 
+			select recipe_seq.nextval from dual
+		</selectKey>
 		insert into recipe(
 						recipe_id,
 						recipe_date,
@@ -23,72 +21,71 @@
 						sysdate,
 						#{mainpic},
 						#{maintext},
-						#{view},
+						0,
 						#{user},
 						#{recipe_title}
 						)
 	</insert>
 	
+	<insert id="food" parameterType="hashmap">
+		insert into food(
+					food_id,
+					food_name,
+					food_value,
+					recipe_id
+					)
+					values(
+						food_id.nextval,
+						#{food_name},
+						#{food_value},
+						#{recipe_id}
+					)
+					
+	</insert>
+	
+	<insert id="hashtag" parameterType="hashmap">
+		insert into hashtag(
+						hash_id,
+						hash_name,
+						tag_type,
+						recipe_id
+					)
+					values(
+						hash_id.nextval,
+						#{hash_name},
+						'recipe',
+						#{recipe_id}
+					)
+	</insert>
+	
+	<insert id="detailrecipe" parameterType="hashmap">
+		insert into detailrecipe(
+							detailrecipe_id,
+							detail_pic,
+							detail_text,
+							make_order,
+							recipe_id
+						)
+						values(
+							detailrecipe_id.nextval,
+							#{detail_pic},
+							#{detail_text},
+							#{make_order},
+							#{recipe_id}
+						)
+						
+	</insert>
+	
+	<insert>
+		
+	</insert>
+	
+	
+	
 	<select id="searchData" resultType="recipeDTO" parameterType="hashmap"> <!--   -->
 		SELECT * FROM RECIPE
-		<where>
-			recipe_title LIKE '%' || #{recipe_title} || '%'
-			<if test="order == 0">
-				order by recipe_id desc
-			</if>
-			<if test= "oreder == 1">
-				order by viewer desc
-			</if>
-			<if test= "order == 2">
-			
-			</if>
-		</where> 
-			
+		WHERE recipe_title LIKE '%' || #{recipe_title} || '%'
 	</select>
 	
-	<select id="searchRecipe" resultType="recipeDTO" parameterType="String"> <!--   -->
-		SELECT * FROM RECIPE
-		WHERE recipe_id = #{_parameter}
-	</select>
 	
-<!-- 	김호연 -->
-	<insert id="newsigninsert" parameterType="memberDTO">
-			insert into MEMBER (
-				uname, 
-				rname, 
-				email, 
-				pw, 
-				birth, 
-				phone, 
-				gender,
-				guest
-			) values (
-				#{uname}, 
-				#{rname}, 
-				#{email}, 
-				#{pw},  
-				to_date(#{birth}, 'yyyy-mm-dd'), 
-				#{phone}, 
-				#{gender},
-				#{guest}
-			)
-		</insert>
-	
-		<select id="loginselect" resultType="memberDTO">
-			select 
-				uname, pw 
-			from 
-				MEMBER 
-			where 
-				uname = #{uname} and pw = #{pw}
-		</select>
-		
-		<select id="isDuplicateUname" resultType="memberDTO">
-			select 
-				uname
-			from 
-				MEMBER 
-			where 
-				uname = #{uname}
-		</select>
 </mapper>

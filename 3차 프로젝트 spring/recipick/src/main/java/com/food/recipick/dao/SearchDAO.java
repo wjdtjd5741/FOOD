@@ -17,8 +17,4 @@ public class SearchDAO {
 		System.out.println("data : " + map);
 		return sqlSession.selectList("id_recipick.searchData", map);
 	}
-	
-	public List goRecipe(String data) {
-		return sqlSession.selectList("id_recipick.searchRecipe",data);
-	}
 }
