@@ -31,18 +31,13 @@ public class RecipeController {
 			@RequestParam(value="detail_pic", required=false)List<String> detail_pic,
 			@RequestParam(value="detail_text", required=false)List<String> detail_text
 			) {
+		
 		List list = recipickservice.recipePage1(dto);
 		
 		System.out.println(dto);
-		return "newrecipepage";
+		return "newrecipe";
 		
 	}
-	@RequestMapping("/newrecipepage")
-	public String newrecipepage() {
-		
-		return "newrecipepage.do";
-	}
-	
-	
+
 	
 }

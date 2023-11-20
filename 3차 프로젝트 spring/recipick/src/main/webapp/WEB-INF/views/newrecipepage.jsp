@@ -831,12 +831,12 @@ input {
 		}
 	</script>
 	<%-- --%>
-	<script type="text/javascript" src="assets/js/header_contents.js"></script>
+<!-- 	<script type="text/javascript" src="assets/js/header_contents.js"></script>
 
 	<script type="text/javascript" src="assets/js/search_event.js"></script>
 	<script type="text/javascript" src="assets/js/mobile_pop.js"></script>
 
-	<script type="text/javascript" src="assets/js/btns_hover.js"></script>
+	<script type="text/javascript" src="assets/js/btns_hover.js"></script> -->
 
 </body>
 </html>

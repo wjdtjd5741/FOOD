@@ -1,5 +1,6 @@
 package com.food.recipick.service;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -17,7 +18,12 @@ public class RecipickServiceImpl implements RecipickService{
 
 	@Override
 	public List recipePage1(RecipeDTO dto) {
-			
+		dto.setMainpic("юс╫ц");
+		dto.setUser("user");
+		List l = new ArrayList();
+		l.add("f");
+		dto.setDetail_pic(l);
+		dto.setView("0");
 		return recipickdao.recipePage1(dto);
 	}
 
