@@ -5,19 +5,494 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="assets/css/newrecipepage.css">
-<link rel="stylesheet" href="assets/css/header.css">
-<link rel="stylesheet" href="assets/css/footer.css">
-<link rel="stylesheet" href="assets/css/mobile_console.css">
-<link rel="stylesheet" href="assets/css/j/newrecipepage_sec1.css">
-<link rel="stylesheet" href="assets/css/h/newrecipepage_sec2.css">
-<link rel="stylesheet" href="assets/css/h/media/newrecipepage_sec2.css">
-<link rel="stylesheet" href="assets/css/j/newrecipepage_sec3.css">
-<link rel="stylesheet" href="assets/css/j/media/newrecipepage.css">
-</head>
+ <style>
+ main{
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+section{
+    /* border: 1px solid blue; */
+    width: 85%;
+}
 
+.title{
+    display: flex;
+    margin-top: 100px;
+    /* border: 1px solid red; */
+    width: 100%;
+}
+.title > div:nth-child(1){
+    /* border: 1px solid blue; */
+    width: 100%;
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    
+    
+}
 
-<body>
+/* .hashtag_box > div:nth-child(1){
+    margin-bottom: 10px;
+} */
+.title div:nth-child(n+2){
+    border-radius: 8px;
+    margin-top: 5px;    
+    background-color: rgba(207, 207, 207, 0.562);
+    font-size: 16px;
+    font-weight: bold;
+    height: 30px;
+    line-height: 1.8;
+    text-align: center;
+    width: 100px;
+    cursor: pointer;
+}
+.title div:nth-child(2){
+    margin-right: 1%;
+}
+
+.bigbox{
+    margin-top: 50px;
+}
+.topbox{
+    margin-bottom: 30px;
+    margin-left: 45px;
+}
+.topbox > div:nth-child(n){
+    display: inline-block;
+}
+.making_how{
+	font-size: 16px;
+	font-weight: bold;
+	margin-left: 10px;
+}
+
+.topbox > div:nth-child(1){
+    width: 30px;
+    height: 30px;
+    background-color: rgb(230, 126, 34);
+    text-align: center;
+    border-radius: 30px;
+    line-height: 2;
+    color: white;
+    font-size: 16px;
+}
+.topbox > div:nth-child(2){
+    font-size: 20px;   
+    margin-left: 10px;
+    font-weight: bold;
+}
+.del_recipage{
+    display: inline-block;
+    font-size: 12px;
+    margin-left: 87%;
+    vertical-align: top;
+    border: 1px solid gray;
+    border-radius: 4px;
+    background-color: gray;
+    width: 50px;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+    
+}
+ 
+/*    .topbox div:nth-child(2){*/
+/*    font-size: 20px;   */
+/*    margin-left: 10px;*/
+/*    font-weight: bold;*/
+/*}*/
+ 
+
+.media_box{
+    border: 1px solid black;
+    width: 90%;
+    height: 500px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    /* margin-left: 300px; */
+    margin-bottom: 20px;
+    margin-left: 5%;
+/*    line-height: 25;*/
+}
+
+.media_box > img {
+	margin-top: 180px;
+}
+.media_box_pic{
+	font-size: 20px;
+	margin-top: 210px;
+}
+.explanation{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 5%;
+    margin-bottom: 10px;
+/*    margin-bottom: 200px;*/
+}
+.explanation_context{
+	border: 1px solid black;
+    font-size: 16px;
+    font-weight: bold;
+    width: 90%;
+    height: 100px;
+    margin-left: 52px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+.attach{
+    display: flex;
+    margin-left: 49px;
+}
+.attach div{
+    margin-right: 20px;
+}
+.attach img{
+    width: 50px;
+    height: 50px;
+}
+.attach_font{
+    /* border: 1px solid blue; */
+    display: flex;
+    margin-left: 50px;
+    margin-bottom: 10px;
+}
+.attach_font div{
+    font-size: 13px;
+    
+    font-weight: bold;
+}
+.attach_font div:nth-child(1){
+    margin-right: 34px;
+}
+.attach_font div:nth-child(2){
+    margin-right: 30px;
+}
+
+.plus{
+    /* border: 1px solid blue; */
+    width: 90%;
+    height: 30px;
+    /* margin-left: 220px; */
+    background-color: rgb(230, 126, 34);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 30px;
+    line-height: 0.8;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    margin-left: 5%;
+    text-align: center;
+    /* 
+    cursor: pointer;
+    font-size: 30px;
+    line-height: 1;
+    border-radius: 5px;
+ 
+    */
+}
+
+.plus_btn input{
+    font-size: 16px;
+}
+.all2 {
+    /* border: 1px solid black; */
+}
+
+.all2 > img {
+    margin-top: -200px; 
+    width: 100%;
+    height: 500px;
+}
+.recipick_title{
+    font-size: 20px;
+    font-weight: bold;
+    width: 85%;
+    margin-bottom: 20px;
+    height: 26px;
+    margin-left: 50px;
+    margin-top: 30px;
+/*    margin-right: 10px;*/
+    
+}
+.title_box{
+    width: 100%;
+}
+.title_submit, .food_explain_submit{
+    display: inline-block;
+    font-size: 16px;
+    width: 50px;
+    height: 35px;
+    border-radius: 5px;
+    background-color: rgba(207, 207, 207, 0.562);
+    /* margin-top: 12px; */
+    text-align: center;
+    line-height: 2;
+    cursor: pointer;
+    vertical-align: top;
+}
+.show_titlename, .food_explain{
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    border: 1px solid gray;
+    height: 30px;
+    width: 80%;
+    display: inline-block;
+    word-wrap: break-word;
+}
+.recipick_hashtag {
+    padding-left: 1%;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    margin-left: 5px;
+    border-radius: 5px;
+    border: 1px solid rgb(160, 158, 158);
+    font-size: 18px;
+    width: 99%;
+    height: 40px;
+/*    margin-left: 50px;*/
+    /* margin-left: 2%;  */
+}
+.recipick_hashtag { 
+    /* padding-left: 7px; */
+    /* margin-left: 13%;  */
+    width: 130px;
+    margin-right: 30px;
+    text-align: center;
+    border-radius: 5px;
+}
+.hashtag_ex{
+	font-size: 20px;
+	font-weight: bold;
+}
+.content_ex{
+	font-size: 20px;
+	font-weight: bold;
+}
+.hashtag_border{
+	width: 90%;
+/*	height: 200px;*/
+/*	border: 1px solid orange;*/
+	margin-left: 51px;
+	margin-bottom: 40px;
+}
+.hashtag_box{
+    /* border: 1px solid red; */
+    width: 300px;
+    height: 100px;
+    display: flex;
+}
+.food_ex{
+	font-size: 20px;
+	font-weight: bold;
+	width: 90%;
+	margin-left: 51px;
+}
+.hashtag_box > div:nth-child(2){
+    font-size: 16px;
+    width: 30%;
+    height: 35px;
+    border-radius: 5px;
+    background-color: rgba(207, 207, 207, 0.562);
+    margin-top: 25px;
+    margin-right: 0px;
+    text-align: center;
+    line-height: 2;
+    cursor: pointer;
+}
+.hashtag_minus, .quantity_minus{
+    width: 20px;
+    height: 20px;
+    background-color: rgb(236, 235, 235);
+    font-size: 40px;
+    color: black;
+    line-height: 0.2;
+    position: absolute;
+    top: 0;
+    right: 1px;
+    text-align: center;
+}
+
+.hashtags {
+    color: black;
+    display: inline-block;
+    border: 2px solid orange;
+    background-color: white;
+    width: 17%;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 15px;
+    text-align: center;
+    margin-top: 30px;
+    margin-right: 2%;
+    margin-left: 5px;
+/*	margin-left: 50px;*/
+    font-size: 18px;
+    position: relative;
+}
+.del_titlename , .del_explain{
+    font-size: 16px;
+    background-color: rgba(207, 207, 207, 0.562); 
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    width: 50px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+.max {
+    color: red;
+    margin-top: 20px;
+    font-size: 16px; 
+    margin-left: 20px;
+    font-weight: bold;
+    display: none;
+}
+.img_add { 
+    border: 1px solid black;
+    width: 100%;
+    height: 500px;
+    /* margin-top: -130px; */
+    text-align: center;
+    
+
+    
+}
+
+.img_add > div:nth-child(2){
+    height: 100px;
+    font-size: 20px;
+}
+
+.recipick_content0, .recipick_content1{
+    width: 90%;
+    height: 40px;
+    font-size: 18px;
+    border-radius: 5px;
+    text-align: center;
+    
+}
+
+.content_all > div:nth-child(1),
+.content_all > div:nth-child(2){
+    width: 35%;
+    margin-right: 10px;
+}
+.content_all > div:nth-child(1){
+    margin-right: 10px;
+}
+#quantity_submit{
+    font-size: 16px;
+    width: 30%;
+    height: 35px;
+    border-radius: 5px;
+    background-color: rgba(207, 207, 207, 0.562);
+    margin-top: 6px;
+    text-align: center;
+    line-height: 2;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.content_all {
+    /* border: 1px solid red; */
+    margin-top: 20px;
+    width: 50%;
+    display: flex;
+    margin-bottom: 30px;
+/*    margin-left: 40px;*/
+    /* justify-content: space-between; */
+    /* margin-left: 1%; */
+}
+.content_all_border{
+/*	border: 1px solid orange;*/
+	width: 90%;
+	margin-left: 51px;
+}
+
+input {
+    color:gray;
+}
+.quantity_box{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-left: 5px;
+    margin-bottom: 30px;
+    
+    
+    /* border: 1px solid blue; */
+    /* margin-left: 2%; */
+    
+}
+.quantity_content{
+	
+}
+.input_info{
+    
+}
+.quantity{
+/*    width: 110px;*/
+/*    height: 30px;*/
+/*    border: 1px solid black;*/
+/*    position: relative;*/
+/*    line-height: 2;*/
+/*    margin-right: 2%;*/
+/*    vertical-align: top;*/
+
+	color: black;
+    display: inline-block;
+    border: 2px solid orange;
+    background-color: white;
+    width: 14%;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 15px;
+    text-align: center;
+    margin-top: 30px;
+    margin-right: 2%;
+    font-size: 18px;
+    position: relative;
+}
+.quantity > div:nth-child(1){
+    font-size: 16px;
+}
+.quantity_box > div:nth-child(1){
+    /* margin-right: 2%; */
+}
+.food_explanation{
+    border: 1px solid black;
+    font-size: 16px;
+    font-weight: bold;
+    width: 86%;
+    height: 50px;
+    margin-top: 10px;
+}
+.food_explain, .del_explain{
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+#explanation{
+    border: 1px solid black;
+    font-size: 16px;
+    width: 90%;
+    height: 200px;
+    margin-top: 20px;
+    margin-left: 5%;
+    margin-bottom: 30px;
+}
+
+ </style>
+
 <body>
 <%-- 	<%@ include file="header.jsp"%> --%>
 	<main>

@@ -24,18 +24,9 @@
 						)
 	</insert>
 	
-	<select id="selectMember" resultType="memberDTO">
-<!-- 		
-		<selectKey keyProperty="pw" resultType="int" order="BEFORE">
-			select * seq_emp2.nextval from dual  
-		</selectKey> 
--->
-		SELECT * FROM MEMBER
-	</select>
-	
-	<select id="searchData" resultType="recipeDTO" parameterType="string">
+	<select id="searchData" resultType="recipeDTO" parameterType="hashmap"> <!--   -->
 		SELECT * FROM RECIPE
-		WHERE RECIPE_TITLE LIKE '%' || '#{data}' || '%'
+		WHERE recipe_title LIKE '%' || #{recipe_title} || '%'
 	</select>
 	
 	

@@ -31,7 +31,7 @@ public class RecipeController {
 			@RequestParam(value="detail_pic", required=false)List<String> detail_pic,
 			@RequestParam(value="detail_text", required=false)List<String> detail_text
 			) {
-		RecipeDTO rdto = recipickservice.recipePage1(dto);
+		List list = recipickservice.recipePage1(dto);
 		
 		System.out.println(dto);
 		return "newrecipepage";
