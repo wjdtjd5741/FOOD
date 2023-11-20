@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="id_recipick">
+	<insert id="recipe_id" parameterType="com.food.recipick.dto.RecipeDTO">
+		insert into recipe(
+						recipe_id,
+						recipe_date,
+						mainpic,
+						maintext,
+						viewer,
+						uname,
+						recipe_title
+						)
+					values(
+						recipe_seq.nextval,
+						sysdate,
+						#{mainpic},
+						#{maintext},
+						0,
+						#{user},
+						#{recipe_title}
+						)
+	</insert>
+
+</mapper>
