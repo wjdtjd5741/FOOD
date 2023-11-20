@@ -37,6 +37,11 @@ public class RecipeController {
 		return "newrecipepage";
 		
 	}
+	@RequestMapping("/newrecipepage")
+	public String newrecipepage() {
+		
+		return "newrecipepage.do";
+	}
 	
 	
 	

@@ -6,8 +6,11 @@ import org.springframework.stereotype.Repository;
 
 import com.food.recipick.dto.RecipeDTO;
 
+@Repository
 public class RecipickDAOImpl implements RecipickDAO{
 
+	
+	
 	
 	@Autowired
 	SqlSession sqlSession;
