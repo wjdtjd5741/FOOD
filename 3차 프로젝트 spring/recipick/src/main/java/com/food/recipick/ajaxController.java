@@ -10,8 +10,16 @@ public class ajaxController {
 	
 	@RequestMapping("bulletinsection")
 //	@ResponseBody
-	public String pagereload(@RequestParam("page") int page) {
+	public String bulletin_pagereload(@RequestParam("page") int page) {
 		System.out.println("pagereload");
 		return "bulletinsection"+page;
 	}
+
+	@RequestMapping("mypagesection")
+	public String mypage_pagereload(@RequestParam("page") int page) {
+		System.out.println("pagereload");
+		return "mypagesection"+page;
+	}
+	
+	
 }

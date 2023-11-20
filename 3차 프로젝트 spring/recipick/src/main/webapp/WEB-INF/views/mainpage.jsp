@@ -580,7 +580,7 @@ h2 {
  	logout()
 		function logout(){
 			document.querySelector(".logout").addEventListener("click",function(){
-				alert("로그아웃 되었습니다");
+				alert("로그아웃되었습니다");
 				window.location.href = "logout";
 			})
 		}

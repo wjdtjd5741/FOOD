@@ -38,9 +38,11 @@ public class memberController {
     		
 //    		// model에 담아서
     		model.addAttribute("list", loginList);
-    		session.setAttribute("dto", dto);
+    		model.addAttribute("dto", dto);
     		
-        	return "main"; // 메인 페이지로 포워드
+    		
+    		
+        	return "main"; // 메인 페이지로 리다이렉트
         	
         } else {
             // 로그인이 실패한 경우
@@ -96,17 +98,6 @@ public class memberController {
 		
 //		return "redirect:newsign";
 	}
-	
-	    // 로그아웃
-	    @RequestMapping("/logout")
-	    public String logoutsubmit(HttpServletRequest request) {
-	        
-	        HttpSession session = request.getSession();
-	        
-	        session.invalidate(); // 저장된 session 제거
-	        
-			return "main";
-    }
 	
 	
 }
