@@ -487,15 +487,51 @@ body{
 				<div>댓글</div>
 				<div class="comment_count">0</div>
 			</div>
+			<div class="comment_box"></div>
 			<div>
 				<textarea class="input_text" type="text" value="댓글을 남겨주세요."
 					maxlength="300"></textarea>
 				<input class="btn_txt" type="button" value="등록">
 			</div>
-			<div class="comment_box"></div>
+			
 		</div>
 	</article>
 </main>
+<script>
+	
+ 	get_json();
+	function get_json(){
+		const xhr = new XMLHttpRequest();
+		let data = new URLSearchParams(window.location.search).get("reciid");
+		xhr.open("GET", `http://localhost:8080/recipick/comment_load?reciid=\${data}`);
+		xhr.send();
+		
+		window.addEventListener("load", function(){
+			xhr.onload = function(){
+				console.log(xhr.responseText);
+				let json = JSON.parse(xhr.responseText)
+				
+				for(let i = 0 ;i<json.length ;i++){
+					let html = "";
+					let margin = json[i].lv * 30;
+		            html += `<div class="reple_box" style="margin: 0 \${margin}px">`
+	                html += `<div style="display: inline-block; width: 60%;">\${json[i].uname}</div>`;
+	                html += `<input class='del_btn' type=button value='X' style='font-size: 10px;'>`;
+	                html += `<div style="display: inline-block;">\${json[i].comment_text}</div>`
+	                html += "<input class='reple_btn' type=button value='ㄴ' style='font-size: 10px;'>"
+	                html += `<div style="display: none">\${json[i].comment_id}</div>`
+	                html += `<div class='submit_box'></div>`
+	                document.querySelector(".comment_box").innerHTML += html;
+				}
+				
+			}
+		})
+
+	}
+
+		
+	
+</script>
 	<script type="text/javascript" src="resources/assets/js/comment.js"></script>
 	<script type="text/javascript" src="resources/assets/js/header_contents.js"></script>
 	<script type="text/javascript" src="resources/assets/js/reci_pop.js"></script>

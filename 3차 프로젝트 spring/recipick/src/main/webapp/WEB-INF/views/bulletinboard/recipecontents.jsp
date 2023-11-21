@@ -21,11 +21,11 @@
                 <tr class="lines">
                 <div class="bulletinID"></div>
                     <td class="tb_num_color">1</td>
-                    <td><img src="${bul_rec_sel.mainpic }"></td>
-                    <td>${bul_rec_sel.recipe_title }</td>
-                    <td>${bul_rec_sel.recipe_date }</td>
-                    <td>${bul_rec_sel.uname }</td>
-                    <td>${bul_rec_sel.viewer }</td>
+                    <td><img src="${bul_rec_sel[0].mainpic }"></td>
+                    <td>${bul_rec_sel[0].recipe_title }</td>
+                    <td>${bul_rec_sel[0].recipe_date }</td>
+                    <td>${bul_rec_sel[0].uname }</td>
+                    <td>${bul_rec_sel[0].viewer }</td>
                 </tr>
             </tbody>
         </table>

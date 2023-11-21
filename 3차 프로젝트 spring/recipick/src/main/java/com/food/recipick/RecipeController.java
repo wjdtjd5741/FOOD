@@ -40,14 +40,14 @@ public class RecipeController {
 		
 		HttpSession session = request.getSession();
 		
-		dto.setUser((String)session.getAttribute("memberdto"));
+		dto.setUname((String)session.getAttribute("memberdto"));
 		System.out.println(dto);
 		
-		RecipeDTO bulletin_rec_sel = (RecipeDTO)recipickservice.recipePage1(dto);
+		List bulletin_rec_sel = (List)recipickservice.recipePage1(dto);
 		
-		m.addAttribute("bul_rec_sel", bulletin_rec_sel);
+		session.setAttribute("bul_rec_sel", bulletin_rec_sel);
 		
-		return "bulletinsection0";
+		return "bulletin";
 		
 	}
 	

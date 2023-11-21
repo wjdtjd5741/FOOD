@@ -22,4 +22,11 @@ public class SearchService {
 		return searchDAO.goRecipe(data);
 	}
 	
+	public List comment_load(String data) {
+		return searchDAO.comment_load(data);
+	}
+	
+	public void insert_comment(Map map) {
+		searchDAO.insert_comment(map);
+	}
 }

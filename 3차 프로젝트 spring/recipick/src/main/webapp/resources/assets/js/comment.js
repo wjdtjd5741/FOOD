@@ -5,7 +5,8 @@ text_focus();
 function comment() {
     document.querySelector(".btn_txt").addEventListener("click", function () {
         let text = document.querySelector(".input_text").value;
-        window.location.href = ""
+        let reciid = new URLSearchParams(window.location.search).get("reciid");
+        //window.location.href = ""
         
         
         if (text != "") {
@@ -24,13 +25,18 @@ function comment() {
 		reple_add();
         del_reple();
         reple_count()
+        
+        window.location.href = "insert_comment?reciid="+reciid+"&ctext="+text
     });
 }
 
 
 function reple_add(){
 	document.querySelector(".reple_btn").addEventListener("click",function(){
-		console.log("f");
+		let html = ""
+		html += `<textarea class="input_text" type="text" value="댓글을 남겨주세요."maxlength="300"></textarea>`
+		html += `<input class="btn_txt" type="button" value="등록">`
+		document.queryselector(".submit_box").innerHTML += html;
 	})
 }
 

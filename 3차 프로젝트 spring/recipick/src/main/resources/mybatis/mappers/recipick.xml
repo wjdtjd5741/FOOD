@@ -44,7 +44,7 @@
 						#{mainpic},
 						#{maintext},
 						0,
-						#{user},
+						#{uname},
 						#{recipe_title}
 						)
 	</insert>
@@ -97,7 +97,7 @@
 						)
 	</insert>
 	
-	<select id="bulletin_rec_sel" resultType="recipeDTO">
+	<select id="bulletin_rec_sel" resultType="recipeDTO" parameterType="recipeDTO">
 		select mainpic, recipe_title, recipe_date, uname, viewer from recipe
 		where #{recipe_id} = recipe_id
 						

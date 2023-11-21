@@ -21,4 +21,12 @@ public class SearchDAO {
 	public List goRecipe(String data) {
 		return sqlSession.selectList("searchs.searchRecipe",data);
 	}
+	
+	public List comment_load(String data) {
+		return sqlSession.selectList("searchs.comment_load", data);
+	}
+	
+	public void insert_comment(Map map) {
+		sqlSession.insert("searchs.insert_comment", map);
+	}
 }

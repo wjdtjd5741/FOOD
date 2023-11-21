@@ -20,7 +20,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class TilesController {
 	
 	@RequestMapping("/main")
-	public String main(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	public String main(HttpServletRequest request, HttpServletResponse response
+			) throws IOException {
 		
 		String str = request.getParameter("ck");
 		
@@ -34,7 +35,7 @@ public class TilesController {
 			response.addCookie(c);
 			response.sendRedirect("main");
 		} else {
-			
+				
 		}
 		return "main";
 	}
@@ -53,7 +54,6 @@ public class TilesController {
 	
 	@RequestMapping("/login")
 	public String login() {
-		
 		return "login";
 	}
 	
