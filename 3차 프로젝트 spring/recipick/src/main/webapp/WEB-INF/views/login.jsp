@@ -143,7 +143,7 @@ input:focus{
  <form method="post" action="loginsubmit">
     <main>
         <div class="mainbox">
-            <a class="logo" href="mainpage.jsp">레시pick!</a>
+            <a class="logo" href="mainpage">레시pick!</a>
             <div class="text">
                 <div>
                   <img
