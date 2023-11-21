@@ -586,9 +586,9 @@ h3 {
 				let selectedSection = document.querySelector(".selected_section");
 				if (selectedSection) {
 					if (selectedSection.textContent === "레시피 게시판") {
-						window.location.href = "newrecipepage.jsp"; // 레시피 게시판의 글쓰기 페이지로 이동
+						window.location.href = "newrecipe"; // 레시피 게시판의 글쓰기 페이지로 이동
 					} else if (selectedSection.textContent === "후기 게시판") {
-						window.location.href = "writepage.jsp"; // 후기 게시판의 글쓰기 페이지로 이동
+						window.location.href = "write"; // 후기 게시판의 글쓰기 페이지로 이동
 					}
 				}
 			});

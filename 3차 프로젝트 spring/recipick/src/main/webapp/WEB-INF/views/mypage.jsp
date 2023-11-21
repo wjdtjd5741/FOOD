@@ -779,7 +779,7 @@ hr {
 		<div class="all_1">
 			 <div class="left_right">
                 <div class="left">
-					<div class = "logo"><a href="mainpage">레시pick!</a></div>
+					<div class = "logo"><a href="main">레시pick!</a></div>
 				<div class = "hi">
 					안녕하세요
 <%-- 				<%= mm.getName() %> --%>

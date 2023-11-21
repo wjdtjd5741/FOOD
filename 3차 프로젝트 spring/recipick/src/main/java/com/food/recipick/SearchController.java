@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.food.recipick.service.SearchService;
 
 @Controller
-public class searchController {
+public class SearchController {
 	
 	@Autowired
 	SearchService searchService;

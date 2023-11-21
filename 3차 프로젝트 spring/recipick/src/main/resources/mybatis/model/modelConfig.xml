@@ -8,6 +8,7 @@
 	</settings>
 	<typeAliases>
 		<typeAlias type="com.food.recipick.dto.MemberDTO" alias="memberDTO" />
+		<typeAlias type="com.food.recipick.dto.WriteDTO" alias="writeDTO" />
 		<typeAlias type="com.food.recipick.dto.RecipeDTO" alias="recipeDTO"/>
 	</typeAliases>
 

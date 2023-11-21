@@ -37,9 +37,13 @@
 	<definition name="mypagesection2" template="/WEB-INF/views/mypage/section2.jsp"/>
 	
 	<definition name="writer" extends="baseLayout">
-		
 		<put-attribute name="body" value="/WEB-INF/views/writerview.jsp"/>
 	</definition>
+
+	<definition name="write" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/views/writepage.jsp"/>
+	</definition>
+	
 	<definition name="newrecipe" extends="baseLayout">
 		<put-attribute name="body" value="/WEB-INF/views/newrecipepage.jsp"/>
 	</definition>

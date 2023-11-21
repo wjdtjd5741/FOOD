@@ -16,7 +16,7 @@ import com.food.recipick.dto.RecipeDTO;
 import com.food.recipick.service.NewsignService;
 
 @Controller
-public class memberController {
+public class MemberController {
 	
 	@Autowired
 	NewsignService newsignService;

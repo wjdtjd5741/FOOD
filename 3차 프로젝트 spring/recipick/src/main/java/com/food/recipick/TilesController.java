@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class tilesController {
+public class TilesController {
 	
 	@RequestMapping("/main")
 	public String main(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -77,6 +77,10 @@ public class tilesController {
 	@RequestMapping("/mypage")
 	public String mypage() {
 		return "mypage";
+	}
+	@RequestMapping("/write")
+	public String write() {
+		return "write";
 	}
 }
 

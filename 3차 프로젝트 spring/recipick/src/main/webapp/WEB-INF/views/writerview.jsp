@@ -270,7 +270,7 @@ article>div>img {
 				<div class="title">후기 게시판</div>
 				
 				<textarea class="writeTitle a" disabled="true">
-<%-- ${write.title} --%>
+<%-- ${write.title} --%>${dto.review_title}
                 </textarea>  
 				
 				 <div>
@@ -285,13 +285,13 @@ article>div>img {
                 %>
 --%>                
                 <textarea class="food_text_review a" disabled="true">
-<%-- ${write.text} --%>
+<%-- ${write.text} --%>${dto.review_text }
                 </textarea>  
 				
 				<div class="modify">
 					<input class="edit_text_review viewbtn" type="button" value="수정" onclick="enableTextareas()">
 					<input  class="del_text_review viewbtn" type="button" value="삭제" onclick="enableTextareas()">
-					<a href="bulletin.jsp">목록</a>
+					<a href="bulletin">목록</a>
 				</div>
 			</article>
 		</section>
@@ -349,4 +349,4 @@ function saveChanges() {
 }
 
 </script>
-<script type="text/javascript" src="assets/js/search_event.js"></script>
+<script type="text/javascript" src="resources/assets/js/search_event.js"></script>
