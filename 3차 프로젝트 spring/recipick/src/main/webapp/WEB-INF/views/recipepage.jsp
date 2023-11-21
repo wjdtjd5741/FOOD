@@ -493,12 +493,109 @@ body{
 					maxlength="300"></textarea>
 				<input class="btn_txt" type="button" value="등록">
 			</div>
-			
+			<div class='submit_box' style="display: none"></div>
+			<div class='reple_btn_txt' style="display: none"></div>
 		</div>
 	</article>
 </main>
 <script>
+comment();
+text_focus();
+
+
+function comment() {
+    document.querySelector(".btn_txt").addEventListener("click", function () {
+        let text = document.querySelector(".input_text").value;
+        let reciid = new URLSearchParams(window.location.search).get("reciid");
+        //window.location.href = ""
+        
+        
+        if (text != "") {
+            let html = "";
+            html += `<div class="reple_box">`
+            html += "<div style='display: inline-block; width: 60%;'>작성자</div>";
+            html += `<input class='del_btn' type=button value='X' style='font-size: 10px;'>`;
+            html += `<div style='display: inline-block;'>${text}</div>`
+            html += "<input class='reple_btn' type=button value='ㄴ' style='font-size: 10px;'>"
+            // console.log(document.querySelector(".comment_box"));
+            document.querySelector(".comment_box").innerHTML += html;
+            document.querySelector(".input_text").value = "댓글을 남겨주세요.";
+        } else
+            alert("댓글을 입력해주세요.");
+            
+		
+        del_reple();
+        reple_count()
+        
+        window.location.href = "insert_comment?reciid="+reciid+"&ctext="+text
+    });
+}
+
+
+function reple_add(){
+	let btns = document.querySelectorAll(".reple_btn")
 	
+// 	console.log(btns)
+	for(let i = 0 ;i<btns.length ;i++){
+		btns[i].addEventListener("click",function(){
+			let html = ""
+			html += `<textarea class="reple_input_text" type="text" value="댓글을 남겨주세요."maxlength="300"></textarea>`
+			html += `<input class="reple_btn_txt" type="button" value="등록">`
+			let boxs = document.querySelectorAll(".submit_box")
+			for(let j = 0 ;j<boxs.length ;j++)
+				boxs[j].innerHTML = "";
+			boxs[i].innerHTML = html;
+			
+			reple_comments(i);
+		})
+	}
+	
+// 	reple_add()
+}
+
+function reple_comments(z){
+	let replebtns = document.querySelectorAll(".reple_btn_txt")
+	let submitbox = document.querySelectorAll(".submit_box")
+	for(let j = 0 ;j<submitbox ;j++)
+	console.log(replebtns)
+	for(let i = 0 ; i<replebtns.length ;i++){
+		replebtns[i].addEventListener("click",function(){
+			let reciid = new URLSearchParams(window.location.search).get("reciid");
+			let text = document.querySelector(".reple_input_text").value;
+			let pid = submitbox[z].parentNode.querySelector(".reple_id").innerText
+			console.log(pid);
+			window.location.href = "insert_reple_comment?reciid="+reciid+"&ctext="+text+"&pid="+pid
+		})
+	}
+}
+
+function text_focus() {
+    document.querySelector(".input_text").addEventListener("click", function () {
+        document.querySelector(".input_text").value = "";
+    });
+}
+
+function del_reple() {
+    let reple = document.querySelectorAll(".del_btn");
+    let submitbox = document.querySelectorAll(".submit_box")
+    console.log(reple)
+    for (let i = 0; i < reple.length; i++) {
+        reple[i].addEventListener("click", function () {
+            reple[i].parentNode.remove();
+            let reciid = new URLSearchParams(window.location.search).get("reciid");
+            console.log(submitbox[i].parentNode)
+            let cid = submitbox[i].parentNode.querySelector(".reple_id").innerText
+            console.log(cid)
+            window.location.href = "del_comment?reciid="+reciid+"&cid="+cid
+
+        });
+    }
+}
+
+function reple_count(){
+    document.querySelector(".comment_count").innerText = document.querySelectorAll(".reple_box").length;
+}
+
  	get_json();
 	function get_json(){
 		const xhr = new XMLHttpRequest();
@@ -519,15 +616,18 @@ body{
 	                html += `<input class='del_btn' type=button value='X' style='font-size: 10px;'>`;
 	                html += `<div style="display: inline-block;">\${json[i].comment_text}</div>`
 	                html += "<input class='reple_btn' type=button value='ㄴ' style='font-size: 10px;'>"
-	                html += `<div style="display: none">\${json[i].comment_id}</div>`
+	                html += `<div class="reple_id" style="display: none">\${json[i].comment_id}</div>`
 	                html += `<div class='submit_box'></div>`
 	                document.querySelector(".comment_box").innerHTML += html;
 				}
-				
+				reple_add();
+				del_reple()
 			}
+			
 		})
+		
+	}	
 
-	}
 
 		
 	

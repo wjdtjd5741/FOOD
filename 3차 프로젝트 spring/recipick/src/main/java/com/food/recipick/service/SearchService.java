@@ -29,4 +29,12 @@ public class SearchService {
 	public void insert_comment(Map map) {
 		searchDAO.insert_comment(map);
 	}
+	
+	public void insert_reple_comment(Map map) {
+		searchDAO.insert_reple_comment(map);
+	}
+	
+	public void del_comment(String data) {
+		searchDAO.del_comment(data);
+	}
 }

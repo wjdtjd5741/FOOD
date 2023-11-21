@@ -29,4 +29,10 @@ public class SearchDAO {
 	public void insert_comment(Map map) {
 		sqlSession.insert("searchs.insert_comment", map);
 	}
+	public void insert_reple_comment(Map map) {
+		sqlSession.insert("searchs.insert_reple_comment", map);
+	}
+	public void del_comment(String data) {
+		sqlSession.delete("searchs.del_comment", data);
+	}
 }

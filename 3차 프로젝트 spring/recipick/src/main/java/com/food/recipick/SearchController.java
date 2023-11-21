@@ -73,6 +73,40 @@ public class SearchController {
 		
 		searchService.insert_comment(map);
 		
-		return "recipe";
+		return "redirect:/gorecipe?reciid="+reciid;
+	}
+	
+	@RequestMapping("/insert_reple_comment")
+	public String insert_reple_comment(HttpServletRequest request,
+			@RequestParam("reciid") String reciid,
+			@RequestParam("ctext") String ctext,
+			@RequestParam("pid") String pid
+			) {
+		HttpSession session = request.getSession();
+		Map map = new HashMap();
+
+		map.put("parentcomment_id", pid);
+		map.put("recipe_id", reciid);
+		map.put("comment_text", ctext);
+		if(session.getAttribute("memberdto") != null) {
+			map.put("uname", session.getAttribute("memberdto"));
+		} else
+			map.put("uname", "admin");
+		
+		searchService.insert_reple_comment(map);
+		
+		System.err.println(map.get("uname"));
+		return "redirect:/gorecipe?reciid="+reciid;
+	}
+	
+	@RequestMapping("/del_comment")
+	public String del_comment(@RequestParam("reciid") String reciid,
+			@RequestParam("cid") String cid) {
+		System.out.println("reciid: "+reciid);
+		System.out.println("cid: "+cid);
+		
+		searchService.del_comment(cid);
+		
+		return "redirect:/gorecipe?reciid="+reciid;
 	}
 }

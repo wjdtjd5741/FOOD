@@ -54,8 +54,6 @@ public class RecipeController {
 	@RequestMapping(value="/bulletin_rec_sel")
 	public String bulletin_rec_sel(@ModelAttribute RecipeDTO dto) {
 		
-			
-		
 		return "bulletin";
 	}
 	
