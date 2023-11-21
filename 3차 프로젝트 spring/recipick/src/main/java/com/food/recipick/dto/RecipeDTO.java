@@ -8,19 +8,22 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class RecipeDTO {
 
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private int recipe_id;
 	private Date recipe_date;
 	private String mainpic;
 	private String maintext;
 	private String uname;
 	private String recipe_title;
 	private String viewer;
-	private int recipe_id;
-	private int food_id;
+	
 	private int hash_id;
-	private int detailrecipe_id;
+	private List hash_name;
+	
+	private int food_id;
 	private List food_name;
 	private List food_value;
-	private List hash_name;
+	
+	private int detailrecipe_id;
 	private List detail_pic;
 	private List detail_text;
 	private int make_order;

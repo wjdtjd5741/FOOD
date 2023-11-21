@@ -55,7 +55,7 @@ public class SearchController {
 		return searchService.comment_load(data);
 	}
 	
-	@RequestMapping(value= "/insert_comment", method= {RequestMethod.POST, RequestMethod.GET})
+	@RequestMapping("/insert_comment")
 	public String insert_comment(HttpServletRequest request,
 			@RequestParam("reciid") String reciid,
 			@RequestParam("ctext") String ctext

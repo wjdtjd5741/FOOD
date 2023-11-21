@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <style>
 main{
@@ -376,6 +379,7 @@ body{
     font-weight: 800;
     /* color: gray; */
 }
+
 </style>
 <link rel="stylesheet" href="resources/assets/css/comments.css">
 <main>
@@ -612,7 +616,7 @@ function reple_count(){
 					let html = "";
 					let margin = json[i].lv * 30;
 		            html += `<div class="reple_box" style="margin: 0 \${margin}px">`
-	                html += `<div style="display: inline-block; width: 60%;">\${json[i].uname}</div>`;
+	                html += `<div class="uname" style="display: inline-block; width: 60%;">\${json[i].uname}</div>`;
 	                html += `<input class='del_btn' type=button value='X' style='font-size: 10px;'>`;
 	                html += `<div style="display: inline-block;">\${json[i].comment_text}</div>`
 	                html += "<input class='reple_btn' type=button value='ㄴ' style='font-size: 10px;'>"
@@ -622,15 +626,15 @@ function reple_count(){
 				}
 				reple_add();
 				del_reple()
+				
+				comment_btns()
+				
 			}
 			
 		})
 		
 	}	
 
-
-		
-	
 </script>
 	<script type="text/javascript" src="resources/assets/js/comment.js"></script>
 	<script type="text/javascript" src="resources/assets/js/header_contents.js"></script>
@@ -640,3 +644,45 @@ function reple_count(){
 	<script type="text/javascript" src="resources/assets/js/heart_counter.js"></script>
 	<script type="text/javascript" src="resources/assets/js/likeNdislike.js"></script>
 	<script type="text/javascript" src="resources/assets/js/btns_hover.js"></script>
+	
+<c:if test="${memberdto == null}">
+	<script>
+		console.log("ggggg")
+		function comment_btns(){
+			let del_btn = document.querySelectorAll(".del_btn")
+			for(let i = 0 ;i<del_btn.length ;i++)
+				del_btn[i].style.display="none";
+			console.log(del_btn)
+			let reple_btn = document.querySelectorAll(".reple_btn")
+			for(let i = 0 ;i<reple_btn.length ;i++)
+				reple_btn[i].style.display="none";
+			console.log(reple_btn)
+		}
+	</script>
+</c:if>
+
+<c:if test="${memberdto != null}">
+	<script>
+		console.log("aaaaa")
+		function comment_btns(){
+			console.log(document.querySelector(".uname").innerText)
+			let uname = document.querySelectorAll(".uname")
+			console.log(uname)
+			for(let i = 0 ; i<uname.length;i++){
+				if(uname[i].innerText != "${memberdto.uname}"){
+					btns_off(i)	
+				}
+			}
+			if(document.querySelector(".uname").innerText == "${memberdto.uname}"){
+				console.log("f")	
+			}
+		}
+		
+		function btns_off(z){
+			let del_btn = document.querySelectorAll(".del_btn")
+				del_btn[z].style.display="none";
+			let reple_btn = document.querySelectorAll(".reple_btn")
+				reple_btn[z].style.display="none";
+		}
+	</script>
+</c:if>	
