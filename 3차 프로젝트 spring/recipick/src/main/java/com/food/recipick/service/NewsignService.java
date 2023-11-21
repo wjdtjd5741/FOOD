@@ -8,13 +8,13 @@ import com.food.recipick.dto.MemberDTO;
 
 public interface NewsignService {
 	
+	List newsignlist(MemberDTO dto);
+
 	int newsigninsert(MemberDTO dto);
 
-	MemberDTO loginselect(MemberDTO dto);
+	List loginselect(MemberDTO dto);
 
 	List isDuplicateUname(MemberDTO dto);
-	
-	int updateMypage(MemberDTO dto);
 
 
 	

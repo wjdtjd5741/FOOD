@@ -18,19 +18,15 @@
                 </tr>
             </thead>
             <tbody>
-<%--			
                 <tr class="lines">
                 <div class="bulletinID"></div>
                     <td class="tb_num_color">1</td>
-                    <td><img src="<%= rDTO.get(0).getMainPic() %>"></td>
-                    <td><%= rDTO.get(0).getTitle() %></td>
-                    <td><%= rLib.getDateYYMMDD() %></td>
-                    <td><%= rDTO.get(0).getWriter() %></td>
-                    <td><%= rDTO.get(0).getView() %></td>
+                    <td><img src="${bul_rec_sel[0].mainpic }"></td>
+                    <td>${bul_rec_sel[0].recipe_title }</td>
+                    <td>${bul_rec_sel[0].recipe_date }</td>
+                    <td>${bul_rec_sel[0].uname }</td>
+                    <td>${bul_rec_sel[0].viewer }</td>
                 </tr>
-                
-                 5개 까지 
---%>
             </tbody>
         </table>
     </div>

@@ -13,34 +13,33 @@
 </style>
 <body>
     <div class="all_box">
-     <form id="myForm" action="mypagesubmit" method="post">
+     <form id="myForm" action="MypageSection0" method="get">
       <div class="top_bottom_box">
         <div class="top_box">
             <div class="mypage_line">
                 <div class="information_title">기본 정보</div>
-<!--                 <div class="btns_hover" onclick="toggleEdit(this)">수정</div> -->
-                <input type="submit" class="btns_hover" value="수정"  onclick="toggleEdit(this)">
+                <div class="btns_hover" onclick="toggleEdit(this)">수정</div>
+<!--                 <div class="out">회원탈퇴</div> -->
             </div>
             <div class="mypage_line">
                 <div class="information_id text_head">이름</div>
-                <input class="information_name text_d" name="rname" value=${memberdto.rname }>
+                <textarea class="information_name text_d" disabled name="name"><%-- <%= mm.getName() %> --%></textarea>
             </div>
             <div class="mypage_line">
                 <div class="information_id text_head">아이디</div>
-                <div class="fix_uname">${memberdto.uname }</div>
-                <input class="information_id_2 text_d" type="hidden" name="uname" value=${memberdto.uname }>
+                <textarea class="information_id_2 text_d" disabled name="id"><%-- <%= mm.getId() %> --%></textarea>
             </div>
             <div class="mypage_line">
                 <div class="information_password text_head">비밀번호</div>
-                <input class="information_password_2 text_d" name="pw" value=${memberdto.pw }>
+                <textarea class="information_password_2 text_d" disabled name="password"><%-- <%= mm.getPw() %> --%></textarea>
             </div>
             <div class="mypage_line">
                 <div class="information_birth text_head">생년월일</div>
-                <input class="information_birth_2 text_d" name="birth" value=${memberdto.birth }>
+                <textarea class="information_birth_2 text_d" disabled name="birth"><%-- <%= mm.getBirth() %> --%></textarea>
             </div>
             <div class="mypage_line">
                 <div class="information_gender text_head">성별</div>
-                <input class="information_gender_2 text_d" name="gender" value=${memberdto.gender }>
+                <textarea class="information_gender_2 text_d" disabled name="gender"><%-- <%= gender %> --%></textarea>
             </div>
         </div>
         <div class="bottom_box">
@@ -49,11 +48,11 @@
             </div>
             <div class="mypage_line">
                 <div class="information_email text_head">이메일</div>
-                <input class="information_email_2 text_d" name="email" value=${memberdto.email }>
+                <textarea class="information_email_2 text_d" disabled name="email"><%-- <%= mm.getEmail() %> --%></textarea>
             </div>
             <div class="mypage_line">
                 <div class="information_phone text_head">휴대전화</div>
-                <input class="information_phone_2 text_d" name="phone" value=${memberdto.phone }>
+                <textarea class="information_phone_2 text_d" disabled name="phone"><%-- <%= mm.getPhone() %> --%></textarea>
             </div>
 <!--             <input id="submit" type="submit" class="btns_hover" onclick="toggleEdit(this)" value="수정"> -->
 <!--             <div class="btns_hover" onclick="toggleEdit(this)">수정</div> -->

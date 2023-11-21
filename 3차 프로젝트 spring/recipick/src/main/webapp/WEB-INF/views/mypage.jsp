@@ -223,9 +223,6 @@
 /* .information_name {
     margin-bottom: 30px;
 } */
-.fix_uname {
-	font-size: 17px;
-}
 
 .information_title {
 /*	font-weight: bold;*/
@@ -343,7 +340,7 @@
     float: right;
     width: 40px;
     height: 25px;
-    border: none;
+    line-height: 25px;
     text-align: center;
     border-radius: 5px;
 }
@@ -785,7 +782,7 @@ hr {
 					<div class = "logo"><a href="main">레시pick!</a></div>
 				<div class = "hi">
 					안녕하세요
-					${memberdto.rname }
+<%-- 				<%= mm.getName() %> --%>
 					님 !
 				</div>
 					<div class="my_0">MY</div>

@@ -10,7 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.food.recipick.dto.MemberDTO;
 import com.food.recipick.dto.RecipeDTO;
@@ -22,7 +21,6 @@ public class MemberController {
 	@Autowired
 	NewsignService newsignService;
 
-	// 로그인
 	@RequestMapping("/loginsubmit")
 	public String loginsubmit(
 			Model model, 
@@ -34,17 +32,16 @@ public class MemberController {
 	    	// db에서 조회하고
 	    	// controller에서 판단하고 size가 0인지 아닌지
 	    	// 보여줄 페이지 결정
-		
-		MemberDTO loginList = newsignService.loginselect(dto);
-		
-	    System.out.println(loginList);
-	    
-        if (loginList != null) {
+	    List loginList = newsignService.loginselect(dto);
+	    System.out.println(loginList.size());
+        if (loginList.size() != 0) {
             // 로그인이 성공한 경우
-        	
-        	// 회원 정보를 세션에 저장
-    		session.setAttribute("memberdto", loginList);
+    		
+//    		// model에 담아서
+    		model.addAttribute("list", loginList);
+    		session.setAttribute("memberdto", dto);
 //    		String str = (String)session.getAttribute("memberdto");
+    		
     		
         	return "main"; // 메인 페이지로 리다이렉트
         	
@@ -55,16 +52,14 @@ public class MemberController {
         }
 	}
 	
-	// 회원가입
 	@RequestMapping("/newsignsubmit")
 	public String newsignsubmit(Model model, 
 //			@RequestParam("user") String user,
 			@ModelAttribute MemberDTO dto) {
+		System.out.println("ff");
 		
-//		System.out.println("ff");
-//		
-//		System.out.println("uname : " + dto.getUname());
-//		System.out.println("gender : " + dto.getGender());
+		System.out.println("uname : " + dto.getUname());
+		System.out.println("gender : " + dto.getGender());
 		
 		List isDuplicateUname = newsignService.isDuplicateUname(dto);
 		
@@ -82,8 +77,7 @@ public class MemberController {
 
             // 중복된 uname이 없으면 회원 가입 진행
 			int result = newsignService.newsigninsert(dto);
-			System.out.println("getEmail" + dto.getEmail());
-			
+
 			return "login";
 			
 		} else {
@@ -105,39 +99,6 @@ public class MemberController {
 		
 //		return "redirect:newsign";
 	}
-	
-	    // 로그아웃
-	    @RequestMapping("/logout")
-	    public String logoutsubmit(HttpServletRequest request) {
-	        
-	        HttpSession session = request.getSession();
-	        
-	        session.invalidate(); // 저장된 session 제거
-	        
-			return "main";
-	}
-	    // 수정
-	    @RequestMapping(value="/mypagesubmit", method=RequestMethod.POST)
-		public String mypagesubmit(@ModelAttribute MemberDTO dto,
-				HttpServletRequest request) {
-	    	
-	    	HttpSession session = request.getSession();
-	    	
-//	    	System.out.println("getEmail : " + dto.getEmail());
-//	    	System.out.println("getUname : " + dto.getUname());
-	    	
-	    	int updateMypage = newsignService.updateMypage(dto);
-//	    	System.out.println("update 결과 : " + updateMypage);
-	    	
-//	    	System.out.println("getEmail : " + dto.getEmail());
-	    	session.setAttribute("memberdto", dto);
-	    	
-			return "redirect:/mypage";
-	    }
-	    
-	    // 회원탈퇴
-
-	    
 	
 	
 }

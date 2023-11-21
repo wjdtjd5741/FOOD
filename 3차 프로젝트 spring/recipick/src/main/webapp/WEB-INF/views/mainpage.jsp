@@ -580,7 +580,7 @@ h2 {
  	logout()
 		function logout(){
 			document.querySelector(".logout").addEventListener("click",function(){
-				alert("로그아웃 되었습니다");
+				alert("로그아웃되었습니다");
 				window.location.href = "logout";
 			})
 		}
@@ -643,6 +643,6 @@ h2 {
        }
  */	
  </script>
-    <script type="text/javascript" src="resources/assets/js/header_contents.js"></script>
+    
 <!--     <script type="text/javascript" src="assets/js/mobile_pop.js"></script>	 -->
-	<script type="text/javascript" src="resources/assets/js/search_event.js"></script>	
+		
