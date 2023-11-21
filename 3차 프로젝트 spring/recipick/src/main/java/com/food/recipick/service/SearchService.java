@@ -17,5 +17,9 @@ public class SearchService {
 	public List searchRecipe(Map map) {
 		return searchDAO.searchRecipe(map);
 	}
-
+	
+	public List goRecipe(String data) {
+		return searchDAO.goRecipe(data);
+	}
+	
 }

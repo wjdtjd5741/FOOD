@@ -1,4 +1,4 @@
-package com.food.recipick.controller;
+package com.food.recipick;
 
 import java.util.List;
 

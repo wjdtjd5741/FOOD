@@ -31,8 +31,13 @@
 	
 	<definition name="bulletinsection0" template="/WEB-INF/views/bulletinboard/recipecontents.jsp"/>
 	<definition name="bulletinsection1" template="/WEB-INF/views/bulletinboard/reviewcontents.jsp"/>
+
+	<definition name="mypagesection0" template="/WEB-INF/views/mypage/section0.jsp"/>
+	<definition name="mypagesection1" template="/WEB-INF/views/mypage/section1.jsp"/>
+	<definition name="mypagesection2" template="/WEB-INF/views/mypage/section2.jsp"/>
 	
 	<definition name="writer" extends="baseLayout">
+		
 		<put-attribute name="body" value="/WEB-INF/views/writerview.jsp"/>
 	</definition>
 	<definition name="newrecipe" extends="baseLayout">
@@ -46,6 +51,10 @@
 
 	<definition name="login" extends="loginLayout">
    		<put-attribute name="body" value="/WEB-INF/views/login.jsp"/>
+	</definition>
+	
+	<definition name="mypage" extends="loginLayout">
+   		<put-attribute name="body" value="/WEB-INF/views/mypage.jsp"/>
 	</definition>
 
 	<definition name="newsign" extends="loginLayout">
