@@ -596,6 +596,36 @@ function del_reple() {
     }
 }
 
+function rewrite_reple() {
+//     let reple = document.querySelectorAll(".del_btn");
+//     let submitbox = document.querySelectorAll(".submit_box")
+//     console.log(reple)
+//     for (let i = 0; i < reple.length; i++) {
+//         reple[i].addEventListener("click", function () {
+//             reple[i].parentNode.remove();
+//             let reciid = new URLSearchParams(window.location.search).get("reciid");
+//             console.log(submitbox[i].parentNode)
+//             let cid = submitbox[i].parentNode.querySelector(".reple_id").innerText
+//             console.log(cid)
+//             window.location.href = "del_comment?reciid="+reciid+"&cid="+cid
+
+//         });
+//     }
+}
+
+// let textArea = document.querySelectorAll("textarea");
+// for(let i = 0 ;i<textArea.length ;i++){
+//     if (textArea[i].disabled) {
+//         textArea[i].disabled = false;
+//         btn.innerHTML = "확인";
+        
+//     } else {
+//         textArea[i].disabled = true;
+//         btn.innerHTML = "수정";
+//     }
+// }
+
+
 function reple_count(){
     document.querySelector(".comment_count").innerText = document.querySelectorAll(".reple_box").length;
 }
@@ -618,9 +648,10 @@ function reple_count(){
 		            html += `<div class="reple_box" style="margin: 0 \${margin}px">`
 	                html += `<div class="uname" style="display: inline-block; width: 60%;">\${json[i].uname}</div>`;
 	                html += `<input class='del_btn' type=button value='X' style='font-size: 10px;'>`;
-	                html += `<div style="display: inline-block;">\${json[i].comment_text}</div>`
+	                html += `<textarea class='reple_text' style="display: inline-block;" disabled>\${json[i].comment_text}</textarea>`
 	                html += "<input class='reple_btn' type=button value='ㄴ' style='font-size: 10px;'>"
 	                html += `<div class="reple_id" style="display: none">\${json[i].comment_id}</div>`
+	                html += "<input class='rewrite_btn' type=button value='수정' style='font-size: 10px;'>"
 	                html += `<div class='submit_box'></div>`
 	                document.querySelector(".comment_box").innerHTML += html;
 				}
@@ -656,6 +687,9 @@ function reple_count(){
 			let reple_btn = document.querySelectorAll(".reple_btn")
 			for(let i = 0 ;i<reple_btn.length ;i++)
 				reple_btn[i].style.display="none";
+			let rewrite_btn = document.querySelectorAll(".rewrite_btn")
+			for(let i = 0 ;i<rewrite_btn.length ;i++)
+				rewrite_btn[i].style.display="none";
 			console.log(reple_btn)
 		}
 	</script>
@@ -683,6 +717,8 @@ function reple_count(){
 				del_btn[z].style.display="none";
 			let reple_btn = document.querySelectorAll(".reple_btn")
 				reple_btn[z].style.display="none";
+			let rewrite_btn = document.querySelectorAll(".rewrite_btn")
+				rewrite_btn[z].style.display="none";
 		}
 	</script>
 </c:if>	

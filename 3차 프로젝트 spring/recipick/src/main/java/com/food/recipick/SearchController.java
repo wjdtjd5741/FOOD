@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.food.recipick.dto.MemberDTO;
 import com.food.recipick.service.SearchService;
 
 @Controller
@@ -66,7 +67,8 @@ public class SearchController {
 		map.put("recipe_id", reciid);
 		map.put("comment_text", ctext);
 		if(session.getAttribute("memberdto") != null) {
-			map.put("uname", session.getAttribute("memberdto"));
+			MemberDTO memberdto = (MemberDTO)session.getAttribute("memberdto");
+			map.put("uname", memberdto.getUname());
 		} else
 			map.put("uname", "admin");
 		
@@ -89,7 +91,8 @@ public class SearchController {
 		map.put("recipe_id", reciid);
 		map.put("comment_text", ctext);
 		if(session.getAttribute("memberdto") != null) {
-			map.put("uname", session.getAttribute("memberdto"));
+			MemberDTO memberdto = (MemberDTO)session.getAttribute("memberdto");
+			map.put("uname", memberdto.getUname());
 		} else
 			map.put("uname", "admin");
 		
