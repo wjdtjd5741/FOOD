@@ -95,8 +95,39 @@
 							#{make_order},
 							#{recipe_id}
 						)
-						
 	</insert>
+	
+	<select id="bulletin_rec_sel" resultType="recipeDTO">
+		select mainpic, recipe_title, recipe_date, uname, viewer from recipe
+		where #{recipe_id} = recipe_id
+						
+	</select>	
+<!-- 	<insert id="recommend" parameterType="recipeDTO"> -->
+<!-- 		insert into recommend( -->
+<!-- 							recom_id, -->
+<!-- 							uname, -->
+<!-- 							recipe_id -->
+<!-- 						) -->
+<!-- 						values( -->
+<!-- 							recom_id.nextval, -->
+<!-- 							#{uname}, -->
+<!-- 							#{recipe_id} -->
+<!-- 						)	 -->
+<!-- 	</insert> -->
+	
+	
+<!-- 	<insert id="ggim" parameterType="recipeDTO"> -->
+<!-- 		insert into ggim( -->
+<!-- 						ggim_id, -->
+<!-- 						uname, -->
+<!-- 						recipe_id -->
+<!-- 					) -->
+<!-- 					values( -->
+<!-- 						ggim_id.nextval, -->
+<!-- 						#{uname{, -->
+<!-- 						#{recipe_id} -->
+<!-- 					) -->
+<!-- 	</insert> -->
 	
 <!-- 	김호연 -->
 	<insert id="newsigninsert" parameterType="memberDTO">
