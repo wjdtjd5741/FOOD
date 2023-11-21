@@ -32,6 +32,7 @@ public class WriteController {
 		List result=rService.writepage(dto);
 		
 		return "writerview";
+		
 	}
 	
 	@RequestMapping("/bullet")

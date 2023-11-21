@@ -63,12 +63,9 @@ public class RecipickDAOImpl implements RecipickDAO{
 		}
 		
 		
-//		sqlSession.insert("id_recipick.recommend", dto);
-//		sqlSession.insert("id_recipick.ggim", dto);
-		
-		List bulletin_rec_sel = sqlSession.selectList("bulletin_rec_sel", dto);
-		
-		return bulletin_rec_sel;
+		sqlSession.insert("id_recipick.recommend", dto);
+		 
+		return null;
 	}
 
 }

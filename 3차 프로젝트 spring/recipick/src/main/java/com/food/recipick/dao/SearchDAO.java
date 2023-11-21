@@ -21,6 +21,7 @@ public class SearchDAO {
 	public List goRecipe(String data) {
 		return sqlSession.selectList("searchs.searchRecipe",data);
 	}
+<<<<<<< HEAD
 	
 	public List comment_load(String data) {
 		return sqlSession.selectList("searchs.comment_load", data);
@@ -36,3 +37,6 @@ public class SearchDAO {
 		sqlSession.delete("searchs.del_comment", data);
 	}
 }
+=======
+}
+>>>>>>> 6e76e6f499433b2f5b74a7363b990e0173523b27

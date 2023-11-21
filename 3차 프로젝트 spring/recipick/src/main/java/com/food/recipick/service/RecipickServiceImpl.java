@@ -23,14 +23,10 @@ public class RecipickServiceImpl implements RecipickService{
 		l.add("f");
 		l.add("g");
 		dto.setDetail_pic(l);
-		dto.setViewer("0");
-		dto.setUname("Á¤¼º");
-		
-		List bulletin_rec_sel = recipickdao.recipePage1(dto);
+		dto.setView("0");
 		
 		
-		
-		return bulletin_rec_sel;
+		return recipickdao.recipePage1(dto);
 	}
 
 	

@@ -22,6 +22,4 @@
 		</footer>
 	</main>
 </body>
-<script type="text/javascript" src="resources/assets/js/search_event.js"></script>
-<script type="text/javascript" src="resources/assets/js/header_contents.js"></script>
 </html>

@@ -15,9 +15,9 @@ public class NewsignServiceImpl implements NewsignService {
 	NewsignDAO newsignDAO;
 
 	@Override
-	public List newsignlist(MemberDTO dto) {
-		List newsignlist = newsignDAO.newsign(dto);
-		return newsignlist;
+	public MemberDTO loginselect(MemberDTO dto) {
+		MemberDTO loginselect = newsignDAO.loginselect(dto);
+		return loginselect;
 	}
 
 	@Override
@@ -28,16 +28,20 @@ public class NewsignServiceImpl implements NewsignService {
 	}
 	
 	@Override
-	public List loginselect(MemberDTO dto) {
-		List loginlist = newsignDAO.loginselect(dto);
-		return loginlist;
-	}
-
-	@Override
 	public List isDuplicateUname(MemberDTO dto) {
-		List isDuplicateUname = newsignDAO.loginselect(dto);
+		List isDuplicateUname = newsignDAO.isDuplicateUname(dto);
 		return isDuplicateUname;
 	}
+	
+	@Override
+	public int updateMypage(MemberDTO dto) {
+		int updateMypage = newsignDAO.updateMypage(dto);
+		return updateMypage;
+	}
+	
+
+
+
 
 	
 	

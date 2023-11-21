@@ -21,21 +21,22 @@ public class NewsignDAOImpl implements NewsignDAO {
 	}
 	
 	@Override
-	public List newsign(MemberDTO dto) {
-		List newsignList = sqlSession.selectList("id_recipick.selectMember", dto);
-		return newsignList;
-	}
-	
-	@Override
-	public List loginselect(MemberDTO dto) {
-		List loginList = sqlSession.selectList("id_recipick.loginselect", dto);
-		return loginList;
+	public MemberDTO loginselect(MemberDTO dto) {
+		MemberDTO loginselect = sqlSession.selectOne("id_recipick.loginselect", dto);
+		return loginselect;
 	}
 	
 	@Override
 	public List isDuplicateUname(MemberDTO dto) {
 		List isDuplicateUname = sqlSession.selectList("id_recipick.isDuplicateUname", dto);
 		return isDuplicateUname;
+	}
+
+	@Override
+	public int updateMypage(MemberDTO dto) {
+		int updateMypage = sqlSession.update("id_recipick.updateMypage", dto);
+		System.out.println("updateMypage : " + updateMypage);
+		return updateMypage;
 	}
 
 

@@ -4,17 +4,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.food.recipick.service.SearchService;
 
@@ -44,9 +38,9 @@ public class SearchController {
 		
 		List l = searchService.goRecipe(data);
 		System.out.println(l);
-		comment_load(data);
 		return "recipe";
 	}
+<<<<<<< HEAD
 	
 	@RequestMapping("/comment_load")
 	@ResponseBody
@@ -109,4 +103,6 @@ public class SearchController {
 		
 		return "redirect:/gorecipe?reciid="+reciid;
 	}
+=======
+>>>>>>> 6e76e6f499433b2f5b74a7363b990e0173523b27
 }

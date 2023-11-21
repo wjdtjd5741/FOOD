@@ -44,7 +44,7 @@
 						#{mainpic},
 						#{maintext},
 						0,
-						#{uname},
+						#{user},
 						#{recipe_title}
 						)
 	</insert>
@@ -95,39 +95,8 @@
 							#{make_order},
 							#{recipe_id}
 						)
-	</insert>
-	
-	<select id="bulletin_rec_sel" resultType="recipeDTO" parameterType="recipeDTO">
-		select mainpic, recipe_title, recipe_date, uname, viewer from recipe
-		where #{recipe_id} = recipe_id
 						
-	</select>	
-<!-- 	<insert id="recommend" parameterType="recipeDTO"> -->
-<!-- 		insert into recommend( -->
-<!-- 							recom_id, -->
-<!-- 							uname, -->
-<!-- 							recipe_id -->
-<!-- 						) -->
-<!-- 						values( -->
-<!-- 							recom_id.nextval, -->
-<!-- 							#{uname}, -->
-<!-- 							#{recipe_id} -->
-<!-- 						)	 -->
-<!-- 	</insert> -->
-	
-	
-<!-- 	<insert id="ggim" parameterType="recipeDTO"> -->
-<!-- 		insert into ggim( -->
-<!-- 						ggim_id, -->
-<!-- 						uname, -->
-<!-- 						recipe_id -->
-<!-- 					) -->
-<!-- 					values( -->
-<!-- 						ggim_id.nextval, -->
-<!-- 						#{uname{, -->
-<!-- 						#{recipe_id} -->
-<!-- 					) -->
-<!-- 	</insert> -->
+	</insert>
 	
 <!-- 	김호연 -->
 	<insert id="newsigninsert" parameterType="memberDTO">
@@ -145,7 +114,7 @@
 				#{rname}, 
 				#{email}, 
 				#{pw},  
-				to_date(#{birth}, 'yyyy-mm-dd'), 
+				to_date(#{birth}, 'yyyy-mm-dd'),
 				#{phone}, 
 				#{gender},
 				#{guest}
@@ -154,7 +123,7 @@
 	
 		<select id="loginselect" resultType="memberDTO">
 			select 
-				uname, pw 
+				*
 			from 
 				MEMBER 
 			where 
@@ -169,4 +138,23 @@
 			where 
 				uname = #{uname}
 		</select>
+		
+		<update id="updateMypage" parameterType="memberDTO">
+			update
+				member
+			set
+				rname = #{rname},
+				email = #{email},
+				pw = #{pw},
+				birth = #{birth},
+				phone = #{phone},
+				gender = #{gender}
+			where
+				uname = #{uname}
+		</update>
+		
+<!-- 		<select id="selectMember" resultType="memberDTO"> -->
+<!-- 			select * from MEMBER -->
+<!-- 		</select> -->
+		
 </mapper>

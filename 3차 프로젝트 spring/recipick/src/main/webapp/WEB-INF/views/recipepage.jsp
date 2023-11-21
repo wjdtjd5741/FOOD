@@ -491,17 +491,16 @@ body{
 				<div>댓글</div>
 				<div class="comment_count">0</div>
 			</div>
-			<div class="comment_box"></div>
 			<div>
 				<textarea class="input_text" type="text" value="댓글을 남겨주세요."
 					maxlength="300"></textarea>
 				<input class="btn_txt" type="button" value="등록">
 			</div>
-			<div class='submit_box' style="display: none"></div>
-			<div class='reple_btn_txt' style="display: none"></div>
+			<div class="comment_box"></div>
 		</div>
 	</article>
 </main>
+<<<<<<< HEAD
 <script>
 comment();
 text_focus();
@@ -636,6 +635,8 @@ function reple_count(){
 	}	
 
 </script>
+=======
+>>>>>>> 6e76e6f499433b2f5b74a7363b990e0173523b27
 	<script type="text/javascript" src="resources/assets/js/comment.js"></script>
 	<script type="text/javascript" src="resources/assets/js/header_contents.js"></script>
 	<script type="text/javascript" src="resources/assets/js/reci_pop.js"></script>
