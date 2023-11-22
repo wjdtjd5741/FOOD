@@ -15,18 +15,37 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.food.recipick.dto.RecipeDTO;
+<<<<<<< HEAD
 import com.food.recipick.dto.WriteDTO;
 import com.food.recipick.service.RecipickService;
 import com.food.recipick.service.WriteService;
+=======
+<<<<<<< HEAD
+import com.food.recipick.dto.WriteDTO;
+import com.food.recipick.service.RecipickService;
+import com.food.recipick.service.WriteService;
+=======
+import com.food.recipick.service.RecipickService;
+>>>>>>> 67848654431e0ffffab14c66cbe1a879ec1f33ce
+>>>>>>> ca95fe4743dfb60860b3eb18c3af1a6f97d69cb4
 
 @Controller
 public class TilesController {
 	
 	@Autowired
 	RecipickService recipickservice;
+<<<<<<< HEAD
 
 	@Autowired
 	WriteService writeService;
+=======
+<<<<<<< HEAD
+
+	@Autowired
+	WriteService writeService;
+=======
+>>>>>>> 67848654431e0ffffab14c66cbe1a879ec1f33ce
+>>>>>>> ca95fe4743dfb60860b3eb18c3af1a6f97d69cb4
 	
 	@RequestMapping("/main")
 	public String main(HttpServletRequest request, HttpServletResponse response
@@ -57,7 +76,14 @@ public class TilesController {
 	
 	@RequestMapping("/bulletin")
 	public String bulletin(@ModelAttribute RecipeDTO dto, Model m,
+<<<<<<< HEAD
 			@ModelAttribute WriteDTO wdto,
+=======
+<<<<<<< HEAD
+			@ModelAttribute WriteDTO wdto,
+=======
+>>>>>>> 67848654431e0ffffab14c66cbe1a879ec1f33ce
+>>>>>>> ca95fe4743dfb60860b3eb18c3af1a6f97d69cb4
 			HttpServletRequest request) {
 		System.out.println("aa");
 		System.out.println(dto);
@@ -67,8 +93,16 @@ public class TilesController {
 		System.out.println(bul_rec);
 		s.setAttribute("bul_rec", bul_rec);
 		
+<<<<<<< HEAD
 		List write_all = writeService.selectdata_all(wdto);
 		s.setAttribute("review_bul_sel",write_all);
+=======
+<<<<<<< HEAD
+		List write_all = writeService.selectdata_all(wdto);
+		s.setAttribute("review_bul_sel",write_all);
+=======
+>>>>>>> 67848654431e0ffffab14c66cbe1a879ec1f33ce
+>>>>>>> ca95fe4743dfb60860b3eb18c3af1a6f97d69cb4
 		return "bulletin";
 	}
 	
