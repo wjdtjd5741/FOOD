@@ -11,6 +11,9 @@
 		<typeAlias type="com.food.recipick.dto.WriteDTO" alias="writeDTO" />
 		<typeAlias type="com.food.recipick.dto.CommentDTO" alias="commentDTO" />
 		<typeAlias type="com.food.recipick.dto.RecipeDTO" alias="recipeDTO"/>
+		<typeAlias type="com.food.recipick.dto.DetailRecipeDTO" alias="detailrecipeDTO"/>
+		<typeAlias type="com.food.recipick.dto.FoodDTO" alias="foodDTO"/>
+		<typeAlias type="com.food.recipick.dto.HashtagDTO" alias="hashtagDTO"/>
 	</typeAliases>
 
 </configuration>

@@ -37,4 +37,8 @@ public class SearchService {
 	public void del_comment(String data) {
 		searchDAO.del_comment(data);
 	}
+	
+	public void update_comment(Map map) {
+		searchDAO.update_comment(map);
+	}
 }

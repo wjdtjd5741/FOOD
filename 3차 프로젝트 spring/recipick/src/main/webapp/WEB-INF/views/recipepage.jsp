@@ -25,7 +25,7 @@ nav{
     display: inline-block;
     width: 15px;
     height: 50px;
-    margin: 125px 0;
+    margin: 145px 0;
     font-size: 12px;
     text-align: center;
     line-height: 50px;
@@ -38,7 +38,7 @@ nav{
     border-radius: 10px;
     display: inline-block;
     width: 120px;
-    height: 100%;
+    height: 330px;
 }
 .nav_contents > div{
     width: 100%;
@@ -66,10 +66,17 @@ nav{
     margin-top: 10px;
     font-weight: 600;
 }
-.nav_contents > img {
+.nav_recom {
     width: 80px;
     margin: 5px 10px;
-    margin-left: 20px;
+/*     margin-left: 20px; */
+    cursor: pointer;
+}
+.nav_recom_box {
+	margin-top: 10px;
+    width: 80px;
+/*     margin: 5px 10px; */
+/*     margin-left: 20px; */
     cursor: pointer;
 }
 #nav_location a {
@@ -84,6 +91,7 @@ nav{
     display: flex;
     height: 20px;
     justify-content: space-around;
+/*     margin-top: 10px; */
 }
 .reci_top_img{
     /* border: 1px solid black; */
@@ -659,13 +667,35 @@ function reple_count(){
 				del_reple()
 				
 				comment_btns()
-				
+				rewirte_event()
 			}
 			
 		})
 		
 	}	
 
+	function rewirte_event(){
+		let rewrite_btns = document.querySelectorAll(".rewrite_btn")
+		let reples = document.querySelectorAll(".reple_text")
+		console.log(rewrite_btns)
+		for(let i = 0 ; i<rewrite_btns.length ;i++){
+			rewrite_btns[i].addEventListener("click", function(){
+			     if (reples[i].disabled) {
+			    	 reples[i].disabled = false;
+// 			    	 console.log("gggg")
+
+			     } else{
+			    	 reples[i].disabled = true;
+			    	 let reciid = new URLSearchParams(window.location.search).get("reciid");
+			    	 let cid = reples[i].parentNode.querySelector(".reple_id").innerText
+			    	 let ctext = reples[i].value
+			    	 console.log(ctext)
+			    	 window.location.href = "update_comment?reciid="+reciid+"&cid="+cid+"&ctext="+ctext
+			     }			
+			})	
+		}
+	}
+	
 </script>
 	<script type="text/javascript" src="resources/assets/js/comment.js"></script>
 	<script type="text/javascript" src="resources/assets/js/header_contents.js"></script>
@@ -699,9 +729,9 @@ function reple_count(){
 	<script>
 		console.log("aaaaa")
 		function comment_btns(){
-			console.log(document.querySelector(".uname").innerText)
+// 			console.log(document.querySelector(".uname").innerText)
 			let uname = document.querySelectorAll(".uname")
-			console.log(uname)
+// 			console.log(uname)
 			for(let i = 0 ; i<uname.length;i++){
 				if(uname[i].innerText != "${memberdto.uname}"){
 					btns_off(i)	

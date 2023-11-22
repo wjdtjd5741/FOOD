@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.food.recipick.dto.MemberDTO;
 import com.food.recipick.dto.RecipeDTO;
 import com.food.recipick.service.RecipickService;
 
@@ -39,27 +40,31 @@ public class RecipeController {
 			) {
 		
 		HttpSession session = request.getSession();
+		if(session.getAttribute("memberdto") != null) {
+			dto.setUname(((MemberDTO)session.getAttribute("memberdto")).getUname());
+		} else
+			dto.setUname("admin");
 		
-		dto.setUname((String)session.getAttribute("memberdto"));
+		
+		recipickservice.recipePage1(dto);
 		System.out.println(dto);
+//		session.setAttribute("bul_rec_sel", bulletin_rec_sel);
 		
-		List bulletin_rec_sel = (List)recipickservice.recipePage1(dto);
-		
-		session.setAttribute("bul_rec_sel", bulletin_rec_sel);
-		
-		return "bulletin";
+		// 조회하는 컨트롤러로 보내자
+		// 레시피아이디도 보내자
+		// 일단 전체목록으로 가자
+		return "redirect:/bulletin";
 		
 	}
 	
-	@RequestMapping(value="/bulletin_rec_sel")
-	public String bulletin_rec_sel(@ModelAttribute RecipeDTO dto) {
-		
-		return "bulletin";
-	}
-	
-	
-	
-	
-	
+	/*
+	 * @RequestMapping("/bulletin2") public String bulletin(@ModelAttribute
+	 * RecipeDTO dto, Model m) {
+	 * 
+	 * RecipeDTO bul_rec = recipickservice.bulletin(dto); m.addAttribute("bul_rec",
+	 * bul_rec);
+	 * 
+	 * return "bulletin"; }
+	 */
 	
 }

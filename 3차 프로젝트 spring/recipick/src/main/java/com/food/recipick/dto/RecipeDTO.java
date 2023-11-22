@@ -8,26 +8,50 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class RecipeDTO {
 
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private int recipe_id;
 	private Date recipe_date;
 	private String mainpic;
 	private String maintext;
 	private String uname;
 	private String recipe_title;
 	private String viewer;
-	
-	private int hash_id;
-	private List hash_name;
-	
+	private int recipe_id;
 	private int food_id;
+	private int hash_id;
+	private int detailrecipe_id;
 	private List food_name;
 	private List food_value;
-	
-	private int detailrecipe_id;
+	private List hash_name;
 	private List detail_pic;
 	private List detail_text;
 	private int make_order;
+	private List hashAll;
+	private List foodAll;
+	private List detailAll;
 	
+	public List getHashAll() {
+		return hashAll;
+	}
+
+	public void setHashAll(List hashAll) {
+		this.hashAll = hashAll;
+	}
+
+	public List getFoodAll() {
+		return foodAll;
+	}
+
+	public void setFoodAll(List foodAll) {
+		this.foodAll = foodAll;
+	}
+
+	public List getDetailAll() {
+		return detailAll;
+	}
+
+	public void setDetailAll(List detailAll) {
+		this.detailAll = detailAll;
+	}
+
 	public Date getRecipe_date() {
 		return recipe_date;
 	}
@@ -174,8 +198,11 @@ public class RecipeDTO {
 				+ uname + ", recipe_title=" + recipe_title + ", viewer=" + viewer + ", recipe_id=" + recipe_id
 				+ ", food_id=" + food_id + ", hash_id=" + hash_id + ", detailrecipe_id=" + detailrecipe_id
 				+ ", food_name=" + food_name + ", food_value=" + food_value + ", hash_name=" + hash_name
-				+ ", detail_pic=" + detail_pic + ", detail_text=" + detail_text + ", make_order=" + make_order + "]";
+				+ ", detail_pic=" + detail_pic + ", detail_text=" + detail_text + ", make_order=" + make_order
+				+ ", hashAll=" + hashAll + ", foodAll=" + foodAll + ", detailAll=" + detailAll + "]";
 	}
+
+
 
 
 
