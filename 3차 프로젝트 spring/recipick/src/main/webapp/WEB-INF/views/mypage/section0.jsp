@@ -58,10 +58,10 @@
 <!--             <input id="submit" type="submit" class="btns_hover" onclick="toggleEdit(this)" value="수정"> -->
 <!--             <div class="btns_hover" onclick="toggleEdit(this)">수정</div> -->
         </div>
-        <div class="out">회원탈퇴</div>
+        <input type="button" class="out" value="회원탈퇴" onclick="confirmMemberOut()">
           </div>
          </form>
     </div>
-
+    
 </body>
 </html>

@@ -10,6 +10,7 @@ public interface NewsignDAO {
 	MemberDTO loginselect(MemberDTO dto);
 	List isDuplicateUname(MemberDTO dto);
 	int updateMypage(MemberDTO dto);
+	int memberout(MemberDTO dto);
 
 
 	

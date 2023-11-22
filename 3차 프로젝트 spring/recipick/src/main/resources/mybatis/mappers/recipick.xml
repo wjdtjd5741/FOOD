@@ -29,7 +29,6 @@
 		)
 	</insert >
 	
-	
 	<insert id="insertHash" parameterType="writeDTO">
 		insert into hashtag(
 			hash_id,review_id,hash_name,tag_type
@@ -217,6 +216,25 @@
 			where
 				uname = #{uname}
 		</update>
+		
+		<delete id="memberout" parameterType="memberDTO">
+			delete
+			from 
+				member
+			where
+				uname = #{uname}
+		</delete>
+		
+		
+<!-- 		나의 게시물 -->
+		<select id="myrecipeselect" resultType="recipeDTO">
+			select 
+				*
+			from 
+				recipe 
+			where 
+				uname = #{uname}
+		</select>
 		
 <!-- 		<select id="selectMember" resultType="memberDTO"> -->
 <!-- 			select * from MEMBER -->

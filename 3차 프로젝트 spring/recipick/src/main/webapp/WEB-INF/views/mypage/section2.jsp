@@ -105,12 +105,14 @@
 	<div class="box">
 		<div class="write_box">
 			<div class="write_title">내가 쓴 글</div><br>
-			<%-- 
-            <div class="write_name">나만의 햄마요덮밥 만들기 !</div><br>
+			
+			
+            <div class="write_name">${recipedto.recipe_title }나만의 햄마요덮밥 만들기 !</div><br>
             <div class="write_date">2023.09.09</div>
             <hr>
-			작성글 4개까지
-			--%>
+<!-- 			작성글 4개까지 -->
+			
+			
 		</div>
 		<div class="bottom">
 			<div class="order_all">

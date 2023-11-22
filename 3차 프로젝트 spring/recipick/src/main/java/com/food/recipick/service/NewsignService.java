@@ -15,6 +15,8 @@ public interface NewsignService {
 	List isDuplicateUname(MemberDTO dto);
 	
 	int updateMypage(MemberDTO dto);
+	
+	int memberout(MemberDTO dto);
 
 
 	

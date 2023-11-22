@@ -39,5 +39,12 @@ public class NewsignDAOImpl implements NewsignDAO {
 		return updateMypage;
 	}
 
+	@Override
+	public int memberout(MemberDTO dto) {
+		int memberout = sqlSession.delete("id_recipick.memberout", dto);
+		System.out.println("memberout : " + memberout);
+		return memberout;
+	}
+
 
 }

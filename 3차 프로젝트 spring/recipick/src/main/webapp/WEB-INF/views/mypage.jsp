@@ -381,8 +381,9 @@
 	margin-right: 3%;
     font-size: 15px;
     float: right;
+    border: none;
     cursor: pointer;
-    width: 65px;
+/*     width: 65px; */
     height: 30px;
     line-height: 30px;
     text-align: center;
@@ -859,6 +860,19 @@ hr {
 				})
 			}
 		}
+		
+	    function confirmMemberOut() {
+	        if (confirm("정말로 회원탈퇴 하시겠습니까?")) {
+	            // 기본 동작 방지
+	            event.preventDefault();
+	            
+	            // 회원탈퇴 페이지로 이동
+	            window.location.href = 'memberout';
+	        }
+	    }
+	    
+
+	    
 	</script>
 	<script type="text/javascript" src="resources/assets/js/mypage_clickEvent.js"></script>
 	<script type="text/javascript" src="resources/assets/js/btns_hover.js"></script>

@@ -38,6 +38,12 @@ public class NewsignServiceImpl implements NewsignService {
 		int updateMypage = newsignDAO.updateMypage(dto);
 		return updateMypage;
 	}
+
+	@Override
+	public int memberout(MemberDTO dto) {
+		int memberout = newsignDAO.memberout(dto);
+		return memberout;
+	}
 	
 
 

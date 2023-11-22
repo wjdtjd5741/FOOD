@@ -136,7 +136,32 @@ public class MemberController {
 	    }
 	    
 	    // 회원탈퇴
+	    @RequestMapping("/memberout")
+	    public String memberout(Model model,
+	    		@ModelAttribute MemberDTO dto,
+	    		HttpServletRequest request) {
+	    	
+//	    	System.out.println("회원탈퇴 실행");
 
+	    	HttpSession session = request.getSession();
+	      
+
+	        // 세션에서 uname 꺼내서
+	        // dto에 uname 넣기
+	    	MemberDTO memberdto = (MemberDTO) session.getAttribute("memberdto");
+	        dto.setUname(memberdto.getUname());
+//	        System.out.println("dto.getUname : " + dto.getUname() );
+	        
+	        // 여기에서 실제 회원탈퇴 로직 수행
+	        int result = newsignService.memberout(dto);
+//	        System.out.println("회원탈퇴 서비스 실행");
+	        
+	        model.addAttribute("result", result);
+	        
+	        session.invalidate(); // 세션 무효화
+
+	        return "main"; // 회원탈퇴 후 메인 페이지로 이동
+	    }
 	    
 	
 	

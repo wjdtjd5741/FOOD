@@ -4,14 +4,10 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
+
 <style>
 </style>
->>>>>>> 67848654431e0ffffab14c66cbe1a879ec1f33ce
->>>>>>> ca95fe4743dfb60860b3eb18c3af1a6f97d69cb4
+
 <body>
 	<div class="table_all">
 		<table>
@@ -29,41 +25,18 @@
 				<c:forEach var="reci_bul" items="${bul_rec}">
 					<tr class="lines">
 						<td class="tb_num_color">1</td>
-<<<<<<< HEAD
 						<td><!-- <img src="${reci_bul.mainpic }"> --></td>
-=======
-<<<<<<< HEAD
-						<td><!-- <img src="${reci_bul.mainpic }"> --></td>
-=======
-						<td><img src="${reci_bul.mainpic }"></td>
->>>>>>> 67848654431e0ffffab14c66cbe1a879ec1f33ce
->>>>>>> ca95fe4743dfb60860b3eb18c3af1a6f97d69cb4
 						<td>${reci_bul.recipe_title }</td>
 						<td>${reci_bul.recipe_date }</td>
 						<td>${reci_bul.uname }</td>
 						<td>${reci_bul.viewer }</td>
 						<td style="display: none" class="bu_reciid">${reci_bul.recipe_id }</td>
 					</tr>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-					
->>>>>>> 67848654431e0ffffab14c66cbe1a879ec1f33ce
->>>>>>> ca95fe4743dfb60860b3eb18c3af1a6f97d69cb4
 				</c:forEach>
 			</tbody>
 		</table>
 	</div>
-<<<<<<< HEAD
-</body>
-=======
-<<<<<<< HEAD
-</body>
-=======
 </body>
 <script>
 
 </script>
->>>>>>> 67848654431e0ffffab14c66cbe1a879ec1f33ce
->>>>>>> ca95fe4743dfb60860b3eb18c3af1a6f97d69cb4
