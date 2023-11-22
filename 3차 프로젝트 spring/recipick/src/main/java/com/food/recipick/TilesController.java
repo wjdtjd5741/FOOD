@@ -15,13 +15,18 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.food.recipick.dto.RecipeDTO;
+import com.food.recipick.dto.WriteDTO;
 import com.food.recipick.service.RecipickService;
+import com.food.recipick.service.WriteService;
 
 @Controller
 public class TilesController {
 	
 	@Autowired
 	RecipickService recipickservice;
+
+	@Autowired
+	WriteService writeService;
 	
 	@RequestMapping("/main")
 	public String main(HttpServletRequest request, HttpServletResponse response
@@ -52,6 +57,7 @@ public class TilesController {
 	
 	@RequestMapping("/bulletin")
 	public String bulletin(@ModelAttribute RecipeDTO dto, Model m,
+			@ModelAttribute WriteDTO wdto,
 			HttpServletRequest request) {
 		System.out.println("aa");
 		System.out.println(dto);
@@ -61,6 +67,8 @@ public class TilesController {
 		System.out.println(bul_rec);
 		s.setAttribute("bul_rec", bul_rec);
 		
+		List write_all = writeService.selectdata_all(wdto);
+		s.setAttribute("review_bul_sel",write_all);
 		return "bulletin";
 	}
 	

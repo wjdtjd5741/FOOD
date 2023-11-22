@@ -4,6 +4,10 @@
    "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
 <mapper namespace="id_recipick">
 	<!-- 강신영 -->
+	<select id="selectAll" parameterType="writeDTO" resultType="writeDTO">
+		select * from review
+	</select>
+	
 	<insert id="insertWrite" parameterType="writeDTO">
 		insert into review(
 			review_id,
@@ -52,27 +56,6 @@
 
 	</select>
 	
-	
-	<insert id="insertWrite" parameterType="writeDTO">
-		insert into review(
-			REVIEW_ID,
-			pic,
-			review_text,
-			REVIEW_DATE,
-			VIEWER,
-			UNAME,
-			review_title
-		)
-		values
-			(RI.nextval,
-			0,
-			#{review_text},
-			sysdate,
-			0,
-			0,
-			#{review_title}
-		)
-	</insert>
 	
 	<insert id="insert_recipe" parameterType="recipeDTO">
 		<selectKey keyProperty="recipe_id" resultType="int" order="BEFORE">

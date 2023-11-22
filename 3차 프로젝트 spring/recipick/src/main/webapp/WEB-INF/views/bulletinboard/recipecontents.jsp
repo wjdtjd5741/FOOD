@@ -4,8 +4,6 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
-<style>
-</style>
 <body>
 	<div class="table_all">
 		<table>
@@ -23,19 +21,15 @@
 				<c:forEach var="reci_bul" items="${bul_rec}">
 					<tr class="lines">
 						<td class="tb_num_color">1</td>
-						<td><img src="${reci_bul.mainpic }"></td>
+						<td><!-- <img src="${reci_bul.mainpic }"> --></td>
 						<td>${reci_bul.recipe_title }</td>
 						<td>${reci_bul.recipe_date }</td>
 						<td>${reci_bul.uname }</td>
 						<td>${reci_bul.viewer }</td>
 						<td style="display: none" class="bu_reciid">${reci_bul.recipe_id }</td>
 					</tr>
-					
 				</c:forEach>
 			</tbody>
 		</table>
 	</div>
 </body>
-<script>
-
-</script>

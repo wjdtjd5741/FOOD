@@ -69,7 +69,7 @@ public class SearchController {
 			
 		// data(recipe_id)를 db로 보낸후 where recipe_id = #{_parameter}
 		// 가져온것을 m에 담아서 jsp에서 처리
-
+		
 		
 		System.out.println("in0 : "+ data);
 		

@@ -34,6 +34,11 @@ public class WriteDAOImpl implements WriteDAO {
 		System.out.println("selectData_review:"+selectData_review.get(0));
 		return selectData_review;
 	}
+
+	@Override
+	public List selectData_all(WriteDTO dto) {
+		return sqlSession.selectList("id_recipick.selectAll",dto);
+	}
 	
 	
 	

@@ -494,7 +494,7 @@ option {
 					document.querySelector(".recipick_hashtag").value = "";
 				})
 
-	 function submitForm() {
+ function submitForm() {
         let params = document.querySelectorAll(".submit");
         let aa = "";
         for (let i = 0; i < params.length; i++) {

@@ -425,6 +425,7 @@ body{
 						<div>-레시피 재료</div>
 						<div class="select">▽</div>
 						<div class="food_text">
+						
 <%--						
  							<% 
 							for (Map.Entry<String, String> mapstr : rDTO.getFoods().entrySet()) {

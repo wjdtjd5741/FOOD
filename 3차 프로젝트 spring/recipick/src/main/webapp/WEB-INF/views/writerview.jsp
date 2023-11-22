@@ -273,8 +273,7 @@ article>div>img {
 
 <main>
 
-	
-		<section>
+			<section>
 			<!-- 이정성 -->
 			<!-- title 클릭 게시판 목록 이동, #음식이름 클릭 레시피 목록 이동, 수정 삭제 -->
 			<article>
@@ -282,8 +281,7 @@ article>div>img {
 				<div class="title">후기 게시판</div>
 
 
-				<textarea class="writeTitle a" disabled="true">
-	${selectData_review.review_title }
+				<textarea class="writeTitle a" disabled="true">${selectData_review[0].review_title }
                 </textarea>
 
 				<div>
@@ -297,8 +295,7 @@ article>div>img {
         		}
                 %>
 --%>
-				<textarea class="food_text_review a" disabled="true">
-				${selectData_review.review_text }
+				<textarea class="food_text_review a" disabled="true">${selectData_review[0].review_text }
                 </textarea>
 
 				<div class="modify">

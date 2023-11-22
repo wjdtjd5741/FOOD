@@ -33,9 +33,9 @@
 	
 </body>
 <script>
-	function viewReviewDetail(reviewId) {
-		// 리뷰 상세 페이지로 이동하는 로직
-		window.location.href = `writer?review_id=${reviewId}`;
-	}
+// 	function viewReviewDetail(reviewId) {
+// 		// 리뷰 상세 페이지로 이동하는 로직
+// 		window.location.href = `writer?review_id=${reviewId}`;
+// 	}
 </script>
 </html>

@@ -27,4 +27,9 @@ public class WriteServiceImpl implements WriteService {
 		return selectData_review;
 	}
 
+	@Override
+	public List selectdata_all(WriteDTO dto) {
+		return rDAO.selectData_all(dto);
+	}
+
 }
