@@ -9,7 +9,7 @@
 		left: 750px;
 		z-index: 99;
 		border: 3px solid white;
-		border-radius: 5px;
+		border-radius: 10px;
 	}
 	.popuplocation{
 		width: 300px;
@@ -27,10 +27,12 @@
 	.popupcontents{
 		width:300px;
 		height:200px;	
+		border-radius: 10px;
 	}
 	.popupcontents > img{
 		width:300px;
 		height:200px;
+		border-radius: 10px;
 	}
 	.popupc{
 		background-color: rgb(255, 230, 184);
@@ -38,6 +40,7 @@
 		align-items: center;
 		justify-content: space-between;
 		padding: 0 0 0 10px;
+		border-radius: 3px;
 	}
 	.popuptext{
 		font-size: 16px;

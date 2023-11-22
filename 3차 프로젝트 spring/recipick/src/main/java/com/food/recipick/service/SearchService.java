@@ -51,5 +51,8 @@ public class SearchService {
 	public void update_comment(Map map) {
 		searchDAO.update_comment(map);
 	}
-
+	
+	public List recom_main_img() {
+		return searchDAO.recom_main_img();
+	}
 }

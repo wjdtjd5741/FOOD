@@ -4,6 +4,11 @@
    "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
 <mapper namespace="searchs">
 	
+	<select id="recom_main_img" resultType="recipeDTO">
+		select * from recipe
+		order by viewer desc;
+	</select>
+	
 	<update id="update_comment" parameterType="hashmap">
 		UPDATE COMMENTS 
 		SET comment_text = #{comment_text}

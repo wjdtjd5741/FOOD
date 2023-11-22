@@ -49,4 +49,7 @@ public class SearchDAO {
 	public void update_comment(Map map) {
 		sqlSession.update("searchs.update_comment", map);
 	}
+	public List recom_main_img() {
+		return sqlSession.selectList("searchs.recom_main_img");
+	}
 }

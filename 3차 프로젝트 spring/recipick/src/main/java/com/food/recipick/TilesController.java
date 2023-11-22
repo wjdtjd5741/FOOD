@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.food.recipick.dto.RecipeDTO;
-
 import com.food.recipick.dto.WriteDTO;
 import com.food.recipick.service.RecipickService;
+import com.food.recipick.service.SearchService;
 import com.food.recipick.service.WriteService;
 
 
@@ -29,6 +29,9 @@ public class TilesController {
 
 	@Autowired
 	WriteService writeService;
+	
+	@Autowired
+	SearchService searchService;
 	
 	@RequestMapping("/main")
 	public String main(HttpServletRequest request, HttpServletResponse response
@@ -46,7 +49,8 @@ public class TilesController {
 			response.addCookie(c);
 			response.sendRedirect("main");
 		} else {
-				
+			// db에 order 순으로 가져옴
+			searchService.recom_main_img();
 		}
 		return "main";
 	}
