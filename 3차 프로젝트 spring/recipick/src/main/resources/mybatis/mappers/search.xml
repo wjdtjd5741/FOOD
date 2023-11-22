@@ -19,10 +19,18 @@
 		insert into comments(comment_id, uname, review_id, recipe_id, comment_text, parentcomment_id)
 		values (seq_comment_id.nextval, #{uname}, null, #{recipe_id}, #{comment_text}, #{parentcomment_id})
 	</insert>
+	<insert id="insert_reple_comment_review" parameterType="hashmap">
+		insert into comments(comment_id, uname, review_id, recipe_id, comment_text, parentcomment_id)
+		values (seq_comment_id.nextval, #{uname}, #{review_id},null,  #{comment_text}, #{parentcomment_id})
+	</insert>
 	
 	<insert id="insert_comment" parameterType="hashmap">
 		insert into comments(comment_id, uname, review_id, recipe_id, comment_text, parentcomment_id)
 		values (seq_comment_id.nextval, #{uname}, null, #{recipe_id}, #{comment_text}, 0)
+	</insert>
+	<insert id="insert_comment_review" parameterType="hashmap">
+		insert into comments(comment_id, uname, review_id, recipe_id, comment_text, parentcomment_id)
+		values (seq_comment_id.nextval, #{uname}, #{review_id}, null, #{comment_text}, 0)
 	</insert>
 	
 	<select id="comment_load" resultType="commentDTO" parameterType="String">
@@ -34,6 +42,21 @@
 		    SELECT CR.LV + 1 AS LV, C.comment_id, C.parentcomment_id, C.uname, C.comment_text
 		    FROM comment_recusive CR LEFT OUTER JOIN comments C ON C.parentcomment_id = CR.comment_id
 		    WHERE C.parentcomment_id != 0 AND recipe_id = #{_parameter}
+		)
+		SEARCH DEPTH FIRST BY comment_id SET ORDER_DEPTH
+		SELECT * FROM comment_recusive
+		ORDER BY ORDER_DEPTH
+	</select>
+	
+	<select id="comment_load_review" resultType="commentDTO" parameterType="String">
+		WITH comment_recusive(LV, comment_id, parentcomment_id, uname, comment_text) AS (
+		    SELECT 0 AS LV, comment_id, parentcomment_id, uname, comment_text
+		    FROM comments 
+		    WHERE parentcomment_id = 0 AND review_id = #{_parameter}
+		    UNION ALL
+		    SELECT CR.LV + 1 AS LV, C.comment_id, C.parentcomment_id, C.uname, C.comment_text
+		    FROM comment_recusive CR LEFT OUTER JOIN comments C ON C.parentcomment_id = CR.comment_id
+		    WHERE C.parentcomment_id != 0 AND review_id = #{_parameter}
 		)
 		SEARCH DEPTH FIRST BY comment_id SET ORDER_DEPTH
 		SELECT * FROM comment_recusive

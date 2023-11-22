@@ -79,11 +79,23 @@ public class SearchController {
 		return "recipe";
 	}
 	
+	@RequestMapping("/goreview")
+	public String goreview() {
+		return "writer";
+	}
+	
 	@RequestMapping("/comment_load")
 	@ResponseBody
 	public List comment_load(@RequestParam("reciid") String data) { //
 //		String data = "10001";
 		return searchService.comment_load(data);
+	}
+	
+	@RequestMapping("/comment_load_review")
+	@ResponseBody
+	public List comment_load_review(@RequestParam("review_id") String data) { //
+//		String data = "10001";
+		return searchService.comment_load_review(data);
 	}
 	
 	@RequestMapping("/insert_comment")
@@ -105,6 +117,27 @@ public class SearchController {
 		searchService.insert_comment(map);
 		
 		return "redirect:/gorecipe?reciid="+reciid;
+	}
+	
+	@RequestMapping("/insert_comment_review")
+	public String insert_comment_review(HttpServletRequest request,
+			@RequestParam("review_id") String review_id,
+			@RequestParam("ctext") String ctext
+			) {
+		HttpSession session = request.getSession();
+		Map map = new HashMap();
+//		int recipe_id = Integer.parseInt(reciid);
+		map.put("review_id", review_id);
+		map.put("comment_text", ctext);
+		if(session.getAttribute("memberdto") != null) {
+			map.put("uname", ((MemberDTO)session.getAttribute("memberdto")).getUname());
+		} else
+			map.put("uname", "admin");
+		
+		
+		searchService.insert_comment_review(map);
+		
+		return "redirect:/goreview?review_id="+review_id;
 	}
 	
 	@RequestMapping("/insert_reple_comment")
@@ -130,6 +163,27 @@ public class SearchController {
 		return "redirect:/gorecipe?reciid="+reciid;
 	}
 	
+	@RequestMapping("/insert_reple_comment_review")
+	public String insert_reple_comment_review(HttpServletRequest request,
+			@RequestParam("review_id") String review_id,
+			@RequestParam("ctext") String ctext,
+			@RequestParam("pid") String pid
+			) {
+		HttpSession session = request.getSession();
+		Map map = new HashMap();
+		
+		map.put("parentcomment_id", pid);
+		map.put("review_id", review_id);
+		map.put("comment_text", ctext);
+		if(session.getAttribute("memberdto") != null) {
+			map.put("uname", ((MemberDTO)session.getAttribute("memberdto")).getUname());
+		} else
+			map.put("uname", "admin");
+		searchService.insert_reple_comment_review(map);
+
+		return "redirect:/goreview?review_id="+review_id;
+	}
+	
 	@RequestMapping("/del_comment")
 	public String del_comment(@RequestParam("reciid") String reciid,
 			@RequestParam("cid") String cid) {
@@ -139,6 +193,17 @@ public class SearchController {
 		searchService.del_comment(cid);
 		
 		return "redirect:/gorecipe?reciid="+reciid;
+	}
+	
+	@RequestMapping("/del_comment_review")
+	public String del_comment_review(@RequestParam("review_id") String review_id,
+			@RequestParam("cid") String cid) {
+		System.out.println("reciid: "+review_id);
+		System.out.println("cid: "+cid);
+		
+		searchService.del_comment(cid);
+		
+		return "redirect:/goreview?review_id="+review_id;
 	}
 	
 	@RequestMapping("/update_comment")
@@ -156,6 +221,24 @@ public class SearchController {
 		searchService.update_comment(map);
 		
 		return "redirect:/gorecipe?reciid="+reciid;
+	}
+	
+	@RequestMapping("/update_comment_review")
+	public String update_comment_review(
+			@RequestParam("review_id") String review_id,
+			@RequestParam("cid") String cid, 
+			@RequestParam("ctext") String ctext
+			) {
+		System.out.println("reciid: "+review_id);
+		System.out.println("cid: "+cid);
+		System.out.println("ctext: "+ctext);
+		Map map = new HashMap();
+		map.put("comment_id", cid);
+		map.put("comment_text", ctext);
+		
+		searchService.update_comment(map);
+		
+		return "redirect:/goreview?review_id="+review_id;
 	}
 	
 }

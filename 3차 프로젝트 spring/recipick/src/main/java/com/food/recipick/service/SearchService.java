@@ -25,13 +25,23 @@ public class SearchService {
 	public List comment_load(String data) {
 		return searchDAO.comment_load(data);
 	}
+	public List comment_load_review(String data) {
+		return searchDAO.comment_load_review(data);
+	}
 	
 	public void insert_comment(Map map) {
 		searchDAO.insert_comment(map);
 	}
+	public void insert_comment_review(Map map) {
+		searchDAO.insert_comment_review(map);
+	}
 	
 	public void insert_reple_comment(Map map) {
 		searchDAO.insert_reple_comment(map);
+	}
+
+	public void insert_reple_comment_review(Map map) {
+		searchDAO.insert_reple_comment_review(map);
 	}
 	
 	public void del_comment(String data) {
