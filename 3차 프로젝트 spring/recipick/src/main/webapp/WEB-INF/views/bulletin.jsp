@@ -593,6 +593,18 @@ h3 {
 				}
 			});
 		}
-	
+		go_recipepage()
+		function go_recipepage(){
+			let recipes = document.querySelectorAll(".lines")
+			let reciids = document.querySelectorAll(".bu_reciid")
+			console.log(recipes)
+			for(let i = 0 ;i<recipes.length ;i++){
+				recipes[i].addEventListener("click", function(){
+// 					console.log(i)
+					let reciid = reciids[i].innerText
+					window.location.href = "gorecipe?reciid="+reciid
+				})
+			}
+		}
 	</script>	
 </body>

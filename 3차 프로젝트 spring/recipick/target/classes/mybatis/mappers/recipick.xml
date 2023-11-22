@@ -3,6 +3,55 @@
    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
 <mapper namespace="id_recipick">
+	<!-- 강신영 -->
+	<insert id="insertWrite" parameterType="writeDTO">
+		insert into review(
+			review_id,
+			pic,
+			review_text,
+			review_date,
+			VIEWER,
+			UNAME,
+			review_title
+		)
+		values(
+			RI.nextval,
+			0,
+			#{review_text},
+			sysdate,
+			0,
+			0,
+			#{review_title}
+		)
+	</insert >
+	
+	
+	<insert id="insertHash" parameterType="writeDTO">
+		insert into hashtag(
+			hash_id,review_id,hash_name,tag_type
+		)
+		values(
+			hash_id.nextval,
+			RI.nextval,
+			#{hash_name},
+			'review')
+		
+	</insert>
+	
+	<select id="selectData_review" parameterType="writeDTO" resultType="writeDTO">
+	select review_title, review_text,review_id
+	from review
+	where  review_id = #{review_id}
+	</select>
+
+
+	<select id="selectReview" parameterType="writeDTO" resultType="writeDTO">
+		select review_id, review_title, review_date, uname, viewer
+		from review
+<!-- 		where review_id=#{review_id}; -->
+
+	</select>
+	
 	
 	<insert id="insertWrite" parameterType="writeDTO">
 		insert into review(
@@ -24,8 +73,8 @@
 			#{review_title}
 		)
 	</insert>
-
-	<insert id="recipe_id" parameterType="recipeDTO">
+	
+	<insert id="insert_recipe" parameterType="recipeDTO">
 		<selectKey keyProperty="recipe_id" resultType="int" order="BEFORE">
 			select recipe_seq.nextval from dual
 		</selectKey>
@@ -49,7 +98,7 @@
 						)
 	</insert>
 	
-	<insert id="food" parameterType="hashmap">
+	<insert id="insert_food" parameterType="hashmap">
 		insert into food(
 					food_id,
 					food_name,
@@ -65,7 +114,7 @@
 					
 	</insert>
 	
-	<insert id="hashtag" parameterType="hashmap">
+	<insert id="insert_hashtag" parameterType="hashmap">
 		insert into hashtag(
 						hash_id,
 						hash_name,
@@ -80,7 +129,7 @@
 					)
 	</insert>
 	
-	<insert id="detailrecipe" parameterType="hashmap">
+	<insert id="insert_detailrecipe" parameterType="hashmap">
 		insert into detailrecipe(
 							detailrecipe_id,
 							detail_pic,
@@ -98,10 +147,13 @@
 	</insert>
 	
 	<select id="bulletin_rec_sel" resultType="recipeDTO" parameterType="recipeDTO">
-		select mainpic, recipe_title, recipe_date, uname, viewer from recipe
-		where #{recipe_id} = recipe_id
-						
-	</select>	
+		select recipe_id, mainpic, recipe_title, recipe_date, uname, viewer from recipe
+	</select>
+	
+<!-- 	<select id="recipe" parameterType="recipeDTO" resultType="recipeDTO"> -->
+<!-- 		SELECT * FROM RECIPE -->
+<!-- 	</select> -->
+
 <!-- 	<insert id="recommend" parameterType="recipeDTO"> -->
 <!-- 		insert into recommend( -->
 <!-- 							recom_id, -->

@@ -9,9 +9,7 @@ public interface WriteService {
 
 	
 	
+	List selectReview(WriteDTO dto);
+	List selectData_review(WriteDTO dto);
 	
-	int writerview(WriteDTO dto);
-
-	List writepage(WriteDTO dto);
-	List bulletin(WriteDTO dto);
 }

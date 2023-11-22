@@ -8,5 +8,6 @@ import com.food.recipick.dto.RecipeDTO;
 
 
 public interface RecipickService {
-	List recipePage1(RecipeDTO dto);
+	void recipePage1(RecipeDTO dto);
+	List bulletin(RecipeDTO dto);
 }

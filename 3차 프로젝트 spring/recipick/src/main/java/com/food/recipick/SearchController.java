@@ -1,18 +1,20 @@
 package com.food.recipick;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.http.HttpServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -38,8 +40,36 @@ public class SearchController {
 		return "search";
 	}
 	
+	public Cookie makeCookie(int i, String data) {
+		Cookie c = new Cookie("latest_contents"+i, data);
+//		c.setMaxAge(365*60*60*24);
+		System.out.println("c.getMaxAge() : "+ c.getMaxAge());
+		return c;
+	}
+	
 	@RequestMapping("/gorecipe")
-	public String gorecipe(@RequestParam("reciid") String data) {
+	public String gorecipe(HttpServletRequest request, HttpServletResponse response,
+			@RequestParam("reciid") String data) {
+		
+		String value = "";
+		Cookie[] cs = request.getCookies();
+		
+		for (Cookie c : cs) {
+			if(c.getName().equals("latest_contents1")) 
+				value = c.getValue();
+		}
+		
+		if(!value.isEmpty() && !data.equals(value)) {
+//			System.out.println("ffd");
+			response.addCookie(makeCookie(2,value));
+			response.addCookie(makeCookie(1,data));
+		} else if(!data.equals(value)){
+			response.addCookie(makeCookie(1,data));
+		}
+			
+		// data(recipe_id)를 db로 보낸후 where recipe_id = #{_parameter}
+		// 가져온것을 m에 담아서 jsp에서 처리
+
 		
 		System.out.println("in0 : "+ data);
 		
@@ -67,8 +97,7 @@ public class SearchController {
 		map.put("recipe_id", reciid);
 		map.put("comment_text", ctext);
 		if(session.getAttribute("memberdto") != null) {
-			MemberDTO memberdto = (MemberDTO)session.getAttribute("memberdto");
-			map.put("uname", memberdto.getUname());
+			map.put("uname", ((MemberDTO)session.getAttribute("memberdto")).getUname());
 		} else
 			map.put("uname", "admin");
 		
@@ -91,8 +120,7 @@ public class SearchController {
 		map.put("recipe_id", reciid);
 		map.put("comment_text", ctext);
 		if(session.getAttribute("memberdto") != null) {
-			MemberDTO memberdto = (MemberDTO)session.getAttribute("memberdto");
-			map.put("uname", memberdto.getUname());
+			map.put("uname", ((MemberDTO)session.getAttribute("memberdto")).getUname());
 		} else
 			map.put("uname", "admin");
 		

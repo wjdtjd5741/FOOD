@@ -4,27 +4,69 @@ public class WriteDTO {
 
 	
 	private int review_id;
-	private int view;
+	private int viewer;
 	private String pic;
 	private String review_title;
 	private String review_date;
 	private String review_text;
 	private String uname;
+	private String hash_name;
+	private int hash_id;
+	private String tag_type;
+	private int recipe_id;
 	
 	
+	
+	public String getHash_name() {
+		return hash_name;
+	}
+
+	public void setHash_name(String hash_name) {
+		this.hash_name = hash_name;
+	}
+
+	public int getHash_id() {
+		return hash_id;
+	}
+
+	public void setHash_id(int hash_id) {
+		this.hash_id = hash_id;
+	}
+
+	public String getTag_type() {
+		return tag_type;
+	}
+
+	public void setTag_type(String tag_type) {
+		this.tag_type = tag_type;
+	}
+
+	public int getRecipe_id() {
+		return recipe_id;
+	}
+
+	public void setRecipe_id(int recipe_id) {
+		this.recipe_id = recipe_id;
+	}
+
 	
 	
 	@Override
 	public String toString() {
-		return "WriteDTO [review_id=" + review_id + ", view=" + view + ", pic=" + pic + ", review_title=" + review_title
-				+ ", review_date=" + review_date + ", review_text=" + review_text + ", uname=" + uname + "]";
+		return "WriteDTO [review_id=" + review_id + ", viewer=" + viewer + ", pic=" + pic + ", review_title="
+				+ review_title + ", review_date=" + review_date + ", review_text=" + review_text + ", uname=" + uname
+				+ ", hash_name=" + hash_name + ", hash_id=" + hash_id + ", tag_type=" + tag_type + ", recipe_id="
+				+ recipe_id + "]";
 	}
-	public int getView() {
-		return view;
+
+	public int getViewer() {
+		return viewer;
 	}
-	public void setView(int view) {
-		this.view = view;
+
+	public void setViewer(int viewer) {
+		this.viewer = viewer;
 	}
+
 	public String getPic() {
 		return pic;
 	}
