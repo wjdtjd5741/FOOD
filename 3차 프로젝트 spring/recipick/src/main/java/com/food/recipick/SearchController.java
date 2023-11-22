@@ -34,9 +34,12 @@ public class SearchController {
 		map.put("recipe_title", data);
 		map.put("order", order);
 		List l = searchService.searchRecipe(map);
+		if(l != null && l.size() != 0) {
+		System.out.println("gdg");
 		System.out.println(l.get(0).toString());
 		m.addAttribute("data", data);
 		m.addAttribute("contents", l);
+		}
 		return "search";
 	}
 	

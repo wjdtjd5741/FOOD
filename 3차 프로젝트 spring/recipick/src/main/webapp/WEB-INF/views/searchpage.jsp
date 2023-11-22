@@ -255,7 +255,14 @@
     font-size: 14px;
 
 }
-
+#no_search{
+	font-size: 50px;
+	color: rgb(230, 126, 34);
+	width: 100%;
+	font-weight: 900;
+	text-align: center;
+	margin: 100px 0;
+}
 </style>
 
     <main>
@@ -294,9 +301,9 @@
                         <div class="search_result">
                             <div class="result1">
                                 <div>검색결과</div>
-<%--                                
-                                <div class="color"><%= reciList.size() %></div>
---%>                                
+                               
+                                <div class="color"></div>
+                               
                                 <div>건 조회</div>
                             </div>
                             <div class="views">
@@ -309,17 +316,23 @@
                         </div>
                     </div>
                     <div class="search_main">
-                    <c:forEach var="content" items="${contents}">
-                    	<div class="menu" style="cursor: pointer">
-                    		<img src="${content.mainpic }">
-                    		<div class="hash">
-                    			<div><%-- <%= reciList.get(i).getHashtags().get(j) %> --%></div>
-                    		</div>	
-                    		<div>${content.recipe_title}</div>
-                    	</div>
-                    	<div id="reciID" style="display:none">${content.recipe_id }</div>
-                    </c:forEach>
-                    
+                    <c:if test="${contents != null}">
+	                    <c:forEach var="content" items="${contents}">
+	                    	<div class="menu" style="cursor: pointer">
+	                    		<img src="${content.mainpic }">
+	                    		<div class="hash">
+	                    			<div><%-- <%= reciList.get(i).getHashtags().get(j) %> --%></div>
+	                    		</div>	
+	                    		<div>${content.recipe_title}</div>
+	                    	</div>
+	                    	<div id="reciID" style="display:none">${content.recipe_id }</div>
+	                    </c:forEach>
+                    </c:if>
+					<c:if test="${contents == null}">
+						<div id ="no_search">
+						검색 결과 없음
+						</div>
+					</c:if>
 <%--                    
                     <%
                     	for(int i = 0 ;i<reciList.size() ;i++){
@@ -347,6 +360,12 @@
         </section>
     </main>
     <script>
+    countbox();
+    function countbox(){
+    	let menus = document.querySelectorAll(".menu")
+    	document.querySelector(".color").innerText = menus.length;
+    }
+    
     orderby();
     
     function orderby(){
