@@ -13,24 +13,23 @@ public class WriteServiceImpl implements WriteService {
 	@Autowired
 	WriteDAO rDAO;
 
-	@Override
-	public List writepage(WriteDTO dto) {
-		rDAO.writepage(dto);
 
-		return null;
+	@Override
+	public List selectReview(WriteDTO dto) {
+		List review_bul_sel=rDAO.selectReview(dto);
+		return review_bul_sel;
 	}
 
 	@Override
-	public int writerview(WriteDTO dto) {
-		int result=rDAO.writerview(dto);
-		
-		return 0;
+	public List selectData_review(WriteDTO dto) {
+		System.out.println("dto_service:"+dto);
+		List selectData_review=rDAO.selectData_review(dto);
+		return selectData_review;
 	}
 
 	@Override
-	public List bulletin(WriteDTO dto) {
-		List result2=rDAO.bulletin(dto);
-		return result2;
+	public List selectdata_all(WriteDTO dto) {
+		return rDAO.selectData_all(dto);
 	}
 
 }

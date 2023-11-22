@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <style>
 main{
@@ -22,7 +25,7 @@ nav{
     display: inline-block;
     width: 15px;
     height: 50px;
-    margin: 125px 0;
+    margin: 145px 0;
     font-size: 12px;
     text-align: center;
     line-height: 50px;
@@ -35,7 +38,7 @@ nav{
     border-radius: 10px;
     display: inline-block;
     width: 120px;
-    height: 100%;
+    height: 330px;
 }
 .nav_contents > div{
     width: 100%;
@@ -63,10 +66,17 @@ nav{
     margin-top: 10px;
     font-weight: 600;
 }
-.nav_contents > img {
+.nav_recom {
     width: 80px;
     margin: 5px 10px;
-    margin-left: 20px;
+/*     margin-left: 20px; */
+    cursor: pointer;
+}
+.nav_recom_box {
+	margin-top: 10px;
+    width: 80px;
+/*     margin: 5px 10px; */
+/*     margin-left: 20px; */
     cursor: pointer;
 }
 #nav_location a {
@@ -81,6 +91,7 @@ nav{
     display: flex;
     height: 20px;
     justify-content: space-around;
+/*     margin-top: 10px; */
 }
 .reci_top_img{
     /* border: 1px solid black; */
@@ -376,6 +387,7 @@ body{
     font-weight: 800;
     /* color: gray; */
 }
+
 </style>
 <link rel="stylesheet" href="resources/assets/css/comments.css">
 <main>
@@ -413,6 +425,7 @@ body{
 						<div>-레시피 재료</div>
 						<div class="select">▽</div>
 						<div class="food_text">
+						
 <%--						
  							<% 
 							for (Map.Entry<String, String> mapstr : rDTO.getFoods().entrySet()) {
@@ -487,15 +500,204 @@ body{
 				<div>댓글</div>
 				<div class="comment_count">0</div>
 			</div>
+			<div class="comment_box"></div>
 			<div>
 				<textarea class="input_text" type="text" value="댓글을 남겨주세요."
 					maxlength="300"></textarea>
 				<input class="btn_txt" type="button" value="등록">
 			</div>
-			<div class="comment_box"></div>
+			<div class='submit_box' style="display: none"></div>
+			<div class='reple_btn_txt' style="display: none"></div>
 		</div>
 	</article>
 </main>
+<script>
+comment();
+text_focus();
+
+
+function comment() {
+    document.querySelector(".btn_txt").addEventListener("click", function () {
+        let text = document.querySelector(".input_text").value;
+        let reciid = new URLSearchParams(window.location.search).get("reciid");
+        //window.location.href = ""
+        
+        
+        if (text != "") {
+            let html = "";
+            html += `<div class="reple_box">`
+            html += "<div style='display: inline-block; width: 60%;'>작성자</div>";
+            html += `<input class='del_btn' type=button value='X' style='font-size: 10px;'>`;
+            html += `<div style='display: inline-block;'>${text}</div>`
+            html += "<input class='reple_btn' type=button value='ㄴ' style='font-size: 10px;'>"
+            // console.log(document.querySelector(".comment_box"));
+            document.querySelector(".comment_box").innerHTML += html;
+            document.querySelector(".input_text").value = "댓글을 남겨주세요.";
+        } else
+            alert("댓글을 입력해주세요.");
+            
+		
+        del_reple();
+        reple_count()
+        
+        window.location.href = "insert_comment?reciid="+reciid+"&ctext="+text
+    });
+}
+
+
+function reple_add(){
+	let btns = document.querySelectorAll(".reple_btn")
+	
+// 	console.log(btns)
+	for(let i = 0 ;i<btns.length ;i++){
+		btns[i].addEventListener("click",function(){
+			let html = ""
+			html += `<textarea class="reple_input_text" type="text" value="댓글을 남겨주세요."maxlength="300"></textarea>`
+			html += `<input class="reple_btn_txt" type="button" value="등록">`
+			let boxs = document.querySelectorAll(".submit_box")
+			for(let j = 0 ;j<boxs.length ;j++)
+				boxs[j].innerHTML = "";
+			boxs[i].innerHTML = html;
+			
+			reple_comments(i);
+		})
+	}
+	
+// 	reple_add()
+}
+
+function reple_comments(z){
+	let replebtns = document.querySelectorAll(".reple_btn_txt")
+	let submitbox = document.querySelectorAll(".submit_box")
+	for(let j = 0 ;j<submitbox ;j++)
+	console.log(replebtns)
+	for(let i = 0 ; i<replebtns.length ;i++){
+		replebtns[i].addEventListener("click",function(){
+			let reciid = new URLSearchParams(window.location.search).get("reciid");
+			let text = document.querySelector(".reple_input_text").value;
+			let pid = submitbox[z].parentNode.querySelector(".reple_id").innerText
+			console.log(pid);
+			window.location.href = "insert_reple_comment?reciid="+reciid+"&ctext="+text+"&pid="+pid
+		})
+	}
+}
+
+function text_focus() {
+    document.querySelector(".input_text").addEventListener("click", function () {
+        document.querySelector(".input_text").value = "";
+    });
+}
+
+function del_reple() {
+    let reple = document.querySelectorAll(".del_btn");
+    let submitbox = document.querySelectorAll(".submit_box")
+    console.log(reple)
+    for (let i = 0; i < reple.length; i++) {
+        reple[i].addEventListener("click", function () {
+            reple[i].parentNode.remove();
+            let reciid = new URLSearchParams(window.location.search).get("reciid");
+            console.log(submitbox[i].parentNode)
+            let cid = submitbox[i].parentNode.querySelector(".reple_id").innerText
+            console.log(cid)
+            window.location.href = "del_comment?reciid="+reciid+"&cid="+cid
+
+        });
+    }
+}
+
+function rewrite_reple() {
+//     let reple = document.querySelectorAll(".del_btn");
+//     let submitbox = document.querySelectorAll(".submit_box")
+//     console.log(reple)
+//     for (let i = 0; i < reple.length; i++) {
+//         reple[i].addEventListener("click", function () {
+//             reple[i].parentNode.remove();
+//             let reciid = new URLSearchParams(window.location.search).get("reciid");
+//             console.log(submitbox[i].parentNode)
+//             let cid = submitbox[i].parentNode.querySelector(".reple_id").innerText
+//             console.log(cid)
+//             window.location.href = "del_comment?reciid="+reciid+"&cid="+cid
+
+//         });
+//     }
+}
+
+// let textArea = document.querySelectorAll("textarea");
+// for(let i = 0 ;i<textArea.length ;i++){
+//     if (textArea[i].disabled) {
+//         textArea[i].disabled = false;
+//         btn.innerHTML = "확인";
+        
+//     } else {
+//         textArea[i].disabled = true;
+//         btn.innerHTML = "수정";
+//     }
+// }
+
+
+function reple_count(){
+    document.querySelector(".comment_count").innerText = document.querySelectorAll(".reple_box").length;
+}
+
+ 	get_json();
+	function get_json(){
+		const xhr = new XMLHttpRequest();
+		let data = new URLSearchParams(window.location.search).get("reciid");
+		xhr.open("GET", `http://localhost:8080/recipick/comment_load?reciid=\${data}`);
+		xhr.send();
+		
+		window.addEventListener("load", function(){
+			xhr.onload = function(){
+				console.log(xhr.responseText);
+				let json = JSON.parse(xhr.responseText)
+				
+				for(let i = 0 ;i<json.length ;i++){
+					let html = "";
+					let margin = json[i].lv * 30;
+		            html += `<div class="reple_box" style="margin: 0 \${margin}px">`
+	                html += `<div class="uname" style="display: inline-block; width: 60%;">\${json[i].uname}</div>`;
+	                html += `<input class='del_btn' type=button value='X' style='font-size: 10px;'>`;
+	                html += `<textarea class='reple_text' style="display: inline-block;" disabled>\${json[i].comment_text}</textarea>`
+	                html += "<input class='reple_btn' type=button value='ㄴ' style='font-size: 10px;'>"
+	                html += `<div class="reple_id" style="display: none">\${json[i].comment_id}</div>`
+	                html += "<input class='rewrite_btn' type=button value='수정' style='font-size: 10px;'>"
+	                html += `<div class='submit_box'></div>`
+	                document.querySelector(".comment_box").innerHTML += html;
+				}
+				reple_add();
+				del_reple()
+				
+				comment_btns()
+				rewirte_event()
+			}
+			
+		})
+		
+	}	
+
+	function rewirte_event(){
+		let rewrite_btns = document.querySelectorAll(".rewrite_btn")
+		let reples = document.querySelectorAll(".reple_text")
+		console.log(rewrite_btns)
+		for(let i = 0 ; i<rewrite_btns.length ;i++){
+			rewrite_btns[i].addEventListener("click", function(){
+			     if (reples[i].disabled) {
+			    	 reples[i].disabled = false;
+// 			    	 console.log("gggg")
+
+			     } else{
+			    	 reples[i].disabled = true;
+			    	 let reciid = new URLSearchParams(window.location.search).get("reciid");
+			    	 let cid = reples[i].parentNode.querySelector(".reple_id").innerText
+			    	 let ctext = reples[i].value
+			    	 console.log(ctext)
+			    	 window.location.href = "update_comment?reciid="+reciid+"&cid="+cid+"&ctext="+ctext
+			     }			
+			})	
+		}
+	}
+	
+</script>
 	<script type="text/javascript" src="resources/assets/js/comment.js"></script>
 	<script type="text/javascript" src="resources/assets/js/header_contents.js"></script>
 	<script type="text/javascript" src="resources/assets/js/reci_pop.js"></script>
@@ -504,3 +706,50 @@ body{
 	<script type="text/javascript" src="resources/assets/js/heart_counter.js"></script>
 	<script type="text/javascript" src="resources/assets/js/likeNdislike.js"></script>
 	<script type="text/javascript" src="resources/assets/js/btns_hover.js"></script>
+	
+<c:if test="${memberdto == null}">
+	<script>
+		console.log("ggggg")
+		function comment_btns(){
+			let del_btn = document.querySelectorAll(".del_btn")
+			for(let i = 0 ;i<del_btn.length ;i++)
+				del_btn[i].style.display="none";
+			console.log(del_btn)
+			let reple_btn = document.querySelectorAll(".reple_btn")
+			for(let i = 0 ;i<reple_btn.length ;i++)
+				reple_btn[i].style.display="none";
+			let rewrite_btn = document.querySelectorAll(".rewrite_btn")
+			for(let i = 0 ;i<rewrite_btn.length ;i++)
+				rewrite_btn[i].style.display="none";
+			console.log(reple_btn)
+		}
+	</script>
+</c:if>
+
+<c:if test="${memberdto != null}">
+	<script>
+		console.log("aaaaa")
+		function comment_btns(){
+// 			console.log(document.querySelector(".uname").innerText)
+			let uname = document.querySelectorAll(".uname")
+// 			console.log(uname)
+			for(let i = 0 ; i<uname.length;i++){
+				if(uname[i].innerText != "${memberdto.uname}"){
+					btns_off(i)	
+				}
+			}
+			if(document.querySelector(".uname").innerText == "${memberdto.uname}"){
+				console.log("f")	
+			}
+		}
+		
+		function btns_off(z){
+			let del_btn = document.querySelectorAll(".del_btn")
+				del_btn[z].style.display="none";
+			let reple_btn = document.querySelectorAll(".reple_btn")
+				reple_btn[z].style.display="none";
+			let rewrite_btn = document.querySelectorAll(".rewrite_btn")
+				rewrite_btn[z].style.display="none";
+		}
+	</script>
+</c:if>	

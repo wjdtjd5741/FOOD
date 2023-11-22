@@ -1,12 +1,20 @@
 package com.food.recipick;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.food.recipick.service.SearchService;
+
 @Controller
 public class AjaxController {
+	
+	@Autowired
+	SearchService searchService;
 	
 	@RequestMapping("bulletinsection")
 //	@ResponseBody
@@ -20,6 +28,5 @@ public class AjaxController {
 		System.out.println("pagereload");
 		return "mypagesection"+page;
 	}
-	
 	
 }

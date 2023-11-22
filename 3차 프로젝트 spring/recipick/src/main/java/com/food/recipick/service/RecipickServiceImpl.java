@@ -1,7 +1,6 @@
 package com.food.recipick.service;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,16 +16,22 @@ public class RecipickServiceImpl implements RecipickService{
 	RecipickDAO recipickdao;
 
 	@Override
-	public List recipePage1(RecipeDTO dto) {
+	public void recipePage1(RecipeDTO dto) {
 		dto.setMainpic("юс╫ц");
 		List l = new ArrayList();
 		l.add("f");
 		l.add("g");
 		dto.setDetail_pic(l);
-		dto.setView("0");
+		dto.setViewer("0");
 		
+		recipickdao.recipePage1(dto);
+
+	}
+
+	@Override
+	public List bulletin(RecipeDTO dto) {
 		
-		return recipickdao.recipePage1(dto);
+		return recipickdao.bulletin(dto);
 	}
 
 	

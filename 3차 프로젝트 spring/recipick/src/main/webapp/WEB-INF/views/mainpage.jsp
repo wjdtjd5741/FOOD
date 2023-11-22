@@ -643,6 +643,6 @@ h2 {
        }
  */	
  </script>
-    <script type="text/javascript" src="resources/assets/js/header_contents.js"></script>
+    
 <!--     <script type="text/javascript" src="assets/js/mobile_pop.js"></script>	 -->
-	<script type="text/javascript" src="resources/assets/js/search_event.js"></script>	
+		

@@ -3,19 +3,23 @@
    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
 <mapper namespace="id_recipick">
+	<!-- 강신영 -->
+	<select id="selectAll" parameterType="writeDTO" resultType="writeDTO">
+		select * from review
+	</select>
 	
 	<insert id="insertWrite" parameterType="writeDTO">
 		insert into review(
-			REVIEW_ID,
+			review_id,
 			pic,
 			review_text,
-			REVIEW_DATE,
+			review_date,
 			VIEWER,
 			UNAME,
 			review_title
 		)
-		values
-			(RI.nextval,
+		values(
+			RI.nextval,
 			0,
 			#{review_text},
 			sysdate,
@@ -23,9 +27,37 @@
 			0,
 			#{review_title}
 		)
+	</insert >
+	
+	
+	<insert id="insertHash" parameterType="writeDTO">
+		insert into hashtag(
+			hash_id,review_id,hash_name,tag_type
+		)
+		values(
+			hash_id.nextval,
+			RI.nextval,
+			#{hash_name},
+			'review')
+		
 	</insert>
+	
+	<select id="selectData_review" parameterType="writeDTO" resultType="writeDTO">
+	select review_title, review_text,review_id
+	from review
+	where  review_id = #{review_id}
+	</select>
 
-	<insert id="recipe_id" parameterType="recipeDTO">
+
+	<select id="selectReview" parameterType="writeDTO" resultType="writeDTO">
+		select review_id, review_title, review_date, uname, viewer
+		from review
+<!-- 		where review_id=#{review_id}; -->
+
+	</select>
+	
+	
+	<insert id="insert_recipe" parameterType="recipeDTO">
 		<selectKey keyProperty="recipe_id" resultType="int" order="BEFORE">
 			select recipe_seq.nextval from dual
 		</selectKey>
@@ -44,12 +76,12 @@
 						#{mainpic},
 						#{maintext},
 						0,
-						#{user},
+						#{uname},
 						#{recipe_title}
 						)
 	</insert>
 	
-	<insert id="food" parameterType="hashmap">
+	<insert id="insert_food" parameterType="hashmap">
 		insert into food(
 					food_id,
 					food_name,
@@ -65,7 +97,7 @@
 					
 	</insert>
 	
-	<insert id="hashtag" parameterType="hashmap">
+	<insert id="insert_hashtag" parameterType="hashmap">
 		insert into hashtag(
 						hash_id,
 						hash_name,
@@ -80,7 +112,7 @@
 					)
 	</insert>
 	
-	<insert id="detailrecipe" parameterType="hashmap">
+	<insert id="insert_detailrecipe" parameterType="hashmap">
 		insert into detailrecipe(
 							detailrecipe_id,
 							detail_pic,
@@ -95,8 +127,42 @@
 							#{make_order},
 							#{recipe_id}
 						)
-						
 	</insert>
+	
+	<select id="bulletin_rec_sel" resultType="recipeDTO" parameterType="recipeDTO">
+		select recipe_id, mainpic, recipe_title, recipe_date, uname, viewer from recipe
+	</select>
+	
+<!-- 	<select id="recipe" parameterType="recipeDTO" resultType="recipeDTO"> -->
+<!-- 		SELECT * FROM RECIPE -->
+<!-- 	</select> -->
+
+<!-- 	<insert id="recommend" parameterType="recipeDTO"> -->
+<!-- 		insert into recommend( -->
+<!-- 							recom_id, -->
+<!-- 							uname, -->
+<!-- 							recipe_id -->
+<!-- 						) -->
+<!-- 						values( -->
+<!-- 							recom_id.nextval, -->
+<!-- 							#{uname}, -->
+<!-- 							#{recipe_id} -->
+<!-- 						)	 -->
+<!-- 	</insert> -->
+	
+	
+<!-- 	<insert id="ggim" parameterType="recipeDTO"> -->
+<!-- 		insert into ggim( -->
+<!-- 						ggim_id, -->
+<!-- 						uname, -->
+<!-- 						recipe_id -->
+<!-- 					) -->
+<!-- 					values( -->
+<!-- 						ggim_id.nextval, -->
+<!-- 						#{uname{, -->
+<!-- 						#{recipe_id} -->
+<!-- 					) -->
+<!-- 	</insert> -->
 	
 <!-- 	김호연 -->
 	<insert id="newsigninsert" parameterType="memberDTO">
@@ -114,7 +180,7 @@
 				#{rname}, 
 				#{email}, 
 				#{pw},  
-				to_date(#{birth}, 'yyyy-mm-dd'), 
+				to_date(#{birth}, 'yyyy-mm-dd'),
 				#{phone}, 
 				#{gender},
 				#{guest}
@@ -123,7 +189,7 @@
 	
 		<select id="loginselect" resultType="memberDTO">
 			select 
-				uname, pw 
+				*
 			from 
 				MEMBER 
 			where 
@@ -138,4 +204,22 @@
 			where 
 				uname = #{uname}
 		</select>
+		
+		<update id="updateMypage" parameterType="memberDTO">
+			update
+				member
+			set
+				rname = #{rname},
+				email = #{email},
+				pw = #{pw},
+				birth = #{birth},
+				phone = #{phone},
+				gender = #{gender}
+			where
+				uname = #{uname}
+		</update>
+		
+<!-- 		<select id="selectMember" resultType="memberDTO"> -->
+<!-- 			select * from MEMBER -->
+<!-- 		</select> -->
 </mapper>

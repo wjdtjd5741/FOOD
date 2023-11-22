@@ -14,19 +14,15 @@ import com.food.recipick.dto.RecipeDTO;
 public class RecipickDAOImpl implements RecipickDAO{
 
 	
-	
-	
 	@Autowired
 	SqlSession sqlSession;
 
 	@Override
-	public List recipePage1(RecipeDTO dto) {
-		sqlSession.insert("id_recipick.recipe_id", dto); // recipe테이블
+	public void recipePage1(RecipeDTO dto) {
+		sqlSession.insert("id_recipick.insert_recipe", dto); // recipe테이블
 		
 		List foodnames= dto.getFood_name();
 		List foodvalue = dto.getFood_value();
-		foodnames.add("감자");
-		foodvalue.add(3);
 		for(int i =0; i<foodnames.size(); i++) {
 			System.out.println(foodnames.get(i));
 			System.out.println(foodvalue.get(i));
@@ -36,7 +32,7 @@ public class RecipickDAOImpl implements RecipickDAO{
 			map.put("food_name", foodnames.get(i));
 			map.put("food_value", foodvalue.get(i));
 			map.put("recipe_id", dto.getRecipe_id());
-			sqlSession.insert("id_recipick.food", map); // food테이블
+			sqlSession.insert("id_recipick.insert_food", map); // food테이블
 		}
 		
 		List hashnames = dto.getHash_name();
@@ -46,7 +42,7 @@ public class RecipickDAOImpl implements RecipickDAO{
 			
 			map.put("hash_name", hashnames.get(i));
 			map.put("recipe_id", dto.getRecipe_id());
-			sqlSession.insert("id_recipick.hashtag", map); // hashtag 테이블 
+			sqlSession.insert("id_recipick.insert_hashtag", map); // hashtag 테이블 
 		}
 		
 		List detailpic = dto.getDetail_pic();
@@ -59,13 +55,32 @@ public class RecipickDAOImpl implements RecipickDAO{
 			map.put("detail_pic", detailpic.get(i));
 			map.put("detail_text", detailtext.get(i));
 			map.put("recipe_id", dto.getRecipe_id());
-			sqlSession.insert("id_recipick.detailrecipe", map); // detailrecipe 테이블
+			sqlSession.insert("id_recipick.insert_detailrecipe", map); // detailrecipe 테이블
 		}
 		
 		
-		sqlSession.insert("id_recipick.recommend", dto);
-		 
-		return null;
+//		sqlSession.insert("id_recipick.recommend", dto);
+//		sqlSession.insert("id_recipick.ggim", dto);
+		
+//		List bulletin_rec_sel = sqlSession.selectList("id_recipick.bulletin_rec_sel", dto);
+		
+		
+	}
+
+	@Override
+	public List bulletin(RecipeDTO dto) {
+		
+		
+//		sqlSession.selectList("id_recipick.recipe", dto);
+//		List hashlist = sqlSession.selectList("id_recipick.hashtag", dto);
+//		dto.setHashAll(hashlist);
+//		List foodlist = sqlSession.selectList("id_recipick.food", dto);
+//		dto.setFoodAll(foodlist);
+//	
+//		List detaillist = sqlSession.selectList("id_recipick.detailrecipe", dto);
+//		dto.setDetailAll(detaillist);
+		System.err.println("dao : " + dto);
+		return sqlSession.selectList("id_recipick.bulletin_rec_sel", dto);
 	}
 
 }

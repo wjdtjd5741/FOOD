@@ -8,12 +8,12 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class RecipeDTO {
 
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private Date date;
+	private Date recipe_date;
 	private String mainpic;
 	private String maintext;
-	private String user;
+	private String uname;
 	private String recipe_title;
-	private String view;
+	private String viewer;
 	private int recipe_id;
 	private int food_id;
 	private int hash_id;
@@ -24,6 +24,59 @@ public class RecipeDTO {
 	private List detail_pic;
 	private List detail_text;
 	private int make_order;
+	private List hashAll;
+	private List foodAll;
+	private List detailAll;
+	
+	public List getHashAll() {
+		return hashAll;
+	}
+
+	public void setHashAll(List hashAll) {
+		this.hashAll = hashAll;
+	}
+
+	public List getFoodAll() {
+		return foodAll;
+	}
+
+	public void setFoodAll(List foodAll) {
+		this.foodAll = foodAll;
+	}
+
+	public List getDetailAll() {
+		return detailAll;
+	}
+
+	public void setDetailAll(List detailAll) {
+		this.detailAll = detailAll;
+	}
+
+	public Date getRecipe_date() {
+		return recipe_date;
+	}
+
+	public void setRecipe_date(Date recipe_date) {
+		this.recipe_date = recipe_date;
+	}
+
+	public String getUname() {
+		return uname;
+	}
+
+	public void setUname(String uname) {
+		this.uname = uname;
+	}
+
+	public String getViewer() {
+		return viewer;
+	}
+
+	public void setViewer(String viewer) {
+		this.viewer = viewer;
+	}
+
+
 	
 	public int getMake_order() {
 		return make_order;
@@ -111,13 +164,7 @@ public class RecipeDTO {
 
 	
 
-	public Date getDate() {
-		return date;
-	}
 
-	public void setDate(Date date) {
-		this.date = date;
-	}
 
 	public String getMainpic() {
 		return mainpic;
@@ -135,13 +182,7 @@ public class RecipeDTO {
 		this.maintext = maintext;
 	}
 
-	public String getUser() {
-		return user;
-	}
 
-	public void setUser(String user) {
-		this.user = user;
-	}
 
 	public String getRecipe_title() {
 		return recipe_title;
@@ -151,22 +192,21 @@ public class RecipeDTO {
 		this.recipe_title = recipe_title;
 	}
 
-	public String getView() {
-		return view;
-	}
-
-	public void setView(String view) {
-		this.view = view;
-	}
-
 	@Override
 	public String toString() {
-		return "RecipeDTO [date=" + date + ", mainpic=" + mainpic + ", maintext=" + maintext + ", user=" + user
-				+ ", recipe_title=" + recipe_title + ", view=" + view + ", recipe_id=" + recipe_id + ", food_id="
-				+ food_id + ", hash_id=" + hash_id + ", detailrecipe_id=" + detailrecipe_id + ", food_name=" + food_name
-				+ ", food_value=" + food_value + ", hash_name=" + hash_name + ", detail_pic=" + detail_pic
-				+ ", detail_text=" + detail_text + "]";
+		return "RecipeDTO [recipe_date=" + recipe_date + ", mainpic=" + mainpic + ", maintext=" + maintext + ", uname="
+				+ uname + ", recipe_title=" + recipe_title + ", viewer=" + viewer + ", recipe_id=" + recipe_id
+				+ ", food_id=" + food_id + ", hash_id=" + hash_id + ", detailrecipe_id=" + detailrecipe_id
+				+ ", food_name=" + food_name + ", food_value=" + food_value + ", hash_name=" + hash_name
+				+ ", detail_pic=" + detail_pic + ", detail_text=" + detail_text + ", make_order=" + make_order
+				+ ", hashAll=" + hashAll + ", foodAll=" + foodAll + ", detailAll=" + detailAll + "]";
 	}
+
+
+
+
+
+
 
 	
 	

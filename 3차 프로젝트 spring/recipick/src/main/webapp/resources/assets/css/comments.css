@@ -6,7 +6,7 @@
     width: 80%;
     margin: 70px 0;
 }
-.input_text{
+.input_text, .reple_input_text{
     margin-left: 2%;
     /* margin-left: 2%濡� �닔�젙 */
     display: inline-block;
@@ -18,7 +18,7 @@
     color: rgb(0, 0, 0, 0.8);
     resize: none;
 }
-.btn_txt{
+.btn_txt, .reple_btn_txt{
     display: inline-block;
     font-size: 16px;
     width: 60px;
@@ -36,13 +36,16 @@
     font-size: 16px;
     color: orange;
 }
-.comment_box > div > div:nth-child(3n){
+.reple_text{
     font-size: 16px;
     border-width: 0 0 1px 0;
     border-color: gray;
     border-style: solid;
     padding-bottom: 5px;
     width: 60%;
+    color: black;
+    resize: none;
+    overflow: hidden;
 }
 
 .comment_word > div:nth-child(1){
