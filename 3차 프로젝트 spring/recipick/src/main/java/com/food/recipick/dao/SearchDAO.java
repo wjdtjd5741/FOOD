@@ -35,4 +35,7 @@ public class SearchDAO {
 	public void del_comment(String data) {
 		sqlSession.delete("searchs.del_comment", data);
 	}
+	public void update_comment(Map map) {
+		sqlSession.update("searchs.update_comment", map);
+	}
 }

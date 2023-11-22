@@ -112,4 +112,22 @@ public class SearchController {
 		
 		return "redirect:/gorecipe?reciid="+reciid;
 	}
+	
+	@RequestMapping("/update_comment")
+	public String update_comment(
+			@RequestParam("reciid") String reciid,
+			@RequestParam("cid") String cid, 
+			@RequestParam("ctext") String ctext
+		) {
+		System.out.println("reciid: "+reciid);
+		System.out.println("cid: "+cid);
+		System.out.println("ctext: "+ctext);
+		Map map = new HashMap();
+		map.put("comment_id", cid);
+		map.put("comment_text", ctext);
+		searchService.update_comment(map);
+		
+		return "redirect:/gorecipe?reciid="+reciid;
+	}
+	
 }

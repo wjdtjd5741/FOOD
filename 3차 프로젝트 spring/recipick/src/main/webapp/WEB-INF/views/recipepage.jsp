@@ -659,13 +659,35 @@ function reple_count(){
 				del_reple()
 				
 				comment_btns()
-				
+				rewirte_event()
 			}
 			
 		})
 		
 	}	
 
+	function rewirte_event(){
+		let rewrite_btns = document.querySelectorAll(".rewrite_btn")
+		let reples = document.querySelectorAll(".reple_text")
+		console.log(rewrite_btns)
+		for(let i = 0 ; i<rewrite_btns.length ;i++){
+			rewrite_btns[i].addEventListener("click", function(){
+			     if (reples[i].disabled) {
+			    	 reples[i].disabled = false;
+// 			    	 console.log("gggg")
+
+			     } else{
+			    	 reples[i].disabled = true;
+			    	 let reciid = new URLSearchParams(window.location.search).get("reciid");
+			    	 let cid = reples[i].parentNode.querySelector(".reple_id").innerText
+			    	 let ctext = reples[i].value
+			    	 console.log(ctext)
+			    	 window.location.href = "update_comment?reciid="+reciid+"&cid="+cid+"&ctext="+ctext
+			     }			
+			})	
+		}
+	}
+	
 </script>
 	<script type="text/javascript" src="resources/assets/js/comment.js"></script>
 	<script type="text/javascript" src="resources/assets/js/header_contents.js"></script>
