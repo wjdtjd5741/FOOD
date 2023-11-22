@@ -4,10 +4,11 @@
    "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
 <mapper namespace="id_recipick">
 	<!-- 강신영 -->
+<<<<<<< HEAD
 	<select id="selectAll" parameterType="writeDTO" resultType="writeDTO">
 		select * from review
 	</select>
-	
+=======
 	<insert id="insertWrite" parameterType="writeDTO">
 		insert into review(
 			review_id,
@@ -56,7 +57,60 @@
 
 	</select>
 	
+>>>>>>> 67848654431e0ffffab14c66cbe1a879ec1f33ce
 	
+	<insert id="insertWrite" parameterType="writeDTO">
+		insert into review(
+			review_id,
+			pic,
+			review_text,
+			review_date,
+			VIEWER,
+			UNAME,
+			review_title
+		)
+		values(
+			RI.nextval,
+			0,
+			#{review_text},
+			sysdate,
+			0,
+			0,
+			#{review_title}
+		)
+	</insert >
+	
+	
+	<insert id="insertHash" parameterType="writeDTO">
+		insert into hashtag(
+			hash_id,review_id,hash_name,tag_type
+		)
+		values(
+			hash_id.nextval,
+			RI.nextval,
+			#{hash_name},
+			'review')
+		
+	</insert>
+	
+<<<<<<< HEAD
+	<select id="selectData_review" parameterType="writeDTO" resultType="writeDTO">
+	select review_title, review_text,review_id
+	from review
+	where  review_id = #{review_id}
+	</select>
+
+
+	<select id="selectReview" parameterType="writeDTO" resultType="writeDTO">
+		select review_id, review_title, review_date, uname, viewer
+		from review
+<!-- 		where review_id=#{review_id}; -->
+
+	</select>
+	
+	
+=======
+>>>>>>> 67848654431e0ffffab14c66cbe1a879ec1f33ce
 	<insert id="insert_recipe" parameterType="recipeDTO">
 		<selectKey keyProperty="recipe_id" resultType="int" order="BEFORE">
 			select recipe_seq.nextval from dual

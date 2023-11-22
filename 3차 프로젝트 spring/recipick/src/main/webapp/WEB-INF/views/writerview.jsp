@@ -273,7 +273,12 @@ article>div>img {
 
 <main>
 
+<<<<<<< HEAD
 			<section>
+=======
+	
+		<section>
+>>>>>>> 67848654431e0ffffab14c66cbe1a879ec1f33ce
 			<!-- 이정성 -->
 			<!-- title 클릭 게시판 목록 이동, #음식이름 클릭 레시피 목록 이동, 수정 삭제 -->
 			<article>
@@ -281,7 +286,12 @@ article>div>img {
 				<div class="title">후기 게시판</div>
 
 
+<<<<<<< HEAD
 				<textarea class="writeTitle a" disabled="true">${selectData_review[0].review_title }
+=======
+				<textarea class="writeTitle a" disabled="true">
+	${selectData_review.review_title }
+>>>>>>> 67848654431e0ffffab14c66cbe1a879ec1f33ce
                 </textarea>
 
 				<div>
@@ -295,7 +305,12 @@ article>div>img {
         		}
                 %>
 --%>
+<<<<<<< HEAD
 				<textarea class="food_text_review a" disabled="true">${selectData_review[0].review_text }
+=======
+				<textarea class="food_text_review a" disabled="true">
+				${selectData_review.review_text }
+>>>>>>> 67848654431e0ffffab14c66cbe1a879ec1f33ce
                 </textarea>
 
 				<div class="modify">

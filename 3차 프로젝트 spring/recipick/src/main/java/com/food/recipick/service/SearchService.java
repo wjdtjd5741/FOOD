@@ -41,5 +41,8 @@ public class SearchService {
 	public void update_comment(Map map) {
 		searchDAO.update_comment(map);
 	}
+<<<<<<< HEAD
 
+=======
+>>>>>>> 67848654431e0ffffab14c66cbe1a879ec1f33ce
 }
