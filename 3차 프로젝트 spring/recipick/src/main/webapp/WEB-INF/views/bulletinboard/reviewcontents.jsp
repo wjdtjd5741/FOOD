@@ -33,22 +33,11 @@
 	
 </body>
 <script>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> ca95fe4743dfb60860b3eb18c3af1a6f97d69cb4
+
 // 	function viewReviewDetail(reviewId) {
 // 		// 리뷰 상세 페이지로 이동하는 로직
 // 		window.location.href = `writer?review_id=${reviewId}`;
 // 	}
-<<<<<<< HEAD
-=======
-=======
-	function viewReviewDetail(reviewId) {
-		// 리뷰 상세 페이지로 이동하는 로직
-		window.location.href = `writer?review_id=${reviewId}`;
-	}
->>>>>>> 67848654431e0ffffab14c66cbe1a879ec1f33ce
->>>>>>> ca95fe4743dfb60860b3eb18c3af1a6f97d69cb4
+
 </script>
 </html>
