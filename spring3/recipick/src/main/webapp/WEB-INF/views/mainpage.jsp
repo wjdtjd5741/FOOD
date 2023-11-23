@@ -453,7 +453,12 @@ h2 {
 			<div class="go_btn">next &gt;</div>
 			<div class="back_btn">&lt; prev</div>
 			<div class="main_top">
-			
+			<c:forEach var="top" items="${top_img}">
+				<div class="main_top_img">
+					<img
+						src="resources/assets/imgs/${top}.jpg">
+				</div>
+			</c:forEach>
 			<!-- Recipick 서블릿에서 받아온 객체의 값을 출력 -->
 <%-- 				<% 
 					for(int i = 0 ;i<mpDTO.getTopImg().size() ;i++){
@@ -652,7 +657,7 @@ h2 {
            }
            i--;
        })
-/* 
+ 
        let play = setInterval(carousel_opacity, 2000)
        let i = 0;
        function carousel_opacity() {
@@ -663,7 +668,7 @@ h2 {
            if (i == imgs.length)
                i = 0;
        }
- */	
+
  </script>
     
 <!--     <script type="text/javascript" src="assets/js/mobile_pop.js"></script>	 -->

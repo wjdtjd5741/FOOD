@@ -62,6 +62,7 @@ public class TilesController {
 				System.err.println("fsdf:"+l.get(i));
 			m.addAttribute("recom_img", l);
 			List li = searchService.season_img();
+			m.addAttribute("top_img", li);
 			System.err.println("fsdf:"+li);
 		}
 		return "main";
