@@ -13,4 +13,5 @@ public interface RecipickDAO {
 	void recipePage1(RecipeDTO dto);
 //	List bulletin(RecipeDTO dto);
 	List bulletin(RecipeDTO dto);
+	RecipeDTO sel_rec(RecipeDTO recipeid);
 }

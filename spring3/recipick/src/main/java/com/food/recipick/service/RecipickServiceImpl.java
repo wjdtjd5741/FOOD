@@ -43,7 +43,7 @@ public class RecipickServiceImpl implements RecipickService{
 			System.out.println(name);
 			System.out.println(size);
 			
-			File saveFile = new File(uploadFolder + "\\"+oName+".jpg");
+			File saveFile = new File(uploadFolder + "\\"+oName+".jpg");//
 				try {
 					file.transferTo(saveFile);
 				} catch (IllegalStateException e) {
@@ -82,4 +82,10 @@ public class RecipickServiceImpl implements RecipickService{
 
 	}
 
+	@Override
+	public RecipeDTO sel_rec(RecipeDTO recipeid) {
+		RecipeDTO reci_sel = recipickdao.sel_rec(recipeid);
+		System.out.println("ttttttt : "+reci_sel);
+		return reci_sel;
+	}
 }

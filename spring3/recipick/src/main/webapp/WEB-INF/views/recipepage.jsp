@@ -149,18 +149,19 @@ body{
     font-weight: bold;
     /* color: orange; */
 }
-.list{
+.lists {
 	border-radius: 8px;
-    background-color: rgba(207, 207, 207, 0.562);
-    font-size: 16px;
-    font-weight: bold;
-    height: 30px;
-    line-height: 1.8;
-    text-align: center;
-    width: 100px;
-    cursor: pointer;
-    margin-left: 80%;
-    color: black;
+	background-color: rgba(207, 207, 207, 0.562);
+	font-size: 16px;
+	font-weight: bold;
+	height: 30px;
+	line-height: 1.8;
+	text-align: center;
+	width: 100px;
+	cursor: pointer;
+	margin-left: 5px;
+/* 	margin-left: 80%; */
+	color: black;
 }
 .topbox div {
     /* font-size: 16px; */
@@ -387,17 +388,23 @@ body{
     font-weight: 800;
     /* color: gray; */
 }
-
+.update_bul_btn{
+	display: flex;
+	margin-left : 63%;
+}
+.update_bul_btn > a{
+	text-decoration: none;
+}
 </style>
 <link rel="stylesheet" href="resources/assets/css/comments.css">
 <main>
 	<section>
-		<img class="reci_top_img" src="<%-- ${nrp.mainPic} --%>">
+		<img class="reci_top_img" src="resources/assets/imgs/${goRecipe_value.mainpic}.jpg">
 		<article>
 			<!-- 이정성 -->
 			<div class="bigbox">
 				<div class="topbox">
-					<div class="headtitle"><%-- ${nrp.title} --%></div>
+					<div class="headtitle">${goRecipe_value.recipe_title }</div>
 					<div></div>
 					<div class="text_line">
 						<div>추천수 :</div>
@@ -414,8 +421,8 @@ body{
 				</div>
 				
 					<div class="hashtag_all">
-						<c:forEach var="hash" items="<%-- ${nrp.hashtags} --%>">
-							<div class="hashtags"><%-- ${hash} --%></div>
+						<c:forEach var="hash" items="${goRecipe_value.hash_name }">
+							<div class="hashtags">#${hash.hash_name}</div>
 						</c:forEach>
 					</div>
 				
@@ -424,24 +431,15 @@ body{
 						<div>-레시피 재료</div>
 						<div class="select">▽</div>
 						<div class="food_text">
-						
-<%--						
- 							<% 
-							for (Map.Entry<String, String> mapstr : rDTO.getFoods().entrySet()) {
-							%>
-
-							<%=mapstr.getKey() + ":" + mapstr.getValue()%>
-
-							<%
-							}
-							%>
---%>
+							<c:forEach var="food" items="${goRecipe_value.food_name }">
+								${food.food_name} : ${food.food_value },
+							</c:forEach>
 						</div>
 					</div>
 					<div class="box2_1">
 						<div>-음식 설명</div>
 						<div class="select">▽</div>
-						<div class="food_text"><%-- ${nrp.mainText} --%></div>
+						<div class="food_text">${goRecipe_value.maintext}</div>
 					</div>
 				</div>
 
@@ -451,25 +449,21 @@ body{
 			<!-- %수정 완료-->
 			<div class="root">
 				<div class="root_son">
-<%--
-					<%
-					int i = 0;
-					for (i = 0; i < rDTO.getKnowHow().size(); i++) {
-					%>
---%>
-					<div class="upper">
-						<div class="num_img1"><%-- <%=(i + 1)%> --%></div>
-						<div class="make_how">만드는 방법</div>
-					</div>
-					<div class="food_img">
-						<img src="<%-- <%=rDTO.getKnowHow().get(i).get(1)%> --%>">
-					</div>
-					<div class="food_exp"><%-- <%=rDTO.getKnowHow().get(i).get(0)%> --%></div>
-<%--
- 					<%
-					}
-					%> 
---%>
+					<div>
+						<c:forEach var="detail" items="${goRecipe_value.detail_pic }">
+							<div class="upper">
+								<div class="num_img1">
+									${detail.make_order }
+								</div>
+								<div class="make_how">만드는 방법</div>
+							</div>
+							<div class="food_img">
+								<img src="${detail.detail_pic}">
+							</div>
+							<div class="food_exp">
+								${detail.detail_text}
+							</div>
+						</c:forEach>
 					<!-- 추천 기능만듬 -->
 					<div class="commend">
 						<div class="up">
@@ -486,7 +480,10 @@ body{
 					</div>
 				</div>
 			</div>
-			<a href="bulletin" class="btns_hover list">목록</a>
+			<div class="update_bul_btn">
+				<a href="update_reci?reciid=${goRecipe_value.recipe_id}" class="btns_hover lists">수정</a>
+				<a href="bulletin" class="btns_hover lists">목록</a>
+			</div>
 			<div class="reci_knowhow">
 				<!-- ajax -->
 			</div>

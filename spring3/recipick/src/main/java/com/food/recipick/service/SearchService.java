@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.food.recipick.dao.SearchDAO;
+import com.food.recipick.dto.RecipeDTO;
 
 @Service
 public class SearchService {
@@ -52,7 +53,15 @@ public class SearchService {
 		searchDAO.update_comment(map);
 	}
 	
+	public RecipeDTO goRecipe_value(String data, RecipeDTO dto) {
+
+		return searchDAO.goRecipe_value(data, dto);
+	}
+	
 	public List recom_main_img() {
 		return searchDAO.recom_main_img();
 	}
+//	public List season_img() {
+//		return searchDAO.season_img();
+//	}
 }

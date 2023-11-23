@@ -7,6 +7,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.food.recipick.dto.RecipeDTO;
+
 @Repository
 public class SearchDAO {
 	
@@ -49,7 +51,24 @@ public class SearchDAO {
 	public void update_comment(Map map) {
 		sqlSession.update("searchs.update_comment", map);
 	}
+	public RecipeDTO goRecipe_value(String data, RecipeDTO dto) {
+		
+		dto = sqlSession.selectOne("searchs.goRecipe_value", data);
+		List hashlist = sqlSession.selectList("searchs.hashtag", data);
+		System.out.println("zzzzzzzzz : " + hashlist.get(0));
+		dto.setHash_name(hashlist);
+
+		List foodlist = sqlSession.selectList("searchs.food", data);
+		dto.setFood_name(foodlist);
+		
+		List detaillist = sqlSession.selectList("searchs.detailrecipe", data);
+		dto.setDetail_pic(detaillist);
+		return dto;
+	}
 	public List recom_main_img() {
 		return sqlSession.selectList("searchs.recom_main_img");
 	}
+//	public List season_img() {
+//		return sqlSession.selectList("searchs.season_img");
+//	}
 }

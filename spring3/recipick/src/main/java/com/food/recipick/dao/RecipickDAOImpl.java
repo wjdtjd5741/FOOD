@@ -83,4 +83,17 @@ public class RecipickDAOImpl implements RecipickDAO{
 		return sqlSession.selectList("id_recipick.bulletin_rec_sel", dto);
 	}
 
+	@Override
+	public RecipeDTO sel_rec(RecipeDTO recipeid) {
+		recipeid = sqlSession.selectOne("id_recipick.update_reci", recipeid);
+		List up_hash = sqlSession.selectList("id_recipick.update_hash", recipeid);
+		recipeid.setHash_name(up_hash);
+		List up_detail = sqlSession.selectList("id_recipick.update_detail", recipeid);
+		recipeid.setDetail_pic(up_detail);
+		List up_food = sqlSession.selectList("id_recipick.update_food", recipeid);
+		recipeid.setFood_name(up_food);
+		System.out.println("yyyyyyyyy : "+recipeid);
+		return recipeid;
+	}
+	
 }

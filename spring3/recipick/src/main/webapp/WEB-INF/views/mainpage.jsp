@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>    
 <!DOCTYPE html>
 <style>
 /* popup */
@@ -205,7 +208,7 @@ section > div:nth-child(n+3){
 }
 /* px�씠�븘�땶 %瑜� �씠�슜�빐�븿 */
 .img_div{
-    
+    cursor: pointer;
     flex-grow: 1;
     /* padding-left:3%; */
     margin-top:24px ;
@@ -478,7 +481,13 @@ h2 {
 							<div class="left">◀</div>
 						</div>
 						<div class="img">
-						
+						<c:forEach var="img" items="${recom_img}">
+							<div class="img_div">
+								<img class="favorite" src="resources/assets/imgs/${img.mainpic }.jpg" >
+								<div class="foodName">${img.recipe_title }</div>
+							</div>
+							<div class="main_reciid" style="display: none">${img.recipe_id}</div>
+						</c:forEach>
 <%-- 						<% 
 							for(int i = 0 ; i<mpDTO.getFavor().size() ;i++){
 						%>
@@ -568,7 +577,17 @@ h2 {
 	<script>
 	// 1. window
 	// 2. div display
-	
+	go_recipepage();
+    function go_recipepage(){
+    	let menus = document.querySelectorAll(".img_div")
+    	let ids = document.querySelectorAll(".main_reciid")
+    	console.log(menus)
+    	for(let i = 0 ; i<menus.length ;i++){
+    		menus[i].addEventListener("click", function(){
+        		window.location.href = "gorecipe?reciid="+ids[i].innerText;
+    		})
+    	}
+    }
 
 	popbox()
 	function popbox(){

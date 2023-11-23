@@ -40,9 +40,10 @@ public class TilesController {
 	SearchService searchService;
 	
 	@RequestMapping("/main")
-	public String main(HttpServletRequest request, HttpServletResponse response
+	public String main(HttpServletRequest request, HttpServletResponse response,
+			Model m
 			) throws IOException {
-		
+//		HttpSession session = request.getSession();
 		String str = request.getParameter("ck");
 		
 		// 팝업박스가 체크되면 쿠키popupBox에 off값 추가
@@ -58,7 +59,9 @@ public class TilesController {
 			// db에 order 순으로 가져옴
 			List l = searchService.recom_main_img();
 			for(int i = 0 ; i<l.size() ;i++)
-				System.out.println(l.get(i));
+				System.err.println("fsdf:"+l.get(i));
+			m.addAttribute("recom_img", l);
+//			searchService.season_img();
 		}
 		return "main";
 	}

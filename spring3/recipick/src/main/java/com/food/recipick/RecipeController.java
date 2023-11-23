@@ -67,14 +67,16 @@ public class RecipeController {
 		
 	}
 	
-	/*
-	 * @RequestMapping("/bulletin2") public String bulletin(@ModelAttribute
-	 * RecipeDTO dto, Model m) {
-	 * 
-	 * RecipeDTO bul_rec = recipickservice.bulletin(dto); m.addAttribute("bul_rec",
-	 * bul_rec);
-	 * 
-	 * return "bulletin"; }
-	 */
+	@RequestMapping("/update_reci")
+	public String sel_rec(@RequestParam("reciid") String recipe_id,
+							Model m) {
+		RecipeDTO rdto = new RecipeDTO();
+		rdto.setRecipe_id(Integer.parseInt(recipe_id));
+		System.out.println("wwwwww : "+rdto);
+		rdto = recipickservice.sel_rec(rdto);
+		System.out.println("kkkkkkkk : "+rdto);
+		m.addAttribute("sel_rec", rdto);
+		return "newrecipe";
+	}
 	
 }

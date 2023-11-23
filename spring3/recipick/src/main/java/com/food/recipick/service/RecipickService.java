@@ -13,4 +13,5 @@ public interface RecipickService {
 	void recipePage1(MultipartHttpServletRequest files, RecipeDTO dto);
 	List bulletin(RecipeDTO dto);
 	void recipe_img_download(List list, HttpServletResponse response);
+	RecipeDTO sel_rec(RecipeDTO recipeid);
 }

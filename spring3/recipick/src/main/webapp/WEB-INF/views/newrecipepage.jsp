@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="com.food.recipick.dto.RecipeDTO" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -509,7 +510,15 @@ input {
 			<form action="recipePage1" id="newRecipePage" method="POST" enctype="multipart/form-data" accept-charset="utf-8">
 				<div class="title_box">
 					<textarea type="text" name="recipe_title" class="recipick_title"
-						maxlength="70">레시피 제목을 작성해주세요!</textarea>
+						maxlength="70">						
+<%-- 						<%if(((RecipeDTO)request.getAttribute("sel_rec")).getRecipe_title()== null){ %> --%>
+<!-- 						레시피 제목을 작성해주세요! -->
+<%-- 						<%}else{%> --%>
+<%-- 							${sel_rec.recipe_title} --%>
+<%-- 							<%}%> --%>
+							
+<!-- 						} -->
+					</textarea>
 				</div>
 				<!-- 김호연 -->
 				<div class="all2">
@@ -527,7 +536,13 @@ input {
 					<div class="media_box img_add" id="media_box">
 						<img
 							src="https://cdn3.iconfinder.com/data/icons/font-awesome-regular-1/512/image-64.png">
-						<div>완성된 음식 사진을 올려주세요 !</div>
+						<div>
+<%-- 							<%if(((RecipeDTO)request.getAttribute("sel_rec")).getMainpic()== null){ %> --%>
+<!-- 								완성된 음식 사진을 올려주세요 ! -->
+<%-- 							<%}else{%> --%>
+<%-- 								${sel_rec.mainpic}  --%>
+<%-- 							<%}%>				 --%>
+						</div>
 					</div>
 				</div>
 				<div class="hashtag_border">

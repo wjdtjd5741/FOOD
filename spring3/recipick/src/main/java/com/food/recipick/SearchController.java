@@ -1,7 +1,5 @@
 package com.food.recipick;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -19,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.food.recipick.dto.MemberDTO;
+import com.food.recipick.dto.RecipeDTO;
 import com.food.recipick.service.SearchService;
 
 @Controller
@@ -52,7 +51,7 @@ public class SearchController {
 	
 	@RequestMapping("/gorecipe")
 	public String gorecipe(HttpServletRequest request, HttpServletResponse response,
-			@RequestParam("reciid") String data) {
+			@RequestParam("reciid") String data, Model m) {
 		
 		String value = "";
 		Cookie[] cs = request.getCookies();
@@ -70,14 +69,20 @@ public class SearchController {
 			response.addCookie(makeCookie(1,data));
 		}
 			
-		// data(recipe_id)¸¦ db·Î º¸³½ÈÄ where recipe_id = #{_parameter}
-		// °¡Á®¿Â°ÍÀ» m¿¡ ´ã¾Æ¼­ jsp¿¡¼­ Ã³¸®
+		// data(recipe_id)ë¥¼ dbë¡œ ë³´ë‚¸í›„ where recipe_id = #{_parameter}
+		// ê°€ì ¸ì˜¨ê²ƒì„ mì— ë‹´ì•„ì„œ jspì—ì„œ ì²˜ë¦¬
 
+		
+		RecipeDTO dto = new RecipeDTO();
 		
 		System.out.println("in0 : "+ data);
 		
 		List l = searchService.goRecipe(data);
 		System.out.println(l);
+		RecipeDTO goRecipe_value = searchService.goRecipe_value(data, dto);
+		System.out.println("asdf : " + goRecipe_value);
+		m.addAttribute("goRecipe_value", goRecipe_value);
+		System.out.println("gorecipe  : " + goRecipe_value);
 		comment_load(data);
 		return "recipe";
 	}

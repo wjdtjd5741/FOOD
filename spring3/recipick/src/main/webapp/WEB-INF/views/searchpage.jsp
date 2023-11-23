@@ -319,7 +319,7 @@
                     <c:if test="${contents != null}">
 	                    <c:forEach var="content" items="${contents}">
 	                    	<div class="menu" style="cursor: pointer">
-	                    		<img src="${content.mainpic }">
+	                    		<img src="resources/assets/imgs/${content.mainpic}.jpg">
 	                    		<div class="hash">
 	                    			<div><%-- <%= reciList.get(i).getHashtags().get(j) %> --%></div>
 	                    		</div>	
