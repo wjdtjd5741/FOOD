@@ -458,7 +458,7 @@ body{
 								<div class="make_how">만드는 방법</div>
 							</div>
 							<div class="food_img">
-								<img src="${detail.detail_pic}">
+								<img src="resources/assets/imgs/${detail.detail_pic}.jpg">
 							</div>
 							<div class="food_exp">
 								${detail.detail_text}

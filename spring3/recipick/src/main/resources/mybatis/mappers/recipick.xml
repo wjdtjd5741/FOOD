@@ -131,6 +131,25 @@
 		select recipe_id, mainpic, recipe_title, recipe_date, uname, viewer from recipe
 	</select>
 	
+	<select id="update_reci" parameterType="recipeDTO" resultType="recipeDTO">
+		select * from recipe
+		where recipe_id = ${recipe_id}
+	</select>
+	
+	<select id="update_hash" parameterType="recipeDTO" resultType="hashtagDTO">
+		select * from hashtag
+		where recipe_id = ${recipe_id}
+	</select>
+	
+	<select id="update_detail" parameterType="recipeDTO" resultType="detailrecipeDTO">
+		select * from detailrecipe
+		where recipe_id = ${recipe_id}
+	</select>
+	
+	<select id="update_food" parameterType="recipeDTO" resultType="foodDTO">
+		select * from food
+		where recipe_id = ${recipe_id}
+	</select>
 <!-- 	<select id="recipe" parameterType="recipeDTO" resultType="recipeDTO"> -->
 <!-- 		SELECT * FROM RECIPE -->
 <!-- 	</select> -->

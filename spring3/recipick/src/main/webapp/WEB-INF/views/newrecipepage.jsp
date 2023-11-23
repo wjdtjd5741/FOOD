@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="com.food.recipick.dto.RecipeDTO" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -510,14 +513,13 @@ input {
 			<form action="recipePage1" id="newRecipePage" method="POST" enctype="multipart/form-data" accept-charset="utf-8">
 				<div class="title_box">
 					<textarea type="text" name="recipe_title" class="recipick_title"
-						maxlength="70">						
-<%-- 						<%if(((RecipeDTO)request.getAttribute("sel_rec")).getRecipe_title()== null){ %> --%>
-<!-- 						레시피 제목을 작성해주세요! -->
-<%-- 						<%}else{%> --%>
-<%-- 							${sel_rec.recipe_title} --%>
-<%-- 							<%}%> --%>
-							
-<!-- 						} -->
+						maxlength="70">
+						<c:if test="${sel_rec == null }">
+							afdsfsfsdf
+						</c:if>
+						<c:if test="${sel_rec != null }">
+							ㅇ녿ㄱ
+						</c:if>
 					</textarea>
 				</div>
 				<!-- 김호연 -->
@@ -817,6 +819,7 @@ input {
 				
 				del_recicontents()
 				click_file()
+				file_add()
 							})
 		}
 

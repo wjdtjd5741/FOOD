@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.food.recipick.dto.MemberDTO;
@@ -68,6 +69,7 @@ public class RecipeController {
 	}
 	
 	@RequestMapping("/update_reci")
+//	@ResponseBody
 	public String sel_rec(@RequestParam("reciid") String recipe_id,
 							Model m) {
 		RecipeDTO rdto = new RecipeDTO();
