@@ -68,7 +68,7 @@ public class SearchDAO {
 	public List recom_main_img() {
 		return sqlSession.selectList("searchs.recom_main_img");
 	}
-//	public List season_img() {
-//		return sqlSession.selectList("searchs.season_img");
-//	}
+	public List season_img() {
+		return sqlSession.selectList("searchs.season_img");
+	}
 }

@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>    
 <!DOCTYPE html>
 <style>
         @font-face {
@@ -547,6 +550,9 @@ hr {
         height: 200px;
         background-size: contain;
     }
+    
+
+    
 }
 
 @media (max-width:650px) {
@@ -754,10 +760,10 @@ hr {
 
 .order_all {
     display: flex;
-    margin-left: 36%;
-    width: 70%;
+    margin-left: 80%;
+    width: 100%;
     margin-top: 40px;
-    font-size: 10px;
+    font-size: 18px;
 }
 
 .order {
@@ -767,6 +773,14 @@ hr {
     font-size: 15px;
     background-color: rgb(220, 218, 218);
     cursor: pointer;
+}
+
+.order_all > a {
+    font-size: 18px;
+}
+    
+strong {
+    font-size: 18px;
 }
 
 @media(max-width:800px) {
@@ -802,8 +816,22 @@ hr {
 			</div>
 		</div>
 	</div>
+	<c:if test="${pagenumber == null}">
+		<script>
+		function return_num(){
+			return 0;	
+		}
+		</script>
+	</c:if>
+	<c:if test="${pagenumber != null}">
+		<script>
+		function return_num(){
+			return 2;	
+		}
+		</script>
+	</c:if>
 	<script>
-	
+		
 	    function toggleEdit(btn) {
 	        let textArea = document.querySelectorAll("textarea");
 	        for(let i = 0 ;i<textArea.length ;i++){
@@ -821,16 +849,23 @@ hr {
 		show_contents();
 		exchange_contents();
 		const xhr = new XMLHttpRequest();
-
+		
+		
+	    // 2번 페이지를 누르면
+	    // 가는 곳은 mypage로 가는데
+	    // 2번 페이지를 가지고 가서
+	    // jsp에 전달 해주고
+	    // 아작스로 2페이지 열기
 		function load_contents(i) {
-			xhr.open("GET", `mypagesection?page=\${i}`);
+			xhr.open("GET", `mypagesection?pageNum=${pagenumber}&page=\${i}`);
 			xhr.send();
 			console.log(1)
 		}
+		
 		function show_contents() {
 			window.addEventListener("load", function() {
-				console.log(1)
-				let i = 0;
+				console.log(1)                                   
+				let i = return_num();
 				load_contents(i);
 				xhr.onload = function() {
 					let text = xhr.responseText;
@@ -871,7 +906,6 @@ hr {
 	        }
 	    }
 	    
-
 	    
 	</script>
 	<script type="text/javascript" src="resources/assets/js/mypage_clickEvent.js"></script>

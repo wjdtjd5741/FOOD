@@ -14,6 +14,7 @@
 		<typeAlias type="com.food.recipick.dto.DetailRecipeDTO" alias="detailrecipeDTO"/>
 		<typeAlias type="com.food.recipick.dto.FoodDTO" alias="foodDTO"/>
 		<typeAlias type="com.food.recipick.dto.HashtagDTO" alias="hashtagDTO"/>
+		<typeAlias type="com.food.recipick.dto.MainpageDTO" alias="mainpageDTO"/>
 	</typeAliases>
 
 </configuration>

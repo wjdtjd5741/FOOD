@@ -61,7 +61,8 @@ public class TilesController {
 			for(int i = 0 ; i<l.size() ;i++)
 				System.err.println("fsdf:"+l.get(i));
 			m.addAttribute("recom_img", l);
-//			searchService.season_img();
+			List li = searchService.season_img();
+			System.err.println("fsdf:"+li);
 		}
 		return "main";
 	}
@@ -153,7 +154,11 @@ public class TilesController {
 		return "newrecipe";
 	}
 	@RequestMapping("/mypage")
-	public String mypage() {
+	public String mypage(HttpServletRequest request, Model model) {
+		
+		String pageNum = request.getParameter("pageNum");
+		model.addAttribute("pagenumber", pageNum);
+		
 		return "mypage";
 	}
 	@RequestMapping("/write")

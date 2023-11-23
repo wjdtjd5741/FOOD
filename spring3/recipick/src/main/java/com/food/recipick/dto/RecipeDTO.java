@@ -27,6 +27,24 @@ public class RecipeDTO {
 	private List hashAll;
 	private List foodAll;
 	private List detailAll;
+	private int startNum;
+	private int endNum;
+
+	public int getStartNum() {
+		return startNum;
+	}
+
+	public void setStartNum(int startNum) {
+		this.startNum = startNum;
+	}
+
+	public int getEndNum() {
+		return endNum;
+	}
+
+	public void setEndNum(int endNum) {
+		this.endNum = endNum;
+	}
 	
 	public List getHashAll() {
 		return hashAll;

@@ -13,15 +13,14 @@
     <div>
         <div class="right_bord">
             <div class="ggim">찜한레시피🧡</div>
-			<%--
+			
             <div class="recipe">
                 <img
                     src="https://cdn.discordapp.com/attachments/1148541415828246548/1149236900067033108/bowl-ramen-with-fried-egg-avocado.jpg">
                 <div>#음식 #음식</div>
                 <div>음식이름</div>
             </div>
-			최근 2개만
-			--%>
+			<%--최근 2개만--%>
             <div class="bottom">
                 <div class="order_all">
                 <%-- 

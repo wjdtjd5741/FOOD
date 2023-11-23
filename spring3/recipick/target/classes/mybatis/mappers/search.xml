@@ -3,7 +3,10 @@
    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
 <mapper namespace="searchs">
-<!-- 	<select id="season_img" resultType -->
+	<select id="season_img" resultType="string">
+		SELECT top_img FROM topimg
+		WHERE main_id = 1
+	</select>
 	<select id="recom_main_img" resultType="recipeDTO">
 		SELECT * 
 		FROM (

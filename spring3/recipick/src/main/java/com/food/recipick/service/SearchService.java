@@ -61,7 +61,7 @@ public class SearchService {
 	public List recom_main_img() {
 		return searchDAO.recom_main_img();
 	}
-//	public List season_img() {
-//		return searchDAO.season_img();
-//	}
+	public List season_img() {
+		return searchDAO.season_img();
+	}
 }

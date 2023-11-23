@@ -245,7 +245,7 @@
 		</delete>
 		
 		
-<!-- 		나의 게시물 -->
+<!-- 		나의 게시물       -->
 		<select id="myrecipeselect" resultType="recipeDTO">
 			select 
 				*
@@ -253,6 +253,26 @@
 				recipe 
 			where 
 				uname = #{uname}
+		</select>
+		
+		
+		
+<!-- 페이징 -->
+		<select id="mylistpage" parameterType="recipeDTO" resultType="recipeDTO">
+			select *
+			from (
+			    select rownum as rnum, tmp.*
+			    from (
+			        SELECT recipe.* 
+			        FROM recipe 
+			        order by recipe_date desc
+			    ) tmp
+			)
+		    where rnum <![CDATA[ >= ]]> #{startNum} and rnum <![CDATA[ <= ]]> #{endNum}
+		</select>
+		
+		<select id="mylistpagetotal" resultType="int">
+			select count(*) from recipe
 		</select>
 		
 <!-- 		<select id="selectMember" resultType="memberDTO"> -->
