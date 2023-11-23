@@ -5,8 +5,12 @@
 <mapper namespace="searchs">
 	
 	<select id="recom_main_img" resultType="recipeDTO">
-		select * from recipe
-		order by viewer desc;
+		SELECT * 
+		FROM (
+			SELECT * FROM recipe
+			ORDER BY viewer DESC
+			)
+		WHERE ROWNUM <![CDATA[ <= ]]> 5
 	</select>
 	
 	<update id="update_comment" parameterType="hashmap">

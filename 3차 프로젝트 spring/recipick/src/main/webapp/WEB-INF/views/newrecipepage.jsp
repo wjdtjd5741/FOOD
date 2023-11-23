@@ -506,7 +506,7 @@ input {
 				<div class="btns_hover">취소</div>
 				<div class="btns_hover writing">작성</div>
 			</div>
-			<form action="recipePage1" id="newRecipePage" method="GET">
+			<form action="recipePage1" id="newRecipePage" method="POST" enctype="multipart/form-data" accept-charset="utf-8">
 				<div class="title_box">
 					<textarea type="text" name="recipe_title" class="recipick_title"
 						maxlength="70">레시피 제목을 작성해주세요!</textarea>
@@ -517,7 +517,7 @@ input {
 						<div>
 							<img class="attach_img"
 								src="https://cdn1.iconfinder.com/data/icons/document-edit-line/64/Document-doc-file-folder-bundle-add-new-64.png">
-							<input type="file" name="file_input" id="file_input"
+							<input type="file" name="mainpic2" id="file_input"
 								style="display: none">
 						</div>
 					</div>
@@ -585,7 +585,7 @@ input {
 							<div>
 								<img class="attach_img"
 									src="https://cdn1.iconfinder.com/data/icons/document-edit-line/64/Document-doc-file-folder-bundle-add-new-64.png">
-								<input type="file" name="file_input" id="file_input"
+								<input type="file" name="detail_pic2" id="file_input" multiple="multiple"
 									style="display: none">
 							</div>
 						</div>
@@ -618,41 +618,59 @@ input {
 			}
 
 		}
-
-		file_add()
+		
+		click_file()
+		function click_file(){
+			let attach = document.querySelectorAll(".attach_img")
+			let btns = document.querySelectorAll("#file_input")
+			console.log(attach)
+			for(let i = 0 ;i<attach.length ;i++){
+				attach[i].addEventListener("click", function(){
+					btns[i].click();
+					console.log("ck")
+					file_add()
+				})
+			}
+			
+		}
+		
+		
 		function file_add() {
-			click_fileImg()
-			document.querySelector("#file_input").addEventListener(
-					"change",
-					function() {
-						const file = this.files[0];
-						if (file) {
-							const mediaBox = document
-									.querySelector("#media_box");
-							// 이미지 파일인 경우에만 처리
-							if (file.type.startsWith("image/")) {
-								const reader = new FileReader();
-								reader.onload = function(e) {
-									// 이미지를 생성하고 media_box에 추가
-									const img = document.createElement("img");
-									img.src = e.target.result;
-									mediaBox.innerHTML = ""; // 기존 이미지를 지우고 새 이미지로 대체
-									mediaBox.appendChild(img);
-								};
-								reader.readAsDataURL(file);
-							}
+			let file_inputs = document.querySelectorAll("#file_input")
+			for(let i = 0 ; i<file_inputs.length ;i++){
+				file_inputs[i].addEventListener("change",function() {
+				console.log(i)
+					const file = this.files[i];
+					console.log(this.files[i])
+					let mediaBox = document.querySelectorAll("#media_box");
+					console.log(mediaBox)
+					
+						
+						// 이미지 파일인 경우에만 처리
+						if (file.type.startsWith("image/")) {
+							const reader = new FileReader();
+							reader.onload = function(e) {
+								// 이미지를 생성하고 media_box에 추가
+								const img = document.createElement("img");
+								img.src = e.target.result;
+								mediaBox[i].innerHTML = ""; // 기존 이미지를 지우고 새 이미지로 대체
+								mediaBox[i].appendChild(img);
+							};
+							reader.readAsDataURL(file);
 						}
-					});
+					
+				});
+			}
 		}
 
-		function click_fileImg() {
-		    const attachImgs = document.querySelectorAll(".attach_img");
-		    attachImgs.forEach(function(img) {
-		        img.addEventListener("click", function() {
-		            img.nextElementSibling.click();
-		        });
-		    });
-		}
+// 		function click_fileImg() {
+// 		    const attachImgs = document.querySelectorAll(".attach_img");
+// 		    attachImgs.forEach(function(img) {
+// 		        img.addEventListener("click", function() {
+// 		            img.nextElementSibling.click();
+// 		        });
+// 		    });
+// 		}
 
 
 		let newRecipePage = document.querySelector('#newRecipePage')
@@ -763,6 +781,7 @@ input {
 				html += `     <div class="attach">`
 				html += `         <div>`
 				html += `             <img src="https://cdn1.iconfinder.com/data/icons/document-edit-line/64/Document-doc-file-folder-bundle-add-new-64.png">`
+				html += `				<input type="file" name="detail_pic2" id="file_input" style="display: none" multiple="multiple">`
 				html += `         </div>`
 				html += `     </div>`
 				html += `     <div class="attach_font">`
@@ -782,6 +801,7 @@ input {
 				document.querySelector("#newpage").append(a.querySelector(".bigbox"));
 				
 				del_recicontents()
+				click_file()
 							})
 		}
 

@@ -7,8 +7,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.food.recipick.dto.RecipeDTO;
 import com.food.recipick.service.MypageService;
@@ -41,5 +44,16 @@ public class AjaxController {
         model.addAttribute("recipedto", recipedto);
 		return "mypagesection"+page;
 	}
+	
+    @RequestMapping(value="/gg" , method= {RequestMethod.POST, RequestMethod.GET})
+    @ResponseBody
+    public void recipePage1(
+    		MultipartHttpServletRequest request
+            ) {
+        List<MultipartFile> files = request.getFiles("file");
+        String textData = request.getParameter("textData");
+        System.out.println(textData);
+
+    }
 	
 }

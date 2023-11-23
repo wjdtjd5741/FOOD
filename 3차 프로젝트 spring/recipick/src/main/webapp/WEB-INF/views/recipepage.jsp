@@ -419,7 +419,6 @@ body{
 						</c:forEach>
 					</div>
 				
-
 				<div class="box2">
 					<div class="box2_1">
 						<div>-레시피 재료</div>

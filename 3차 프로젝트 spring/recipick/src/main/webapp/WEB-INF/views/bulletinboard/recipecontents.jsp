@@ -25,7 +25,7 @@
 				<c:forEach var="reci_bul" items="${bul_rec}">
 					<tr class="lines">
 						<td class="tb_num_color">1</td>
-						<td><!-- <img src="${reci_bul.mainpic }"> --></td>
+						<td><img src="${reci_bul.mainpic }.jpg"></td>
 						<td>${reci_bul.recipe_title }</td>
 						<td>${reci_bul.recipe_date }</td>
 						<td>${reci_bul.uname }</td>

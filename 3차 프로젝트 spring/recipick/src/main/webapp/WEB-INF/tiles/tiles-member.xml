@@ -64,6 +64,9 @@
 	<definition name="newsign" extends="loginLayout">
    		<put-attribute name="body" value="/WEB-INF/views/newsign.jsp"/>
 	</definition>
+	<definition name="bsadb" extends="loginLayout">
+   		<put-attribute name="body" value="/WEB-INF/views/bsadb.jsp"/>
+	</definition>
 
 	<!--  
 	<definition name="main" extends="loginLayout">

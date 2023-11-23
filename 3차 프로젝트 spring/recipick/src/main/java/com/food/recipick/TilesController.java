@@ -50,7 +50,9 @@ public class TilesController {
 			response.sendRedirect("main");
 		} else {
 			// db에 order 순으로 가져옴
-			searchService.recom_main_img();
+			List l = searchService.recom_main_img();
+			for(int i = 0 ; i<l.size() ;i++)
+				System.out.println(l.get(i));
 		}
 		return "main";
 	}
@@ -64,7 +66,7 @@ public class TilesController {
 	@RequestMapping("/bulletin")
 	public String bulletin(@ModelAttribute RecipeDTO dto, Model m,
 			@ModelAttribute WriteDTO wdto,
-
+			HttpServletResponse response,
 			HttpServletRequest request) {
 		System.out.println("aa");
 		System.out.println(dto);
@@ -72,9 +74,13 @@ public class TilesController {
 		
 		List bul_rec = recipickservice.bulletin(dto);
 		System.out.println(bul_rec);
+		
+		recipickservice
+		
 		s.setAttribute("bul_rec", bul_rec);
 		
 		List write_all = writeService.selectdata_all(wdto);
+		
 		s.setAttribute("review_bul_sel",write_all);
 
 		return "bulletin";
@@ -109,6 +115,10 @@ public class TilesController {
 	@RequestMapping("/write")
 	public String write() {
 		return "write";
+	}
+	@RequestMapping("/bsadb")
+	public String bsadb() {
+		return "bsadb";
 	}
 }
 
