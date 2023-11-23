@@ -18,13 +18,12 @@ public class WriteDAOImpl implements WriteDAO {
 
 
 	@Override
-	public List selectReview(WriteDTO dto) {
-		sqlSession.insert("id_recipick.insertWrite",dto);
+	public int insertReview(WriteDTO dto) {
+		int insert_write=sqlSession.insert("id_recipick.insertWrite",dto);
 		sqlSession.insert("id_recipick.insertHash",dto);
-		List review_bul_sel=sqlSession.selectList("id_recipick.selectReview",dto);
-
+		//select 랑 insert따로 분리하기
 		
-		return review_bul_sel;
+		return insert_write;
 	}
 
 	@Override
@@ -32,12 +31,38 @@ public class WriteDAOImpl implements WriteDAO {
 		System.out.println("dto_DAO:"+dto);
 		List selectData_review=sqlSession.selectList("id_recipick.selectData_review",dto);
 		System.out.println("selectData_review:"+selectData_review.get(0));
+		
+		List review_bul_sel=sqlSession.selectList("id_recipick.selectReview",dto);
 		return selectData_review;
 	}
 
 	@Override
 	public List selectData_all(WriteDTO dto) {
+		
+		
 		return sqlSession.selectList("id_recipick.selectAll",dto);
+	}
+
+	@Override
+	public List select_hash(WriteDTO dto) {
+	List select_hash=sqlSession.selectList("id_recipick.select_hash",dto);
+		
+		return select_hash;
+	}
+
+	@Override
+	public int update_review(WriteDTO dto) {
+		return sqlSession.update("id_recipick.update_review",dto);
+	}
+
+	@Override
+	public int delete_review(WriteDTO dto) {
+		
+		int delete_review=sqlSession.delete("id_recipicl.delete_review",dto);
+		
+		return delete_review;
+				
+		
 	}
 	
 	

@@ -285,47 +285,57 @@ h3 {
 .sec1_bbox>a {
 	width: 100%;
 	cursor: pointer;
-	font-size: 20px;
+/* 	font-size: 20px; */
 	text-align: center;
 	line-height: 4.5;
 	font-weight: 400;
 	overflow: hidden;
-	text-overflow: ellipsis;
+/* 	text-overflow: ellipsis; */
 	white-space: nowrap;
 }
 
 .span1 {
 	display: inline-block;
-	
+	 text-decoration: none;
+	color:black;
 	cursor: pointer;
 	font-size: 20px;
 	width: 6%;
 }
 
 .span2 {
+
 display: inline-block;
+ text-decoration: none;
 	width: 50%;
+	color:black;
 	cursor: pointer;
 	font-size: 20px;
 }
 
 .span3 {
 display: inline-block;
+ text-decoration: none;
 	width: 20%;
+	color:black;
 	cursor: pointer;
 	font-size: 20px;
 }
 
 .span4 {
 display: inline-block;
+ text-decoration: none;
 	width: 12.5%;
+	color:black;
 	cursor: pointer;
 	font-size: 20px;
 }
 
 .span5 {
 display: inline-block;
+ text-decoration: none;
 	width: 12.5%;
+	color:black;
 	cursor: pointer;
 	font-size: 20px;
 }

@@ -406,7 +406,7 @@ option {
 			
 				
 			</div>
-			<form id="myForm" action="review_sel" method="post">
+<form id="myForm" action="review_sel" method="post">
 			<div id="board_name">
 				<textarea class="submit" name="review_title" style="overflow: hidden"
 					placeholder="제목을 입력해주세요(20자 제한)" maxlength="20">${dto.review_title }</textarea>
@@ -428,7 +428,7 @@ option {
 				<div class="hashNotice">해쉬태그를 입력해 주세요!(최대 5개)</div>
 				<div class="hashtag_box">
 					<div>
-						<input type="text" name="hash_name" class="recipick_hashtag"
+						<input type="text"  name="hash_name" class="recipick_hashtag"
 							value="#해시태그" maxlength="7">
 					</div>
 					<div id="hash_submit" class="btns_hover">등록</div>

@@ -1,5 +1,7 @@
 package com.food.recipick.dto;
 
+import java.util.List;
+
 public class WriteDTO {
 
 	
@@ -10,20 +12,11 @@ public class WriteDTO {
 	private String review_date;
 	private String review_text;
 	private String uname;
-	private String hash_name;
 	private int hash_id;
 	private String tag_type;
 	private int recipe_id;
-	
-	
-	
-	public String getHash_name() {
-		return hash_name;
-	}
+	private List hash_name; 
 
-	public void setHash_name(String hash_name) {
-		this.hash_name = hash_name;
-	}
 
 	public int getHash_id() {
 		return hash_id;
@@ -48,20 +41,18 @@ public class WriteDTO {
 	public void setRecipe_id(int recipe_id) {
 		this.recipe_id = recipe_id;
 	}
+	public List getHash_name() {
+		return hash_name;
+	}
 
-	
-	
-	@Override
-	public String toString() {
-		return "WriteDTO [review_id=" + review_id + ", viewer=" + viewer + ", pic=" + pic + ", review_title="
-				+ review_title + ", review_date=" + review_date + ", review_text=" + review_text + ", uname=" + uname
-				+ ", hash_name=" + hash_name + ", hash_id=" + hash_id + ", tag_type=" + tag_type + ", recipe_id="
-				+ recipe_id + "]";
+	public void setHash_name(List hash_name) {
+		this.hash_name = hash_name;
 	}
 
 	public int getViewer() {
 		return viewer;
 	}
+	
 
 	public void setViewer(int viewer) {
 		this.viewer = viewer;
@@ -102,6 +93,14 @@ public class WriteDTO {
 	}
 	public void setUname(String uname) {
 		this.uname = uname;
+	}
+
+	@Override
+	public String toString() {
+		return "WriteDTO [review_id=" + review_id + ", viewer=" + viewer + ", pic=" + pic + ", review_title="
+				+ review_title + ", review_date=" + review_date + ", review_text=" + review_text + ", uname=" + uname
+				+ ", hash_id=" + hash_id + ", tag_type=" + tag_type + ", recipe_id=" + recipe_id + ", hash_name="
+				+ hash_name + "]";
 	}
 	
 	
