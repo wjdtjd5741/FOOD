@@ -27,7 +27,7 @@ public class RecipickServiceImpl implements RecipickService{
 
 	@Override
 	public void recipePage1(MultipartHttpServletRequest files, RecipeDTO dto) {
-		String uploadFolder = "C:\\Users\\User\\Documents\\FOOD\\imgs";
+		String uploadFolder = "C:\\Users\\User\\Documents\\FOOD\\spring3\\recipick\\src\\main\\webapp\\resources\\assets\\imgs";
 		String oName = "";
 		List<String> list = new ArrayList();
 		String[] file_name = {"mainpic2","detail_pic2"};
@@ -43,7 +43,7 @@ public class RecipickServiceImpl implements RecipickService{
 			System.out.println(name);
 			System.out.println(size);
 			
-			File saveFile = new File(uploadFolder + "\\"+oName);
+			File saveFile = new File(uploadFolder + "\\"+oName+".jpg");
 				try {
 					file.transferTo(saveFile);
 				} catch (IllegalStateException e) {

@@ -83,7 +83,7 @@ public class TilesController {
 		for(int i = 0 ;i<bul_rec.size() ; i++) {
 			System.err.println("ff"+i+bul_rec.get(i));
 		}
-		System.out.println("hrn  "+((RecipeDTO)bul_rec.get(4)).getMainpic());
+//		System.out.println("hrn  "+((RecipeDTO)bul_rec.get(4)).getMainpic());
 //		recipickservice.recipe_img_download(bul_rec, response);
 		
 		s.setAttribute("bul_rec", bul_rec);
@@ -99,8 +99,8 @@ public class TilesController {
 	public void img_download(@RequestParam("fileName") String fileName, 
 			HttpServletRequest request, 
 			HttpServletResponse response) {
-			String downloadFolder = "C:\\Users\\User\\Documents\\FOOD\\imgs";
-			String downloadFile = downloadFolder + System.getProperty("file.separator")+ fileName+".jpg";
+			String downloadFolder = "C:\\Users\\User\\Documents\\FOOD\\spring3\\recipick\\src\\main\\webapp\\resources\\assets\\imgs";
+			String downloadFile = downloadFolder + System.getProperty("file.separator")+ fileName;
 			File file = new File(downloadFile);
 			try {
 				FileInputStream fis = new FileInputStream(file);

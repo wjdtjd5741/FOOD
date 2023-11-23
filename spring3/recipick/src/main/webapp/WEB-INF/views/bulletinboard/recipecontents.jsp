@@ -13,8 +13,8 @@
 	}
 		
 	
-	String fileName = ((RecipeDTO)list.get(3)).getMainpic(); // 여기에 실제 파일명을 삽입해야 합니다.
-	String imageURL = "/img_download?fileName=" + fileName;
+// 	String fileName = ((RecipeDTO)list.get(3)).getMainpic(); // 여기에 실제 파일명을 삽입해야 합니다.
+// 	String imageURL = "/img_download?fileName=" + fileName;
 %>
 
 <body>
@@ -34,7 +34,7 @@
 				<c:forEach var="reci_bul" items="${bul_rec}">
 					<tr class="lines">
 						<td class="tb_num_color">1</td>
-						<td><img src="<%= imageURL %>" alt="Image"></td>
+						<td><img src="resources/assets/imgs/${reci_bul.mainpic }.jpg" alt="Image"></td>
 						<td>${reci_bul.recipe_title }</td>
 						<td>${reci_bul.recipe_date }</td>
 						<td>${reci_bul.uname }</td>
