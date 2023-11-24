@@ -47,14 +47,7 @@ article {
 }
 
 /* div a ���� */
-.title {
-	margin-top: 30px;
-	margin-bottom: 60px;
-	/* Ÿ��Ʋ */
-	color: black;
-	font-size: 40px;
-	font-weight: bold;
-}
+
 
 article>div:nth-child(2) {
 	font-size: 30px;
@@ -96,7 +89,7 @@ article>div>img {
 	border: 1px solid orange;
 	border-radius: 10px;
 	width: 91%;
-	height: 150px;
+	height: 300px;
 	font-size: 20px;
 	margin-left: 1.5%;
 	padding: 0 15px;
@@ -109,7 +102,7 @@ article>div>img {
 
 .modify {
 	display: flex;
-	margin-top: 20px;
+/* 	margin-top: 20px; */
 	line-height: 0;
 	justify-content: flex-end;
 	margin-right: 2%;
@@ -153,9 +146,10 @@ article {
 	margin-bottom: 60px;
 	/* ���씠�� */
 	color: black;
-	font-size: 40px;
+	font-size: 30px;
 	font-weight: bold;
 }
+
 
 article>div:nth-child(2) {
 	font-size: 30px;
@@ -194,21 +188,8 @@ article>div>img {
 	margin-bottom: 5px;
 }
 
-/* �겢�옒�뒪紐� 蹂�寃� */
-.food_text_review {
-	border: 1px solid orange;
-	border-radius: 10px;
-	width: 91%;
-	height: 150px;
-	font-size: 20px;
-	margin-left: 1.5%;
-	padding: 0 15px;
-	padding-top: 15px;
-	/* �닔�젙�궗�빆: 
-    width:100% -> width: 1075px; 蹂�寃� 
-    */
-	resize: none;
-}
+
+
 
 .writeTitle {
 	background-color: white;
@@ -222,20 +203,13 @@ article>div>img {
 	/* 스크롤바 없애는 스타일 */
 	font-size: 29px;
 	font-weight: 900;
+	margin-left: 15px;
+	
 	width: 91%;
 	height: 50px;
 }
 
-.modify {
-	display: flex;
-	margin-top: 20px;
-	line-height: 0;
-	justify-content: flex-end;
-	margin-right: 2%;
-	/* �닔�젙�궗�빆: 
-    margin-left: 800px -> margin-left: 850px; 蹂�寃� 
-    */
-}
+
 
 .viewbtn {
 	font-size: 16px;
@@ -283,17 +257,16 @@ article>div>img {
 				<div class="title">후기 게시판</div>
 				<textarea class="writeTitle a" name="review_title" disabled="true">${selectData_review[0].review_title }
                 </textarea>
-				<div>
+<!-- 				<div> -->
 				<!-- img -->
-				</div>
+<!-- 				</div> -->
+			
+				<textarea class="food_text_review a" name="review_text" disabled="true">${selectData_review[0].review_text }
+                </textarea>
 			<c:forEach var="hash" items="${select_hash}">
             	<div class="hashtags">#${hash.hash_name }</div> 
 			</c:forEach>
-
-				<textarea class="food_text_review a" name="review_text" disabled="true">${selectData_review[0].review_text }
-
-                </textarea>
-
+						
 				<div class="modify">
 					<input class="edit_text_review viewbtn" type="button" value="수정"
 						onclick="enableTextareas()"> 
@@ -314,12 +287,12 @@ article>div>img {
 				<div>댓글</div>
 				<div class="comment_count">0</div>
 			</div>
-			<div class="comment_box"></div>
-			<div>
+			<div class="all_input_text">
 				<textarea class="input_text" type="text" value="댓글을 남겨주세요."
 					maxlength="300"></textarea>
 				<input class="btn_txt" type="button" value="등록">
 			</div>
+			<div class="comment_box"></div>
 			<div class='submit_box' style="display: none"></div>
 			<div class='reple_btn_txt' style="display: none"></div>
 		</div>

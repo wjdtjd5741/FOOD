@@ -750,7 +750,7 @@ a.recipe_detail {
 }
 
 .order_all {
-    margin-left: 350%;
+    margin-left: 270%;
     margin-top: 80px;
     display: flex;
     width: 100%;

@@ -44,7 +44,6 @@ public class WriteController {
 		rService.insertReview(dto);
 //		session.setAttribute("a", review_bul_sel);
 
-		
 		return "redirect:/bulletin";
 		
 	}

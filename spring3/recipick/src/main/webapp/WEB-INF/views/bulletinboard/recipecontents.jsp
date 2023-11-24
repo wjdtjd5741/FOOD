@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <%@ page import="java.util.*" %>
 <%@ page import="com.food.recipick.dto.RecipeDTO" %>
@@ -33,10 +34,11 @@
 			<tbody>
 				<c:forEach var="reci_bul" items="${bul_rec}">
 					<tr class="lines">
+					<fmt:formatDate value="${reci_bul.recipe_date}" pattern="yyyy-MM-dd" var="formattedDate" />
 						<td class="tb_num_color">1</td>
 						<td><img src="resources/assets/imgs/${reci_bul.mainpic }.jpg" alt="Image"></td>
 						<td>${reci_bul.recipe_title }</td>
-						<td>${reci_bul.recipe_date }</td>
+						<td>${formattedDate}</td>
 						<td>${reci_bul.uname }</td>
 						<td>${reci_bul.viewer }</td>
 						<td style="display: none" class="bu_reciid">${reci_bul.recipe_id }</td>

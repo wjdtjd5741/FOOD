@@ -73,7 +73,7 @@ section {
 
 .selected_board {
 	font-weight: bold;
-	margin-top: 75px;
+	margin-top: 50px;
 	font-size: 25px;
 	margin-bottom: 20px;
 }
@@ -106,7 +106,7 @@ section {
 	display: inline-block;
 	border-radius: 8px;
 	margin-left: 2%;
-	background-color: rgba(207, 207, 207, 0.562);
+	background-color: rgba(179 178 178 , 0.56);
 	font-size: 16px;
 	font-weight: bold;
 	height: 30px;
@@ -114,6 +114,7 @@ section {
 	text-align: center;
 	width: 60px;
 	cursor: pointer;
+	border:none;
 
 }
 
@@ -196,7 +197,7 @@ option {
 	margin-bottom: 20px;
 	white-space: wrap;
 	width: 99%;
-	height: 100px;
+	height: 300px;
 	resize: none;
 }
 
@@ -412,23 +413,32 @@ option {
 					placeholder="제목을 입력해주세요(20자 제한)" maxlength="20">${dto.review_title }</textarea>
 			</div>
 
-			<div class="attach">
-				<div>
-					<img
-						src="https://cdn1.iconfinder.com/data/icons/document-edit-line/64/Document-doc-file-folder-bundle-add-new-64.png">
-					<input type="file" name="pic" id="file_input" style="display: none">
-				</div>
-			</div>
+<!-- 			<div class="attach"> -->
+<!-- 				<div> -->
+<!-- 					<img -->
+<!-- 						src="https://cdn1.iconfinder.com/data/icons/document-edit-line/64/Document-doc-file-folder-bundle-add-new-64.png"> -->
+<!-- 					<input type="file" name="pic" id="file_input" style="display: none"> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
 			
-			<div class="attach_font">
-				<div>첨부파일</div>
+<!-- 			<div class="attach_font"> -->
+<!-- 				<div>첨부파일</div> -->
+<!-- 			</div> -->
+<!-- 			<div class="media_box" id="media_box">사진을 올려주세요</div> -->
+			
+			<div class="writepageReview">
+				음식에 대한 설명
+				<textarea name="review_text" maxlength="300" class="explanation submit"
+					placeholder="후기를 작성해 주세요(300자 제한)">${dto.review_text }</textarea>
+
 			</div>
-			<div class="media_box" id="media_box">사진을 올려주세요</div>
+			<div class="write_explaintext btns_hover"></div>
+			
 			<div class="hashpull_box">
 				<div class="hashNotice">해쉬태그를 입력해 주세요!(최대 5개)</div>
 				<div class="hashtag_box">
 					<div>
-						<input type="text" class="recipick_hashtag"
+						<input type="text"  name="hash_name" class="recipick_hashtag"
 							value="#해시태그" maxlength="7">
 					</div>
 					<div id="hash_submit" class="btns_hover">등록</div>
@@ -437,13 +447,6 @@ option {
 				<br>
 				<div class="hashtag_all"></div>
 			</div>
-			<div class="writepageReview">
-				음식에 대한 설명
-				<textarea name="review_text" maxlength="300" class="explanation submit"
-					placeholder="후기를 작성해 주세요(300자 제한)">${dto.review_text }</textarea>
-
-			</div>
-			<div class="write_explaintext btns_hover"></div>
 			<!-- <div id="plus">+</div> -->
 <!-- 			<div id="write" class="btns_hover" onclick="submitForm()">등록</div> -->
 			<input id="write" class="btns_hover" type="submit" value="등록">

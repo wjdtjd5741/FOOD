@@ -11,8 +11,8 @@
     /* margin-left: 2%濡� �닔�젙 */
     display: inline-block;
     font-size: 16px;
-    width:75%;
-    height: 43px;
+    width: 87.5%;
+    height: 60px;
     padding: 5px;
     /* vertical-align: top; */
     color: rgb(0, 0, 0, 0.8);
@@ -21,12 +21,14 @@
 .btn_txt, .reple_btn_txt{
     display: inline-block;
     font-size: 16px;
-    width: 60px;
-    height: 50px;
+    width: 63px;
+    margin-top: 0.3%;
+    height: 65px;
     /* vertical-align: middle; �궘�젣 */
-    margin-left: 2%;
-    background-color: orange;
+    margin-left: 1%;
+    background-color: rgb(230, 126, 34);
     color: white;
+    border-radius: 5%;
     border: none;
     cursor: pointer;
     vertical-align: top;
@@ -42,7 +44,7 @@
     border-color: gray;
     border-style: solid;
     padding-bottom: 5px;
-    width: 60%;
+    width: 97%;
     color: black;
     resize: none;
     overflow: hidden;
@@ -63,3 +65,24 @@
     color: orange;
     margin-bottom: 5px;
 }
+.comment_box {
+	margin-top: 3%;
+	margin-left: 3%;
+	
+}
+
+.all_input_text {
+	width: 120%;
+}
+
+.uname {
+	margin-right: 35%;
+}
+
+..reple_box {
+	width: 120%;
+}
+
+
+
+
