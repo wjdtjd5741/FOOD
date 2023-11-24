@@ -58,6 +58,8 @@ public class WriteController {
 		System.out.println("dto:"+dto);
 		HttpSession session = request.getSession();
 		
+		rService.review_count(review_id);
+		
 		List selectData_review = rService.selectData_review(dto);
 		List select_hash=rService.select_hash(dto);
 		System.out.println("selectData_review: "+selectData_review.get(0));

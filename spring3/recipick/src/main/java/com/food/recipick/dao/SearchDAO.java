@@ -29,6 +29,9 @@ public class SearchDAO {
 	public List recom_ck(String data) {
 		return sqlSession.selectList("searchs.recom_ck",data);
 	}
+	public void view_count(String data) {
+		sqlSession.update("searchs.view_count",data);
+	}
 	
 	public List comment_load(String data) {
 		return sqlSession.selectList("searchs.comment_load", data);

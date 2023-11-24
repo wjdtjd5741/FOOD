@@ -52,6 +52,12 @@ public class WriteServiceImpl implements WriteService {
 		 rDAO.delete_review(dto);
 	}
 
+	@Override
+	public void review_count(String review_id) {
+		rDAO.review_count(review_id);
+		
+	}
+
 
 
 }

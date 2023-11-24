@@ -6,7 +6,7 @@ import com.food.recipick.dto.WriteDTO;
 
 
 public interface WriteService {
-
+	void review_count(String review_id);
 	int insertReview(WriteDTO dto);
 	List select_hash(WriteDTO dto);
 	List selectdata_all(WriteDTO dto);

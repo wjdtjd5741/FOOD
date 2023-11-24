@@ -70,12 +70,12 @@ public class WriteDAOImpl implements WriteDAO {
 
 	@Override
 	public void delete_review(WriteDTO dto) {
-		
-		
-		
 		sqlSession.delete("id_recipick.delete_review",dto);
-				
-		
+	}
+
+	@Override
+	public void review_count(String review_id) {
+		sqlSession.update("id_recipick.review_count", review_id);
 	}
 	
 	

@@ -28,6 +28,9 @@ public class SearchService {
 	public List recom_ck(String data) {
 		return searchDAO.recom_ck(data);
 	}
+	public void view_count(String data) {
+		searchDAO.view_count(data);
+	}
 	
 	public List comment_load(String data) {
 		return searchDAO.comment_load(data);

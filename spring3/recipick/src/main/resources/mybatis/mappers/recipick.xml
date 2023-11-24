@@ -3,6 +3,12 @@
    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
    "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
 <mapper namespace="id_recipick">
+	<update id="review_count" parameterType="string">
+		update review
+		set viewer = viewer+1
+		where review_id = #{_parameter}
+	</update>
+
 	<!-- 강신영 -->
 	<select id="selectAll" parameterType="writeDTO" resultType="writeDTO">
 		select * from review
