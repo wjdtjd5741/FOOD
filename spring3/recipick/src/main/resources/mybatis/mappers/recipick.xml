@@ -29,8 +29,8 @@
 			pic,
 			review_text,
 			review_date,
-			VIEWER,
-			UNAME,
+			viewer,
+			uname,
 			review_title
 		)
 		values(
@@ -39,7 +39,7 @@
 			#{review_text},
 			sysdate,
 			0,
-			'user',
+			#{uname},
 			#{review_title}
 		)
 	</insert >
@@ -56,7 +56,7 @@
 	</insert>
 	
 	<select id="selectData_review" parameterType="writeDTO" resultType="writeDTO">
-	select review_title, review_text,review_id
+	select review_title, review_text,review_id,uname
 	from review
 	where  review_id = #{review_id}
 	</select>

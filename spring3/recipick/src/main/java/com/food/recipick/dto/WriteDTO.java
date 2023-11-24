@@ -1,5 +1,6 @@
 package com.food.recipick.dto;
 
+import java.util.Date;
 import java.util.List;
 
 public class WriteDTO {
@@ -9,7 +10,7 @@ public class WriteDTO {
 	private int viewer;
 	private String pic;
 	private String review_title;
-	private String review_date;
+	private Date review_date;
 	private String review_text;
 	private String uname;
 	private int hash_id;
@@ -76,10 +77,10 @@ public class WriteDTO {
 	public void setReview_id(int review_id) {
 		this.review_id = review_id;
 	}
-	public String getReview_date() {
+	public Date getReview_date() {
 		return review_date;
 	}
-	public void setReview_date(String review_date) {
+	public void setReview_date(Date review_date) {
 		this.review_date = review_date;
 	}
 	public String getReview_text() {
