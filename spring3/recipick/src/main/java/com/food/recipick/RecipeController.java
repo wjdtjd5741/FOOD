@@ -31,6 +31,8 @@ public class RecipeController {
 	
 	@RequestMapping(value= "/recipePage1", method= {RequestMethod.POST, RequestMethod.GET})
 	public String recipePage1(
+			@RequestParam("reciid") int data,
+			@RequestParam("up_or_ins") int data2,
 			@ModelAttribute RecipeDTO dto,
 			@RequestParam(value="food_name", required=false)List<String> food_name,
 			@RequestParam(value="food_value", required=false)List<String> food_value,
@@ -49,15 +51,17 @@ public class RecipeController {
 			dto.setUname(((MemberDTO)session.getAttribute("memberdto")).getUname());
 		} else
 			dto.setUname("admin");
-		
-		System.out.println(food_name);
-		System.out.println(food_value);
-		System.out.println(hash_name);
+		if(data != 0) {
+			dto.setRecipe_id(data);
+		}
+//		System.out.println(food_name);
+//		System.out.println(food_value);
+//		System.out.println(hash_name);
 		
 //		recipickservice.mainupload(files, "detail_pic2");
 //		recipickservice.mainupload(files, "mainpic2");
 		
-		recipickservice.recipePage1(files, dto);
+		recipickservice.recipePage1(files, dto, data2);	
 		System.out.println(dto);
 //		session.setAttribute("bul_rec_sel", bulletin_rec_sel);
 		
@@ -68,7 +72,7 @@ public class RecipeController {
 		
 	}
 	
-	@RequestMapping("/update_reci")
+	@RequestMapping("/update_reci_sel")
 //	@ResponseBody
 	public String sel_rec(@RequestParam("reciid") String recipe_id,
 							Model m) {
