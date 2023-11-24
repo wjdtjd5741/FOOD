@@ -17,6 +17,16 @@
 // 	String fileName = ((RecipeDTO)list.get(3)).getMainpic(); // 여기에 실제 파일명을 삽입해야 합니다.
 // 	String imageURL = "/img_download?fileName=" + fileName;
 %>
+<style>
+	.tb_num_color{ 
+		display: inline-block; 
+		text-decoration: none; 
+		color:#e79311; 
+		cursor: pointer; 
+		font-size: 20px;
+		width: 6%; 
+		}
+</style>
 
 <body>
 	<div class="table_all">
@@ -35,7 +45,7 @@
 				<c:forEach var="reci_bul" items="${bul_rec}">
 					<tr class="lines">
 					<fmt:formatDate value="${reci_bul.recipe_date}" pattern="yyyy-MM-dd" var="formattedDate" />
-						<td class="tb_num_color">1</td>
+						<td class="tb_num_color">${reci_bul.recipe_id}</td>
 						<td><img src="resources/assets/imgs/${reci_bul.mainpic }.jpg" alt="Image"></td>
 						<td>${reci_bul.recipe_title }</td>
 						<td>${formattedDate}</td>

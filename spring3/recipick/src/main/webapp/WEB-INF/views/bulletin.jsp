@@ -440,6 +440,15 @@ img {
 		height: 100px;
 	}
 }
+.tb_num_color{ 
+/* 		display: inline-block;  */
+		text-decoration: none; 
+		color:#e79311; 
+		cursor: pointer; 
+		font-size: 20px;
+		font-weight:bold;
+		width: 6%; 
+		}
 </style>
 
 <body>
