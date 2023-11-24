@@ -9,7 +9,7 @@ import com.food.recipick.dto.RecipeDTO;
 
 
 public interface RecipickDAO {
-
+	void update_reci(RecipeDTO dto);
 	void recipePage1(RecipeDTO dto);
 //	List bulletin(RecipeDTO dto);
 	List bulletin(RecipeDTO dto);

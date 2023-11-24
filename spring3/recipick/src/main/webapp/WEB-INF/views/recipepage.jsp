@@ -486,7 +486,7 @@ body{
 				</div>
 			</div>
 			<div class="update_bul_btn">
-				<a href="update_reci?reciid=${goRecipe_value.recipe_id}" class="btns_hover lists">수정</a>
+				<a href="update_reci_sel?reciid=${goRecipe_value.recipe_id}" class="btns_hover lists">수정</a>
 				<a href="bulletin" class="btns_hover lists">목록</a>
 			</div>
 			<div class="reci_knowhow">

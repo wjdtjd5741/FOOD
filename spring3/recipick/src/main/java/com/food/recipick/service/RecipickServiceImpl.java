@@ -26,7 +26,7 @@ public class RecipickServiceImpl implements RecipickService{
 	RecipickDAO recipickdao;
 
 	@Override
-	public void recipePage1(MultipartHttpServletRequest files, RecipeDTO dto) {
+	public void recipePage1(MultipartHttpServletRequest files, RecipeDTO dto, int data) {
 		String uploadFolder = "C:\\Users\\User\\Documents\\FOOD\\spring3\\recipick\\src\\main\\webapp\\resources\\assets\\imgs";
 		String oName = "";
 		List<String> list = new ArrayList();
@@ -67,7 +67,13 @@ public class RecipickServiceImpl implements RecipickService{
 				System.out.println("detail_pic2 : "+ list.get(0));
 				dto.setDetail_pic(list);
 		}
-		recipickdao.recipePage1(dto);
+		if(data == 0) {
+			//insert
+			recipickdao.recipePage1(dto);
+		} else {
+//			update
+			 recipickdao.update_reci(dto);
+		}
 	}
 
 	@Override
