@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="searchs">
+	<update id="view_count" parameterType="string">
+		update recipe
+		set viewer = viewer+1
+		where recipe_id = #{_parameter}
+	</update>
+
+	<select id="recom_hash" parameterType="int" resultType="hashtagDTO">
+		select hash_name from hashtag
+		where recipe_id = #{_parameter}
+	</select>
+	
+	<select id="ggim_ck" resultType="string">
+		SELECT uname FROM ggim
+		WHERE recipe_id = #{_parameter}
+	</select>
+	<select id="recom_ck" resultType="string">
+		SELECT uname FROM recommend
+		WHERE recipe_id = #{_parameter}
+	</select>
+	<select id="season_img" resultType="string">
+		SELECT top_img FROM topimg
+		WHERE main_id = 1
+	</select>
+	<select id="recom_main_img" resultType="recipeDTO">
+		SELECT * 
+		FROM (
+			SELECT * FROM recipe
+			ORDER BY viewer DESC
+			)
+		WHERE ROWNUM <![CDATA[ <= ]]> 5
+	</select>
+	<select id="recom_count_img" resultType="recipeDTO">
+		select * from recipe
+		where recipe_id in(
+		select recipe_id from recommend 
+		group by recipe_id having count(*) <![CDATA[ >= ]]> 0 
+		) and rownum <![CDATA[ <= ]]> 6
+	</select>
+	
+	<update id="update_comment" parameterType="hashmap">
+		UPDATE COMMENTS 
+		SET comment_text = #{comment_text}
+		WHERE comment_id= #{comment_id}
+	</update>
+	
+	<delete id="del_comment" parameterType="String">
+		DELETE FROM COMMENTS
+		WHERE comment_id = #{_parameter}
+	</delete>
+	
+	<insert id="insert_reple_comment" parameterType="hashmap">
+		insert into comments(comment_id, uname, review_id, recipe_id, comment_text, parentcomment_id)
+		values (seq_comment_id.nextval, #{uname}, null, #{recipe_id}, #{comment_text}, #{parentcomment_id})
+	</insert>
+	<insert id="insert_reple_comment_review" parameterType="hashmap">
+		insert into comments(comment_id, uname, review_id, recipe_id, comment_text, parentcomment_id)
+		values (seq_comment_id.nextval, #{uname}, #{review_id},null,  #{comment_text}, #{parentcomment_id})
+	</insert>
+	
+	<insert id="insert_heart" parameterType="hashmap">
+		insert into ggim(ggim_id, uname, recipe_id)
+		values(seq_ggim_id.nextval, #{uname} , #{recipe_id})
+	</insert>
+	
+	<insert id="insert_recom" parameterType="hashmap">
+		insert into recommend(recom_id, uname, recipe_id)
+		values(seq_recom_id.nextval, #{uname} , #{recipe_id})
+	</insert>
+	
+	<insert id="delete_heart" parameterType="hashmap">
+		DELETE FROM ggim
+		WHERE recipe_id = #{recipe_id} and uname = #{uname}
+	</insert>
+	<insert id="delete_recom" parameterType="hashmap">
+		DELETE FROM recommend
+		WHERE recipe_id = #{recipe_id} and uname = #{uname}
+	</insert>
+	
+	<insert id="insert_comment" parameterType="hashmap">
+		insert into comments(comment_id, uname, review_id, recipe_id, comment_text, parentcomment_id)
+		values (seq_comment_id.nextval, #{uname}, null, #{recipe_id}, #{comment_text}, 0)
+	</insert>
+	<insert id="insert_comment_review" parameterType="hashmap">
+		insert into comments(comment_id, uname, review_id, recipe_id, comment_text, parentcomment_id)
+		values (seq_comment_id.nextval, #{uname}, #{review_id}, null, #{comment_text}, 0)
+	</insert>
+	
+	<select id="comment_load" resultType="commentDTO" parameterType="String">
+		WITH comment_recusive(LV, comment_id, parentcomment_id, uname, comment_text) AS (
+		    SELECT 0 AS LV, comment_id, parentcomment_id, uname, comment_text
+		    FROM comments 
+		    WHERE parentcomment_id = 0 AND recipe_id = #{_parameter}
+		    UNION ALL
+		    SELECT CR.LV + 1 AS LV, C.comment_id, C.parentcomment_id, C.uname, C.comment_text
+		    FROM comment_recusive CR LEFT OUTER JOIN comments C ON C.parentcomment_id = CR.comment_id
+		    WHERE C.parentcomment_id != 0 AND recipe_id = #{_parameter}
+		)
+		SEARCH DEPTH FIRST BY comment_id SET ORDER_DEPTH
+		SELECT * FROM comment_recusive
+		ORDER BY ORDER_DEPTH
+	</select>
+	
+	<select id="comment_load_review" resultType="commentDTO" parameterType="String">
+		WITH comment_recusive(LV, comment_id, parentcomment_id, uname, comment_text) AS (
+		    SELECT 0 AS LV, comment_id, parentcomment_id, uname, comment_text
+		    FROM comments 
+		    WHERE parentcomment_id = 0 AND review_id = #{_parameter}
+		    UNION ALL
+		    SELECT CR.LV + 1 AS LV, C.comment_id, C.parentcomment_id, C.uname, C.comment_text
+		    FROM comment_recusive CR LEFT OUTER JOIN comments C ON C.parentcomment_id = CR.comment_id
+		    WHERE C.parentcomment_id != 0 AND review_id = #{_parameter}
+		)
+		SEARCH DEPTH FIRST BY comment_id SET ORDER_DEPTH
+		SELECT * FROM comment_recusive
+		ORDER BY ORDER_DEPTH
+	</select>
+	
+	<select id="searchData" resultType="recipeDTO" parameterType="hashmap"> <!--   -->
+		SELECT * FROM RECIPE
+		<where>
+			recipe_title LIKE '%' || #{recipe_title} || '%'
+			<if test="order == 0">
+				order by recipe_id desc
+			</if>
+			<if test= "oreder == 1">
+				order by viewer desc
+			</if>
+			<if test= "order == 2">
+			
+			</if>
+		</where> 
+			
+	</select>
+	
+	<select id="searchRecipe" resultType="recipeDTO" parameterType="String"> <!--   -->
+		SELECT * FROM RECIPE
+		WHERE recipe_id = #{_parameter}
+	</select>
+	
+	<select id="goRecipe_value" parameterType="String" resultType="recipeDTO">
+		select * from recipe
+		where recipe_id = #{recipe_id}
+	</select>
+	
+	<select id="hashtag" parameterType="String" resultType="hashtagDTO">
+		select hash_name from hashtag
+		where recipe_id = #{recipe_id}
+	</select>
+	
+	<select id="food" parameterType="String" resultType="foodDTO">
+		select food_name, food_value from food
+		where recipe_id = #{recipe_id}
+	</select>
+	
+	<select id="detailrecipe" parameterType="String" resultType="detailrecipeDTO">
+		select detail_pic, detail_text, make_order from detailrecipe
+		where recipe_id = #{recipe_id}
+	</select>
+</mapper>
