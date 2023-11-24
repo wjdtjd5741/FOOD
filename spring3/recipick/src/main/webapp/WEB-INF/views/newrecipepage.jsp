@@ -498,128 +498,174 @@ input {
  </style>
 
 <body>
-<%-- 	<%@ include file="header.jsp"%> --%>
+	<%-- 	<%@ include file="header.jsp"%> --%>
 	<main>
 		<nav>
-<%-- 			<%@ include file="mobile_console.jsp"%> --%>
+			<%-- 			<%@ include file="mobile_console.jsp"%> --%>
 		</nav>
 		<section>
 			<!-- 이정성 -->
 			<div class="title">
 				<div>레시피 작성 페이지</div>
 				<div class="btns_hover">취소</div>
+				<c:if test="${sel_rec == null }">
 				<div class="btns_hover writing">작성</div>
+				</c:if>
+				<c:if test="${sel_rec != null }">
+				<div class="btns_hover writing">수정</div>
+				</c:if>
+				
 			</div>
-			<form action="recipePage1" id="newRecipePage" method="POST" enctype="multipart/form-data" accept-charset="utf-8">
-				<div class="title_box">
-					<textarea type="text" name="recipe_title" class="recipick_title"
-						maxlength="70">
-						<c:if test="${sel_rec == null }">
-							afdsfsfsdf
-						</c:if>
-						<c:if test="${sel_rec != null }">
-							ㅇ녿ㄱ
-						</c:if>
-					</textarea>
+			<c:if test="${sel_rec == null }">
+				<form action="recipePage1?reciid=0&up_or_ins=0" id="newRecipePage" method="POST"
+					enctype="multipart/form-data" accept-charset="utf-8">
+			</c:if>
+			<c:if test="${sel_rec != null }">
+				<form action="recipePage1?reciid=${sel_rec.recipe_id}&up_or_ins=1" id="newRecipePage" method="POST"
+					enctype="multipart/form-data" accept-charset="utf-8">
+			</c:if>
+			<div class="title_box">
+				<textarea type="text" name="recipe_title" class="recipick_title"
+					maxlength="70"><c:if test="${sel_rec == null }">레시피 제목을 작성해주세요!</c:if><c:if test="${sel_rec != null }">${sel_rec.recipe_title}</c:if></textarea>
+			</div>
+			<!-- 김호연 -->
+			<div class="all2">
+				<div class="attach">
+					<div>
+						<img class="attach_img"
+							src="https://cdn1.iconfinder.com/data/icons/document-edit-line/64/Document-doc-file-folder-bundle-add-new-64.png">
+						<input type="file" name="mainpic2" id="file_input"
+							style="display: none">
+					</div>
 				</div>
-				<!-- 김호연 -->
-				<div class="all2">
+				<div class="attach_font">
+					<div>첨부파일</div>
+				</div>
+				<c:if test="${sel_rec == null }">
+					<div class="media_box img_add" id="media_box">
+						<img
+							src="https://cdn3.iconfinder.com/data/icons/font-awesome-regular-1/512/image-64.png">
+						<div>완성된 음식 사진을 올려주세요 !</div>
+					</div>
+				</c:if>
+				<c:if test="${sel_rec != null }">
+					<img src="resources/assets/imgs/${sel_rec.mainpic }.jpg">
+				</c:if>
+			</div>
+			<div class="hashtag_border">
+				<div class="hashtag_ex">해시태그를 입력해주세요!(최대 5개)</div>
+				<div class="hashtag_box">
+					<div>
+						<input type="text" class="recipick_hashtag" value="#해시태그"
+							maxlength="7">
+					</div>
+					<div id="hash_submit" class="btns_hover">등록</div>
+				</div>
+				<br>
+				<div class="hashtag_all">
+					<c:forEach var="hash" items="${sel_rec.hash_name}">
+						<div class="hashtags">${hash.hash_name}<input type="hidden"
+								name="hash_name" value="${hash.hash_name}">
+							<div class="hashtag_minus">-</div>
+						</div>
+					</c:forEach>
+				</div>
+			</div>
+			<div class="content_all_border">
+				<div class="content_ex">재료명과 수량을 입력해주세요!</div>
+				<div class="content_all">
+					<div>
+						<input type="text" class="recipick_content0" value="재료명"
+							maxlength="10">
+					</div>
+					<div>
+						<input type="text" class="recipick_content1" value="수량"
+							maxlength="10">
+					</div>
+					<div id="quantity_submit" class="btns_hover">등록</div>
+				</div>
+				<div class="quantity_box">
+					<c:forEach var="food" items="${sel_rec.food_name}">
+						<div class="quantity">
+							<div>${food.food_name}:${food.food_value}</div>
+							<input type="hidden" name="food_name" value="${food.food_name}"><input
+								type="hidden" name="food_value" value="${food.food_value}"><input
+								type="hidden" name="recipick_content01"
+								value="${food.food_name}${food.food_value}">
+							<div class="quantity_minus">-</div>
+						</div>
+					</c:forEach>
+				</div>
+			</div>
+			<div>
+				<div class="food_ex">
+					음식에 대한 설명
+					<textarea class="food_explanation" name="maintext"></textarea>
+				</div>
+			</div>
+
+			<!-- 이정성
+                + 버튼 누르면 for문을 통해 추가로 작성 가능 -->
+			<c:if test="${sel_rec==null}">
+				<div id="newpage">
+					<div class="topbox">
+						<div class="bigbox_num">1</div>
+						<input class="bigbox_num2" type="hidden" name="bigbox_num" value=1>
+						<div class="making_how">만드는 방법</div>
+						<div class="delete_butt">삭제</div>
+					</div>
 					<div class="attach">
 						<div>
 							<img class="attach_img"
 								src="https://cdn1.iconfinder.com/data/icons/document-edit-line/64/Document-doc-file-folder-bundle-add-new-64.png">
-							<input type="file" name="mainpic2" id="file_input"
-								style="display: none">
+							<input type="file" name="detail_pic2" id="file_input"
+								multiple="multiple" style="display: none">
 						</div>
 					</div>
 					<div class="attach_font">
 						<div>첨부파일</div>
 					</div>
-					<div class="media_box img_add" id="media_box">
-						<img
-							src="https://cdn3.iconfinder.com/data/icons/font-awesome-regular-1/512/image-64.png">
-						<div>
-<%-- 							<%if(((RecipeDTO)request.getAttribute("sel_rec")).getMainpic()== null){ %> --%>
-<!-- 								완성된 음식 사진을 올려주세요 ! -->
-<%-- 							<%}else{%> --%>
-<%-- 								${sel_rec.mainpic}  --%>
-<%-- 							<%}%>				 --%>
-						</div>
-					</div>
-				</div>
-				<div class="hashtag_border">
-					<div class="hashtag_ex">해시태그를 입력해주세요!(최대 5개)</div>
-					<div class="hashtag_box">
-						<div>
-							<input type="text" class="recipick_hashtag" value="#해시태그"
-								maxlength="7">
-						</div>
-						<div id="hash_submit" class="btns_hover">등록</div>
-					</div>
-					<br>
-					<div class="hashtag_all">
-						<%-- --%>
-					</div>
-				</div>
-				<!-- <div class="max">해시태그는 5개까지 입력할 수 있습니다.</div> -->
-				<div class="content_all_border">
-					<div class="content_ex">재료명과 수량을 입력해주세요!</div>
-					<div class="content_all">
-						<div>
-							<input type="text" class="recipick_content0" value="재료명"
-								maxlength="10">
-						</div>
-						<div>
-							<input type="text" class="recipick_content1" value="수량"
-								maxlength="10">
-						</div>
-						<div id="quantity_submit" class="btns_hover">등록</div>
-					</div>
-					<div class="quantity_box">
-						<%-- --%>
-					</div>
-				</div>
-				<div>
-					<div class="food_ex">
-						음식에 대한 설명
-						<textarea class="food_explanation" name="maintext"></textarea>
-					</div>
-				</div>
+					<div class="media_box">
 
-				<!-- 이정성
-                + 버튼 누르면 for문을 통해 추가로 작성 가능 -->
-				<div id="newpage">
-
-					<div class="bigbox">
-						<div class="topbox">
-							<div class="bigbox_num">1</div>
-							<input class="bigbox_num2" type="hidden" name="bigbox_num"
-								value=1>
-							<div class="making_how">만드는 방법</div>
-							<div class="delete_butt">삭제</div>
-						</div>
-						<div class="attach">
-							<div>
-								<img class="attach_img"
-									src="https://cdn1.iconfinder.com/data/icons/document-edit-line/64/Document-doc-file-folder-bundle-add-new-64.png">
-								<input type="file" name="detail_pic2" id="file_input" multiple="multiple"
-									style="display: none">
-							</div>
-						</div>
-						<div class="attach_font">
-							<div>첨부파일</div>
-						</div>
-						<div class="media_box">
-
-							<div class="media_box_pic">레시피 사진, 동영상을 올려주세요!</div>
-						</div>
-						<div class="explanation">만드는 방법 설명</div>
+						<div class="media_box_pic">레시피 사진, 동영상을 올려주세요!</div>
 					</div>
+					<div class="explanation">만드는 방법 설명</div>
 					<textarea class="explanation_context" type="text"
-						  name="detail_text" value="만드는 방법을 설명해주세요"></textarea>
+						name="detail_text" value="만드는 방법을 설명해주세요"></textarea>
 				</div>
+			</c:if>
+			<c:forEach var="detail" items="${sel_rec.detail_pic}">
+			<c:if test="${sel_rec!=null}">
+				<div id="newpage">
+					<div class="topbox">
+						<div class="bigbox_num">${detail.make_order}</div>
+						<input class="bigbox_num2" type="hidden" name="bigbox_num" value=1>
+						<div class="making_how">만드는 방법</div>
+						<div class="delete_butt">삭제</div>
+					</div>
+					<div class="attach">
+						<div>
+							<img class="attach_img"
+								src="https://cdn1.iconfinder.com/data/icons/document-edit-line/64/Document-doc-file-folder-bundle-add-new-64.png">
+							<input type="file" name="detail_pic2" id="file_input"
+								multiple="multiple" style="display: none">
+						</div>
+					</div>
+					<div class="attach_font">
+						<div>첨부파일</div>
+					</div>
+					<div class="media_box">
 
-				<div class="plus">+</div>
+						<div class="media_box_pic"><img class="attach_img"
+								src="resources/assets/imgs/${detail.detail_pic}.jpg"></div>
+					</div>
+					<div class="explanation">만드는 방법 설명</div>
+					<textarea class="explanation_context" type="text"
+						name="detail_text">${detail.detail_text}</textarea>
+				</div>
+			</c:if>
+			</c:forEach>
+			<div class="plus">+</div>
 			</form>
 		</section>
 

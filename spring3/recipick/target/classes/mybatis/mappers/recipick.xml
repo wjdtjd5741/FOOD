@@ -29,8 +29,8 @@
 			pic,
 			review_text,
 			review_date,
-			VIEWER,
-			UNAME,
+			viewer,
+			uname,
 			review_title
 		)
 		values(
@@ -39,7 +39,7 @@
 			#{review_text},
 			sysdate,
 			0,
-			'user',
+			#{uname},
 			#{review_title}
 		)
 	</insert >
@@ -56,7 +56,7 @@
 	</insert>
 	
 	<select id="selectData_review" parameterType="writeDTO" resultType="writeDTO">
-	select review_title, review_text,review_id
+	select review_title, review_text,review_id,uname
 	from review
 	where  review_id = #{review_id}
 	</select>
@@ -157,25 +157,75 @@
 		select recipe_id, mainpic, recipe_title, recipe_date, uname, viewer from recipe
 	</select>
 	
-	<select id="update_reci" parameterType="recipeDTO" resultType="recipeDTO">
+	<select id="update_sel_reci" parameterType="recipeDTO" resultType="recipeDTO">
 		select * from recipe
 		where recipe_id = ${recipe_id}
 	</select>
 	
-	<select id="update_hash" parameterType="recipeDTO" resultType="hashtagDTO">
+	<select id="update_sel_hash" parameterType="recipeDTO" resultType="hashtagDTO">
 		select * from hashtag
 		where recipe_id = ${recipe_id}
 	</select>
 	
-	<select id="update_detail" parameterType="recipeDTO" resultType="detailrecipeDTO">
+	<select id="update_sel_detail" parameterType="recipeDTO" resultType="detailrecipeDTO">
 		select * from detailrecipe
 		where recipe_id = ${recipe_id}
 	</select>
 	
-	<select id="update_food" parameterType="recipeDTO" resultType="foodDTO">
+	<select id="update_sel_food" parameterType="recipeDTO" resultType="foodDTO">
 		select * from food
 		where recipe_id = ${recipe_id}
 	</select>
+	
+	<update id="update_reci" parameterType="recipeDTO">
+		update recipe 
+		set 
+			mainpic = #{mainpic} ,
+			maintext = #{maintext} ,
+			recipe_title = #{recipe_title} 
+		where recipe_id = #{recipe_id}
+	</update>
+	
+	<update id="update_hash" parameterType="hashmap">
+		update hashtag
+		set
+			hash_name = #{hash_name}
+		where recipe_id = #{recipe_id}
+	</update>
+	
+	<update id="update_food" parameterType="hashmap"> 
+		update food
+		set
+			food_name = #{food_name},
+			food_value = #{food_value}
+		where recipe_id = #{recipe_id}
+	</update>
+	
+	<update id="update_detail" parameterType="hashmap">
+		update DETAILRECIPE
+		set
+			detail_pic = #{detail_pic},
+			detail_text = #{detail_text}
+		where recipe_id = #{recipe_id}
+	</update>
+	
+	<delete id="deletehash" parameterType="hashmap">
+	delete
+		from hashtag
+            where recipe_id = #{recipe_id}
+	</delete>
+	
+	<delete id="deletedetail" parameterType="hashmap">
+	delete
+		from detailrecipe
+            where recipe_id = #{recipe_id}
+	</delete>
+	
+	<delete id="deletefood" parameterType="hashmap">
+	delete
+		from food
+            where recipe_id = #{recipe_id}
+	</delete>
 <!-- 	<select id="recipe" parameterType="recipeDTO" resultType="recipeDTO"> -->
 <!-- 		SELECT * FROM RECIPE -->
 <!-- 	</select> -->

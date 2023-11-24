@@ -10,7 +10,7 @@ import com.food.recipick.dto.RecipeDTO;
 
 
 public interface RecipickService {
-	void recipePage1(MultipartHttpServletRequest files, RecipeDTO dto);
+	void recipePage1(MultipartHttpServletRequest files, RecipeDTO dto, int data);
 	List bulletin(RecipeDTO dto);
 	void recipe_img_download(List list, HttpServletResponse response);
 	RecipeDTO sel_rec(RecipeDTO recipeid);

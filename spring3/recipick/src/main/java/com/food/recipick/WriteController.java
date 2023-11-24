@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-
+import com.food.recipick.dto.MemberDTO;
 import com.food.recipick.dto.WriteDTO;
 import com.food.recipick.service.WriteService;
 
@@ -35,12 +35,20 @@ public class WriteController {
 			@RequestParam("hash_name2")List<String> hash_name
 			) {
 		System.out.println("hash_name:"+hash_name);
+		
 		HttpSession session = request.getSession();
+		
 		dto.setHash_name(hash_name);
+		
 		System.out.println("review_title:"+dto.getReview_title());
 		System.out.println("review_text:"+dto.getHash_name().get(0));
 		System.out.println("dto:"+dto);
-
+		
+		MemberDTO memberdto = (MemberDTO) session.getAttribute("memberdto");
+		dto.setUname(memberdto.getUname());
+		
+		System.out.println("getUname"+dto.getUname());
+		
 		rService.insertReview(dto);
 //		session.setAttribute("a", review_bul_sel);
 
@@ -53,20 +61,29 @@ public class WriteController {
 			@ModelAttribute WriteDTO dto,
 			
 			HttpServletRequest request) {
-		
+		System.out.println("getUname");
 		System.out.println("dto:"+dto);
 		HttpSession session = request.getSession();
 		
 		rService.review_count(review_id);
 		
+		
+		
 		List selectData_review = rService.selectData_review(dto);
+		System.out.println("selectData_review"+dto.getUname());
+		
 		List select_hash=rService.select_hash(dto);
 		System.out.println("selectData_review: "+selectData_review.get(0));
 		System.out.println("select_hash:"+select_hash.get(0));
+		
 		session.setAttribute("selectData_review", selectData_review);	
+		System.out.println("selectData_review"+selectData_review);
+		
 		session.setAttribute("select_hash", select_hash);
 		session.setAttribute("review_id", review_id);
 		
+		
+	
 		return "writer";
 		
 	}
