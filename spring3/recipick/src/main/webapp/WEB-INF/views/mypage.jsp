@@ -80,8 +80,8 @@
             width: 70%;
         }
 
-        .right hr {
-     	    margin-left: 5%;
+        .imfomation_hr {
+			margin-top: 2%;
             width: 80%;
         }
 
@@ -232,8 +232,9 @@
 }
 
 .information_title {
-/*	font-weight: bold;*/
-    font-size: 25px;
+	margin-top: 3%;
+	font-weight: bold;
+    font-size: 23px;
     /* margin-bottom: 20px; */
 }
 
@@ -270,7 +271,7 @@
     /* border: 3px solid rgb(230, 142, 34); */
     border-radius: 10px;
     width: 90%;
-    margin-top: 7%;
+    margin-top: 10%;
     /* height: 180px; */
     /* padding-left: 4%; */
     /* margin-left: 3%;
@@ -293,8 +294,8 @@
 }
 
 .information_title_2 {
-/*	font-weight: bold;*/
-    font-size: 25px;
+	font-weight: bold;
+    font-size: 23px;
     /* margin-bottom: 30px; */
 }
 
@@ -342,7 +343,7 @@
     color: black;
     font-size: 14px;
     /* margin-left: 30%; */
-    margin-top: 5%;
+    margin-top: -8%;
     cursor: pointer;
     float: right;
     width: 40px;
@@ -381,7 +382,7 @@
     /* margin-left: 31% */
 }
 .out{
-	margin-top: 80px;
+	margin-top: 60px;
 	margin-right: 3%;
     font-size: 15px;
     float: right;
@@ -435,13 +436,13 @@
     /* border: 1px solid orange; */
     font-weight: bold;
     margin-left: 40px;
-    margin-top: 35px;
-    font-size: 20px;
+    margin-top: 7%;
+    font-size: 23px;
 }
 
 .recipe {
-    margin-top: 60px;
-    margin-left: 12%;
+    margin-top: 100px;
+    margin-left: 7%;
     /* margin-right: 7%; */
     width: 250px;
     height: 250px;
@@ -451,9 +452,19 @@
     height: 300px;
 }
 
-.recipe>div {
+.ggim_hstag {
     font-size: 16px;
     width: 100%;
+}
+
+.write_hr {
+	width: 80%;
+	margin-left: 8%;
+}
+
+.ggim_title {
+	font-size: 20px;
+	font-weight: bold;
 }
 
 .recipe>img {
@@ -461,7 +472,6 @@
     height: 80%;
     background-size: contain;
 }
-
 
 .order {
     width: 30px;
@@ -521,8 +531,7 @@
         margin-top: 30px;
         font-size: 20px;
     }
-
-
+    
     .recipe>div {
         font-size: 16px;
         width: 100%;
@@ -711,7 +720,7 @@ a.recipe_detail {
 }
 
 .write_box>div {
-    font-size: 20px;
+/*     font-size: 20px; */
     display: inline-block;
 }
 
@@ -725,9 +734,9 @@ a.recipe_detail {
 
 .write_title {
 	font-weight: bold;
-    margin-left: 5%;
-    font-size: 25px;
-    margin-top: 3%;
+    margin-left: 3%;
+    font-size: 23px;
+    margin-top: 5%;
     margin-bottom: 5%;
 
 }
@@ -795,7 +804,7 @@ strong {
 					<div class = "logo"><a href="main">레시pick!</a></div>
 				<div class = "hi">
 					안녕하세요
-					${memberdto.rname }
+					${memberdto.uname }
 					님 !
 				</div>
 					<div class="my_0">MY</div>

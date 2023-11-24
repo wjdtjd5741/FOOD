@@ -118,7 +118,7 @@
 		            </div><br>
 		            <div class="write_date">${formattedDate}</div><br>
 	       	    </a>
-	             <hr>
+	             <hr class="write_hr">
             </c:forEach>
            
             <div class="bottom">
