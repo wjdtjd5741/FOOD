@@ -18,14 +18,16 @@
 				<div>조회수</div>
 			</div>
 			<c:forEach var="review" items="${review_bul_sel}">
+			<fmt:formatDate value="${review.review_date}" pattern="yyyy-MM-dd" var="formattedDate" />
 				<div class="abox">
 					<div class="sec1_bbox">
-						<a href="writer_view?review_id=${review.review_id}"> 
+					<a href="writer_view?review_id=${review.review_id}"> 
 						<span class="span1">${review.review_id }</span> 
 						<span class="span2">${review.review_title }</span>
-						<span class="span3">${review.review_date }</span> 
-						<span class="span4">${review.uname }</span> <span class="span5">${review.viewer }</span>
-						</a>
+						<span class="span3">${formattedDate}</span> 
+						<span class="span4">${review.uname }</span> 
+						<span class="span5">${review.viewer }</span>
+					</a>
 					</div>
 				</div>
 			</c:forEach>

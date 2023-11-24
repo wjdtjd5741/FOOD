@@ -297,17 +297,18 @@ h3 {
 .span1 {
 	display: inline-block;
 	 text-decoration: none;
-	color:black;
+	color:#e79311;
 	cursor: pointer;
 	font-size: 20px;
 	width: 6%;
+	
 }
 
 .span2 {
 
 display: inline-block;
  text-decoration: none;
-	width: 50%;
+	width: 48%;
 	color:black;
 	cursor: pointer;
 	font-size: 20px;
@@ -316,7 +317,7 @@ display: inline-block;
 .span3 {
 display: inline-block;
  text-decoration: none;
-	width: 20%;
+	width: 21%;
 	color:black;
 	cursor: pointer;
 	font-size: 20px;
@@ -325,7 +326,7 @@ display: inline-block;
 .span4 {
 display: inline-block;
  text-decoration: none;
-	width: 12.5%;
+	width: 13%;
 	color:black;
 	cursor: pointer;
 	font-size: 20px;

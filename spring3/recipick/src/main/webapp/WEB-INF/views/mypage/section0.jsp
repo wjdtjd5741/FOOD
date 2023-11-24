@@ -18,6 +18,7 @@
         <div class="top_box">
             <div class="mypage_line">
                 <div class="information_title">기본 정보</div>
+                <hr class="imfomation_hr">
 <!--                 <div class="btns_hover" onclick="toggleEdit(this)">수정</div> -->
                 <input type="submit" class="btns_hover" value="수정"  onclick="toggleEdit(this)">
             </div>
@@ -46,6 +47,7 @@
         <div class="bottom_box">
             <div class="mypage_line">
                 <div class="information_title_2">연락처 정보</div>
+                 <hr class="imfomation_hr">
             </div>
             <div class="mypage_line">
                 <div class="information_email text_head">이메일</div>
