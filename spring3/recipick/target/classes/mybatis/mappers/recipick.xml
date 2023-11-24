@@ -38,16 +38,15 @@
 		)
 	</insert >
 	
-	<insert id="insertHash" parameterType="writeDTO">
+	<insert id="insertHash" parameterType="hashmap">
 		insert into hashtag(
 			hash_id,review_id,hash_name,tag_type
 		)
 		values(
 			hash_id.nextval,
 			#{review_id},
-			0,
+			#{hash_name},
 			'review')
-		
 	</insert>
 	
 	<select id="selectData_review" parameterType="writeDTO" resultType="writeDTO">
@@ -72,7 +71,7 @@
 	
 	<delete id="delete_review" parameterType="writeDTO">
 		delete from review
-		where review_id=${review_id}
+		where review_id=#{review_id}
 	</delete>
 	
 	<!-- 이정성 -->

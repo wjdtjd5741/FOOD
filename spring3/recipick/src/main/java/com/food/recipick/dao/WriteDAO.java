@@ -12,5 +12,5 @@ public interface WriteDAO {
 	List select_hash(WriteDTO dto);
 	List selectData_review(WriteDTO dto);
 	int update_review(WriteDTO dto);
-	int delete_review(WriteDTO dto);
+	void delete_review(WriteDTO dto);
 }

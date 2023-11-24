@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="java.util.*"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -107,14 +108,16 @@
 	<div class="box">
 		<div class="write_box">
 			<div class="write_title">내가 쓴 글</div><br>
-			
 			<c:forEach var="recipe" items="${data.list}">
-	            <div class="write_name">
-	          	  ${recipe.recipe_title }
-				<%--  나만의 햄마요덮밥 만들기 ! --%>
-				<!-- 작성글 4개까지 -->
-	            </div><br>
-	            <div class="write_date"> ${recipe.recipe_date }</div><br>
+			<fmt:formatDate value="${recipe.recipe_date}" pattern="yyyy-MM-dd" var="formattedDate" />
+				<a class="recipe_detail" href="gorecipe?reciid=${recipe.recipe_id}">
+		            <div class="write_name">
+		          	  ${recipe.recipe_title }
+					<%--  나만의 햄마요덮밥 만들기 ! --%>
+					<!-- 작성글 4개까지 -->
+		            </div><br>
+		            <div class="write_date">${formattedDate}</div><br>
+	       	    </a>
 	             <hr>
             </c:forEach>
            
@@ -149,7 +152,7 @@
 		
 			
 			if(beginPaging == 1) {
-				out.println("[이전]");
+				out.println("<");
 			} else {
 				out.println("<a href='mypage?pageNum=" + (beginPaging-1) + "'>[이전]</a>");
 			}
@@ -163,9 +166,9 @@
 			}
 				
 			if(endPaging == totalPaging) {
-				out.println("[다음]");
+				out.println(">");
 			} else {
-				out.println("<a href='mypage?pageNum=" + (endPaging + 1) + "'>[다음]</a>");
+				out.println("<a href='mypage?pageNum=" + (endPaging + 1) + "'>></a>");
 			}
 %>
 

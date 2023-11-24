@@ -81,6 +81,7 @@
         }
 
         .right hr {
+     	    margin-left: 5%;
             width: 80%;
         }
 
@@ -461,24 +462,6 @@
     background-size: contain;
 }
 
-.order_all {
-    display: inline-block;
-    margin-bottom: 15px;
-}
-
-hr {
-    width: 90%;
-}
-
-.order_all {
-    display: flex;
-
-    margin-left: 35%;
-    width: 50%;
-    margin-top: 80px;
-    font-size: 10px;
-
-}
 
 .order {
     width: 30px;
@@ -710,6 +693,11 @@ hr {
     width: 80%;
 }
 
+a.recipe_detail {
+	color: black;
+	text-decoration: none;
+}
+
 .write_box {
 	margin-left : 10%;
     height: 600px;
@@ -737,32 +725,36 @@ hr {
 
 .write_title {
 	font-weight: bold;
-/*    margin-left: 3%;*/
+    margin-left: 5%;
     font-size: 25px;
-    margin-top: 20px;
+    margin-top: 3%;
+    margin-bottom: 5%;
 
 }
 
 .write_name,
 .write_date {
     margin-left: 10%;
-    font-size: 18px;
 }
 
 .write_date {
     margin-top: 10px;
     margin-bottom: 10px;
+    font-size: 15px;
 }
 
 .write_name {
+	font-weight: bold;
     margin-top: 30px;
+    font-size: 19px;
 }
 
 .order_all {
+    margin-left: 350%;
+    margin-top: 80px;
     display: flex;
-    margin-left: 80%;
     width: 100%;
-    margin-top: 40px;
+    margin-top: 40%;
     font-size: 18px;
 }
 
@@ -776,7 +768,10 @@ hr {
 }
 
 .order_all > a {
+	color: black;
+	text-decoration: none;
     font-size: 18px;
+    margin: 2%;
 }
     
 strong {

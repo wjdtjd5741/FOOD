@@ -279,7 +279,7 @@ article>div>img {
 			<article>
 				<!-- a태그 삭제 -->	
 	<form action="writer_modify" method="post">
-	<input type="hidden" id="review_id" name="review_id" value="${review_id }">
+	<input type="hidden" id="review_id"  value="${review_id }">
 				<div class="title">후기 게시판</div>
 				<textarea class="writeTitle a" name="review_title" disabled="true">${selectData_review[0].review_title }
                 </textarea>
@@ -297,13 +297,12 @@ article>div>img {
 				<div class="modify">
 					<input class="edit_text_review viewbtn" type="button" value="수정"
 						onclick="enableTextareas()"> 
-						
-						<a href="/delete_review?review_id=${review_id}"role="button" class="del_text_review viewbtn" onclick="enableTextareas()">
+					<a href="delete_review?review_id=${review_id}"role="button" class="del_text_review viewbtn" onclick="enableTextareas()">
 						삭제
-						</a>
+					</a>
 <!-- 					<input class="del_text_review viewbtn" type="button" value="삭제" -->
 <!-- 						onclick="enableTextareas()">  -->
-						<a href="bulletin">목록</a>
+					<a href="bulletin">목록</a>
 				</div>
 				</form>
 			</article>
@@ -374,14 +373,12 @@ article>div>img {
 
 	    
 	 	// 폼을 서버로 제출합니다.
-// 	    form.submit();
+	    form.submit();
 	 	
 		// 수정 버튼을 다시 수정 버튼으로 변경합니다.
 		let editButton = document.querySelector('.edit_text_review');
 		editButton.value = '수정';
 		editButton.onclick = enableTextareas;
-		
-		
 		
 		// 선택된 각 텍스트 영역의 disabled 속성을 true로 변경하여 수정 불가능하게 만듭니다.
 		let textareas = document.querySelectorAll('.a');
@@ -390,168 +387,208 @@ article>div>img {
 		});
 	}
 	
+
 	comment();
 	text_focus();
 
-
 	function comment() {
-	    document.querySelector(".btn_txt").addEventListener("click", function () {
-	        let text = document.querySelector(".input_text").value;
-	        let review_id = new URLSearchParams(window.location.search).get("review_id");
-	        //window.location.href = ""
-	        
-	        if (text != "") {
-	            let html = "";
-	            html += `<div class="reple_box">`
-	            html += "<div style='display: inline-block; width: 60%;'>작성자</div>";
-	            html += `<input class='del_btn' type=button value='X' style='font-size: 10px;'>`;
-	            html += `<div style='display: inline-block;'>${text}</div>`
-	            html += "<input class='reple_btn' type=button value='ㄴ' style='font-size: 10px;'>"
-	            // console.log(document.querySelector(".comment_box"));
-	            document.querySelector(".comment_box").innerHTML += html;
-	            document.querySelector(".input_text").value = "댓글을 남겨주세요.";
-	        } else
-	            alert("댓글을 입력해주세요.");
-	            
-			
-	        del_reple();
-	        reple_count()
-	        
-	        window.location.href = "insert_comment_review?review_id="+review_id+"&ctext="+text
-	    });
+		document
+				.querySelector(".btn_txt")
+				.addEventListener(
+						"click",
+						function() {
+							let text = document.querySelector(".input_text").value;
+							let review_id = new URLSearchParams(
+									window.location.search).get("review_id");
+							//window.location.href = ""
+
+							if (text != "") {
+								let html = "";
+								html += `<div class="reple_box">`
+								html += "<div style='display: inline-block; width: 60%;'>작성자</div>";
+								html += `<input class='del_btn' type=button value='X' style='font-size: 10px;'>`;
+								html += `<div style='display: inline-block;'>${text}</div>`
+								html += "<input class='reple_btn' type=button value='ㄴ' style='font-size: 10px;'>"
+								// console.log(document.querySelector(".comment_box"));
+								document.querySelector(".comment_box").innerHTML += html;
+								document.querySelector(".input_text").value = "댓글을 남겨주세요.";
+							} else
+								alert("댓글을 입력해주세요.");
+
+							del_reple();
+							reple_count()
+
+							window.location.href = "insert_comment_review?review_id="
+									+ review_id + "&ctext=" + text
+						});
 	}
-	
-	function reple_count(){
-	    document.querySelector(".comment_count").innerText = document.querySelectorAll(".reple_box").length;
+
+	function reple_count() {
+		document.querySelector(".comment_count").innerText = document
+				.querySelectorAll(".reple_box").length;
 	}
-	
-	function reple_comments(z){
+
+	function reple_comments(z) {
 		let replebtns = document.querySelectorAll(".reple_btn_txt")
 		let submitbox = document.querySelectorAll(".submit_box")
-		for(let j = 0 ;j<submitbox ;j++)
-		console.log(replebtns)
-		for(let i = 0 ; i<replebtns.length ;i++){
-			replebtns[i].addEventListener("click",function(){
-				let review_id = new URLSearchParams(window.location.search).get("review_id");
-				let text = document.querySelector(".reple_input_text").value;
-				let pid = submitbox[z].parentNode.querySelector(".reple_id").innerText
-				console.log(pid);
-				window.location.href = "insert_reple_comment_review?review_id="+review_id+"&ctext="+text+"&pid="+pid
-			})
+		for (let j = 0; j < submitbox; j++)
+			console.log(replebtns)
+		for (let i = 0; i < replebtns.length; i++) {
+			replebtns[i]
+					.addEventListener(
+							"click",
+							function() {
+								let review_id = new URLSearchParams(
+										window.location.search)
+										.get("review_id");
+								let text = document
+										.querySelector(".reple_input_text").value;
+								let pid = submitbox[z].parentNode
+										.querySelector(".reple_id").innerText
+								console.log(pid);
+								window.location.href = "insert_reple_comment_review?review_id="
+										+ review_id
+										+ "&ctext="
+										+ text
+										+ "&pid=" + pid
+							})
 		}
 	}
 
 	function text_focus() {
-	    document.querySelector(".input_text").addEventListener("click", function () {
-	        document.querySelector(".input_text").value = "";
-	    });
+		document.querySelector(".input_text").addEventListener("click",
+				function() {
+					document.querySelector(".input_text").value = "";
+				});
 	}
-	
- 	get_json();
-	function get_json(){
+
+	get_json();
+	function get_json() {
 		const xhr = new XMLHttpRequest();
 		let data = new URLSearchParams(window.location.search).get("review_id");
-		xhr.open("GET", `http://localhost:8080/recipick/comment_load_review?review_id=\${data}`);
+		xhr
+				.open("GET",
+						`http://localhost:8080/recipick/comment_load_review?review_id=\${data}`);
 		xhr.send();
-		
-		window.addEventListener("load", function(){
-			xhr.onload = function(){
-				console.log(xhr.responseText);
-				let json = JSON.parse(xhr.responseText)
-				
-				for(let i = 0 ;i<json.length ;i++){
-					let html = "";
-					let margin = json[i].lv * 30;
-		            html += `<div class="reple_box" style="margin: 0 \${margin}px">`
-	                html += `<div class="uname" style="display: inline-block; width: 60%;">\${json[i].uname}</div>`;
-	                html += `<input class='del_btn' type=button value='X' style='font-size: 10px;'>`;
-	                html += `<textarea class='reple_text' style="display: inline-block;" disabled>\${json[i].comment_text}</textarea>`
-	                html += "<input class='reple_btn' type=button value='ㄴ' style='font-size: 10px;'>"
-	                html += `<div class="reple_id" style="display: none">\${json[i].comment_id}</div>`
-	                html += "<input class='rewrite_btn' type=button value='수정' style='font-size: 10px;'>"
-	                html += `<div class='submit_box'></div>`
-	                document.querySelector(".comment_box").innerHTML += html;
-				}
-				reple_add();
-				del_reple()
-				comment_btns()
-				rewirte_event()
-			}
-		})
-	}	
-	function reple_add(){
-		let btns = document.querySelectorAll(".reple_btn")
-//	 	console.log(btns)
-		for(let i = 0 ;i<btns.length ;i++){
-			btns[i].addEventListener("click",function(){
-				let html = ""
-				html += `<textarea class="reple_input_text" type="text" value="댓글을 남겨주세요."maxlength="300"></textarea>`
-				html += `<input class="reple_btn_txt" type="button" value="등록">`
-				let boxs = document.querySelectorAll(".submit_box")
-				for(let j = 0 ;j<boxs.length ;j++)
-					boxs[j].innerHTML = "";
-				boxs[i].innerHTML = html;
-				reple_comments(i);
-			})
-		}
-		
-//	 	reple_add()
+
+		window
+				.addEventListener(
+						"load",
+						function() {
+							xhr.onload = function() {
+								console.log(xhr.responseText);
+								let json = JSON.parse(xhr.responseText)
+
+								for (let i = 0; i < json.length; i++) {
+									let html = "";
+									let margin = json[i].lv * 30;
+									html += `<div class="reple_box" style="margin: 0 \${margin}px">`
+									html += `<div class="uname" style="display: inline-block; width: 60%;">\${json[i].uname}</div>`;
+									html += `<input class='del_btn' type=button value='X' style='font-size: 10px;'>`;
+									html += `<textarea class='reple_text' style="display: inline-block;" disabled>\${json[i].comment_text}</textarea>`
+									html += "<input class='reple_btn' type=button value='ㄴ' style='font-size: 10px;'>"
+									html += `<div class="reple_id" style="display: none">\${json[i].comment_id}</div>`
+									html += "<input class='rewrite_btn' type=button value='수정' style='font-size: 10px;'>"
+									html += `<div class='submit_box'></div>`
+									document.querySelector(".comment_box").innerHTML += html;
+								}
+								reple_add();
+								del_reple()
+								comment_btns()
+								rewirte_event()
+							}
+						})
 	}
-	
+	function reple_add() {
+		let btns = document.querySelectorAll(".reple_btn")
+		//	 	console.log(btns)
+		for (let i = 0; i < btns.length; i++) {
+			btns[i]
+					.addEventListener(
+							"click",
+							function() {
+								let html = ""
+								html += `<textarea class="reple_input_text" type="text" value="댓글을 남겨주세요."maxlength="300"></textarea>`
+								html += `<input class="reple_btn_txt" type="button" value="등록">`
+								let boxs = document
+										.querySelectorAll(".submit_box")
+								for (let j = 0; j < boxs.length; j++)
+									boxs[j].innerHTML = "";
+								boxs[i].innerHTML = html;
+								reple_comments(i);
+							})
+		}
+
+		//	 	reple_add()
+	}
+
 	function del_reple() {
-	    let reple = document.querySelectorAll(".del_btn");
-	    let submitbox = document.querySelectorAll(".submit_box")
-	    console.log(reple)
-	    for (let i = 0; i < reple.length; i++) {
-	        reple[i].addEventListener("click", function () {
-	            reple[i].parentNode.remove();
-	            let review_id = new URLSearchParams(window.location.search).get("review_id");
-	            console.log(submitbox[i].parentNode)
-	            let cid = submitbox[i].parentNode.querySelector(".reple_id").innerText
-	            console.log(cid)
-	            window.location.href = "del_comment_review?review_id="+review_id+"&cid="+cid
-	        });
-	    }
-	}	
-	
-	function rewirte_event(){
+		let reple = document.querySelectorAll(".del_btn");
+		let submitbox = document.querySelectorAll(".submit_box")
+		console.log(reple)
+		for (let i = 0; i < reple.length; i++) {
+			reple[i].addEventListener("click",
+					function() {
+						reple[i].parentNode.remove();
+						let review_id = new URLSearchParams(
+								window.location.search).get("review_id");
+						console.log(submitbox[i].parentNode)
+						let cid = submitbox[i].parentNode
+								.querySelector(".reple_id").innerText
+						console.log(cid)
+						window.location.href = "del_comment_review?review_id="
+								+ review_id + "&cid=" + cid
+					});
+		}
+	}
+
+	function rewirte_event() {
 		let rewrite_btns = document.querySelectorAll(".rewrite_btn")
 		let reples = document.querySelectorAll(".reple_text")
 		console.log(rewrite_btns)
-		for(let i = 0 ; i<rewrite_btns.length ;i++){
-			rewrite_btns[i].addEventListener("click", function(){
-			     if (reples[i].disabled) {
-			    	 reples[i].disabled = false;
-// 			    	 console.log("gggg")
+		for (let i = 0; i < rewrite_btns.length; i++) {
+			rewrite_btns[i]
+					.addEventListener(
+							"click",
+							function() {
+								if (reples[i].disabled) {
+									reples[i].disabled = false;
+									// 			    	 console.log("gggg")
 
-			     } else{
-			    	 reples[i].disabled = true;
-			    	 let review_id = new URLSearchParams(window.location.search).get("review_id");
-			    	 let cid = reples[i].parentNode.querySelector(".reple_id").innerText
-			    	 let ctext = reples[i].value
-			    	 console.log(ctext)
-			    	 window.location.href = "update_comment_review?review_id="+review_id+"&cid="+cid+"&ctext="+ctext
-			     }			
-			})	
+								} else {
+									reples[i].disabled = true;
+									let review_id = new URLSearchParams(
+											window.location.search)
+											.get("review_id");
+									let cid = reples[i].parentNode
+											.querySelector(".reple_id").innerText
+									let ctext = reples[i].value
+									console.log(ctext)
+									window.location.href = "update_comment_review?review_id="
+											+ review_id
+											+ "&cid="
+											+ cid
+											+ "&ctext=" + ctext
+								}
+							})
 		}
 	}
-	
 </script>
 <script type="text/javascript" src="resources/assets/js/search_event.js"></script>
 <c:if test="${memberdto == null}">
 	<script>
 		console.log("ggggg")
-		function comment_btns(){
+		function comment_btns() {
 			let del_btn = document.querySelectorAll(".del_btn")
-			for(let i = 0 ;i<del_btn.length ;i++)
-				del_btn[i].style.display="none";
+			for (let i = 0; i < del_btn.length; i++)
+				del_btn[i].style.display = "none";
 			console.log(del_btn)
 			let reple_btn = document.querySelectorAll(".reple_btn")
-			for(let i = 0 ;i<reple_btn.length ;i++)
-				reple_btn[i].style.display="none";
+			for (let i = 0; i < reple_btn.length; i++)
+				reple_btn[i].style.display = "none";
 			let rewrite_btn = document.querySelectorAll(".rewrite_btn")
-			for(let i = 0 ;i<rewrite_btn.length ;i++)
-				rewrite_btn[i].style.display="none";
+			for (let i = 0; i < rewrite_btn.length; i++)
+				rewrite_btn[i].style.display = "none";
 			console.log(reple_btn)
 		}
 	</script>
@@ -560,27 +597,27 @@ article>div>img {
 <c:if test="${memberdto != null}">
 	<script>
 		console.log("aaaaa")
-		function comment_btns(){
-// 			console.log(document.querySelector(".uname").innerText)
+		function comment_btns() {
+			// 			console.log(document.querySelector(".uname").innerText)
 			let uname = document.querySelectorAll(".uname")
-// 			console.log(uname)
-			for(let i = 0 ; i<uname.length;i++){
-				if(uname[i].innerText != "${memberdto.uname}"){
-					btns_off(i)	
+			// 			console.log(uname)
+			for (let i = 0; i < uname.length; i++) {
+				if (uname[i].innerText != "${memberdto.uname}") {
+					btns_off(i)
 				}
 			}
-			if(document.querySelector(".uname").innerText == "${memberdto.uname}"){
-				console.log("f")	
+			if (document.querySelector(".uname").innerText == "${memberdto.uname}") {
+				console.log("f")
 			}
 		}
-		
-		function btns_off(z){
+
+		function btns_off(z) {
 			let del_btn = document.querySelectorAll(".del_btn")
-				del_btn[z].style.display="none";
+			del_btn[z].style.display = "none";
 			let reple_btn = document.querySelectorAll(".reple_btn")
-				reple_btn[z].style.display="none";
+			reple_btn[z].style.display = "none";
 			let rewrite_btn = document.querySelectorAll(".rewrite_btn")
-				rewrite_btn[z].style.display="none";
+			rewrite_btn[z].style.display = "none";
 		}
 	</script>
-</c:if>	
+</c:if>

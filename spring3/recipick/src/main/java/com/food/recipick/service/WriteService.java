@@ -12,5 +12,5 @@ public interface WriteService {
 	List selectdata_all(WriteDTO dto);
 	List selectData_review(WriteDTO dto);
 	int update_review(WriteDTO dto);
-	int delete_review(WriteDTO dto);
+	void delete_review(WriteDTO dto);
 }

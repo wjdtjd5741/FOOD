@@ -46,7 +46,7 @@ public class MemberController {
     		session.setAttribute("memberdto", loginList);
 //    		String str = (String)session.getAttribute("memberdto");
     		
-        	return "main"; // 메인 페이지로 리다이렉트
+        	return "redirect:/main"; // 메인 페이지로 리다이렉트
         	
         } else {
             // 로그인이 실패한 경우

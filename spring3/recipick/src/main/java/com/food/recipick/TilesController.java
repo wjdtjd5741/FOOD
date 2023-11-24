@@ -64,6 +64,14 @@ public class TilesController {
 			List li = searchService.season_img();
 			m.addAttribute("top_img", li);
 			System.err.println("fsdf:"+li);
+			List recom = searchService.recom_count_img();
+			m.addAttribute("recom_count", recom);
+			
+			List recom_hash0 = searchService.recom_hash(((RecipeDTO)recom.get(0)).getRecipe_id());
+			m.addAttribute("recom_hash0", recom_hash0);
+			List recom_hash5 = searchService.recom_hash(((RecipeDTO)recom.get(5)).getRecipe_id());
+			m.addAttribute("recom_hash5", recom_hash5);
+			
 		}
 		return "main";
 	}
@@ -96,7 +104,7 @@ public class TilesController {
 		List write_all = writeService.selectdata_all(wdto);
 		
 		s.setAttribute("review_bul_sel",write_all);
-
+		System.out.println("${review_bul_sel}:" + write_all);
 		return "bulletin";
 	}
 	

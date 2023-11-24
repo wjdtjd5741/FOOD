@@ -22,12 +22,31 @@ public class SearchService {
 	public List goRecipe(String data) {
 		return searchDAO.goRecipe(data);
 	}
+	public List ggim_ck(String data) {
+		return searchDAO.ggim_ck(data);
+	}
+	public List recom_ck(String data) {
+		return searchDAO.recom_ck(data);
+	}
 	
 	public List comment_load(String data) {
 		return searchDAO.comment_load(data);
 	}
 	public List comment_load_review(String data) {
 		return searchDAO.comment_load_review(data);
+	}
+	
+	public void insert_heart(Map map) {
+		searchDAO.insert_heart(map);
+	}
+	public void insert_recom(Map map) {
+		searchDAO.insert_recom(map);
+	}
+	public void delete_heart(Map map) {
+		searchDAO.delete_heart(map);
+	}
+	public void delete_recom(Map map) {
+		searchDAO.delete_recom(map);
 	}
 	
 	public void insert_comment(Map map) {
@@ -60,6 +79,12 @@ public class SearchService {
 	
 	public List recom_main_img() {
 		return searchDAO.recom_main_img();
+	}
+	public List recom_count_img() {
+		return searchDAO.recom_count_img();
+	}
+	public List recom_hash(int recipe_id) {
+		return searchDAO.recom_hash(recipe_id);
 	}
 	public List season_img() {
 		return searchDAO.season_img();

@@ -48,8 +48,10 @@ public class WriteServiceImpl implements WriteService {
 	}
 
 	@Override
-	public int delete_review(WriteDTO dto) {
-		return rDAO.delete_review(dto);
+	public void delete_review(WriteDTO dto) {		
+		 rDAO.delete_review(dto);
 	}
+
+
 
 }

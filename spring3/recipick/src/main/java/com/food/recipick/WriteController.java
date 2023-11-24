@@ -32,13 +32,13 @@ public class WriteController {
 	public String writepage(Model model,
 			@ModelAttribute WriteDTO dto,
 			HttpServletRequest request,
-			@RequestParam("hash_name")List<String> hash_name
+			@RequestParam("hash_name2")List<String> hash_name
 			) {
 		System.out.println("hash_name:"+hash_name);
 		HttpSession session = request.getSession();
-	
+		dto.setHash_name(hash_name);
 		System.out.println("review_title:"+dto.getReview_title());
-		System.out.println("review_text:"+dto.getReview_text());
+		System.out.println("review_text:"+dto.getHash_name().get(0));
 		System.out.println("dto:"+dto);
 
 		rService.insertReview(dto);
@@ -65,6 +65,7 @@ public class WriteController {
 		session.setAttribute("selectData_review", selectData_review);	
 		session.setAttribute("select_hash", select_hash);
 		session.setAttribute("review_id", review_id);
+		
 		return "writer";
 		
 	}
@@ -73,30 +74,22 @@ public class WriteController {
 	public String modify_review(@RequestParam("review_id")String review_id,
 			@ModelAttribute WriteDTO dto,
 			HttpServletRequest request) {
-		System.out.println("update확인:");
+		System.out.println("update확인:"+ review_id);
 		HttpSession session=request.getSession();
 		int update=	rService.update_review(dto);
 		session.setAttribute("update_review",update); 
 		System.out.println("update:"+update);
-		return "redirect:/writer_view";
-		
-		
+		return "redirect:/writer_view?review_id="+review_id;
 	}
 	//삭제
 	@RequestMapping("/delete_review")
-	public String delete_review(Model model,
-			@ModelAttribute WriteDTO dto,
-			HttpServletRequest request) {
-		HttpSession session=request.getSession();
-		WriteDTO writeDTO=(WriteDTO) session.getAttribute("writeDTO");
-		dto.setReview_id(writeDTO.getReview_id());
+	public String delete_review(@ModelAttribute WriteDTO dto,
+			@RequestParam("review_id")int review_id) {
+		System.out.println("ㅈㅁ더ㅏㅣㄹㅈㅁ더ㅏㅣ럼ㅈㄹ다ㅣ");
+		System.out.println("review_id:"+review_id);
+		rService.delete_review(dto);
 		
-		int delete_rev=rService.delete_review(dto);
-		
-		model.addAttribute("delete_rev",delete_rev);
-		session.invalidate();
-		
-		return "bulletin";
+		return "redirect:/bulletin";
 	}
 	
 	

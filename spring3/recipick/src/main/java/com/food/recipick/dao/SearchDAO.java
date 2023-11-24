@@ -23,12 +23,31 @@ public class SearchDAO {
 	public List goRecipe(String data) {
 		return sqlSession.selectList("searchs.searchRecipe",data);
 	}
+	public List ggim_ck(String data) {
+		return sqlSession.selectList("searchs.ggim_ck",data);
+	}
+	public List recom_ck(String data) {
+		return sqlSession.selectList("searchs.recom_ck",data);
+	}
 	
 	public List comment_load(String data) {
 		return sqlSession.selectList("searchs.comment_load", data);
 	}
 	public List comment_load_review(String data) {
 		return sqlSession.selectList("searchs.comment_load_review", data);
+	}
+	
+	public void insert_heart(Map map) {
+		sqlSession.insert("searchs.insert_heart", map);
+	}
+	public void insert_recom(Map map) {
+		sqlSession.insert("searchs.insert_recom", map);
+	}
+	public void delete_heart(Map map) {
+		sqlSession.delete("searchs.delete_heart", map);
+	}
+	public void delete_recom(Map map) {
+		sqlSession.delete("searchs.delete_recom", map);
 	}
 	
 	public void insert_comment(Map map) {
@@ -67,6 +86,12 @@ public class SearchDAO {
 	}
 	public List recom_main_img() {
 		return sqlSession.selectList("searchs.recom_main_img");
+	}
+	public List recom_count_img() {
+		return sqlSession.selectList("searchs.recom_count_img");
+	}
+	public List recom_hash(int recipe_id) {
+		return sqlSession.selectList("searchs.recom_hash", recipe_id);
 	}
 	public List season_img() {
 		return sqlSession.selectList("searchs.season_img");

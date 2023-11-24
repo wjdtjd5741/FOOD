@@ -408,15 +408,20 @@ body{
 					<div></div>
 					<div class="text_line">
 						<div>추천수 :</div>
-						<div class="like_count"><%-- ${nrp.recomCount} --%></div>
+						<div class="like_count">${recom_count}</div>
 						<div>찜횟수 :</div>
 						<div class="pick_count">
-							<%-- ${nrp.ggimCount } --%> <input type="hidden" name="pick_count"
+							${ggim_count} <input type="hidden" name="pick_count"
 								value="0">
 						</div>
 						<div class="empty_space"></div>
 						<div>찜하기</div>
-						<div class="heart_text">♡</div>
+						<c:if test="${ggim_ck == true}">
+							<div class="heart_text">♥</div>
+						</c:if>
+						<c:if test="${ggim_ck == false}">
+							<div class="heart_text">♡</div>
+						</c:if>
 					</div>
 				</div>
 				
@@ -467,7 +472,7 @@ body{
 					<!-- 추천 기능만듬 -->
 					<div class="commend">
 						<div class="up">
-							<div class="up_count"><%-- ${nrp.recomCount } --%></div>
+							<div class="up_count">${recom_count}</div>
 
 							<img
 								src="https://cdn.discordapp.com/attachments/1148541415828246548/1148541802450800650/recommend.jpg">
@@ -507,7 +512,81 @@ body{
 		</div>
 	</article>
 </main>
+
+
+<c:if test="${recom_ck == true}">
+	<script>
+	console.log("recom_ck_true")
+		document.querySelector(".up_count").style.color = "orange";
+	</script>
+</c:if>
+<c:if test="${recom_ck == false}">
+	<script>
+		console.log("recom_ck_false")
+		document.querySelector(".up_count").style.color = "black";
+	</script>
+</c:if>
+
 <script>
+likeNdislike();
+
+function likeNdislike() {
+    let downU = document.querySelector(".up_count");
+    let downC = document.querySelector(".down_count");
+    let reciid = new URLSearchParams(window.location.search).get("reciid");
+    document.querySelector(".up > img").addEventListener("click", function () {
+        if (downU.style.color != "orange" && downC.style.color != "gray") {
+//             document.querySelector(".up_count").innerText = parseInt(document.querySelector(".up_count").innerText) + 1;
+//             document.querySelector(".like_count").innerText = document.querySelector(".up_count").innerText;
+            document.querySelector(".up_count").style.color = "orange";
+            window.location.href = "insert_recom?reciid="+reciid
+            alert("추천되었습니다.");
+            
+        } else if (downU.style.color == "orange") {
+//             document.querySelector(".up_count").innerText = parseInt(document.querySelector(".up_count").innerText) - 1;
+//             document.querySelector(".up_count").innerText = document.querySelector(".up_count").innerText;
+            document.querySelector(".up_count").style.color = "black";
+            window.location.href = "delete_recom?reciid="+reciid
+        } else if (downC.style.color == "gray") {
+            alert("추천할 수 없습니다.");
+        }
+    });
+    document.querySelector(".down > img").addEventListener("click", function () {
+        if (downU.style.color != "orange" && downC.style.color != "gray") {
+            document.querySelector(".down_count").innerText = parseInt(document.querySelector(".down_count").innerText) + 1;
+            document.querySelector(".down_count").style.color = "gray";
+            alert("비추천되었습니다.")
+        } else if (downC.style.color == "gray") {
+            document.querySelector(".down_count").innerText = parseInt(document.querySelector(".down_count").innerText) - 1;
+            document.querySelector(".down_count").style.color = "black";
+        } else if (downU.style.color == "orange") {
+            alert("비추천할 수 없습니다.");
+        }
+    });
+}
+
+heart_counter();
+
+function heart_counter() {
+    document.querySelector(".heart_text").addEventListener("click", function () {
+        let reciid = new URLSearchParams(window.location.search).get("reciid");
+        
+        if (document.querySelector(".heart_text").innerText == "♥") {
+            document.querySelector(".heart_text").innerText = "♡";
+//             document.querySelector(".pick_count").innerText = parseInt(document.querySelector(".pick_count").innerText) -1
+        	
+            window.location.href = "delete_heart?reciid="+reciid
+        } else{
+            document.querySelector(".heart_text").innerText = "♥";
+            
+            
+            window.location.href = "insert_heart?reciid="+reciid
+//             document.querySelector(".pick_count").innerText = parseInt(document.querySelector(".pick_count").innerText) +1
+        }
+            
+    });
+}
+
 comment();
 text_focus();
 
@@ -517,7 +596,6 @@ function comment() {
         let text = document.querySelector(".input_text").value;
         let reciid = new URLSearchParams(window.location.search).get("reciid");
         //window.location.href = ""
-        
         
         if (text != "") {
             let html = "";

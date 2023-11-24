@@ -52,7 +52,7 @@ public class SearchController {
 	@RequestMapping("/gorecipe")
 	public String gorecipe(HttpServletRequest request, HttpServletResponse response,
 			@RequestParam("reciid") String data, Model m) {
-		
+		HttpSession session = request.getSession();
 		String value = "";
 		Cookie[] cs = request.getCookies();
 		
@@ -71,18 +71,45 @@ public class SearchController {
 			
 		// data(recipe_id)를 db로 보낸후 where recipe_id = #{_parameter}
 		// 가져온것을 m에 담아서 jsp에서 처리
-
+		String uname = "admin";
+		if(session.getAttribute("memberdto") != null) 
+			uname = ((MemberDTO)session.getAttribute("memberdto")).getUname();
 		
 		RecipeDTO dto = new RecipeDTO();
 		
-		System.out.println("in0 : "+ data);
+		List recom_list = searchService.recom_ck(data);
+		for(int i = 0 ;i<recom_list.size() ;i++)
+			System.out.println("gsdgds"+recom_list.get(i));
+		boolean bb = false;
+		for(int i = 0 ;i<recom_list.size(); i++) {
+			if(recom_list.get(i).equals(uname)) {
+				bb = true;
+				System.out.println("gsdg"+recom_list.get(i));
+			}
+		}		
+		m.addAttribute("recom_ck", bb);
 		
+		m.addAttribute("recom_count", recom_list.size());
+//		System.out.println("in0 : "+ data);
+		List ggim_uname = searchService.ggim_ck(data);
+		m.addAttribute("ggim_count", ggim_uname.size());
+
 		List l = searchService.goRecipe(data);
-		System.out.println(l);
+//		System.out.println(l);
 		RecipeDTO goRecipe_value = searchService.goRecipe_value(data, dto);
-		System.out.println("asdf : " + goRecipe_value);
+
+		
+		boolean b = false;
+		for(int i = 0 ;i<ggim_uname.size(); i++)
+			if(ggim_uname.get(i).equals(uname))
+				b = true;
+		m.addAttribute("ggim_ck", b);
+		
+
+		
+//		System.out.println("asdf : " + goRecipe_value);
 		m.addAttribute("goRecipe_value", goRecipe_value);
-		System.out.println("gorecipe  : " + goRecipe_value);
+//		System.out.println("gorecipe  : " + goRecipe_value);
 		comment_load(data);
 		return "recipe";
 	}
@@ -104,6 +131,77 @@ public class SearchController {
 	public List comment_load_review(@RequestParam("review_id") String data) { //
 //		String data = "10001";
 		return searchService.comment_load_review(data);
+	}
+	
+	@RequestMapping("/insert_recom")
+	public String insert_recom(HttpServletRequest request,
+			@RequestParam("reciid") String reciid
+			) {
+		HttpSession session = request.getSession();
+		Map map = new HashMap();
+		
+		map.put("recipe_id", reciid);
+		if(session.getAttribute("memberdto") != null) {
+			map.put("uname", ((MemberDTO)session.getAttribute("memberdto")).getUname());
+		} else
+			map.put("uname", "admin");
+		
+		searchService.insert_recom(map);
+		
+		return "redirect:/gorecipe?reciid="+reciid;
+	}
+	
+	@RequestMapping("/insert_heart")
+	public String insert_heart(HttpServletRequest request,
+			@RequestParam("reciid") String reciid
+			) {
+		HttpSession session = request.getSession();
+		Map map = new HashMap();
+		
+		map.put("recipe_id", reciid);
+		if(session.getAttribute("memberdto") != null) {
+			map.put("uname", ((MemberDTO)session.getAttribute("memberdto")).getUname());
+		} else
+			map.put("uname", "admin");
+		
+		searchService.insert_heart(map);
+		
+		return "redirect:/gorecipe?reciid="+reciid;
+	}
+	
+	@RequestMapping("/delete_recom")
+	public String delete_recom(HttpServletRequest request,
+			@RequestParam("reciid") String reciid
+			) {
+		HttpSession session = request.getSession();
+		Map map = new HashMap();
+		
+		map.put("recipe_id", reciid);
+		if(session.getAttribute("memberdto") != null) {
+			map.put("uname", ((MemberDTO)session.getAttribute("memberdto")).getUname());
+		} else
+			map.put("uname", "admin");
+		
+		searchService.delete_recom(map);
+		
+		return "redirect:/gorecipe?reciid="+reciid;
+	}
+	@RequestMapping("/delete_heart")
+	public String delete_heart(HttpServletRequest request,
+			@RequestParam("reciid") String reciid
+			) {
+		HttpSession session = request.getSession();
+		Map map = new HashMap();
+		
+		map.put("recipe_id", reciid);
+		if(session.getAttribute("memberdto") != null) {
+			map.put("uname", ((MemberDTO)session.getAttribute("memberdto")).getUname());
+		} else
+			map.put("uname", "admin");
+		
+		searchService.delete_heart(map);
+		
+		return "redirect:/gorecipe?reciid="+reciid;
 	}
 	
 	@RequestMapping("/insert_comment")

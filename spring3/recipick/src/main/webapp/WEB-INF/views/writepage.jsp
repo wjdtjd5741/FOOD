@@ -428,7 +428,7 @@ option {
 				<div class="hashNotice">해쉬태그를 입력해 주세요!(최대 5개)</div>
 				<div class="hashtag_box">
 					<div>
-						<input type="text"  name="hash_name" class="recipick_hashtag"
+						<input type="text" class="recipick_hashtag"
 							value="#해시태그" maxlength="7">
 					</div>
 					<div id="hash_submit" class="btns_hover">등록</div>
@@ -471,7 +471,7 @@ option {
 									html = "";
 									html += `<div class="hashtags">`
 									html += `#` + hashtag //.substring(1)
-									html += `<input class="submit" type="hidden" name="viewhash" value="\${hashtag}">`
+									html += `<input class="submit" type="hidden" name="hash_name2" value="\${hashtag}">`
 									html += `<div class="hashtag_minus">-</div>`
 									html += `</div>`
 									document.querySelector(".hashtag_all").innerHTML += html;

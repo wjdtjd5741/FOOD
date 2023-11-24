@@ -402,7 +402,9 @@ h2 {
     margin-top: 30px;
     text-align: center;
 }
-
+.clicks, .clicks_name{
+	cursor: pointer;
+}
 </style>
 <body>
 <%
@@ -459,18 +461,6 @@ h2 {
 						src="resources/assets/imgs/${top}.jpg">
 				</div>
 			</c:forEach>
-			<!-- Recipick 서블릿에서 받아온 객체의 값을 출력 -->
-<%-- 				<% 
-					for(int i = 0 ;i<mpDTO.getTopImg().size() ;i++){
-				%>	
-					<div class="main_top_img">
-					<img
-						src="<%= mpDTO.getTopImg().get(i) %>">
-					</div>
-				<%
-					}
-				%>
---%>				
 			</div>
 			<div class="main">
 				<div class="main2">
@@ -493,17 +483,6 @@ h2 {
 							</div>
 							<div class="main_reciid" style="display: none">${img.recipe_id}</div>
 						</c:forEach>
-<%-- 						<% 
-							for(int i = 0 ; i<mpDTO.getFavor().size() ;i++){
-						%>
-							<div class="img_div">
-								<img class="favorite" src="<%= mpDTO.getFavor().get(i).get(0)%>" >
-							<div class="foodName"><%= mpDTO.getFavor().get(i).get(1) %></div>
-							</div>
-						<%		
-							}
-						%>
---%>						
 						</div>
 					</div>
 				</div>
@@ -516,58 +495,51 @@ h2 {
 					<h2>추천 레시피</h2>
 					<div class="recipick">
 						<div class="big_img1">
-						
-							<img src="<%-- <%= mpDTO.getRecom().get(0).get(0) %> --%>">
- 							<% 
-// 							String str = ""+mpDTO.getRecom().get(0).get(2);
-// 							String[] hashs = str.split(",");
-// 							for(int i = 0 ; i<hashs.length ;i++){
-							%>
-							<div class="hashtags">#A<%-- <%= hashs[i] %> --%></div>
-							<% 	
-// 							}
-							%>
-							<div class="recommend_name">aaa<%-- <%= mpDTO.getRecom().get(0).get(1) %> --%></div>
-
+							<img class="clicks" src="resources/assets/imgs/${recom_count[0].mainpic}.jpg">
+							<c:forEach var="tag" items="${recom_hash0}">
+								<div class="hashtags">#${tag.hash_name }</div>
+							</c:forEach>
+							<div class="recommend_name clicks_name">${recom_count[0].recipe_title }</div>
+							<div class="goreci_id" style="display: none">${recom_count[0].recipe_id}</div>
 						</div>
+						
 						<div class="small_img1">
-<%--						
-							<img
-								src="<%= mpDTO.getRecom().get(1).get(0) %>">
-							<div class="small_name1"><%= mpDTO.getRecom().get(1).get(1) %></div>
+							<img class="clicks"
+								src="resources/assets/imgs/${recom_count[1].mainpic}.jpg">
+							<div class="small_name1 clicks_name">${recom_count[1].recipe_title }</div>
+							<div class="goreci_id" style="display: none">${recom_count[1].recipe_id}</div>
 						</div>
+						
 						<div class="small_img1_1">
-							<img
-								src="<%= mpDTO.getRecom().get(2).get(0) %>">
-							<div class="small_name1"><%= mpDTO.getRecom().get(2).get(1) %></div>
+							<img class="clicks"
+								src="resources/assets/imgs/${recom_count[2].mainpic}.jpg">
+							<div class="small_name1 clicks_name">${recom_count[2].recipe_title }</div>
+							<div class="goreci_id" style="display: none">${recom_count[2].recipe_id}</div>
 						</div>
-						<div class="small_img2">
-							<img
-								src="<%= mpDTO.getRecom().get(3).get(0) %>">
-							<div class="small_name1"><%= mpDTO.getRecom().get(3).get(1) %></div>
-						</div>
-						<div class="small_img2">
 						
-							<img
-								src="<%= mpDTO.getRecom().get(4).get(0) %>">
-							<div class="small_name1"><%= mpDTO.getRecom().get(4).get(1) %></div>
-						
+						<div class="small_img2">
+							<img class="clicks"
+								src="resources/assets/imgs/${recom_count[3].mainpic}.jpg">
+							<div class="small_name1 clicks_name">${recom_count[3].recipe_title }</div>
+							<div class="goreci_id" style="display: none">${recom_count[3].recipe_id}</div>
 						</div>
+						
+						<div class="small_img2">
+							<img class="clicks"
+								src="resources/assets/imgs/${recom_count[4].mainpic}.jpg">
+							<div class="small_name1 clicks_name">${recom_count[4].recipe_title }</div>
+							<div class="goreci_id" style="display: none">${recom_count[4].recipe_id}</div>
+						</div>
+						
 						<div class="big_img2">
-						
-							<img src="<%= mpDTO.getRecom().get(5).get(0) %>">
-							<%
-							String strA = ""+mpDTO.getRecom().get(5).get(2);
-							String[] hashsA = strA.split(",");
-							for(int i = 0 ; i<hashsA.length ;i++){
-							%>
-							<div class="hashtags">#<%= hashsA[i] %></div>
-							<% 	
-							}
-							%>
-							<div class="recommend_name"><%= mpDTO.getRecom().get(5).get(1) %></div>
---%>						 
+							<img class="clicks" src="resources/assets/imgs/${recom_count[5].mainpic}.jpg">
+							<c:forEach var="tag" items="${recom_hash5}">
+								<div class="hashtags">#${tag.hash_name }</div>
+							</c:forEach>
+							<div class="recommend_name clicks_name">${recom_count[5].recipe_title }</div>
+							<div class="goreci_id" style="display: none">${recom_count[5].recipe_id}</div>
 						</div>
+						
 					</div>
 				</div>
 				<div class="bot_img">
@@ -580,6 +552,20 @@ h2 {
 		</section>
 	</main>
 	<script>
+	go_recomrecipe();
+	function go_recomrecipe(){
+		let reciids = document.querySelectorAll(".goreci_id")
+		let clicks = document.querySelectorAll(".clicks")
+		let clicks_names = document.querySelectorAll(".clicks_name")
+		for(let i = 0 ; i<reciids.length ;i++){
+			clicks[i].addEventListener("click", function(){
+				window.location.href = "gorecipe?reciid="+reciids[i].innerText;
+			})
+			clicks_names[i].addEventListener("click", function(){
+				window.location.href = "gorecipe?reciid="+reciids[i].innerText;
+			})
+		}
+	}
 	// 1. window
 	// 2. div display
 	go_recipepage();

@@ -1,6 +1,8 @@
 package com.food.recipick.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +22,18 @@ public class WriteDAOImpl implements WriteDAO {
 	@Override
 	public int insertReview(WriteDTO dto) {
 		int insert_write=sqlSession.insert("id_recipick.insertWrite",dto);
-		sqlSession.insert("id_recipick.insertHash",dto);
+		
+		List hashnames = dto.getHash_name();
+		for(int i = 0; i<dto.getHash_name().size(); i++) {
+			System.out.println(hashnames.get(i));
+			Map map = new HashMap();
+			
+			map.put("hash_name", hashnames.get(i));
+			map.put("review_id", dto.getReview_id());
+			sqlSession.insert("id_recipick.insertHash", map); // hashtag 테이블 
+		}
+		
+	
 		//select 랑 insert따로 분리하기
 		
 		return insert_write;
@@ -56,11 +69,11 @@ public class WriteDAOImpl implements WriteDAO {
 	}
 
 	@Override
-	public int delete_review(WriteDTO dto) {
+	public void delete_review(WriteDTO dto) {
 		
-		int delete_review=sqlSession.delete("id_recipicl.delete_review",dto);
 		
-		return delete_review;
+		
+		sqlSession.delete("id_recipick.delete_review",dto);
 				
 		
 	}
