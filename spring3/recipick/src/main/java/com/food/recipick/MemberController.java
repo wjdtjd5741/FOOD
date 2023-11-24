@@ -114,7 +114,7 @@ public class MemberController {
 	        
 	        session.invalidate(); // 저장된 session 제거
 	        
-			return "main";
+			return "redirect:/main";
 	}
 	    // 수정
 	    @RequestMapping(value="/mypagesubmit", method=RequestMethod.POST)
@@ -160,7 +160,7 @@ public class MemberController {
 	        
 	        session.invalidate(); // 세션 무효화
 
-	        return "main"; // 회원탈퇴 후 메인 페이지로 이동
+	        return "redirect:/main"; // 회원탈퇴 후 메인 페이지로 이동
 	    }
 	    
 	
