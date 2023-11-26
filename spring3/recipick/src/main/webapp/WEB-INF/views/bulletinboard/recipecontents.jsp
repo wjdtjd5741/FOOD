@@ -18,6 +18,7 @@
 // 	String imageURL = "/img_download?fileName=" + fileName;
 %>
 
+
 <body>
 	<div class="table_all">
 		<table>
@@ -35,7 +36,7 @@
 				<c:forEach var="reci_bul" items="${bul_rec}">
 					<tr class="lines">
 					<fmt:formatDate value="${reci_bul.recipe_date}" pattern="yyyy-MM-dd" var="formattedDate" />
-						<td class="tb_num_color">1</td>
+						<td class="tb_num_color">${reci_bul.recipe_id}</td>
 						<td><img src="resources/assets/imgs/${reci_bul.mainpic }.jpg" alt="Image"></td>
 						<td>${reci_bul.recipe_title }</td>
 						<td>${formattedDate}</td>

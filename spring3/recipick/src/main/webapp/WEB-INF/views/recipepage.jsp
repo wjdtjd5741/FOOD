@@ -752,9 +752,9 @@ function reple_count(){
 			for(let i = 0 ;i<del_btn.length ;i++)
 				del_btn[i].style.display="none";
 			console.log(del_btn)
-			let reple_btn = document.querySelectorAll(".reple_btn")
-			for(let i = 0 ;i<reple_btn.length ;i++)
-				reple_btn[i].style.display="none";
+// 			let reple_btn = document.querySelectorAll(".reple_btn")
+// 			for(let i = 0 ;i<reple_btn.length ;i++)
+// 				reple_btn[i].style.display="none";
 			let rewrite_btn = document.querySelectorAll(".rewrite_btn")
 			for(let i = 0 ;i<rewrite_btn.length ;i++)
 				rewrite_btn[i].style.display="none";
@@ -783,8 +783,8 @@ function reple_count(){
 		function btns_off(z){
 			let del_btn = document.querySelectorAll(".del_btn")
 				del_btn[z].style.display="none";
-			let reple_btn = document.querySelectorAll(".reple_btn")
-				reple_btn[z].style.display="none";
+// 			let reple_btn = document.querySelectorAll(".reple_btn")
+// 				reple_btn[z].style.display="none";
 			let rewrite_btn = document.querySelectorAll(".rewrite_btn")
 				rewrite_btn[z].style.display="none";
 		}
