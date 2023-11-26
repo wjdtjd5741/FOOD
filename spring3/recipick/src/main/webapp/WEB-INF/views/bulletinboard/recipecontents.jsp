@@ -17,16 +17,7 @@
 // 	String fileName = ((RecipeDTO)list.get(3)).getMainpic(); // 여기에 실제 파일명을 삽입해야 합니다.
 // 	String imageURL = "/img_download?fileName=" + fileName;
 %>
-<style>
-	.tb_num_color{ 
-		display: inline-block; 
-		text-decoration: none; 
-		color:#e79311; 
-		cursor: pointer; 
-		font-size: 20px;
-		width: 6%; 
-		}
-</style>
+
 
 <body>
 	<div class="table_all">
