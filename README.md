@@ -1,5 +1,5 @@
 <br>
-# 레시Pick!
+<h1>레시Pick!</h1> 
 
 ### ・ 프로젝트 개요
 Java와 Spring 프레임워크, Oracle DB를 활용한 레시피 작성/등록 웹 서버 개발<br>
