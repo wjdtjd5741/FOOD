@@ -42,8 +42,14 @@ Java ORM 기술(JPA) 도입, (네이버, 카카오 등..)API으로 로그인 / �
 ・ IDE & Collaboration : VSCode, Eclipse, SQL Developer, Git, Notion<br>
 <br>
 <br>
-### ・ 핵심기능
+### ・ 스토리보드
+<details>
+<summary>접기/펼치기</summary> 
+  접은 내용(ex 소스 코드)
 ![image](https://user-images.githubusercontent.com/88137420/175780484-3e48f13b-eec9-4865-8f49-4ff7e6b155f5.png)
+</details>
+
+
 <br>
 <br>
 ### ・ WBS
