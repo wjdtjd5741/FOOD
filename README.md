@@ -76,16 +76,20 @@ Java ORM 기술(JPA) 도입, (네이버, 카카오 등..)API으로 로그인 / �
 <br>
 <br>
 ### ・ 일정
+<br>
 <img src="https://github.com/wjdtjd5741/FOOD/assets/111046436/c0948674-3068-4f2d-90b1-bb371a2629cf"><br>
 <br>
 ### ・ ERD
+<br>
 <img src="https://github.com/wjdtjd5741/FOOD/assets/111046436/e5e6f08d-c66b-461a-bddb-edab7d689820"><br>
 <br>
 ### ・ FlowChart
+<br>
 <img src="https://github.com/wjdtjd5741/FOOD/assets/111046436/1faf2634-322b-49b4-aac1-2bbf92b2ba64"><br>
 <br>
 <br>
 ### ・ 후기
+<br>
 이기영 :
 <br>
 <br>
