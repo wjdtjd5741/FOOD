@@ -42,7 +42,7 @@ Java ORM 기술(JPA) 도입, (네이버, 카카오 등..)API으로 로그인 / �
 ・ IDE & Collaboration : VSCode, Eclipse, SQL Developer, Git, Notion<br>
 <br>
 <br>
-### ・ 스토리보드
+<h3>・ 스토리보드 </h3>
 <details>
 <summary>접기/펼치기</summary>
 <h4>・ 로그인 / 회원가입 페이지 </h4><br>
