@@ -73,23 +73,17 @@ Java ORM 기술(JPA) 도입, (네이버, 카카오 등..)API으로 로그인 / �
 <img width="300px" height="500px" src="https://github.com/wjdtjd5741/FOOD/assets/111046436/1ff45e36-aeaa-4526-b4ba-e28e215b6359"><br>
 </details>
 
-
 <br>
 <br>
 ### ・ 일정
-![image](https://user-images.githubusercontent.com/88137420/175780403-9e9c8024-1c49-4867-a57f-c730fd222ccf.png)
-<br>
-<br>
-### ・ IA
-![image](https://user-images.githubusercontent.com/88137420/175779853-12469885-c342-4fff-991c-19991814c165.png)
-<br>
-<br>
-### ・ 유저 플로우
-![image](https://user-images.githubusercontent.com/88137420/175780638-8b48173f-d848-41f1-b2b3-5520f1b38926.png)
-<br>
+
+<img src="https://github.com/wjdtjd5741/FOOD/assets/111046436/c0948674-3068-4f2d-90b1-bb371a2629cf"><br>
 <br>
 ### ・ ERD
-![image](https://user-images.githubusercontent.com/88137420/175780521-66da4193-d9ca-499f-81a1-4ff63a513f27.png)
+<img src="https://github.com/wjdtjd5741/FOOD/assets/111046436/e5e6f08d-c66b-461a-bddb-edab7d689820"><br>
+<br>
+### ・ FlowChart
+<img src="https://github.com/wjdtjd5741/FOOD/assets/111046436/1faf2634-322b-49b4-aac1-2bbf92b2ba64"><br>
 <br>
 <br>
 ### ・ 후기
