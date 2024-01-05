@@ -61,7 +61,7 @@ Java ORM 기술(JPA) 도입, (네이버, 카카오 등..)API으로 로그인 / �
 <img width="300px" height="300px" src="https://github.com/wjdtjd5741/FOOD/assets/111046436/617c55a2-f2f2-4e73-84ac-7aada230a95a"><br>
 <h4>・ 후기 페이지 </h4><br>
 <img width="300px" height="500px" src="https://github.com/wjdtjd5741/FOOD/assets/111046436/1f71eb8b-3e4d-453f-9790-5e7882a1125d">
-<img src="https://github.com/wjdtjd5741/FOOD/assets/111046436/17cf8a1e-67cd-421a-aace-9ec13538e502"><br>
+<img width="300px" height="500px" src="https://github.com/wjdtjd5741/FOOD/assets/111046436/17cf8a1e-67cd-421a-aace-9ec13538e502"><br>
 <h4>・ 레시피 작성 페이지 </h4><br>
 <img width="300px" height="500px" src="https://github.com/wjdtjd5741/FOOD/assets/111046436/8644a6a4-f933-4893-aa2f-fdd8c6c561cb">
 <img width="300px" height="500px" src="https://github.com/wjdtjd5741/FOOD/assets/111046436/4c532013-4553-4e6a-9f92-6f63ab2b0a0d"><br>
@@ -78,28 +78,28 @@ Java ORM 기술(JPA) 도입, (네이버, 카카오 등..)API으로 로그인 / �
 <details>
 <summary>접기/펼치기</summary>
 <h4>・ 로그인 / 회원가입 페이지 </h4><br>
-<img width="300px" height="500px" src="https://github.com/wjdtjd5741/FOOD/assets/111046436/07ab56d6-9039-4c67-8aa8-35ba2dfe0477">
-<img width="300px" height="500px" src="https://github.com/wjdtjd5741/FOOD/assets/111046436/5ee45d30-c5da-4c96-beac-e39f5cc39bc5"><br>
+<img src="https://github.com/wjdtjd5741/FOOD/assets/111046436/07ab56d6-9039-4c67-8aa8-35ba2dfe0477">
+<img src="https://github.com/wjdtjd5741/FOOD/assets/111046436/5ee45d30-c5da-4c96-beac-e39f5cc39bc5"><br>
 <h4>・ 메인 페이지 </h4><br>
-<img width="300px" height="500px" src="https://github.com/wjdtjd5741/FOOD/assets/111046436/0d07dbef-a108-4e09-a643-49ea992d7245">
+<img src="https://github.com/wjdtjd5741/FOOD/assets/111046436/0d07dbef-a108-4e09-a643-49ea992d7245">
 <br>
 <h4>・ 레시피 페이지 </h4><br>
-<img width="300px" height="500px" src="https://github.com/wjdtjd5741/FOOD/assets/111046436/2faf597e-4268-4bec-9a98-7dca085674e5">
+<img src="https://github.com/wjdtjd5741/FOOD/assets/111046436/2faf597e-4268-4bec-9a98-7dca085674e5">
 <br>  
 <h4>・ 게시판 페이지 (레시피 / 후기) </h4><br>
-<img width="400px" height="500px" src="https://github.com/wjdtjd5741/FOOD/assets/111046436/c2050334-6e22-44ed-8652-f9a3df9bcb66">
+<img src="https://github.com/wjdtjd5741/FOOD/assets/111046436/c2050334-6e22-44ed-8652-f9a3df9bcb66">
 <br>
 <h4>・ 후기 페이지 </h4><br>
-<img width="300px" height="500px" src="https://github.com/wjdtjd5741/FOOD/assets/111046436/d8a6c7e7-8a0f-445e-86f0-494b635b6439">
+<img src="https://github.com/wjdtjd5741/FOOD/assets/111046436/d8a6c7e7-8a0f-445e-86f0-494b635b6439">
 <br>
 <h4>・ 레시피 작성 페이지 </h4><br>
-<img width="300px" height="500px" src="https://github.com/wjdtjd5741/FOOD/assets/111046436/91ec8c77-b749-4ac2-8cc2-37cc9abfa00e">
+<img src="https://github.com/wjdtjd5741/FOOD/assets/111046436/91ec8c77-b749-4ac2-8cc2-37cc9abfa00e">
 <br>
 <h4>・ 후기 작성 페이지 </h4><br> 
-<img width="300px" height="500px" src="https://github.com/wjdtjd5741/FOOD/assets/111046436/7675a2d3-265b-4581-9ea1-10ff937d8926">
+<img src="https://github.com/wjdtjd5741/FOOD/assets/111046436/7675a2d3-265b-4581-9ea1-10ff937d8926">
 <br>
 <h4>・ 검색 페이지 </h4><br>
-<img width="300px" height="500px" src="https://github.com/wjdtjd5741/FOOD/assets/111046436/6aab33df-50f6-4a20-b5a4-17f54b75ea3a">
+<img src="https://github.com/wjdtjd5741/FOOD/assets/111046436/6aab33df-50f6-4a20-b5a4-17f54b75ea3a">
 <br>
 </details>
 <br>
