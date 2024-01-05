@@ -76,7 +76,6 @@ Java ORM 기술(JPA) 도입, (네이버, 카카오 등..)API으로 로그인 / �
 <br>
 <br>
 ### ・ 일정
-
 <img src="https://github.com/wjdtjd5741/FOOD/assets/111046436/c0948674-3068-4f2d-90b1-bb371a2629cf"><br>
 <br>
 ### ・ ERD
