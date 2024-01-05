@@ -15,17 +15,18 @@ Java와 Spring 프레임워크, Oracle DB를 활용한 레시피 작성/등록 �
 검색창에 검색어 입력 / 각 페이지 별 존재하는 해시태그를 클릭하면 검색 페이지에 해당 검색어 해당되는 게시물이 최신순 / 조회순으로 보여집니다.<br>
 
 <br>
-<i>[목표 및 개발과정]</i><br>
+<i>[목표 및 개발]</i><br>
 3차에 걸친 프로젝트를 통해 팀원 모두가 개발의 전과정을 경험 하는 것을 목표로 했습니다.<br>
 <br>
 ・ 1차 프로젝트<br>
-&nbsp;스토리보드와 일정을 수립하고 VSCode를 이용하여 HTML과 CSS로 UI를 작성했습니다.<br>
+&nbsp; 스토리보드와 일정을 수립하고 VSCode를 이용하여 HTML과 CSS로 UI를 작성했습니다.<br>
 ・ 2차 프로젝트<br>
-&nbsp;페이지 별 요구사항을 취합해 스토리보드를 수정하고 반응형 웹 페이지와 Javascript를 이용해 동적 페이지 구현했습니다. <br>
+&nbsp; 페이지 별 요구사항을 취합해 스토리보드를 수정하고 반응형 웹 페이지와 Javascript를 이용해 동적 페이지 구현했습니다. <br>
 ・ 3차 프로젝트<br>
-&nbsp;DB를 설계하고
-
-
+&nbsp; 페이지 별 주요 기능을 구현하고 데이터베이스를 설계하고 Mybatis를 사용해 DB에 접근해 CURD 기능을 구현했습니다.<br>
+&nbsp; 세션 쿠키를 이용한 팝업창과 네비게이션 바에 최근 본 레시피를 등록하는 기능을 구현했습니다. <br>
+&nbsp; 마이 페이지 / 게시판 페이징 기능 구현했습니다 <br>
+&nbsp; 후기 페이지와 레시피 페이지에 공통적으로 사용되는 댓글 / 대댓글을 효율적으로 사용하기 위해 기능을 REST API를 구현했습니다.
 <br>
 <br>
 <i>[고도화 계획]</i><br>
@@ -98,9 +99,14 @@ Java ORM 기술(JPA) 도입, (네이버, 카카오 등..)API으로 로그인 / �
 <img src="https://github.com/wjdtjd5741/FOOD/assets/111046436/7675a2d3-265b-4581-9ea1-10ff937d8926"><br>
 <h4>・ 검색 페이지 </h4><br>
 <img src="https://github.com/wjdtjd5741/FOOD/assets/111046436/6aab33df-50f6-4a20-b5a4-17f54b75ea3a"><br>
-<h4> 댓글/대댓글 </h4><br>
+<h4>・ 댓글 대댓글 / REST API </h4><br>
 <img src="https://github.com/wjdtjd5741/FOOD/assets/111046436/1a20067e-e94e-41a4-8eee-5648adb30943">
 <img src="https://github.com/wjdtjd5741/FOOD/assets/111046436/a2784fb7-2c46-4527-b1eb-b13cf9b31643"><br>
+<h6> REST API </h6>
+GET 댓글 전체 조회 : reciid(필수)<br>
+POST 댓글 등록 : comment_id(필수), parentcomment_id(필수), comment_text(필수), reciid(필수), uname(필수)<br>
+PUT 댓글 수정 : comment_id(필수), parentcomment_id(필수), comment_text(필수), reciid(필수)<br>
+DELETE 댓글 삭제 : comment_id(필수), parentcomment_id(필수), reciid(필수)<br>
 </details>
 <br>
 <h3>・ 일정 </h3>
