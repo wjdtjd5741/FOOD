@@ -105,6 +105,7 @@ Java ORM 기술(JPA) 도입, (네이버, 카카오 등..)API으로 로그인 / �
 <img src="https://github.com/wjdtjd5741/FOOD/assets/111046436/a2784fb7-2c46-4527-b1eb-b13cf9b31643"><br>
 <h6> REST API </h6>
 GET 댓글 전체 조회 : reciid(필수)<br>
+&nbsp; 조회된 JSON 데이터 AJAX로 페이지에 호출<br>
 POST 댓글 등록 : comment_id(필수), parentcomment_id(필수), comment_text(필수), reciid(필수), uname(필수)<br>
 PUT 댓글 수정 : comment_id(필수), parentcomment_id(필수), comment_text(필수), reciid(필수)<br>
 DELETE 댓글 삭제 : comment_id(필수), parentcomment_id(필수), reciid(필수)<br>
