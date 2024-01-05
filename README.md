@@ -33,7 +33,7 @@ Java ORM 기술(JPA) 도입, (네이버, 카카오 등..)API으로 로그인 / �
 <br>
 <br>
 
-### ・ 개발환경
+<h3> ・ 개발환경 </h3>
 ・ Frontend : HTML, CSS, JS(ES6)<br>
 ・ Backend : Java, Spring Boot, Mybatis<br>
 ・ Server : Apache Tomcat 9.0<br>
@@ -45,50 +45,50 @@ Java ORM 기술(JPA) 도입, (네이버, 카카오 등..)API으로 로그인 / �
 ### ・ 스토리보드
 <details>
 <summary>접기/펼치기</summary>
-<h3>・ 로그인 / 회원가입 페이지 </h3><br>
+<h4>・ 로그인 / 회원가입 페이지 </h4><br>
 <img width="300px" height="500px" src="https://github.com/wjdtjd5741/FOOD/assets/111046436/f767b0fa-c6a3-45f7-ae89-044aeb9ec965">
 <img width="300px" height="500px" src="https://github.com/wjdtjd5741/FOOD/assets/111046436/860278c8-1a13-4b4d-9bdc-f9585aab3860"><br>
-<h3>・ 메인 페이지 </h3><br>
+<h4>・ 메인 페이지 </h4><br>
 <img width="300px" height="500px" src="https://github.com/wjdtjd5741/FOOD/assets/111046436/46986824-2139-48e5-8735-c15499b3b29a">
 <img width="300px" height="500px" src="https://github.com/wjdtjd5741/FOOD/assets/111046436/fc1ae5c4-9bba-4610-ac20-9d3c6e03cb87"><br>
-<h3>・ 레시피 페이지 </h3><br>
+<h4>・ 레시피 페이지 </h4><br>
 <img width="300px" height="500px" src="https://github.com/wjdtjd5741/FOOD/assets/111046436/c79b25b7-46e9-441a-92f9-20658dd642d1">
 <img width="300px" height="500px" src="https://github.com/wjdtjd5741/FOOD/assets/111046436/71dabc51-d730-472d-bcc2-50577d36fadd"><br>  
-<h3>・ 게시판 페이지 (레시피 / 후기) </h3><br>
+<h4>・ 게시판 페이지 (레시피 / 후기) </h4><br>
 <img width="400px" height="500px" src="https://github.com/wjdtjd5741/FOOD/assets/111046436/a398e959-543b-487f-8154-024bd4db3eb1">
 <img width="400px" height="500px" src="https://github.com/wjdtjd5741/FOOD/assets/111046436/fbe39471-1704-4c55-bfbc-edd56d8dacbc"><br>
 <img width="300px" height="300px" src="https://github.com/wjdtjd5741/FOOD/assets/111046436/045aa2a8-01cf-490f-a13e-002c0cc5abe7">
 <img width="300px" height="300px" src="https://github.com/wjdtjd5741/FOOD/assets/111046436/617c55a2-f2f2-4e73-84ac-7aada230a95a"><br>
-<h3>・ 후기 페이지 </h3><br>
+<h4>・ 후기 페이지 </h4><br>
 <img width="300px" height="500px" src="https://github.com/wjdtjd5741/FOOD/assets/111046436/1f71eb8b-3e4d-453f-9790-5e7882a1125d">
 <img src="https://github.com/wjdtjd5741/FOOD/assets/111046436/17cf8a1e-67cd-421a-aace-9ec13538e502"><br>
-<h3>・ 레시피 작성 페이지 </h3><br>
+<h4>・ 레시피 작성 페이지 </h4><br>
 <img width="300px" height="500px" src="https://github.com/wjdtjd5741/FOOD/assets/111046436/8644a6a4-f933-4893-aa2f-fdd8c6c561cb">
 <img width="300px" height="500px" src="https://github.com/wjdtjd5741/FOOD/assets/111046436/4c532013-4553-4e6a-9f92-6f63ab2b0a0d"><br>
-<h3>・ 후기 작성 페이지 </h3><br> 
+<h4>・ 후기 작성 페이지 </h4><br> 
 <img width="300px" height="500px" src="https://github.com/wjdtjd5741/FOOD/assets/111046436/11d4fa6e-dca8-4f12-a0e5-e3d702661ca8">
 <img width="300px" height="500px" src="https://github.com/wjdtjd5741/FOOD/assets/111046436/6be0fee7-aa02-43b2-b307-ce5ff80995de"><br>
-<h3>・ 검색 페이지 </h3><br>
+<h4>・ 검색 페이지 </h4><br>
 <img width="300px" height="500px" src="https://github.com/wjdtjd5741/FOOD/assets/111046436/22c3e285-6136-4e94-91a3-026c0e75929d">
 <img width="300px" height="500px" src="https://github.com/wjdtjd5741/FOOD/assets/111046436/1ff45e36-aeaa-4526-b4ba-e28e215b6359"><br>
 </details>
 
 <br>
 <br>
-### ・ 일정
+<h3> ### ・ 일정 </h3>
 <br>
 <img src="https://github.com/wjdtjd5741/FOOD/assets/111046436/c0948674-3068-4f2d-90b1-bb371a2629cf"><br>
 <br>
-### ・ ERD
+<h3> ### ・ ERD </h3>
 <br>
 <img src="https://github.com/wjdtjd5741/FOOD/assets/111046436/e5e6f08d-c66b-461a-bddb-edab7d689820"><br>
 <br>
-### ・ FlowChart
+<h3> ### ・ FlowChart </h3>
 <br>
 <img src="https://github.com/wjdtjd5741/FOOD/assets/111046436/1faf2634-322b-49b4-aac1-2bbf92b2ba64"><br>
 <br>
 <br>
-### ・ 후기
+<h3> ### ・ 후기 </h3>
 <br>
 이기영 :
 <br>
